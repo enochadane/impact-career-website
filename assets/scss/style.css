@@ -1,0 +1,140 @@
+.mission {
+  margin-top: 20px;
+}
+
+.mission .missionImgCol {
+  margin: auto;
+}
+
+.mission .missionImgCol .missionImg {
+  max-width: 100%;
+}
+
+.mission .missionImgCol .missionImgVertical {
+  max-width: 100%;
+}
+
+.mission .missionContent {
+  margin: auto;
+}
+
+.mission .missionContent .missionH1 {
+  font-size: 22px;
+  font-weight: 550;
+  margin-top: 8px;
+}
+
+.mission .missionContent .missionPara {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.employers .employersHeader {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  margin: 30px auto;
+}
+
+.employers .employersHeader .employerH1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #474c55;
+}
+
+.employers .cardMain {
+  margin: 24px 5px;
+  border: 3px solid #f5f6f8;
+  height: 295px;
+}
+
+.employers .cardMain .cardImg {
+  margin: 15px auto;
+  max-width: 18%;
+}
+
+.employers .cardMain .cardContent {
+  text-align: center;
+}
+
+.employers .cardMain .cardContent .cardTitle {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.employers .cardMain .cardContent .cardText {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.locationSec {
+  margin-top: 20px;
+  background-color: #f5f5f5;
+}
+
+.locationSec .locationImg {
+  max-width: 100%;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.locationSec .locationH1 {
+  margin: 30px 0;
+}
+
+.locationSec .locationPara {
+  text-align: justify;
+}
+
+.trainingCol {
+  text-align: center;
+}
+
+.trainingCol .trainingH1 {
+  font-size: xx-large;
+  color: #333;
+  margin: 20px 0;
+}
+
+.trainingImg {
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.interviewCol {
+  text-align: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+  .employers .cardMain {
+    height: 347px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .missionImg {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1000px) {
+  .employers .cardMain {
+    height: 420px;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 2560px) {
+  .missionImgVertical {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .employers .cardMain {
+    height: 350px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
