@@ -88,24 +88,34 @@
   text-align: justify;
 }
 
-.trainingCol {
+.trainingSec .trainingCol {
   text-align: center;
 }
 
-.trainingCol .trainingH1 {
-  font-size: xx-large;
-  color: #333;
+.trainingSec .trainingCol .trainingH1 {
   margin: 20px 0;
+  color: #333;
 }
 
-.trainingImg {
-  border-radius: 10px;
-  max-width: 100%;
-  margin: 10px 0;
+.interviewSec {
+  margin-top: 9rem;
 }
 
-.interviewCol {
+.interviewSec .interviewH1 {
   text-align: center;
+  color: #474c55;
+}
+
+.interviewSec .interviewPara {
+  text-align: center;
+}
+
+.interviewSec .interviewCard {
+  margin-top: 4rem;
+}
+
+.interviewSec .interviewCard .interviewCardBody {
+  height: 340px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 350px) {

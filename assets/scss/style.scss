@@ -81,22 +81,32 @@
 
 //Resources page
 //Training Resources
-.trainingCol {
-  text-align: center;
-  .trainingH1 {
-    font-size: xx-large;
-    color: #333;
-    margin: 20px 0;
+.trainingSec {
+  .trainingCol {
+    text-align: center;
+    .trainingH1 {
+      margin: 20px 0;
+      color: #333;
+    }
   }
 }
-.trainingImg {
-  border-radius: 10px;
-  max-width: 100%;
-  margin: 10px 0;
-}
+
 //interview Resources
-.interviewCol {
-  text-align: center;
+.interviewSec {
+  margin-top: 9rem;
+  .interviewH1 {
+    text-align: center;
+    color: #474c55;
+  }
+  .interviewPara {
+    text-align: center;
+  }
+  .interviewCard {
+    margin-top: 4rem;
+    .interviewCardBody {
+      height: 340px;
+    }
+  }
 }
 //media queries
 @media only screen and (min-width: 320px) and (max-width: 350px) {
