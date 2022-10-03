@@ -1,90 +1,126 @@
-.mission {
-  margin-top: 20px;
+.homeEmployers .homeEmployersH2 {
+  margin: 40px 0;
+  text-align: center;
+  color: #474c55;
 }
 
-.mission .missionImgCol {
+.homeEmployers .employersRow {
+  margin: 25px 0;
+}
+
+.homeEmployers .employersRow .bagImgCol {
+  text-align: center;
+}
+
+.homeEmployers .employersRow .bagImgCol .employersImg {
+  border-radius: 5px;
+  max-width: 88%;
+  background-color: #ecebeb;
+  padding: 10px;
+}
+
+.homeEmployers .employersRow .employersContent {
+  padding: 0;
+}
+
+.homeEmployers .employersRow .employersContent .employersH5 {
+  color: #173753;
+}
+
+.homeEmployers .employersRow .employersContent .employersPara {
+  margin: 15px 0;
+}
+
+.aboutMissionSec {
+  margin-top: 5rem;
+}
+
+.aboutMissionSec .missionImgCol {
   margin: auto;
 }
 
-.mission .missionImgCol .missionImg {
+.aboutMissionSec .missionImgCol .missionImg {
   max-width: 100%;
 }
 
-.mission .missionImgCol .missionImgVertical {
+.aboutMissionSec .missionImgCol .missionImgVertical {
   max-width: 100%;
 }
 
-.mission .missionContent {
+.aboutMissionSec .missionContent {
   margin: auto;
 }
 
-.mission .missionContent .missionH1 {
+.aboutMissionSec .missionContent .missionH1 {
   font-size: 22px;
   font-weight: 550;
   margin-top: 8px;
 }
 
-.mission .missionContent .missionPara {
+.aboutMissionSec .missionContent .missionPara {
   font-size: 15px;
   margin-top: 10px;
 }
 
-.employers .employersHeader {
+.aboutEmployersSec {
+  margin-top: 5rem;
+}
+
+.aboutEmployersSec .employersHeader {
   text-align: center;
   font-weight: 600;
   font-size: 32px;
   margin: 30px auto;
 }
 
-.employers .employersHeader .employerH1 {
+.aboutEmployersSec .employersHeader .employerH1 {
   font-size: 32px;
-  font-weight: 600;
   color: #474c55;
 }
 
-.employers .cardMain {
+.aboutEmployersSec .cardMain {
   margin: 24px 5px;
   border: 3px solid #f5f6f8;
   height: 295px;
 }
 
-.employers .cardMain .cardImg {
+.aboutEmployersSec .cardMain .cardImg {
   margin: 15px auto;
   max-width: 18%;
 }
 
-.employers .cardMain .cardContent {
+.aboutEmployersSec .cardMain .cardContent {
   text-align: center;
 }
 
-.employers .cardMain .cardContent .cardTitle {
+.aboutEmployersSec .cardMain .cardContent .cardTitle {
   margin-bottom: 10px;
   color: #333;
   font-weight: 600;
   font-size: 24px;
 }
 
-.employers .cardMain .cardContent .cardText {
+.aboutEmployersSec .cardMain .cardContent .cardText {
   margin: 20px 0;
   font-size: 14px;
 }
 
-.locationSec {
-  margin-top: 20px;
+.aboutLocationSec {
+  margin-top: 5rem;
   background-color: #f5f5f5;
 }
 
-.locationSec .locationImg {
+.aboutLocationSec .locationImg {
   max-width: 100%;
   border-radius: 20px;
   margin-top: 40px;
 }
 
-.locationSec .locationH1 {
+.aboutLocationSec .locationH1 {
   margin: 30px 0;
 }
 
-.locationSec .locationPara {
+.aboutLocationSec .locationPara {
   text-align: justify;
 }
 
@@ -95,6 +131,15 @@
 .trainingSec .trainingCol .trainingH1 {
   margin: 20px 0;
   color: #333;
+}
+
+.trainingSec .trainingCard {
+  border-radius: 15px;
+}
+
+.trainingSec .trainingCard .trainingImg {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .interviewSec {
@@ -112,6 +157,12 @@
 
 .interviewSec .interviewCard {
   margin-top: 4rem;
+  border-radius: 15px;
+}
+
+.interviewSec .interviewCard .interviewImg {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .interviewSec .interviewCard .interviewCardBody {
@@ -130,6 +181,18 @@
   }
 }
 
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .employersRow .bagImgCol .employersImg {
+    max-width: none;
+  }
+}
+
+@media only screen and (min-width: 678px) and (max-width: 1000px) {
+  .employersRow .bagImgCol .employersImg {
+    max-width: 100%;
+  }
+}
+
 @media only screen and (min-width: 760px) and (max-width: 1000px) {
   .employers .cardMain {
     height: 420px;
@@ -145,6 +208,12 @@
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .employers .cardMain {
     height: 350px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .trainingPara {
+    margin: 1rem 18rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
