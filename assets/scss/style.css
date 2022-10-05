@@ -1,3 +1,24 @@
+.homeBanner .imageDiv {
+  background: black;
+  overflow: hidden;
+}
+
+.homeBanner .imageDiv .bannerImg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.4;
+}
+
+.aboutBannerHeader .aboutBannerImg {
+  position: absolute;
+}
+
+.aboutBannerSec {
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
 .homeEmployers .homeEmployersH2 {
   margin: 40px 0;
   text-align: center;

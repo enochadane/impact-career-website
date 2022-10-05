@@ -1,3 +1,25 @@
+//banner
+.homeBanner {
+  .imageDiv {
+    background: black;
+    overflow: hidden;
+    .bannerImg {
+      object-fit: cover;
+      opacity: 0.4;
+    }
+  }
+}
+
+.aboutBannerHeader {
+  .aboutBannerImg {
+    position: absolute;
+  }
+}
+.aboutBannerSec {
+  color: white;
+  position: relative;
+  text-align: center;
+}
 //homeEmployers
 .homeEmployers {
   .homeEmployersH2 {
