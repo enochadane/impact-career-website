@@ -1,55 +1,57 @@
-.homeBanner .imageDiv {
-  background: black;
-  overflow: hidden;
-}
-
-.homeBanner .imageDiv .bannerImg {
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 0.4;
-}
-
-.aboutBannerHeader .aboutBannerImg {
-  position: absolute;
-}
-
-.aboutBannerSec {
-  color: white;
-  position: relative;
-  text-align: center;
-}
-
-.homeEmployers .homeEmployersH2 {
-  margin: 40px 0;
-  text-align: center;
-  color: #474c55;
-}
-
-.homeEmployers .employersRow {
-  margin: 25px 0;
-}
-
-.homeEmployers .employersRow .bagImgCol {
-  text-align: center;
-}
-
-.homeEmployers .employersRow .bagImgCol .employersImg {
-  border-radius: 5px;
-  max-width: 88%;
-  background-color: #ecebeb;
-  padding: 10px;
-}
-
-.homeEmployers .employersRow .employersContent {
+* {
+  margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 0px;
 }
 
-.homeEmployers .employersRow .employersContent .employersH5 {
-  color: #173753;
+#home-page .logo {
+  height: 60px;
 }
 
-.homeEmployers .employersRow .employersContent .employersPara {
-  margin: 15px 0;
+#home-page ul li a {
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#home-page ul li a:hover {
+  color: #166433;
+  background: none;
+}
+
+#home-page ul li .fa-solid {
+  float: right;
+  margin-left: 10px;
+  margin-top: 4px;
+  font-size: 1em;
+  font-weight: 500px;
+}
+
+#home-page .header-button {
+  border-color: #a67d2d;
+  background-color: #a67d2d;
+  border-radius: 5px;
+  margin-left: 70px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#home-page .header-button:hover {
+  background-color: #166433;
+}
+
+#home-page .header-button .btn {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-style: solid;
 }
 
 .aboutMissionSec {
@@ -81,6 +83,45 @@
 .aboutMissionSec .missionContent .missionPara {
   font-size: 15px;
   margin-top: 10px;
+}
+
+.homeBanner .imageDiv {
+  background: black;
+  overflow: hidden;
+}
+
+.homeBanner .imageDiv .bannerImg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.4;
+}
+
+.aboutBanner {
+  margin-top: 73px;
+}
+
+.aboutBanner .containerFluid {
+  background-image: url("../images/bannerImages/aboutBanner.png");
+  height: 264px;
+}
+
+.aboutBanner .aboutBannerCol {
+  padding: 0;
+}
+
+.aboutBanner .bannerH1 {
+  height: 306%;
+  color: white;
+  background-color: black;
+  opacity: 0.4;
+  font-size: 65px;
+  font-weight: bolder;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .aboutEmployersSec {
@@ -126,6 +167,31 @@
   font-size: 14px;
 }
 
+.employees .business-meet h1 {
+  font-size: 32px;
+  font-family: 'Roboto';
+}
+
+.employees .business-meet img.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 550px;
+}
+
+.employees .contents {
+  width: 565px;
+  height: 990px;
+}
+
+.employees .contents .content-box p {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  border: none;
+  font-family: 'Roboto';
+}
+
 .aboutLocationSec {
   margin-top: 5rem;
   background-color: #f5f5f5;
@@ -143,6 +209,70 @@
 
 .aboutLocationSec .locationPara {
   text-align: justify;
+}
+
+.product-designer .candidates {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 40px;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.product-designer .candidates:hover {
+  background-color: #f4f4f4;
+}
+
+.product-designer .candidates img {
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 76px;
+}
+
+.product-designer .candidates .senior-product h5 {
+  font-size: 18px;
+}
+
+.product-designer .candidates .senior-product p {
+  font-size: 18px;
+}
+
+.accordion-button {
+  border-width: 0;
+}
+
+.accordion-collapse {
+  border: solid rgba(233, 9, 9, 0.125);
+  border-width: 0px 0px;
+}
+
+.accordion-button.collapsed {
+  background-color: white;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.accordion-button:focus {
+  border: none;
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+}
+
+.accordion-button:not(.collapsed) {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  color: black;
+  background-color: white;
+}
+
+.accordion-body {
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
 }
 
 .trainingSec .trainingCol {
@@ -190,6 +320,262 @@
   height: 340px;
 }
 
+#carousel-section {
+  background-color: #f4f5f7;
+}
+
+#carousel-section .our-values-title {
+  color: #474c55;
+  font-size: 32px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+#carousel-section .row .owl-theme {
+  margin-bottom: 50px;
+}
+
+#carousel-section .row .owl-theme .card {
+  border-top: 3px solid #166433;
+  border-radius: 8px;
+}
+
+#carousel-section .row .owl-theme .card img {
+  height: 50px;
+  margin: 31px -130px;
+}
+
+#carousel-section .row .owl-theme .card .card-body .card-text {
+  font-size: 15px;
+}
+
+#contact-card-section {
+  margin-top: 100px;
+}
+
+#contact-card-section .card {
+  padding: 10px 26px;
+  border-radius: 12px;
+  background-color: #f4f4f4;
+  min-height: 200px;
+  margin-bottom: 60px;
+}
+
+#contact-card-section .card .topContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact-card-section .card .topContent h2 {
+  font-size: 24px;
+  line-height: 130%;
+  font-weight: 500;
+  margin: 19px;
+}
+
+#contact-card-section .card p {
+  font-size: 15px;
+  padding: 5px;
+}
+
+#contact-form .container {
+  max-width: 832px;
+}
+
+#contact-form .container .get-in-touch {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+#contact-form .container .get-in-touch h2 {
+  color: #474c55;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+#contact-form .container .get-in-touch p {
+  color: #333;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  padding: 0 26px;
+}
+
+#contact-form .form-control {
+  margin: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 13px;
+}
+
+#contact-form .site-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #166433;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #166433;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#contact-form .site-btn:hover {
+  color: #fff;
+  background-color: #166433;
+}
+
+.black-footer {
+  background-color: #231f20;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.black-footer .top-footer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.black-footer .top-footer .footer-brand {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-column-gap: 60px;
+}
+
+.black-footer .top-footer .footer-brand .img-fluid {
+  max-width: 100px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.black-footer .social {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.black-footer .social h4 {
+  font-weight: 600;
+  margin-bottom: 13px;
+  font-size: 22px;
+}
+
+.black-footer .social .social-icons {
+  margin-bottom: 36px;
+}
+
+.black-footer .social .social-icons .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.black-footer .social .social-icons .fa:hover {
+  background: #885c2b;
+}
+
+.black-footer .social .social-icons .style {
+  background: #32353b;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  margin: 4px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+}
+
+.black-footer .bottom-footer .bottom-footer-content {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.black-footer .bottom-footer .bottom-footer-content h4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.black-footer .bottom-footer .bottom-footer-content .privacy-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+#contact-form .container {
+  max-width: 832px;
+}
+
+#contact-form .container .get-in-touch {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+#contact-form .container .get-in-touch h2 {
+  color: #474c55;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+#contact-form .container .get-in-touch p {
+  color: #333;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  padding: 0 26px;
+}
+
+#contact-form .form-control {
+  margin: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 13px;
+}
+
+#contact-form .site-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #166433;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #166433;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#contact-form .site-btn:hover {
+  color: #fff;
+  background-color: #166433;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 350px) {
   .employers .cardMain {
     height: 347px;
@@ -235,6 +621,114 @@
 @media only screen and (min-width: 1200px) {
   .trainingPara {
     margin: 1rem 18rem;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  #home-page ul li .resource {
+    margin-left: -23px;
+  }
+  #home-page .header-button {
+    margin-left: 2px;
+    margin-right: 199px;
+    margin-top: 10px;
+  }
+  #contact-card-section .card {
+    min-height: 200px;
+  }
+  #contact-card-section .card .topContent h2 {
+    font-size: 18px;
+  }
+  .bottom-footer .bottom-footer-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .bottom-footer .bottom-footer-content h4 {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  #home-page .header-button {
+    margin-right: 254px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  #home-page .header-button {
+    margin-right: 304px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #home-page ul li .resource {
+    margin-left: -25px;
+  }
+  #home-page .header-button {
+    margin-left: -2px;
+    margin-right: 608px;
+    margin-top: 10px;
+  }
+  #contact-card-section .card {
+    padding: 16px;
+    min-height: 215px;
+  }
+  #contact-card-section .card .topContent img {
+    max-width: 25px;
+  }
+  #contact-card-section .card .topContent h2 {
+    font-size: 14px;
+  }
+  #contact-card-section .card p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #contact-card-section .card .topContent h2 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .product-designer .candidates {
+    width: auto;
+    height: auto;
+  }
+  .product-designer .candidates img {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+  .product-designer .candidates .senior-product h5 {
+    font-size: 15px;
+  }
+  .product-designer .candidates .senior-product p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .product-designer .candidates {
+    width: auto;
+    height: auto;
+  }
+  .product-designer .candidates img {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+  .product-designer .candidates .senior-product h5 {
+    font-size: 16px;
+  }
+  .product-designer .candidates .senior-product p {
+    font-size: 12px;
+  }
+  .product .page .job-page .in-page {
+    margin-bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
