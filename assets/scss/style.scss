@@ -1,18 +1,102 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-  letter-spacing: 0px;
+body {
+  line-height: 20px;
+  font-weight: 400;
 }
-$bgcolorwhite: white;
-$bgcolorrgbwhite: rgb(252, 248, 248);
-$bgcolorgreen: #023f02;
-$colorgreen: #023f02;
-$bordercolor: #022502;
-$fontssize1: 18px;
-$fontssize2: 12px;
-$fontssize3: 13px;
+.Job {
+  margin-top: 200px;
+  .candidates {
+    // padding: 10px;
+    border-radius: 10px;
+    .Job-Seeker {
+      margin-top: 10px;
+
+      h5 {
+        margin-top: 0px;
+        color: #474c55;
+        font-size: 32px;
+        line-height: 120%;
+        font-weight: 600;
+      }
+    }
+    .sub-btn {
+      text-decoration: none;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #166433;
+      border-radius: 5px;
+      background-color: transparent;
+      color: #166433;
+      font-size: 16px;
+      font-weight: 600;
+      &:hover {
+        background-color: rgb(1, 61, 1);
+        color: white;
+      }
+    }
+  }
+  .Learn {
+    background-color: #ffd447;
+    padding: 30px;
+    border-radius: 10px;
+    h5 {
+      font-weight: 600;
+    }
+    p {
+      font-weight: 100;
+    }
+  }
+  .access-btn {
+    border-color: white;
+    font-weight: 600;
+    color: white;
+    &:hover {
+      background-color: white;
+      color: yellow;
+    }
+  }
+  .last-card {
+    border-radius: 15px;
+    background-image: url('../images/aboutUsHero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    //position: relative;
+
+    h5 {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 600;
+    }
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+    .text-field {
+      margin-top: 30px;
+      width: 100%;
+      height: auto;
+      padding: 15px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .sign-up {
+      .signup-btn {
+        margin-top: 20px;
+        border-color: white;
+        font-weight: 600;
+        color: white;
+        &:hover {
+          background-color: white;
+          color: yellow;
+        }
+      }
+    }
+  }
+}
 
 //Header
 #home-page {
@@ -142,11 +226,10 @@ $fontssize3: 13px;
     }
   }
 }
-
 //banner section
 //home-banner
 .carouselSlide {
-  margin-top: 70px;
+  margin-top: 71px;
   background-color: black;
   .carouselInner {
     opacity: 0.4;
@@ -173,7 +256,43 @@ $fontssize3: 13px;
     align-items: center;
   }
 }
-
+//about-carousel-section
+#carousel-section {
+  background-color: #f4f5f7;
+  margin-top: 80px;
+  .our-values-title {
+    color: #474c55;
+    font-size: 32px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+  }
+  .row {
+    .owl-theme {
+      margin-bottom: 50px;
+      .card {
+        border-top: 3px solid #166433;
+        border-radius: 8px;
+        img {
+          height: 40px;
+          margin: 37px -138px;
+          padding-left: 36px;
+        }
+        .card-body {
+          padding-top: 0px;
+          .card-title {
+            font-size: 22px;
+            font-weight: 430;
+            margin-left: 3px;
+          }
+          .card-text {
+            font-size: 15px;
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+  }
+}
 //aboutEmployers section
 .aboutEmployersSec {
   margin-top: 5rem;
@@ -227,9 +346,9 @@ $fontssize3: 13px;
   }
   .contents {
     width: 565px;
-
     .content-box {
       p {
+        width: 580px;
         background-color: #f4f4f4;
         border-radius: 10px;
         padding: 20px;
@@ -258,7 +377,15 @@ $fontssize3: 13px;
 
 //jobs page
 //jobcards//
-.product-designer {
+.trending-jobs {
+  background-color: white;
+  h2 {
+    margin-left: 100px;
+    margin-bottom: 80px;
+  }
+  a {
+    float: right;
+  }
   .candidates {
     margin-bottom: 30px;
     border: none;
@@ -274,19 +401,24 @@ $fontssize3: 13px;
     }
     .senior-product {
       h5 {
-        font-size: $fontssize1;
+        font-size: 18px;
       }
       p {
-        font-size: $fontssize1;
+        font-size: 18px;
       }
     }
   }
 }
 //accordion section
-//accordion section
-.accordion {
-  margin-top: 6rem;
+
+.faq {
+  background-color: #f4f4f4;
+  #accordionSection {
+    margin-bottom: 100px;
+  }
   .accordion-button {
+    color: #173753;
+    font-size: 18px;
     border-width: 0;
   }
   .accordion-button.collapsed {
@@ -310,6 +442,7 @@ $fontssize3: 13px;
   }
   .accordion-body {
     background: #fff;
+    font-size: 15px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -318,7 +451,40 @@ $fontssize3: 13px;
     border-top-right-radius: 1.25rem;
   }
 }
+
 //Resources page
+//page section//
+.product {
+  margin-top: 120px;
+  .page {
+    background-color: white;
+    &:hover {
+      background-color: white;
+      border-radius: 20px;
+    }
+    .job-page {
+      margin-left: 20px;
+      .in-page {
+        img {
+          border-radius: 76px;
+          margin-top: 30px;
+        }
+      }
+      a {
+        margin-bottom: 20px;
+        color: darkgreen;
+        font-weight: 400;
+        font-size: 15px;
+        border-color: darkgreen;
+        &:hover {
+          color: white;
+          background-color: darkgreen;
+        }
+      }
+    }
+  }
+}
+
 //Training Resources
 .trainingSec {
   .trainingCol {
@@ -415,54 +581,6 @@ $fontssize3: 13px;
     }
   }
 }
-//form-section
-#contact-form {
-  .container {
-    max-width: 832px;
-
-    .get-in-touch {
-      margin-top: 60px;
-      margin-bottom: 60px;
-      text-align: center;
-      //padding: 0px 164px;
-      h2 {
-        color: #474c55;
-        font-size: 32px;
-        line-height: 120%;
-        font-weight: 600;
-      }
-      p {
-        color: #333;
-        font-size: 15px;
-        line-height: 26px;
-        font-weight: 400;
-        padding: 0 26px;
-      }
-    }
-  }
-  .form-control {
-    margin: 10px;
-    box-shadow: none;
-    padding: 13px;
-  }
-  .site-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #166433;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #166433;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s linear;
-    &:hover {
-      color: #fff;
-      background-color: #166433;
-    }
-  }
-}
 
 //footer-section
 .black-footer {
@@ -536,6 +654,54 @@ $fontssize3: 13px;
     }
   }
 }
+//form-section
+#contact-form {
+  .container {
+    max-width: 832px;
+
+    .get-in-touch {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      text-align: center;
+      //padding: 0px 164px;
+      h2 {
+        color: #474c55;
+        font-size: 32px;
+        line-height: 120%;
+        font-weight: 600;
+      }
+      p {
+        color: #333;
+        font-size: 15px;
+        line-height: 26px;
+        font-weight: 400;
+        padding: 0 26px;
+      }
+    }
+  }
+  .form-control {
+    margin: 10px;
+    box-shadow: none;
+    padding: 13px;
+  }
+  .site-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #166433;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #166433;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s linear;
+    &:hover {
+      color: #fff;
+      background-color: #166433;
+    }
+  }
+}
 //media queries
 @media only screen and (min-width: 320px) and (max-width: 350px) {
   .employers {
@@ -592,7 +758,7 @@ $fontssize3: 13px;
     margin: 1rem 18rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 425px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   #home-page {
     ul li {
       .resource {
@@ -604,6 +770,9 @@ $fontssize3: 13px;
       margin-right: 199px;
       margin-top: 10px;
     }
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -108px;
   }
   #contact-card-section {
     .card {
@@ -625,15 +794,21 @@ $fontssize3: 13px;
     }
   }
 }
-@media only screen and (min-width: 375px) and (max-width: 425px) {
+@media only screen and (min-width: 375px) and (max-width: 767px) {
   #home-page .header-button {
     margin-right: 254px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -135px;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
   #home-page .header-button {
     margin-right: 304px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -160px;
   }
 }
 
@@ -679,6 +854,126 @@ $fontssize3: 13px;
       }
     }
   }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -101px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  #carousel-section .row .owl-theme .card {
+    min-height: 215px;
+    img {
+      margin: 37px -158px;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  #home-page {
+    ul li {
+      .resource {
+        margin-left: -23px;
+      }
+    }
+    .header-button {
+      margin-left: 2px;
+      margin-right: 199px;
+      margin-top: 10px;
+    }
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -108px;
+  }
+  #contact-card-section {
+    .card {
+      min-height: 200px;
+      .topContent {
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    .bottom-footer-content {
+      flex-direction: column;
+      text-align: center;
+      h4 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  #home-page .header-button {
+    margin-right: 254px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -135px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  #home-page .header-button {
+    margin-right: 304px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -160px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #home-page {
+    ul li {
+      .resource {
+        margin-left: -25px;
+      }
+    }
+    .header-button {
+      margin-left: -2px;
+      margin-right: 608px;
+      margin-top: 10px;
+    }
+  }
+  #contact-card-section {
+    .card {
+      padding: 16px;
+      min-height: 215px;
+      .topContent {
+        img {
+          max-width: 25px;
+        }
+        h2 {
+          font-size: 14px;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #contact-card-section {
+    .card {
+      .topContent {
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -101px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  #carousel-section .row .owl-theme .card {
+    min-height: 215px;
+    img {
+      margin: 37px -158px;
+    }
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .product-designer {
@@ -695,7 +990,7 @@ $fontssize3: 13px;
           font-size: 15px;
         }
         p {
-          font-size: $fontssize2;
+          font-size: 12px;
         }
       }
     }
@@ -716,7 +1011,7 @@ $fontssize3: 13px;
           font-size: 16px;
         }
         p {
-          font-size: $fontssize2;
+          font-size: 12px;
         }
       }
     }
@@ -732,14 +1027,212 @@ $fontssize3: 13px;
   }
 }
 @media only screen and (min-width: 320px) {
-  .business-meet {
-    img.sticky {
-      margin-bottom: 20px;
+  .employees {
+    .business-meet {
+      img.sticky {
+        margin-bottom: 20px;
+        width: 295px;
+      }
     }
   }
   .contents {
     .content-box {
-      width: 540px;
+      width: 295px;
+    }
+  }
+}
+@media only screen and (min-width: 375px) {
+  .employees {
+    .business-meet {
+      img.sticky {
+        margin-bottom: 20px;
+        width: 350px;
+      }
+    }
+  }
+  .contents {
+    .content-box {
+      width: 350px;
+    }
+  }
+}
+@media only screen and (min-width: 425px) {
+  .employees {
+    .business-meet {
+      img.sticky {
+        margin-bottom: 20px;
+        width: 400px;
+      }
+    }
+  }
+  .contents {
+    .content-box {
+      width: 400px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .employees {
+    .business-meet {
+      img.sticky {
+        margin-bottom: 20px;
+        width: 270px;
+      }
+    }
+    .contents {
+      width: 400px;
+      .content-box {
+        width: 390px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .Job {
+    .candidates {
+      padding: 0px;
+      margin-top: 20px;
+      .Job-Seeker {
+        h5 {
+          font-weight: 700;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+        }
+      }
+      .sub-btn {
+        margin: auto;
+        display: table;
+      }
+      .icon {
+        img {
+          width: 40%;
+          margin: auto;
+          display: block;
+        }
+      }
+    }
+    .Learn {
+      padding: 0px;
+      border-radius: 10px;
+      h5 {
+        padding: 0px;
+        font-size: 24px;
+        text-align: center;
+      }
+      p {
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+        font-weight: 100;
+      }
+      .access-btn {
+        margin: auto;
+        display: table;
+      }
+      .icon {
+        img {
+          width: 40%;
+          margin: auto;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .last-card {
+      margin-top: 20px;
+      h5 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    .sign-up {
+      .signup-btn {
+        margin: auto;
+        display: table;
+      }
+    }
+  }
+  .product {
+    padding: 0px;
+    .page {
+      background-color: #f4f4f4;
+      .job-page {
+        .in-page {
+          margin-bottom: 0px;
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .inner-content {
+          h5 {
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+  .Job {
+    .candidates {
+      margin-top: 20px;
+
+      .Job-Seeker {
+        h5 {
+          font-weight: 600;
+          font-size: 35px;
+        }
+      }
+    }
+    .last-card {
+      margin-top: 20px;
+    }
+  }
+  .product {
+    .page {
+      .job-page {
+        .in-page {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .Job {
+    .candidates {
+      height: 400px;
+      .Job-Seeker {
+        h5 {
+          font-size: 22px;
+        }
+      }
+    }
+    .Learn {
+      height: 320px;
+    }
+    .last-card {
+      margin-top: 0px;
+      height: 320px;
+    }
+  }
+  .employees {
+    .business-meet {
+      img.sticky {
+        width: 464px;
+      }
+    }
+    .contents {
+      .content-box {
+        width: 478px;
+      }
     }
   }
 }
