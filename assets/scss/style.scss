@@ -145,14 +145,11 @@ $fontssize3: 13px;
 
 //banner section
 //home-banner
-.homeBanner {
-  .imageDiv {
-    background: black;
-    overflow: hidden;
-    .bannerImg {
-      object-fit: cover;
-      opacity: 0.4;
-    }
+.carouselSlide {
+  margin-top: 70px;
+  background-color: black;
+  .carouselInner {
+    opacity: 0.4;
   }
 }
 //about-banner
@@ -536,54 +533,6 @@ $fontssize3: 13px;
         color: #fff;
         text-decoration: none;
       }
-    }
-  }
-}
-//form-section
-#contact-form {
-  .container {
-    max-width: 832px;
-
-    .get-in-touch {
-      margin-top: 60px;
-      margin-bottom: 60px;
-      text-align: center;
-      //padding: 0px 164px;
-      h2 {
-        color: #474c55;
-        font-size: 32px;
-        line-height: 120%;
-        font-weight: 600;
-      }
-      p {
-        color: #333;
-        font-size: 15px;
-        line-height: 26px;
-        font-weight: 400;
-        padding: 0 26px;
-      }
-    }
-  }
-  .form-control {
-    margin: 10px;
-    box-shadow: none;
-    padding: 13px;
-  }
-  .site-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #166433;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #166433;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s linear;
-    &:hover {
-      color: #fff;
-      background-color: #166433;
     }
   }
 }

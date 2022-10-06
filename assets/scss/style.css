@@ -142,14 +142,12 @@
   font-family: 'Roboto';
 }
 
-.homeBanner .imageDiv {
-  background: black;
-  overflow: hidden;
+.carouselSlide {
+  margin-top: 70px;
+  background-color: black;
 }
 
-.homeBanner .imageDiv .bannerImg {
-  -o-object-fit: cover;
-     object-fit: cover;
+.carouselSlide .carouselInner {
   opacity: 0.4;
 }
 
@@ -578,58 +576,6 @@
 .black-footer .bottom-footer .bottom-footer-content .privacy-link {
   color: #fff;
   text-decoration: none;
-}
-
-#contact-form .container {
-  max-width: 832px;
-}
-
-#contact-form .container .get-in-touch {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-#contact-form .container .get-in-touch h2 {
-  color: #474c55;
-  font-size: 32px;
-  line-height: 120%;
-  font-weight: 600;
-}
-
-#contact-form .container .get-in-touch p {
-  color: #333;
-  font-size: 15px;
-  line-height: 26px;
-  font-weight: 400;
-  padding: 0 26px;
-}
-
-#contact-form .form-control {
-  margin: 10px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  padding: 13px;
-}
-
-#contact-form .site-btn {
-  margin-top: 10px;
-  padding: 10px 15px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #166433;
-  border-radius: 5px;
-  background-color: transparent;
-  color: #166433;
-  font-size: 16px;
-  font-weight: 600;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-#contact-form .site-btn:hover {
-  color: #fff;
-  background-color: #166433;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 350px) {
