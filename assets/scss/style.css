@@ -3,6 +3,11 @@ body {
   font-weight: 400;
 }
 
+#home-page .navbar-light .navbar-nav .nav-link.active,
+#home-page .navbar-light .navbar-nav .show > .nav-link {
+  color: #166433;
+}
+
 #home-page .logo {
   height: 60px;
 }
@@ -19,6 +24,14 @@ body {
 #home-page ul li a:hover {
   color: #166433;
   background: none;
+}
+
+#home-page ul li a:focus {
+  color: #166433;
+}
+
+#home-page ul li a:active {
+  color: #166433 !important;
 }
 
 #home-page ul li .fa-solid {
