@@ -51,7 +51,8 @@ body {
 }
 
 .Job {
-  margin-top: 200px;
+  background-color: #f4f5f7;
+  padding: 40px 0 70px 0;
 }
 
 .Job .candidates {
@@ -222,21 +223,17 @@ body {
 
 .employees .business-meet h1 {
   font-size: 32px;
-  font-family: 'Roboto';
 }
 
 .employees .business-meet img.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 550px;
+  max-width: 100%;
 }
 
-.employees .business-meet .contents {
-  width: 565px;
-}
-
-.employees .business-meet .contents .content-box p {
+.employees .contents .content-box p {
+  margin-top: 10px;
   background-color: #f4f4f4;
   border-radius: 10px;
   padding: 20px;
@@ -387,31 +384,6 @@ body {
 .aboutEmployersSec .cardMain .cardContent .cardText {
   margin: 20px 0;
   font-size: 14px;
-}
-
-.employees .business-meet h1 {
-  font-size: 32px;
-  font-family: 'Roboto';
-}
-
-.employees .business-meet img.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  width: 550px;
-}
-
-.employees .contents {
-  width: 565px;
-}
-
-.employees .contents .content-box p {
-  width: 580px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  padding: 20px;
-  border: none;
-  font-family: 'Roboto';
 }
 
 .aboutLocationSec {
@@ -1050,49 +1022,6 @@ body {
   }
 }
 
-@media only screen and (min-width: 320px) {
-  .employees .business-meet img.sticky {
-    margin-bottom: 20px;
-    width: 295px;
-  }
-  .contents .content-box {
-    width: 295px;
-  }
-}
-
-@media only screen and (min-width: 375px) {
-  .employees .business-meet img.sticky {
-    margin-bottom: 20px;
-    width: 350px;
-  }
-  .contents .content-box {
-    width: 350px;
-  }
-}
-
-@media only screen and (min-width: 425px) {
-  .employees .business-meet img.sticky {
-    margin-bottom: 20px;
-    width: 400px;
-  }
-  .contents .content-box {
-    width: 400px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .employees .business-meet img.sticky {
-    margin-bottom: 20px;
-    width: 270px;
-  }
-  .employees .contents {
-    width: 400px;
-  }
-  .employees .contents .content-box {
-    width: 390px;
-  }
-}
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .Job .candidates {
     padding: 0px;
@@ -1201,12 +1130,6 @@ body {
   .Job .last-card {
     margin-top: 0px;
     height: 320px;
-  }
-  .employees .business-meet img.sticky {
-    width: 464px;
-  }
-  .employees .contents .content-box {
-    width: 478px;
   }
 }
 

@@ -52,7 +52,8 @@ body {
 //home-page
 //jobs section
 .Job {
-  margin-top: 200px;
+  background-color: #f4f5f7;
+  padding: 40px 0 70px 0;
   .candidates {
     // padding: 10px;
     border-radius: 10px;
@@ -206,24 +207,23 @@ body {
   .business-meet {
     h1 {
       font-size: 32px;
-      font-family: 'Roboto';
     }
     img.sticky {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
-      width: 550px;
+      max-width: 100%;
     }
-    .contents {
-      width: 565px;
-      .content-box {
-        p {
-          background-color: #f4f4f4;
-          border-radius: 10px;
-          padding: 20px;
-          border: none;
-          font-family: 'Roboto';
-        }
+  }
+  .contents {
+    .content-box {
+      p {
+        margin-top: 10px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        padding: 20px;
+        border: none;
+        font-family: 'Roboto';
       }
     }
   }
@@ -349,34 +349,6 @@ body {
       .cardText {
         margin: 20px 0;
         font-size: 14px;
-      }
-    }
-  }
-}
-
-.employees {
-  .business-meet {
-    h1 {
-      font-size: 32px;
-      font-family: 'Roboto';
-    }
-    img.sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      width: 550px;
-    }
-  }
-  .contents {
-    width: 565px;
-    .content-box {
-      p {
-        width: 580px;
-        background-color: #f4f4f4;
-        border-radius: 10px;
-        padding: 20px;
-        border: none;
-        font-family: 'Roboto';
       }
     }
   }
@@ -1017,67 +989,6 @@ body {
     }
   }
 }
-@media only screen and (min-width: 320px) {
-  .employees {
-    .business-meet {
-      img.sticky {
-        margin-bottom: 20px;
-        width: 295px;
-      }
-    }
-  }
-  .contents {
-    .content-box {
-      width: 295px;
-    }
-  }
-}
-@media only screen and (min-width: 375px) {
-  .employees {
-    .business-meet {
-      img.sticky {
-        margin-bottom: 20px;
-        width: 350px;
-      }
-    }
-  }
-  .contents {
-    .content-box {
-      width: 350px;
-    }
-  }
-}
-@media only screen and (min-width: 425px) {
-  .employees {
-    .business-meet {
-      img.sticky {
-        margin-bottom: 20px;
-        width: 400px;
-      }
-    }
-  }
-  .contents {
-    .content-box {
-      width: 400px;
-    }
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .employees {
-    .business-meet {
-      img.sticky {
-        margin-bottom: 20px;
-        width: 270px;
-      }
-    }
-    .contents {
-      width: 400px;
-      .content-box {
-        width: 390px;
-      }
-    }
-  }
-}
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .Job {
     .candidates {
@@ -1212,18 +1123,6 @@ body {
     .last-card {
       margin-top: 0px;
       height: 320px;
-    }
-  }
-  .employees {
-    .business-meet {
-      img.sticky {
-        width: 464px;
-      }
-    }
-    .contents {
-      .content-box {
-        width: 478px;
-      }
     }
   }
 }
