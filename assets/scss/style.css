@@ -319,6 +319,7 @@ body {
 
 #carousel-section .row .owl-theme .card {
   border-top: 3px solid #166433;
+  border-style: solid none none none;
   border-radius: 8px;
 }
 
