@@ -3,6 +3,53 @@ body {
   font-weight: 400;
 }
 
+#home-page .logo {
+  height: 60px;
+}
+
+#home-page ul li a {
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#home-page ul li a:hover {
+  color: #166433;
+  background: none;
+}
+
+#home-page ul li .fa-solid {
+  float: right;
+  margin-left: 10px;
+  margin-top: 4px;
+  font-size: 1em;
+  font-weight: 500px;
+}
+
+#home-page .header-button {
+  border-color: #a67d2d;
+  background-color: #a67d2d;
+  border-radius: 5px;
+  margin-left: 70px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#home-page .header-button:hover {
+  background-color: #166433;
+}
+
+#home-page .header-button .btn {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-style: solid;
+}
+
 .Job {
   margin-top: 200px;
 }
@@ -109,53 +156,6 @@ body {
   color: yellow;
 }
 
-#home-page .logo {
-  height: 60px;
-}
-
-#home-page ul li a {
-  color: black;
-  font-weight: 500;
-  font-size: 14px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#home-page ul li a:hover {
-  color: #166433;
-  background: none;
-}
-
-#home-page ul li .fa-solid {
-  float: right;
-  margin-left: 10px;
-  margin-top: 4px;
-  font-size: 1em;
-  font-weight: 500px;
-}
-
-#home-page .header-button {
-  border-color: #a67d2d;
-  background-color: #a67d2d;
-  border-radius: 5px;
-  margin-left: 70px;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-#home-page .header-button:hover {
-  background-color: #166433;
-}
-
-#home-page .header-button .btn {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 10px 15px;
-  border-style: solid;
-}
-
 .homeEmployers .homeEmployersH2 {
   margin: 40px 0;
   text-align: center;
@@ -253,28 +253,55 @@ body {
   opacity: 0.4;
 }
 
-.aboutBanner .containerFluid {
-  background-image: url("../images/bannerImages/aboutBanner.png");
-  height: 264px;
-}
-
-.aboutBanner .aboutBannerCol {
-  padding: 0;
-}
-
-.aboutBanner .bannerH1 {
-  height: 306%;
-  color: white;
-  background-color: black;
-  opacity: 0.4;
-  font-size: 65px;
-  font-weight: bolder;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
+.Banner {
+  margin-top: 71px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 41vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.Banner .row {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Banner .row h1 {
+  text-align: center;
+  margin-top: 86px;
+  font-size: 66px;
+  font-weight: 600;
+}
+
+.contact-banner {
+  background-image: url("../images/resourcesHero.jpg");
+}
+
+.about-banner {
+  background-image: url("../images/bannerImages/aboutBanner.png");
+}
+
+.resources-banner {
+  background-image: url("../images/bannerImages/aboutBanner.png");
+}
+
+.jobs-banner {
+  background-image: url("../images/jobs_banner.jpg");
+  background-position: 50% 50%;
 }
 
 #carousel-section {
@@ -420,7 +447,6 @@ body {
 }
 
 .trending-jobs .candidates {
-  margin-bottom: 30px;
   border: none;
   border-radius: 40px;
   border-bottom: 2px solid #f4f4f4;
@@ -442,6 +468,11 @@ body {
 
 .trending-jobs .candidates .senior-product p {
   font-size: 18px;
+}
+
+.trending-jobs .candidates .cardLInk {
+  text-decoration: none;
+  color: black;
 }
 
 .faq {
@@ -574,35 +605,6 @@ body {
   height: 340px;
 }
 
-#carousel-section {
-  background-color: #f4f5f7;
-}
-
-#carousel-section .our-values-title {
-  color: #474c55;
-  font-size: 32px;
-  margin-bottom: 50px;
-  padding-top: 50px;
-}
-
-#carousel-section .row .owl-theme {
-  margin-bottom: 50px;
-}
-
-#carousel-section .row .owl-theme .card {
-  border-top: 3px solid #166433;
-  border-radius: 8px;
-}
-
-#carousel-section .row .owl-theme .card img {
-  height: 50px;
-  margin: 31px -130px;
-}
-
-#carousel-section .row .owl-theme .card .card-body .card-text {
-  font-size: 15px;
-}
-
 #contact-card-section {
   margin-top: 100px;
 }
@@ -633,6 +635,74 @@ body {
 #contact-card-section .card p {
   font-size: 15px;
   padding: 5px;
+}
+
+.timelineMain {
+  position: relative;
+}
+
+.timelineMain .timeline::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  right: -23px;
+  background-color: #f0f0f0;
+  border: 10px solid #a67d2d;
+  top: 77px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timelineMain::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #a67d2d;
+  top: 84px;
+  bottom: 150px;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timelineLeft {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+.timelineRight {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+.cardSec {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: none;
+}
+
+.cardSec .timelineH6 {
+  color: darkgreen;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.cardSec .timelineH5 {
+  margin: 25px 0;
+}
+
+.cardSec .timelinePara {
+  margin-bottom: 10px;
+}
+
+.timelineRight::after {
+  left: -23px;
 }
 
 .black-footer {
@@ -693,6 +763,7 @@ body {
 }
 
 .black-footer .social .social-icons .style {
+  padding: 13px;
   background: #32353b;
   text-align: center;
   height: 50px;
@@ -835,6 +906,13 @@ body {
     margin-right: 199px;
     margin-top: 10px;
   }
+  .Banner {
+    min-height: 30vh;
+  }
+  .Banner .row h1 {
+    margin-top: 56px;
+    font-size: 29px;
+  }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -108px;
   }
@@ -843,6 +921,13 @@ body {
   }
   #contact-card-section .card .topContent h2 {
     font-size: 18px;
+  }
+  #contact-form .row {
+    max-width: 100%;
+  }
+  #contact-form .row .form-control {
+    padding: 8px;
+    font-size: 13px;
   }
   .bottom-footer .bottom-footer-content {
     -webkit-box-orient: vertical;
@@ -883,95 +968,9 @@ body {
     margin-right: 608px;
     margin-top: 10px;
   }
-  #contact-card-section .card {
-    padding: 16px;
-    min-height: 215px;
-  }
-  #contact-card-section .card .topContent img {
-    max-width: 25px;
-  }
-  #contact-card-section .card .topContent h2 {
-    font-size: 14px;
-  }
-  #contact-card-section .card p {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  #contact-card-section .card .topContent h2 {
-    font-size: 18px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -101px;
-  }
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1440px) {
-  #carousel-section .row .owl-theme .card {
-    min-height: 215px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -158px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  #home-page ul li .resource {
-    margin-left: -23px;
-  }
-  #home-page .header-button {
-    margin-left: 2px;
-    margin-right: 199px;
-    margin-top: 10px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -108px;
-  }
-  #contact-card-section .card {
-    min-height: 200px;
-  }
-  #contact-card-section .card .topContent h2 {
-    font-size: 18px;
-  }
-  .bottom-footer .bottom-footer-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-  }
-  .bottom-footer .bottom-footer-content h4 {
-    margin-bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 375px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 254px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -135px;
-  }
-}
-
-@media only screen and (min-width: 425px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 304px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -160px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  #home-page ul li .resource {
-    margin-left: -25px;
-  }
-  #home-page .header-button {
-    margin-left: -2px;
-    margin-right: 608px;
-    margin-top: 10px;
+  .Banner .row h1 {
+    margin-top: 75px;
+    font-size: 44px;
   }
   #contact-card-section .card {
     padding: 16px;
@@ -986,6 +985,9 @@ body {
   #contact-card-section .card p {
     font-size: 13px;
   }
+  #contact-form .row {
+    max-width: 100%;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -998,6 +1000,9 @@ body {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .Banner .row h1 {
+    margin-top: 112px;
+  }
   #carousel-section .row .owl-theme .card {
     min-height: 215px;
   }
@@ -1202,6 +1207,63 @@ body {
   }
   .employees .contents .content-box {
     width: 478px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timelineMain::after {
+    left: 31px;
+  }
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  .timelineLeft::after,
+  .timelineRight::after {
+    left: 10px;
+  }
+  .timelineLeft::before {
+    right: auto;
+  }
+  .timelineRight {
+    left: 0%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .timelineRight::after {
+    left: 9px;
+  }
+  .timelineMain::after {
+    bottom: 263px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 700px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 212px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 169px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 121px;
   }
 }
 /*# sourceMappingURL=style.css.map */

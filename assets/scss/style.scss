@@ -2,6 +2,55 @@ body {
   line-height: 20px;
   font-weight: 400;
 }
+
+//Header
+#home-page {
+  .logo {
+    height: 60px;
+  }
+  ul {
+    li {
+      a {
+        color: black;
+        font-weight: 500;
+        font-size: 14px;
+        justify-content: space-between;
+        &:hover {
+          color: #166433;
+          background: none;
+        }
+      }
+
+      .fa-solid {
+        float: right;
+        margin-left: 10px;
+        margin-top: 4px;
+        font-size: 1em;
+        font-weight: 500px;
+      }
+    }
+  }
+  .header-button {
+    border-color: #a67d2d;
+    background-color: #a67d2d;
+    border-radius: 5px;
+    margin-left: 70px;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: #166433;
+    }
+
+    .btn {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-style: solid;
+    }
+  }
+}
+//home-page
+//jobs section
 .Job {
   margin-top: 200px;
   .candidates {
@@ -98,53 +147,6 @@ body {
   }
 }
 
-//Header
-#home-page {
-  .logo {
-    height: 60px;
-  }
-  ul {
-    li {
-      a {
-        color: black;
-        font-weight: 500;
-        font-size: 14px;
-        justify-content: space-between;
-        &:hover {
-          color: #166433;
-          background: none;
-        }
-      }
-
-      .fa-solid {
-        float: right;
-        margin-left: 10px;
-        margin-top: 4px;
-        font-size: 1em;
-        font-weight: 500px;
-      }
-    }
-  }
-  .header-button {
-    border-color: #a67d2d;
-    background-color: #a67d2d;
-    border-radius: 5px;
-    margin-left: 70px;
-    transition: all 0.3s linear;
-    &:hover {
-      background-color: #166433;
-    }
-
-    .btn {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 10px 15px;
-      border-style: solid;
-    }
-  }
-}
-//home-page
 //homeEmployers
 .homeEmployers {
   .homeEmployersH2 {
@@ -235,27 +237,48 @@ body {
     opacity: 0.4;
   }
 }
-//about-banner
-.aboutBanner {
-  .containerFluid {
-    background-image: url('../images/bannerImages/aboutBanner.png');
-    height: 264px;
-  }
-  .aboutBannerCol {
-    padding: 0;
-  }
-  .bannerH1 {
-    height: 306%;
-    color: white;
-    background-color: black;
-    opacity: 0.4;
-    font-size: 65px;
-    font-weight: bolder;
-    width: 100%;
-    display: grid;
-    align-items: center;
+//banner
+.Banner {
+  margin-top: 71px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 41vh;
+  align-items: center;
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  color: #fff;
+  .row {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.3);
+    h1 {
+      text-align: center;
+      margin-top: 86px;
+      font-size: 66px;
+      font-weight: 600;
+    }
   }
 }
+.contact-banner {
+  background-image: url('../images/resourcesHero.jpg');
+}
+.about-banner {
+  background-image: url('../images/bannerImages/aboutBanner.png');
+}
+.resources-banner {
+  background-image: url('../images/bannerImages/aboutBanner.png');
+}
+.jobs-banner {
+  background-image: url('../images/jobs_banner.jpg');
+  background-position: 50% 50%;
+}
+
 //about-carousel-section
 #carousel-section {
   background-color: #f4f5f7;
@@ -387,7 +410,6 @@ body {
     float: right;
   }
   .candidates {
-    margin-bottom: 30px;
     border: none;
     border-radius: 40px;
     border-bottom: 2px solid #f4f4f4;
@@ -407,10 +429,13 @@ body {
         font-size: 18px;
       }
     }
+    .cardLInk {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 //accordion section
-
 .faq {
   background-color: #f4f4f4;
   #accordionSection {
@@ -525,35 +550,6 @@ body {
     }
   }
 }
-//cabout-carousel-section
-#carousel-section {
-  background-color: #f4f5f7;
-
-  .our-values-title {
-    color: #474c55;
-    font-size: 32px;
-    margin-bottom: 50px;
-    padding-top: 50px;
-  }
-  .row {
-    .owl-theme {
-      margin-bottom: 50px;
-      .card {
-        border-top: 3px solid #166433;
-        border-radius: 8px;
-        img {
-          height: 50px;
-          margin: 31px -130px;
-        }
-        .card-body {
-          .card-text {
-            font-size: 15px;
-          }
-        }
-      }
-    }
-  }
-}
 
 //contact-page
 //card-section
@@ -581,7 +577,65 @@ body {
     }
   }
 }
+//timeLine
+.timelineMain {
+  position: relative;
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: -23px;
+    background-color: #f0f0f0;
+    border: 10px solid rgb(166, 125, 45);
+    top: 77px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+.timelineMain::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: rgb(166, 125, 45);
+  top: 84px;
+  bottom: 150px;
+  left: 50%;
+  margin-left: -3px;
+}
 
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+.timelineLeft {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+.timelineRight {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+.cardSec {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: none;
+  .timelineH6 {
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .timelineH5 {
+    margin: 25px 0;
+  }
+  .timelinePara {
+    margin-bottom: 10px;
+  }
+}
+.timelineRight::after {
+  left: -23px;
+}
 //footer-section
 .black-footer {
   background-color: #231f20;
@@ -624,6 +678,7 @@ body {
         background: #885c2b;
       }
       .style {
+        padding: 13px;
         background: #32353b;
         text-align: center;
         height: 50px;
@@ -658,12 +713,10 @@ body {
 #contact-form {
   .container {
     max-width: 832px;
-
     .get-in-touch {
       margin-top: 60px;
       margin-bottom: 60px;
       text-align: center;
-      //padding: 0px 164px;
       h2 {
         color: #474c55;
         font-size: 32px;
@@ -759,6 +812,7 @@ body {
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  //home-page
   #home-page {
     ul li {
       .resource {
@@ -771,9 +825,20 @@ body {
       margin-top: 10px;
     }
   }
+  //banner
+  .Banner {
+    min-height: 30vh;
+    .row h1 {
+      margin-top: 56px;
+      font-size: 29px;
+    }
+  }
+
+  //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -108px;
   }
+  //contact-page
   #contact-card-section {
     .card {
       min-height: 200px;
@@ -784,6 +849,16 @@ body {
       }
     }
   }
+  #contact-form {
+    .row {
+      max-width: 100%;
+      .form-control {
+        padding: 8px;
+        font-size: 13px;
+      }
+    }
+  }
+  //footer-page
   .bottom-footer {
     .bottom-footer-content {
       flex-direction: column;
@@ -795,24 +870,29 @@ body {
   }
 }
 @media only screen and (min-width: 375px) and (max-width: 767px) {
+  //home-page
   #home-page .header-button {
     margin-right: 254px;
   }
+  //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -135px;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
+  //home-page
   #home-page .header-button {
     margin-right: 304px;
   }
+  //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -160px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  //home-page
   #home-page {
     ul li {
       .resource {
@@ -825,6 +905,12 @@ body {
       margin-top: 10px;
     }
   }
+  //banner
+  .Banner .row h1 {
+    margin-top: 75px;
+    font-size: 44px;
+  }
+  //contact-page
   #contact-card-section {
     .card {
       padding: 16px;
@@ -842,9 +928,15 @@ body {
       }
     }
   }
+  #contact-form {
+    .row {
+      max-width: 100%;
+    }
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  //contact-page
   #contact-card-section {
     .card {
       .topContent {
@@ -854,11 +946,18 @@ body {
       }
     }
   }
+  //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -101px;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  //banner
+  .Banner .row h1 {
+    margin-top: 112px;
+  }
+
+  //about-page
   #carousel-section .row .owl-theme .card {
     min-height: 215px;
     img {
@@ -867,114 +966,6 @@ body {
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  #home-page {
-    ul li {
-      .resource {
-        margin-left: -23px;
-      }
-    }
-    .header-button {
-      margin-left: 2px;
-      margin-right: 199px;
-      margin-top: 10px;
-    }
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -108px;
-  }
-  #contact-card-section {
-    .card {
-      min-height: 200px;
-      .topContent {
-        h2 {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-  .bottom-footer {
-    .bottom-footer-content {
-      flex-direction: column;
-      text-align: center;
-      h4 {
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 254px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -135px;
-  }
-}
-
-@media only screen and (min-width: 425px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 304px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -160px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  #home-page {
-    ul li {
-      .resource {
-        margin-left: -25px;
-      }
-    }
-    .header-button {
-      margin-left: -2px;
-      margin-right: 608px;
-      margin-top: 10px;
-    }
-  }
-  #contact-card-section {
-    .card {
-      padding: 16px;
-      min-height: 215px;
-      .topContent {
-        img {
-          max-width: 25px;
-        }
-        h2 {
-          font-size: 14px;
-        }
-      }
-      p {
-        font-size: 13px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  #contact-card-section {
-    .card {
-      .topContent {
-        h2 {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -101px;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1440px) {
-  #carousel-section .row .owl-theme .card {
-    min-height: 215px;
-    img {
-      margin: 37px -158px;
-    }
-  }
-}
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .product-designer {
     .candidates {
@@ -1234,5 +1225,60 @@ body {
         width: 478px;
       }
     }
+  }
+}
+//timeline-mediaquery
+@media screen and (max-width: 600px) {
+  .timelineMain::after {
+    left: 31px;
+  }
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timelineLeft::after,
+  .timelineRight::after {
+    left: 10px;
+  }
+
+  .timelineLeft::before {
+    right: auto;
+  }
+  .timelineRight {
+    left: 0%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .timelineRight::after {
+    left: 9px;
+  }
+  .timelineMain::after {
+    bottom: 263px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 700px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 212px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 169px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 121px;
   }
 }
