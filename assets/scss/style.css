@@ -238,7 +238,6 @@ body {
   border-radius: 10px;
   padding: 20px;
   border: none;
-  font-family: 'Roboto';
 }
 
 .carouselSlide {
@@ -410,13 +409,29 @@ body {
   background-color: white;
 }
 
-.trending-jobs h2 {
-  margin-left: 100px;
-  margin-bottom: 80px;
+.trending-jobs .trendingRow {
+  margin: 60px 0;
 }
 
-.trending-jobs a {
-  float: right;
+.trending-jobs .trendingH3 {
+  text-align: left;
+  margin-left: 75px;
+  color: #474c55;
+}
+
+.trending-jobs .viewallCol {
+  text-align: right;
+}
+
+.trending-jobs .viewallCol .atag {
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.trending-jobs .viewallCol .atag .viewallPara {
+  font-size: 17px;
+  font-weight: 500;
+  margin-right: 50px;
 }
 
 .trending-jobs .candidates {
@@ -440,7 +455,7 @@ body {
 }
 
 .trending-jobs .candidates .senior-product p {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .trending-jobs .candidates .cardLInk {
@@ -1188,6 +1203,16 @@ body {
   .timelineMain::after {
     content: '';
     bottom: 121px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 478px) {
+  .trending-jobs .trendingH3 {
+    margin-left: 8px;
+    font-size: larger;
+  }
+  .trending-jobs .viewallCol .atag .viewallPara {
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

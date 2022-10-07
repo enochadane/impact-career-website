@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+    <title>Contact us</title>
+    <meta name="description" content="Impact Career." />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!--form-section-->
+    <section id="contact-form">
+      <div class="container">
+        <div class="get-in-touch">
+          <h2>Apply for this Job</h2>
+          <p>Please fill the details below to evaluate your candidature</p>
+        </div>
+        <form class="needs-validation" method="post">
+          <div class="row">
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="First Name"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Last Name"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Email"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Valid email address is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <input
+                type="tel"
+                class="form-control"
+                id="Phone"
+                placeholder="Mobile number"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Valid phone number is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control"
+                id="Position Location"
+                placeholder="Your Location"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter position location .
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control"
+                id="Title of Position"
+                placeholder="Title of Position"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter Title of Position.
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Title of Position"
+                  placeholder="Notice period"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Title of Position"
+                  placeholder="Linked in URL"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div>
+                <input
+                  type="file"
+                  class="w-file-upload-input form-control"
+                  accept=".pdf, .doc, .docx, .txt"
+                  name="Resume-Upload"
+                  data-iconName="fa-solid fa-cloud-arrow-up"
+                  data-name="Upload Job Description, If Available"
+                  aria-hidden="true"
+                  id="Resume-Upload"
+                  aria-placeholder=" Upload Job Description, If Available"
+                  tabindex="-1"
+                  required=""
+                />
+                <p class="text-center">
+                  Accepted formats : PDF, DOC, DOCX, TXT (Max file size 10MB)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              value="Submit"
+              data-wait="Please wait..."
+              class="site-btn"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+    <!--form-section-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

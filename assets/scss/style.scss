@@ -223,7 +223,6 @@ body {
         border-radius: 10px;
         padding: 20px;
         border: none;
-        font-family: 'Roboto';
       }
     }
   }
@@ -374,13 +373,26 @@ body {
 //jobs page
 //jobcards//
 .trending-jobs {
-  background-color: white;
-  h2 {
-    margin-left: 100px;
-    margin-bottom: 80px;
+  .trendingRow {
+    margin: 60px 0;
   }
-  a {
-    float: right;
+  background-color: white;
+  .trendingH3 {
+    text-align: left;
+    margin-left: 75px;
+    color: #474c55;
+  }
+  .viewallCol {
+    text-align: right;
+    .atag {
+      text-decoration: none;
+      color: darkgreen;
+      .viewallPara {
+        font-size: 17px;
+        font-weight: 500;
+        margin-right: 50px;
+      }
+    }
   }
   .candidates {
     border: none;
@@ -399,7 +411,7 @@ body {
         font-size: 18px;
       }
       p {
-        font-size: 18px;
+        font-size: 14px;
       }
     }
     .cardLInk {
@@ -1180,5 +1192,21 @@ body {
   .timelineMain::after {
     content: '';
     bottom: 121px;
+  }
+}
+//homepage-trending jobsSec
+@media only screen and (min-width: 320px) and (max-width: 478px) {
+  .trending-jobs {
+    .trendingH3 {
+      margin-left: 8px;
+      font-size: larger;
+    }
+    .viewallCol {
+      .atag {
+        .viewallPara {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
