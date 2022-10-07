@@ -448,6 +448,7 @@ body {
 }
 
 .trending-jobs .candidates {
+  margin-bottom: 40px;
   border: none;
   border-radius: 40px;
   border-bottom: 2px solid #f4f4f4;
@@ -477,53 +478,65 @@ body {
 }
 
 .faq {
-  background-color: #f4f4f4;
+  background-color: #f4f5f7;
 }
 
 .faq #accordionSection {
   margin-bottom: 100px;
 }
 
-.faq .accordion-button {
-  color: #173753;
-  font-size: 18px;
+.faq .accordion {
+  --bs-accordion-bg: none;
+}
+
+.faq .accordion .accordion-button {
   border-width: 0;
 }
 
-.faq .accordion-button.collapsed {
+.faq .accordion .accordion-item {
+  border: none;
+}
+
+.faq .accordion .accordion-button.collapsed {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   background-color: white;
 }
 
-.faq .accordion-button:not(.collapsed) {
+.faq .accordion .accordion-button:not(.collapsed) {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
   color: black;
   background-color: white;
 }
 
-.faq .accordion-button:focus {
+.faq .accordion .accordion-button:focus {
   border: none;
   -webkit-box-shadow: 0 0 0 0;
           box-shadow: 0 0 0 0;
 }
 
-.faq .accordion-collapse {
+.faq .accordion .accordion-collapse {
   border: solid rgba(0, 0, 0, 0.125);
   border-width: 0px 0px;
 }
 
-.faq .accordion-body {
-  background: #fff;
-  font-size: 15px;
+.faq .accordion .accordion-body {
+  background: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-.faq .accordion-item:first-of-type .accordion-button {
+.faq .accordion .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
+}
+
+.faq .accordion .accordion-item:last-of-type .accordion-button {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .product {
@@ -643,7 +656,7 @@ body {
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -656,7 +669,7 @@ body {
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1200,21 +1213,21 @@ body {
 
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 212px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 169px;
   }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 121px;
   }
 }
