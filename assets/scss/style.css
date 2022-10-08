@@ -186,7 +186,7 @@ body {
 
 .homeEmployers .employersRow .bagImgCol .employersImg {
   border-radius: 5px;
-  max-width: 88%;
+  max-width: 80%;
   background-color: #ecebeb;
   padding: 10px;
 }
@@ -201,6 +201,8 @@ body {
 
 .homeEmployers .employersRow .employersContent .employersPara {
   margin: 15px 0;
+  font-size: 14px;
+  text-align: justify;
 }
 
 .aboutMissionSec {
@@ -388,10 +390,7 @@ body {
 }
 
 .aboutEmployersSec .cardMain .cardContent .cardTitle {
-  margin-bottom: 10px;
   color: #333;
-  font-weight: 600;
-  font-size: 24px;
 }
 
 .aboutEmployersSec .cardMain .cardContent .cardText {
@@ -583,11 +582,19 @@ body {
   color: #333;
 }
 
-.trainingSec .trainingCard {
+.trainingSec .trainingCol .trainingPara {
+  margin-bottom: 22px;
+}
+
+.trainingSec .trainCardCol {
+  margin: 30px 0;
+}
+
+.trainingSec .trainCardCol .trainingCard {
   border-radius: 15px;
 }
 
-.trainingSec .trainingCard .trainingImg {
+.trainingSec .trainCardCol .trainingCard .trainingImg {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -656,7 +663,7 @@ body {
 }
 
 .timelineMain .timeline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 45px;
   height: 45px;
@@ -669,7 +676,7 @@ body {
 }
 
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -686,12 +693,12 @@ body {
 }
 
 .timelineLeft {
-  padding: 0px 40px 20px 0px;
+  padding: 0px 40px 68px 0px;
   left: 0;
 }
 
 .timelineRight {
-  padding: 0px 0px 20px 40px;
+  padding: 0px 0px 68px 40px;
   left: 50%;
 }
 
@@ -1207,28 +1214,28 @@ body {
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 263px;
+    bottom: 309px;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 212px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: "";
-    bottom: 169px;
+    content: '';
+    bottom: 216px;
   }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
-    bottom: 121px;
+    content: '';
+    bottom: 175px;
   }
 }
 
@@ -1239,6 +1246,94 @@ body {
   }
   .trending-jobs .viewallCol .atag .viewallPara {
     margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: none;
+    padding: 6px;
+  }
+  .employersRow .bagImgCol {
+    text-align: center;
+    margin: inherit;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 800px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: 112%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 346px;
+  }
+}
+
+@media only screen and (min-width: 668px) and (max-width: 822px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 409px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1350px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 321px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: none;
+    padding: 6px;
+  }
+  .employersRow .bagImgCol {
+    text-align: center;
+    margin: inherit;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 392px;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 800px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: 112%;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .trainCardH5 {
+    font-size: 19px;
+  }
+  .trainCardPara {
+    font-size: 13px;
+  }
+  .trainingPara {
+    font-size: 13px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 413px;
+  }
+  .trainingH1 {
+    font-size: 20px;
+  }
+  .interviewH1 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 400px;
   }
 }
 /*# sourceMappingURL=style.css.map */

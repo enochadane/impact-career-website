@@ -116,7 +116,7 @@ body {
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("../images/aboutUsHero.jpg");
+    background-image: url('../images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -171,7 +171,7 @@ body {
       text-align: center;
       .employersImg {
         border-radius: 5px;
-        max-width: 88%;
+        max-width: 80%;
         background-color: rgb(236, 235, 235);
         padding: 10px;
       }
@@ -183,10 +183,13 @@ body {
       }
       .employersPara {
         margin: 15px 0;
+        font-size: 14px;
+        text-align: justify;
       }
     }
   }
 }
+
 //about-page
 .aboutMissionSec {
   margin-top: 5rem;
@@ -275,16 +278,16 @@ body {
   }
 }
 .contact-banner {
-  background-image: url("../images/resourcesHero.jpg");
+  background-image: url('../images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("../images/jobs_banner.jpg");
+  background-image: url('../images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 
@@ -351,10 +354,7 @@ body {
       text-align: center;
 
       .cardTitle {
-        margin-bottom: 10px;
         color: #333;
-        font-weight: 600;
-        font-size: 24px;
       }
       .cardText {
         margin: 20px 0;
@@ -515,7 +515,6 @@ body {
   }
 }
 
-//Training Resources
 .trainingSec {
   .trainingCol {
     text-align: center;
@@ -523,12 +522,18 @@ body {
       margin: 20px 0;
       color: #333;
     }
+    .trainingPara {
+      margin-bottom: 22px;
+    }
   }
-  .trainingCard {
-    border-radius: 15px;
-    .trainingImg {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+  .trainCardCol {
+    margin: 30px 0;
+    .trainingCard {
+      border-radius: 15px;
+      .trainingImg {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
     }
   }
 }
@@ -586,7 +591,7 @@ body {
 .timelineMain {
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -599,7 +604,7 @@ body {
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -615,11 +620,11 @@ body {
   width: 50%;
 }
 .timelineLeft {
-  padding: 0px 40px 20px 0px;
+  padding: 0px 40px 68px 0px;
   left: 0;
 }
 .timelineRight {
-  padding: 0px 0px 20px 40px;
+  padding: 0px 0px 68px 40px;
   left: 50%;
 }
 .cardSec {
@@ -1193,25 +1198,25 @@ body {
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 263px;
+    bottom: 309px;
   }
 }
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 212px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: "";
-    bottom: 169px;
+    content: '';
+    bottom: 216px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
-    bottom: 121px;
+    content: '';
+    bottom: 175px;
   }
 }
 //homepage-trending jobsSec
@@ -1228,5 +1233,116 @@ body {
         }
       }
     }
+  }
+}
+//homeEmployers
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .homeEmployers {
+    .employersRow {
+      .bagImgCol {
+        .employersImg {
+          max-width: none;
+          padding: 6px;
+        }
+      }
+    }
+  }
+  .employersRow {
+    .bagImgCol {
+      text-align: center;
+      margin: inherit;
+    }
+  }
+}
+@media only screen and (min-width: 560px) and (max-width: 800px) {
+  .homeEmployers {
+    .employersRow {
+      .bagImgCol {
+        .employersImg {
+          max-width: 112%;
+        }
+      }
+    }
+  }
+}
+//aboutEmployers
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 346px;
+  }
+}
+@media only screen and (min-width: 668px) and (max-width: 822px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 409px;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1350px) {
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 321px;
+  }
+}
+//homeEmployers and resourcePage
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .homeEmployers {
+    .employersRow {
+      .bagImgCol {
+        .employersImg {
+          max-width: none;
+          padding: 6px;
+        }
+      }
+    }
+  }
+  .employersRow {
+    .bagImgCol {
+      text-align: center;
+      margin: inherit;
+    }
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 392px;
+  }
+}
+@media only screen and (min-width: 560px) and (max-width: 800px) {
+  .homeEmployers {
+    .employersRow {
+      .bagImgCol {
+        .employersImg {
+          max-width: 112%;
+        }
+      }
+    }
+  }
+}
+//resource page
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .trainCardH5 {
+    font-size: 19px;
+  }
+  .trainCardPara {
+    font-size: 13px;
+  }
+  .trainingPara {
+    font-size: 13px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 413px;
+  }
+  .trainingH1 {
+    font-size: 20px;
+  }
+  .interviewH1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 400px;
   }
 }
