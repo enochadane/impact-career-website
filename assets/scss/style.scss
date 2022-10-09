@@ -39,22 +39,17 @@ body {
       }
     }
   }
-  .header-button {
-    border-color: #a67d2d;
-    background-color: #a67d2d;
-    border-radius: 5px;
-    margin-left: 70px;
-    transition: all 0.3s linear;
-    &:hover {
-      background-color: #166433;
-    }
-
-    .btn {
-      color: #fff;
-      font-size: 15px;
+  .btnDiv {
+    .ContactButton {
+      padding: 11px 15px;
+      color: white;
       font-weight: 500;
-      padding: 10px 15px;
-      border-style: solid;
+      background: #885c2b;
+      border-radius: 6px;
+      border: none;
+      &:hover {
+        background-color: #166433;
+      }
     }
   }
 }
@@ -120,7 +115,7 @@ body {
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("../images/aboutUsHero.jpg");
+    background-image: url('../images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -287,16 +282,16 @@ body {
   }
 }
 .contact-banner {
-  background-image: url("../images/resourcesHero.jpg");
+  background-image: url('../images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("../images/jobs_banner.jpg");
+  background-image: url('../images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 
@@ -674,7 +669,7 @@ body {
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -687,7 +682,7 @@ body {
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -830,6 +825,13 @@ body {
     box-shadow: none;
     padding: 13px;
   }
+  .UploadImg {
+    padding-left: 100px;
+    background-image: url('../images/cloudIcon.png');
+    background-repeat: no-repeat;
+    background-position-y: 17px;
+    background-position-x: 60px;
+  }
   .site-btn {
     margin-top: 10px;
     margin-bottom: 25px;
@@ -913,17 +915,12 @@ body {
         margin-left: -23px;
       }
     }
-    .header-button {
-      margin-left: 2px;
-      margin-right: 199px;
-      margin-top: 10px;
-    }
   }
   //banner
   .Banner {
     min-height: 30vh;
     .row h1 {
-      margin-top: 45px;
+      margin-top: 32px;
       font-size: 29px;
     }
   }
@@ -987,10 +984,6 @@ body {
   }
 }
 @media only screen and (min-width: 375px) and (max-width: 767px) {
-  //home-page
-  #home-page .header-button {
-    margin-right: 254px;
-  }
   //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 33px -146px;
@@ -998,10 +991,6 @@ body {
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
-  //home-page
-  #home-page .header-button {
-    margin-right: 304px;
-  }
   //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -160px;
@@ -1016,15 +1005,10 @@ body {
         margin-left: -25px;
       }
     }
-    .header-button {
-      margin-left: -2px;
-      margin-right: 608px;
-      margin-top: 10px;
-    }
   }
   //banner
   .Banner .row h1 {
-    margin-top: 60px;
+    margin-top: 34px;
     font-size: 44px;
   }
   //contact-page
@@ -1069,7 +1053,7 @@ body {
   }
   //banner
   .Banner .row h1 {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 57px;
   }
 }
@@ -1316,20 +1300,26 @@ body {
 }
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 212px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 216px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 175px;
+  }
+  //contact-button
+  #home-page {
+    .btnDiv {
+      margin-left: 58px;
+    }
   }
 }
 //homepage-trending jobsSec
@@ -1345,6 +1335,12 @@ body {
           margin-right: 0;
         }
       }
+    }
+  }
+  //contact button
+  #home-page {
+    .btnDiv {
+      margin: 15px 0;
     }
   }
 }
@@ -1392,12 +1388,24 @@ body {
     border: 3px solid #f5f6f8;
     height: 409px;
   }
+  //contact button
+  #home-page {
+    .btnDiv {
+      margin: 15px 0;
+    }
+  }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1350px) {
   .aboutEmployersSec .cardMain {
     margin: 24px 5px;
     border: 3px solid #f5f6f8;
     height: 321px;
+  }
+  //contact button
+  #home-page {
+    .btnDiv {
+      margin: 15px 15px;
+    }
   }
 }
 //homeEmployers and resourcePage

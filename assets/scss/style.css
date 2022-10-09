@@ -42,25 +42,17 @@ body {
   font-weight: 500px;
 }
 
-#home-page .header-button {
-  border-color: #a67d2d;
-  background-color: #a67d2d;
-  border-radius: 5px;
-  margin-left: 70px;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-#home-page .header-button:hover {
-  background-color: #166433;
-}
-
-#home-page .header-button .btn {
-  color: #fff;
-  font-size: 15px;
+#home-page .btnDiv .ContactButton {
+  padding: 11px 15px;
+  color: white;
   font-weight: 500;
-  padding: 10px 15px;
-  border-style: solid;
+  background: #885c2b;
+  border-radius: 6px;
+  border: none;
+}
+
+#home-page .btnDiv .ContactButton:hover {
+  background-color: #166433;
 }
 
 .Job {
@@ -772,7 +764,7 @@ body {
 }
 
 .timelineMain .timeline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 45px;
   height: 45px;
@@ -785,7 +777,7 @@ body {
 }
 
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -962,6 +954,14 @@ body {
   padding: 13px;
 }
 
+#contact-form .UploadImg {
+  padding-left: 100px;
+  background-image: url("../images/cloudIcon.png");
+  background-repeat: no-repeat;
+  background-position-y: 17px;
+  background-position-x: 60px;
+}
+
 #contact-form .site-btn {
   margin-top: 10px;
   margin-bottom: 25px;
@@ -1035,16 +1035,11 @@ body {
   #home-page ul li .resource {
     margin-left: -23px;
   }
-  #home-page .header-button {
-    margin-left: 2px;
-    margin-right: 199px;
-    margin-top: 10px;
-  }
   .Banner {
     min-height: 30vh;
   }
   .Banner .row h1 {
-    margin-top: 45px;
+    margin-top: 32px;
     font-size: 29px;
   }
   #carousel-section .row .owl-carousel .color-back {
@@ -1093,18 +1088,12 @@ body {
 }
 
 @media only screen and (min-width: 375px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 254px;
-  }
   #carousel-section .row .owl-theme .card img {
     margin: 33px -146px;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
-  #home-page .header-button {
-    margin-right: 304px;
-  }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -160px;
   }
@@ -1114,13 +1103,8 @@ body {
   #home-page ul li .resource {
     margin-left: -25px;
   }
-  #home-page .header-button {
-    margin-left: -2px;
-    margin-right: 608px;
-    margin-top: 10px;
-  }
   .Banner .row h1 {
-    margin-top: 60px;
+    margin-top: 34px;
     font-size: 44px;
   }
   #contact-card-section .card {
@@ -1149,7 +1133,7 @@ body {
     margin: 30px -123px;
   }
   .Banner .row h1 {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 57px;
   }
 }
@@ -1358,22 +1342,25 @@ body {
 
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 212px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 216px;
   }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 175px;
+  }
+  #home-page .btnDiv {
+    margin-left: 58px;
   }
 }
 
@@ -1384,6 +1371,9 @@ body {
   }
   .trending-jobs .viewallCol .atag .viewallPara {
     margin-right: 0;
+  }
+  #home-page .btnDiv {
+    margin: 15px 0;
   }
 }
 
@@ -1418,6 +1408,9 @@ body {
     border: 3px solid #f5f6f8;
     height: 409px;
   }
+  #home-page .btnDiv {
+    margin: 15px 0;
+  }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1350px) {
@@ -1425,6 +1418,9 @@ body {
     margin: 24px 5px;
     border: 3px solid #f5f6f8;
     height: 321px;
+  }
+  #home-page .btnDiv {
+    margin: 15px 15px;
   }
 }
 
