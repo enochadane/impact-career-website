@@ -302,7 +302,7 @@ body {
 
 .Banner .row h1 {
   text-align: center;
-  margin-top: 86px;
+  margin-top: 75px;
   font-size: 66px;
   font-weight: 600;
 }
@@ -901,8 +901,8 @@ body {
 }
 
 #contact-form .container .get-in-touch {
-  margin-top: 60px;
-  margin-bottom: 15px;
+  margin-top: 85px;
+  margin-bottom: 35px;
   text-align: center;
 }
 
@@ -930,6 +930,7 @@ body {
 
 #contact-form .site-btn {
   margin-top: 10px;
+  margin-bottom: 25px;
   padding: 10px 15px;
   border-style: solid;
   border-width: 2px;
@@ -1009,11 +1010,28 @@ body {
     min-height: 30vh;
   }
   .Banner .row h1 {
-    margin-top: 36px;
+    margin-top: 45px;
     font-size: 29px;
   }
+  #carousel-section .row .owl-carousel .color-back {
+    padding: 6px 6px;
+  }
+  #carousel-section .row .owl-carousel .owl-prev,
+  #carousel-section .row .owl-carousel .owl-next {
+    top: -50px;
+  }
+  #carousel-section .row .owl-carousel img {
+    width: 24px;
+  }
+  #carousel-section .row .owl-carousel .owl-prev {
+    right: 90px;
+  }
   #carousel-section .row .owl-theme .card img {
-    margin: 37px -108px;
+    margin: 18px -122px;
+  }
+  #carousel-section .row .owl-theme .card .card-body .card-title {
+    font-size: 17px;
+    font-weight: 500;
   }
   #contact-card-section .card {
     min-height: 200px;
@@ -1045,7 +1063,7 @@ body {
     margin-right: 254px;
   }
   #carousel-section .row .owl-theme .card img {
-    margin: 37px -135px;
+    margin: 33px -146px;
   }
 }
 
@@ -1068,7 +1086,7 @@ body {
     margin-top: 10px;
   }
   .Banner .row h1 {
-    margin-top: 75px;
+    margin-top: 60px;
     font-size: 44px;
   }
   #contact-card-section .card {
@@ -1094,14 +1112,15 @@ body {
     font-size: 18px;
   }
   #carousel-section .row .owl-theme .card img {
-    margin: 37px -101px;
+    margin: 30px -123px;
+  }
+  .Banner .row h1 {
+    margin-top: 50px;
+    font-size: 57px;
   }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-  .Banner .row h1 {
-    margin-top: 112px;
-  }
   #carousel-section .row .owl-theme .card {
     min-height: 215px;
   }
