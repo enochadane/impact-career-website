@@ -65,10 +65,11 @@ body {
   background-color: #f4f5f7;
   padding: 40px 0 70px 0;
   .candidates {
-    // padding: 10px;
+    border: none;
     border-radius: 10px;
     .Job-Seeker {
       margin-top: 10px;
+      padding-right: 0;
 
       h5 {
         margin-top: 0px;
@@ -160,8 +161,10 @@ body {
 
 //homeEmployers
 .homeEmployers {
+  margin-top: 55px;
+  margin-bottom: 6rem;
   .homeEmployersH2 {
-    margin: 40px 0;
+    margin: 53px 0;
     text-align: center;
     color: #474c55;
   }
@@ -196,7 +199,7 @@ body {
   .missionImgCol {
     margin: auto;
     .missionImg {
-      max-width: 100%;
+      max-width: 88%;
     }
     .missionImgVertical {
       max-width: 100%;
@@ -220,6 +223,7 @@ body {
   .business-meet {
     h1 {
       font-size: 32px;
+      color: #474c55;
     }
     img.sticky {
       position: -webkit-sticky;
@@ -236,6 +240,7 @@ body {
         border-radius: 10px;
         padding: 20px;
         border: none;
+        font-weight: 300;
       }
     }
   }
@@ -338,7 +343,6 @@ body {
     font-size: 32px;
     margin: 30px auto;
     .employerH1 {
-      font-size: 32px;
       color: #474c55;
     }
   }
@@ -367,26 +371,32 @@ body {
 .aboutLocationSec {
   margin-top: 5rem;
   background-color: #f5f5f5;
-  .locationImg {
-    max-width: 100%;
-    border-radius: 20px;
-    margin-top: 40px;
-  }
-  .locationH1 {
-    margin: 30px 0;
-  }
-  .locationPara {
-    text-align: justify;
+  .locationRow {
+    padding-bottom: 80px;
+    .locationImg {
+      max-width: 100%;
+      border-radius: 20px;
+      margin-top: 40px;
+    }
+    .locationH1 {
+      margin: 30px 0;
+    }
+    .locationPara {
+      text-align: justify;
+    }
   }
 }
 
 //jobs page
 //jobcards//
 .trending-jobs {
+  margin-top: 5rem;
   .trendingRow {
     margin: 60px 0;
   }
-  background-color: white;
+  .product-designer {
+    padding-bottom: 30px;
+  }
   .trendingH3 {
     text-align: left;
     margin-left: 75px;
@@ -433,21 +443,31 @@ body {
 }
 //accordion section
 .faq {
+  .faqHeading {
+    color: rgb(71, 76, 85);
+  }
+  .faqH3 {
+    color: #474c55;
+  }
   background-color: #f4f5f7;
   #accordionSection {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
   .accordion {
     --bs-accordion-bg: none;
     .accordion-button {
       border-width: 0;
+      color: #173753;
+      font-weight: 500;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
     .accordion-item {
       border: none;
     }
     .accordion-button.collapsed {
-      border-top-left-radius: 1.25rem;
-      border-top-right-radius: 1.25rem;
+      border-top-left-radius: 1.2rem;
+      border-top-right-radius: 1.2rem;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       background-color: white;
@@ -516,10 +536,11 @@ body {
 }
 
 .trainingSec {
+  margin-top: 45px;
   .trainingCol {
     text-align: center;
     .trainingH1 {
-      margin: 20px 0;
+      margin: 30px 0;
       color: #333;
     }
     .trainingPara {
@@ -527,13 +548,17 @@ body {
     }
   }
   .trainCardCol {
-    margin: 30px 0;
+    margin: 15px 0;
     .trainingCard {
+      border: none;
       border-radius: 15px;
       .trainingImg {
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
       }
+    }
+    .trainCardH5 {
+      margin: 15px 0;
     }
   }
 }
@@ -541,6 +566,7 @@ body {
 //interview Resources
 .interviewSec {
   margin-top: 9rem;
+  margin-bottom: 3rem;
   .interviewH1 {
     text-align: center;
     color: #474c55;
@@ -549,7 +575,8 @@ body {
     text-align: center;
   }
   .interviewCard {
-    margin-top: 4rem;
+    border: none;
+    margin-top: 2rem;
     border-radius: 15px;
     .interviewImg {
       border-top-left-radius: 15px;
@@ -557,6 +584,9 @@ body {
     }
     .interviewCardBody {
       height: 340px;
+      .trainCardH5 {
+        margin: 15px 0;
+      }
     }
   }
 }
@@ -564,13 +594,13 @@ body {
 //contact-page
 //card-section
 #contact-card-section {
-  margin-top: 100px;
+  margin-top: 60px;
   .card {
     padding: 10px 26px;
     border-radius: 12px;
     background-color: #f4f4f4;
     min-height: 200px;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
     .topContent {
       display: flex;
       flex-wrap: wrap;
@@ -589,6 +619,7 @@ body {
 }
 //timeLine
 .timelineMain {
+  margin-top: 8rem;
   position: relative;
   .timeline::after {
     content: '';
@@ -650,7 +681,6 @@ body {
 .black-footer {
   background-color: #231f20;
   color: #fff;
-  margin-top: 60px;
   .top-footer {
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
     .footer-brand {
@@ -721,11 +751,12 @@ body {
 }
 //form-section
 #contact-form {
+  margin-bottom: 50px;
   .container {
     max-width: 832px;
     .get-in-touch {
       margin-top: 60px;
-      margin-bottom: 60px;
+      margin-bottom: 15px;
       text-align: center;
       h2 {
         color: #474c55;
@@ -839,7 +870,7 @@ body {
   .Banner {
     min-height: 30vh;
     .row h1 {
-      margin-top: 56px;
+      margin-top: 36px;
       font-size: 29px;
     }
   }
@@ -985,6 +1016,7 @@ body {
         width: 100px;
         height: 100px;
         display: block;
+        margin: 15px;
       }
       .senior-product {
         h5 {
@@ -1039,6 +1071,7 @@ body {
         }
         p {
           text-align: center;
+          padding-right: 10px;
         }
       }
       .sub-btn {
@@ -1057,7 +1090,7 @@ body {
       padding: 0px;
       border-radius: 10px;
       h5 {
-        padding: 0px;
+        padding-top: 20px;
         font-size: 24px;
         text-align: center;
       }
@@ -1268,7 +1301,7 @@ body {
 //aboutEmployers
 @media only screen and (min-width: 320px) and (max-width: 550px) {
   .aboutEmployersSec .cardMain {
-    margin: 24px 5px;
+    margin: 17px 5px;
     border: 3px solid #f5f6f8;
     height: 346px;
   }
@@ -1307,6 +1340,16 @@ body {
   }
   .interviewSec .interviewCard .interviewCardBody {
     height: 392px;
+  }
+  //aboutmission
+  .aboutMissionSec .missionContent .missionH1 {
+    margin-top: 19px;
+  }
+  .aboutMissionSec .missionContent .OurMissionPara {
+    margin-bottom: 45px;
+  }
+  #carousel-section {
+    margin-top: 40px;
   }
 }
 @media only screen and (min-width: 560px) and (max-width: 800px) {
