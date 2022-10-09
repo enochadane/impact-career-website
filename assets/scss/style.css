@@ -68,25 +68,30 @@ body {
   padding: 40px 0 70px 0;
 }
 
-.Job .candidates {
+.Job .candidate-card {
   border: none;
   border-radius: 10px;
+  padding-left: 20px;
 }
 
-.Job .candidates .Job-Seeker {
+.Job .candidate-card .Job-Seeker {
   margin-top: 10px;
   padding-right: 0;
 }
 
-.Job .candidates .Job-Seeker h5 {
+.Job .candidate-card .Job-Seeker h5 {
   margin-top: 0px;
   color: #474c55;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 120%;
   font-weight: 600;
 }
 
-.Job .candidates .sub-btn {
+.Job .candidate-card .Job-Seeker p {
+  font-size: 16px;
+}
+
+.Job .candidate-card .sub-btn {
   text-decoration: none;
   border-style: solid;
   border-width: 2px;
@@ -98,7 +103,7 @@ body {
   font-weight: 600;
 }
 
-.Job .candidates .sub-btn:hover {
+.Job .candidate-card .sub-btn:hover {
   background-color: #013d01;
   color: white;
 }
@@ -115,6 +120,7 @@ body {
 
 .Job .Learn p {
   font-weight: 100;
+  font-size: 18px;
 }
 
 .Job .access-btn {
@@ -134,6 +140,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  position: relative;
+  padding-left: 20px;
 }
 
 .Job .last-card h5 {
@@ -158,6 +166,7 @@ body {
   border-color: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: #fff;
+  font-size: 13px;
 }
 
 .Job .last-card .sign-up .signup-btn {
@@ -484,7 +493,7 @@ body {
 
 .trending-jobs .viewallCol .atag {
   text-decoration: none;
-  color: darkgreen;
+  color: #166433;
 }
 
 .trending-jobs .viewallCol .atag .viewallPara {
@@ -511,11 +520,11 @@ body {
 }
 
 .trending-jobs .candidates .senior-product h5 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .trending-jobs .candidates .senior-product p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .trending-jobs .candidates .cardLInk {
@@ -549,6 +558,7 @@ body {
   font-weight: 500;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 18px;
 }
 
 .faq .accordion .accordion-item {
@@ -582,6 +592,9 @@ body {
 }
 
 .faq .accordion .accordion-body {
+  font-size: 15px;
+  color: #474c55;
+  font-weight: 300;
   background: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -598,15 +611,17 @@ body {
 }
 
 .product {
-  margin-top: 120px;
+  margin-top: 140px;
+  margin-bottom: 60px;
 }
 
 .product .page {
   background-color: white;
+  border: none;
 }
 
 .product .page:hover {
-  background-color: white;
+  background-color: #f4f5f7;
   border-radius: 20px;
 }
 
@@ -614,22 +629,41 @@ body {
   margin-left: 20px;
 }
 
+.product .page .job-page .inner-content h5 {
+  font-size: 22px;
+}
+
+.product .page .job-page .inner-content p {
+  font-size: 14px;
+}
+
 .product .page .job-page .in-page img {
+  margin-left: 20px;
   border-radius: 76px;
   margin-top: 30px;
+  width: 70px;
+  height: 70px;
+}
+
+.product .page .job-page .contents {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .product .page .job-page a {
   margin-bottom: 20px;
-  color: darkgreen;
-  font-weight: 400;
-  font-size: 15px;
-  border-color: darkgreen;
+  color: #166433;
+  font-weight: 600;
+  font-size: 16px;
+  border-color: #166433;
+  background-color: transparent;
 }
 
 .product .page .job-page a:hover {
   color: white;
-  background-color: darkgreen;
+  background-color: #166433;
 }
 
 .trainingSec {
@@ -738,7 +772,7 @@ body {
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -751,7 +785,7 @@ body {
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1141,7 +1175,7 @@ body {
     margin: 15px;
   }
   .product-designer .candidates .senior-product h5 {
-    font-size: 15px;
+    font-size: 14px;
   }
   .product-designer .candidates .senior-product p {
     font-size: 12px;
@@ -1170,23 +1204,24 @@ body {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .Job .candidates {
+  .Job .candidate-card {
     padding: 0px;
     margin-top: 20px;
   }
-  .Job .candidates .Job-Seeker h5 {
+  .Job .candidate-card .Job-Seeker h5 {
     font-weight: 700;
     text-align: center;
   }
-  .Job .candidates .Job-Seeker p {
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 16px;
     text-align: center;
     padding-right: 10px;
   }
-  .Job .candidates .sub-btn {
+  .Job .candidate-card .sub-btn {
     margin: auto;
     display: table;
   }
-  .Job .candidates .icon img {
+  .Job .candidate-card .icon img {
     width: 40%;
     margin: auto;
     display: block;
@@ -1239,8 +1274,9 @@ body {
     margin-bottom: 0px;
   }
   .product .page .job-page .in-page img {
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
+    margin-left: 10px;
   }
   .product .page .job-page .inner-content h5 {
     text-align: left;
@@ -1250,10 +1286,10 @@ body {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
-  .Job .candidates {
+  .Job .candidate-card {
     margin-top: 20px;
   }
-  .Job .candidates .Job-Seeker h5 {
+  .Job .candidate-card .Job-Seeker h5 {
     font-weight: 600;
     font-size: 35px;
   }
@@ -1266,11 +1302,14 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  .Job .candidates {
+  .Job .candidate-card {
     height: 400px;
   }
-  .Job .candidates .Job-Seeker h5 {
+  .Job .candidate-card .Job-Seeker h5 {
     font-size: 22px;
+  }
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 16px;
   }
   .Job .Learn {
     height: 320px;
@@ -1319,21 +1358,21 @@ body {
 
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 212px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 175px;
   }
 }

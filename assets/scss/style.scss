@@ -2,7 +2,6 @@ body {
   line-height: 20px;
   font-weight: 400;
 }
-
 //Header
 #home-page {
   .navbar-light .navbar-nav .nav-link.active,
@@ -64,19 +63,22 @@ body {
 .Job {
   background-color: #f4f5f7;
   padding: 40px 0 70px 0;
-  .candidates {
+  .candidate-card {
     border: none;
     border-radius: 10px;
+    padding-left: 20px;
     .Job-Seeker {
       margin-top: 10px;
       padding-right: 0;
-
       h5 {
         margin-top: 0px;
         color: #474c55;
-        font-size: 32px;
+        font-size: 22px;
         line-height: 120%;
         font-weight: 600;
+      }
+      p {
+        font-size: 16px;
       }
     }
     .sub-btn {
@@ -104,6 +106,7 @@ body {
     }
     p {
       font-weight: 100;
+      font-size: 18px;
     }
   }
   .access-btn {
@@ -117,12 +120,12 @@ body {
   }
   .last-card {
     border-radius: 15px;
-    background-image: url('../images/aboutUsHero.jpg');
+    background-image: url("../images/aboutUsHero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    //position: relative;
-
+    position: relative;
+    padding-left: 20px;
     h5 {
       font-size: 24px;
       line-height: 120%;
@@ -143,6 +146,7 @@ body {
       border-color: rgba(0, 0, 0, 0.3);
       border-radius: 5px;
       background-color: #fff;
+      font-size: 13px;
     }
     .sign-up {
       .signup-btn {
@@ -283,16 +287,16 @@ body {
   }
 }
 .contact-banner {
-  background-image: url('../images/resourcesHero.jpg');
+  background-image: url("../images/resourcesHero.jpg");
 }
 .about-banner {
-  background-image: url('../images/bannerImages/aboutBanner.png');
+  background-image: url("../images/bannerImages/aboutBanner.png");
 }
 .resources-banner {
-  background-image: url('../images/bannerImages/aboutBanner.png');
+  background-image: url("../images/bannerImages/aboutBanner.png");
 }
 .jobs-banner {
-  background-image: url('../images/jobs_banner.jpg');
+  background-image: url("../images/jobs_banner.jpg");
   background-position: 50% 50%;
 }
 
@@ -430,7 +434,7 @@ body {
     text-align: right;
     .atag {
       text-decoration: none;
-      color: darkgreen;
+      color: #166433;
       .viewallPara {
         font-size: 17px;
         font-weight: 500;
@@ -453,10 +457,10 @@ body {
     }
     .senior-product {
       h5 {
-        font-size: 18px;
+        font-size: 20px;
       }
       p {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
     .cardLInk {
@@ -485,6 +489,7 @@ body {
       font-weight: 500;
       padding-top: 20px;
       padding-bottom: 20px;
+      font-size: 18px;
     }
     .accordion-item {
       border: none;
@@ -511,6 +516,9 @@ body {
       border-width: 0px 0px;
     }
     .accordion-body {
+      font-size: 15px;
+      color: #474c55;
+      font-weight: 300;
       background: white;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
@@ -529,30 +537,50 @@ body {
 //Resources page
 //page section//
 .product {
-  margin-top: 120px;
+  margin-top: 140px;
+  margin-bottom: 60px;
   .page {
     background-color: white;
+    border: none;
     &:hover {
-      background-color: white;
+      background-color: #f4f5f7;
       border-radius: 20px;
     }
     .job-page {
       margin-left: 20px;
+      .inner-content {
+        h5 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
       .in-page {
         img {
+          margin-left: 20px;
           border-radius: 76px;
           margin-top: 30px;
+          width: 70px;
+          height: 70px;
         }
+      }
+      .contents {
+        margin-left: 20px;
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 14px;
       }
       a {
         margin-bottom: 20px;
-        color: darkgreen;
-        font-weight: 400;
-        font-size: 15px;
-        border-color: darkgreen;
+        color: #166433;
+        font-weight: 600;
+        font-size: 16px;
+        border-color: #166433;
+        background-color: transparent;
         &:hover {
           color: white;
-          background-color: darkgreen;
+          background-color: #166433;
         }
       }
     }
@@ -646,7 +674,7 @@ body {
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 45px;
     height: 45px;
@@ -659,7 +687,7 @@ body {
   }
 }
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -1068,7 +1096,7 @@ body {
       }
       .senior-product {
         h5 {
-          font-size: 15px;
+          font-size: 14px;
         }
         p {
           font-size: 12px;
@@ -1109,7 +1137,7 @@ body {
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .Job {
-    .candidates {
+    .candidate-card {
       padding: 0px;
       margin-top: 20px;
       .Job-Seeker {
@@ -1118,6 +1146,7 @@ body {
           text-align: center;
         }
         p {
+          font-size: 16px;
           text-align: center;
           padding-right: 10px;
         }
@@ -1185,8 +1214,9 @@ body {
         .in-page {
           margin-bottom: 0px;
           img {
-            width: 100px;
-            height: 100px;
+            width: 72px;
+            height: 72px;
+            margin-left: 10px;
           }
         }
         .inner-content {
@@ -1202,9 +1232,8 @@ body {
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
   .Job {
-    .candidates {
+    .candidate-card {
       margin-top: 20px;
-
       .Job-Seeker {
         h5 {
           font-weight: 600;
@@ -1228,11 +1257,14 @@ body {
 }
 @media only screen and (min-width: 1024px) {
   .Job {
-    .candidates {
+    .candidate-card {
       height: 400px;
       .Job-Seeker {
         h5 {
           font-size: 22px;
+        }
+        p {
+          font-size: 16px;
         }
       }
     }
@@ -1284,19 +1316,19 @@ body {
 }
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 212px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 175px;
   }
 }
