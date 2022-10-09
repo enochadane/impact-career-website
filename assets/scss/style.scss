@@ -302,11 +302,35 @@ body {
   margin-top: 80px;
   .our-values-title {
     color: #474c55;
-    font-size: 32px;
-    margin-bottom: 50px;
-    padding-top: 50px;
+    font-size: 29px;
+    margin-bottom: 81px;
+    padding-top: 59px;
   }
   .row {
+    padding-bottom: 47px;
+    .owl-carousel {
+      margin: 0;
+      .color-back {
+        background-color: #166433;
+        color: #fff;
+        padding: 10px 10px;
+        border-radius: 8px;
+        position: absolute;
+      }
+      .owl-prev,
+      .owl-next {
+        position: absolute;
+        top: -70px;
+        margin: auto !important;
+      }
+      .owl-prev {
+        right: 120px;
+      }
+      .owl-next {
+        right: 60px;
+      }
+    }
+
     .owl-theme {
       margin-bottom: 50px;
       .card {

@@ -331,9 +331,40 @@ body {
 
 #carousel-section .our-values-title {
   color: #474c55;
-  font-size: 32px;
-  margin-bottom: 50px;
-  padding-top: 50px;
+  font-size: 29px;
+  margin-bottom: 81px;
+  padding-top: 59px;
+}
+
+#carousel-section .row {
+  padding-bottom: 47px;
+}
+
+#carousel-section .row .owl-carousel {
+  margin: 0;
+}
+
+#carousel-section .row .owl-carousel .color-back {
+  background-color: #166433;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  position: absolute;
+}
+
+#carousel-section .row .owl-carousel .owl-prev,
+#carousel-section .row .owl-carousel .owl-next {
+  position: absolute;
+  top: -70px;
+  margin: auto !important;
+}
+
+#carousel-section .row .owl-carousel .owl-prev {
+  right: 120px;
+}
+
+#carousel-section .row .owl-carousel .owl-next {
+  right: 60px;
 }
 
 #carousel-section .row .owl-theme {
