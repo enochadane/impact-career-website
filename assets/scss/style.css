@@ -52,7 +52,7 @@
 
 .Job {
   background-color: #f4f5f7;
-  padding: 40px 0 70px 0;
+  padding: 40px 0 60px 0;
 }
 
 .Job .candidate-card {
@@ -76,6 +76,7 @@
 
 .Job .candidate-card .Job-Seeker p {
   font-size: 16px;
+  color: #474c55;
 }
 
 .Job .candidate-card .sub-btn {
@@ -88,6 +89,8 @@
   color: #166433;
   font-size: 16px;
   font-weight: 600;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .Job .candidate-card .sub-btn:hover {
@@ -102,18 +105,22 @@
 }
 
 .Job .Learn h5 {
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .Job .Learn p {
   font-weight: 100;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .Job .access-btn {
   border-color: white;
   font-weight: 600;
   color: white;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-width: 2px;
 }
 
 .Job .access-btn:hover {
@@ -132,35 +139,35 @@
 }
 
 .Job .last-card h5 {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 120%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .Job .last-card p {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
   font-weight: 300;
 }
 
 .Job .last-card .text-field {
+  border: none;
   margin-top: 30px;
   width: 100%;
   height: auto;
   padding: 15px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: #fff;
   font-size: 13px;
 }
 
 .Job .last-card .sign-up .signup-btn {
+  border-width: 2px;
   margin-top: 20px;
   border-color: white;
   font-weight: 600;
   color: white;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .Job .last-card .sign-up .signup-btn:hover {
@@ -205,7 +212,6 @@
 .homeEmployers .employersRow .employersContent .employersPara {
   margin: 15px 0;
   font-size: 14px;
-  text-align: justify;
 }
 
 .aboutMissionSec {
@@ -494,6 +500,8 @@
   border: none;
   border-radius: 40px;
   border-bottom: 2px solid #f4f4f4;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .trending-jobs .candidates:hover {
@@ -532,11 +540,14 @@
 }
 
 .faq #accordionSection {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .faq .accordion {
   --bs-accordion-bg: none;
+  --bs-accordion-border-color: none;
+  width: 80%;
+  margin-left: 100px;
 }
 
 .faq .accordion .accordion-button {
@@ -545,7 +556,7 @@
   font-weight: 500;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .faq .accordion .accordion-item {
@@ -563,7 +574,7 @@
 .faq .accordion .accordion-button:not(.collapsed) {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
-  color: black;
+  color: #173753;
   background-color: white;
 }
 
@@ -580,8 +591,8 @@
 
 .faq .accordion .accordion-body {
   font-size: 15px;
-  color: #474c55;
-  font-weight: 300;
+  color: #333;
+  font-weight: 400;
   background: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -832,7 +843,8 @@
 }
 
 .black-footer .top-footer .footer-brand {
-  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-top: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -891,8 +903,8 @@
 }
 
 .black-footer .bottom-footer .bottom-footer-content {
-  margin-top: 30px;
-  padding-bottom: 20px;
+  margin-top: 21px;
+  padding-bottom: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,7 +951,7 @@
   font-size: 15px;
   line-height: 26px;
   font-weight: 400;
-  padding: 0 26px;
+  padding: 0 34px;
 }
 
 #contact-form .form-control {
@@ -993,7 +1005,8 @@
     margin-top: 20px;
   }
   .Job .candidate-card .Job-Seeker h5 {
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 400;
     text-align: center;
   }
   .Job .candidate-card .Job-Seeker p {
@@ -1090,7 +1103,7 @@
     min-height: 30vh;
   }
   .Banner .row h1 {
-    margin-top: 32px;
+    margin-top: 45px;
     font-size: 29px;
   }
   #carousel-section .row .owl-carousel .color-back {
@@ -1113,21 +1126,43 @@
     font-size: 17px;
     font-weight: 500;
   }
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -146px;
-  }
   #contact-card-section .card {
     min-height: 200px;
   }
   #contact-card-section .card .topContent h2 {
     font-size: 18px;
   }
-  #contact-form .row {
+  #contact-form .container .get-in-touch {
+    margin-top: 50px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  #contact-form .container .get-in-touch p {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px;
+  }
+  #contact-form .container .row {
     max-width: 100%;
   }
-  #contact-form .row .form-control {
+  #contact-form .container .row .form-control {
     padding: 8px;
     font-size: 13px;
+  }
+  .faq .accordion {
+    width: 100%;
+    margin-left: 4px;
+  }
+  .faq .accordion .accordion-button {
+    font-size: 14px;
+  }
+  .faq .accordion .accordion-body {
+    font-size: 13px;
+  }
+  .faq .faqHeading {
+    font-size: 20px;
   }
   .bottom-footer .bottom-footer-content {
     -webkit-box-orient: vertical;
@@ -1138,6 +1173,18 @@
   }
   .bottom-footer .bottom-footer-content h4 {
     margin-bottom: 20px;
+  }
+  .timelineH6 {
+    font-size: 12px;
+  }
+  .timelineH5 {
+    font-size: 15px;
+  }
+  .timelinePara {
+    font-size: small;
+  }
+  .timelineLeft {
+    padding-right: 0;
   }
 }
 
@@ -1170,7 +1217,7 @@
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
   #carousel-section .row .owl-theme .card img {
-    margin: 37px -160px;
+    margin: 37px -174px;
   }
 }
 
@@ -1179,7 +1226,7 @@
     margin-left: -25px;
   }
   .Banner .row h1 {
-    margin-top: 34px;
+    margin-top: 60px;
     font-size: 44px;
   }
   #contact-card-section .card {
@@ -1195,8 +1242,35 @@
   #contact-card-section .card p {
     font-size: 13px;
   }
-  #contact-form .row {
+  #contact-form .container .get-in-touch h2 {
+    font-size: 27px;
+    font-weight: 500;
+  }
+  #contact-form .container .get-in-touch p {
+    padding: 0 26px;
+    line-height: 21px;
+  }
+  #contact-form .container .row {
     max-width: 100%;
+  }
+  .faq .accordion {
+    width: 100%;
+    margin-left: 24px;
+  }
+  .aboutMissionSec .missionContent {
+    padding-left: 0;
+  }
+  .aboutMissionSec .missionImgCol .missionImg {
+    max-width: 100%;
+  }
+  .aboutMissionSec .missionContent .missionPara {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .aboutMissionSec .missionContent .missionH1 {
+    font-size: 18px;
+    font-weight: 550;
+    margin-top: 8px;
   }
 }
 
@@ -1208,7 +1282,7 @@
     margin: 30px -123px;
   }
   .Banner .row h1 {
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 57px;
   }
 }
@@ -1230,6 +1304,9 @@
   }
   #home-page .btnDiv {
     margin: 15px 15px;
+  }
+  .product-designer .senior-product {
+    padding-left: 0;
   }
 }
 
@@ -1259,8 +1336,11 @@
     margin-top: 20px;
   }
   .Job .candidate-card .Job-Seeker h5 {
-    font-weight: 600;
-    font-size: 35px;
+    font-weight: 500;
+    font-size: 28px;
+  }
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 16px;
   }
   .Job .last-card {
     margin-top: 20px;
@@ -1277,7 +1357,6 @@
   .timeline {
     width: 100%;
     padding-left: 70px;
-    padding-right: 25px;
   }
   .timeline::before {
     left: 60px;
@@ -1302,14 +1381,29 @@
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 313px;
+    bottom: 248px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  #carousel-section .row .owl-theme .card img {
+    margin: 33px -120px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 400px) {
+  #carousel-section .row .owl-theme .card img {
+    margin: 33px -143px;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 700px) {
   .timelineMain::after {
     content: '';
-    bottom: 212px;
+    bottom: 192px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 33px -173px;
   }
 }
 
@@ -1332,23 +1426,7 @@
     height: 400px;
   }
   .Job .candidate-card .Job-Seeker h5 {
-    font-size: 22px;
-  }
-  .Job .candidate-card .Job-Seeker p {
-    font-size: 16px;
-  }
-  .Job .Learn {
-    height: 320px;
-  }
-  .Job .last-card {
-    margin-top: 0px;
-    height: 320px;
-  }
-  .Job .candidate-card {
-    height: 400px;
-  }
-  .Job .candidate-card .Job-Seeker h5 {
-    font-size: 22px;
+    font-size: 29px;
   }
   .Job .candidate-card .Job-Seeker p {
     font-size: 16px;
