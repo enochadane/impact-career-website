@@ -160,12 +160,9 @@
                       goals. After that, we will start looking for the most
                       suitable work opportunities.
                     </p>
-                    <a
-                      href="./form.html"
-                      class="btn btn-outline-success sub-btn"
-                    >
-                      Submit Your Resume
-                    </a>
+                    <button id="myBtn" class="btn btn-outline-success sub-btn">
+                      Submit your Resume
+                    </button>
                   </div>
                 </div>
                 <div class="col-md-4 col-12 icon">
@@ -187,12 +184,9 @@
                     <p class="card-text">
                       Lorem Ipsum is simply dummy text of the printing industry.
                     </p>
-                    <a
-                      href="./form.html"
-                      class="btn btn-outline-success sub-btn"
-                    >
-                      Search For Candidates
-                    </a>
+                    <button id="myBtn1" class="btn btn-outline-success sub-btn">
+                      Search for candidates
+                    </button>
                   </div>
                 </div>
                 <div class="col-md-4 col-12 icon">
@@ -271,6 +265,164 @@
         </div>
       </div>
     </section>
+    <!-- form content -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <section id="contact-form">
+          <div class="container">
+            <div class="get-in-touch">
+              <h2>Apply for this Job</h2>
+              <p>Please fill the details below to evaluate your candidature</p>
+            </div>
+            <form class="needs-validation" method="post">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="First Name"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Last Name"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid email address is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="Phone"
+                    placeholder="Mobile number"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid phone number is required.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Position Location"
+                    placeholder="Your Location"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter position location .
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Title of Position"
+                    placeholder="Title of Position"
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter Title of Position.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Title of Position"
+                      placeholder="Notice period"
+                      value=""
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Title of Position"
+                      placeholder="Linked in URL"
+                      value=""
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div>
+                    <input
+                      type="file"
+                      class="w-file-upload-input form-control"
+                      accept=".pdf, .doc, .docx, .txt"
+                      name="Resume-Upload"
+                      data-iconName="fa-solid fa-cloud-arrow-up"
+                      data-name="Upload Job Description, If Available"
+                      aria-hidden="true"
+                      id="Resume-Upload"
+                      aria-placeholder=" Upload Job Description, If Available"
+                      tabindex="-1"
+                      required=""
+                    />
+                    <p class="text-center">
+                      Accepted formats : PDF, DOC, DOCX, TXT (Max file size
+                      10MB)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <input
+                  type="submit"
+                  value="Submit"
+                  data-wait="Please wait..."
+                  class="site-btn"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
     <!--double card section-->
     <section class="trending-jobs mt-5">
       <div class="row trendingRow">
@@ -789,6 +941,36 @@
       </div>
     </footer>
     <!--Footer-->
+    <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn1");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
