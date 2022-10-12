@@ -49,9 +49,57 @@
     }
   }
 }
-//home-page
+//banner section
+//home-banner
+.carouselSlide {
+  margin-top: 71px;
+  background-color: black;
+  .carouselInner {
+    opacity: 0.4;
+  }
+}
+//banner
+.Banner {
+  margin-top: 71px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 41vh;
+  align-items: center;
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  color: #fff;
+  .row {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.3);
+    h1 {
+      text-align: center;
+      margin-top: 85px;
+      font-size: 66px;
+      font-weight: 600;
+    }
+  }
+}
+.contact-banner {
+  background-image: url('../images/resourcesHero.jpg');
+}
+.about-banner {
+  background-image: url('../images/bannerImages/aboutBanner.png');
+}
+.resources-banner {
+  background-image: url('../images/bannerImages/aboutBanner.png');
+}
+.jobs-banner {
+  background-image: url('../images/jobs_banner.jpg');
+  background-position: 50% 50%;
+}
 //jobs section
-
 .Job {
   background-color: #f4f5f7;
   padding: 40px 0 60px 0;
@@ -117,7 +165,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("../images/aboutUsHero.jpg");
+    background-image: url('../images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -215,19 +263,19 @@
     }
   }
 }
-//form2//
+//form2
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 /* Modal Content */
 .modal-content {
@@ -238,7 +286,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 70%;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: auto;
 }
 /* The Close Button */
 .close {
@@ -279,56 +327,6 @@
       }
     }
   }
-}
-//banner section
-//home-banner
-.carouselSlide {
-  margin-top: 71px;
-  background-color: black;
-  .carouselInner {
-    opacity: 0.4;
-  }
-}
-//banner
-.Banner {
-  margin-top: 71px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  min-height: 41vh;
-  align-items: center;
-  background-size: cover;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  color: #fff;
-  .row {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.3);
-    h1 {
-      text-align: center;
-      margin-top: 75px;
-      font-size: 66px;
-      font-weight: 600;
-    }
-  }
-}
-.contact-banner {
-  background-image: url("../images/resourcesHero.jpg");
-}
-.about-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
-}
-.resources-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
-}
-.jobs-banner {
-  background-image: url("../images/jobs_banner.jpg");
-  background-position: 50% 50%;
 }
 //about-carousel-section
 #carousel-section {
@@ -705,7 +703,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -718,7 +716,7 @@
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -864,7 +862,7 @@
   }
   .UploadImg {
     padding-left: 100px;
-    background-image: url("../images/cloudIcon.png");
+    background-image: url('../images/cloudIcon.png');
     background-repeat: no-repeat;
     background-position-y: 17px;
     background-position-x: 60px;
@@ -889,11 +887,20 @@
   }
 }
 //media queries
-@media only screen and (min-width: 320px) and (max-width: 350px) {
+@media only screen and (min-width: 320px) and (max-width: 374px) {
   .employers {
     .cardMain {
       height: 347px;
     }
+  }
+  .timelineRight::after {
+    left: 9px;
+  }
+  .timelineMain::after {
+    bottom: 248px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -127px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -1030,7 +1037,7 @@
   .Banner {
     min-height: 30vh;
     .row h1 {
-      margin-top: 45px;
+      margin-top: 65px;
       font-size: 29px;
     }
   }
@@ -1053,7 +1060,7 @@
     }
     .owl-theme .card {
       img {
-        margin: 18px -122px;
+        margin: 18px -142px;
       }
       .card-body .card-title {
         font-size: 17px;
@@ -1135,322 +1142,6 @@
     padding-right: 0;
   }
 }
-@media only screen and (min-width: 678px) and (max-width: 1000px) {
-  .employersRow {
-    .bagImgCol {
-      .employersImg {
-        max-width: 100%;
-      }
-    }
-  }
-}
-@media only screen and (min-width: 760px) and (max-width: 1000px) {
-  .employers {
-    .cardMain {
-      height: 420px;
-    }
-  }
-}
-@media only screen and (min-width: 500px) and (max-width: 2560px) {
-  .missionImgVertical {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-  .employers {
-    .cardMain {
-      height: 350px;
-    }
-  }
-  .interviewSec .interviewCard .interviewCardBody {
-    height: 400px;
-  }
-}
-@media only screen and (min-width: 425px) and (max-width: 767px) {
-  //about-page
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -174px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  //home-page
-  #home-page {
-    ul li {
-      .resource {
-        margin-left: -25px;
-      }
-    }
-  }
-  //banner
-  .Banner .row h1 {
-    margin-top: 60px;
-    font-size: 44px;
-  }
-  //contact-page
-  #contact-card-section {
-    .card {
-      padding: 16px;
-      min-height: 215px;
-      .topContent {
-        img {
-          max-width: 25px;
-        }
-        h2 {
-          font-size: 14px;
-        }
-      }
-      p {
-        font-size: 13px;
-      }
-    }
-  }
-  #contact-form {
-    .container {
-      .get-in-touch {
-        h2 {
-          font-size: 27px;
-          font-weight: 500;
-        }
-        p {
-          padding: 0 26px;
-          line-height: 21px;
-        }
-      }
-      .row {
-        max-width: 100%;
-      }
-    }
-  }
-  //faq
-  .faq .accordion {
-    width: 100%;
-    margin-left: 24px;
-  }
-  //aboutMission
-  .aboutMissionSec {
-    .missionContent {
-      padding-left: 0;
-    }
-    .missionImgCol {
-      .missionImg {
-        max-width: 100%;
-      }
-    }
-    .missionContent {
-      .missionPara {
-        font-size: 13px;
-        margin-top: 10px;
-      }
-      .missionH1 {
-        font-size: 18px;
-        font-weight: 550;
-        margin-top: 8px;
-      }
-    }
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  //contact-page
-  #contact-card-section {
-    .card {
-      .topContent {
-        h2 {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-  //about-page
-  #carousel-section .row .owl-theme .card img {
-    margin: 30px -123px;
-  }
-  //banner
-  .Banner .row h1 {
-    margin-top: 50px;
-    font-size: 57px;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1440px) {
-  //about-page
-  #carousel-section .row .owl-theme .card {
-    min-height: 215px;
-    img {
-      margin: 37px -158px;
-    }
-  }
-  .trainingPara {
-    margin: 1rem 18rem;
-  }
-  .aboutEmployersSec .cardMain {
-    margin: 24px 5px;
-    border: 3px solid #f5f6f8;
-    height: 321px;
-  }
-  //contact button
-  #home-page {
-    .btnDiv {
-      margin: 15px 15px;
-    }
-  }
-  .product-designer {
-    .senior-product {
-      padding-left: 0;
-    }
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .product-designer {
-    .candidates {
-      width: auto;
-      height: auto;
-      img {
-        width: 100px;
-        height: 100px;
-        display: block;
-      }
-      .senior-product {
-        h5 {
-          font-size: 16px;
-        }
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-  .product {
-    .page {
-      .job-page {
-        .in-page {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1400px) {
-  .Job {
-    .candidate-card {
-      margin-top: 20px;
-      .Job-Seeker {
-        h5 {
-          font-weight: 500;
-          font-size: 28px;
-        }
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-    .last-card {
-      margin-top: 20px;
-    }
-  }
-  .product {
-    .page {
-      .job-page {
-        .in-page {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-//timeline-mediaquery
-@media screen and (max-width: 600px) {
-  .timelineMain::after {
-    left: 31px;
-  }
-  .timeline {
-    width: 100%;
-    padding-left: 70px;
-  }
-  .timeline::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  .timelineLeft::after,
-  .timelineRight::after {
-    left: 10px;
-  }
-
-  .timelineLeft::before {
-    right: auto;
-  }
-  .timelineRight {
-    left: 0%;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 375px) {
-  .timelineRight::after {
-    left: 9px;
-  }
-  .timelineMain::after {
-    bottom: 248px;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 374px) {
-  //about-page
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -120px;
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 400px) {
-  //about-page
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -143px;
-  }
-}
-@media only screen and (min-width: 425px) and (max-width: 700px) {
-  .timelineMain::after {
-    content: "";
-    bottom: 192px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -173px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1000px) {
-  .timelineMain::after {
-    content: "";
-    bottom: 216px;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 2560px) {
-  .timelineMain::after {
-    content: "";
-    bottom: 175px;
-  }
-  //contact-button
-  #home-page {
-    .btnDiv {
-      margin-left: 58px;
-    }
-  }
-  .Job {
-    .candidate-card {
-      height: 400px;
-      .Job-Seeker {
-        h5 {
-          font-size: 29px;
-        }
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-    .Learn {
-      height: 320px;
-    }
-    .last-card {
-      margin-top: 0px;
-      height: 320px;
-    }
-  }
-}
 //homeEmployers and resourcePage
 @media only screen and (min-width: 320px) and (max-width: 550px) {
   .homeEmployers {
@@ -1529,6 +1220,22 @@
     }
   }
 }
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  //about-page
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -160px;
+  }
+  //time-line
+  .timelineMain::after {
+    content: '';
+    bottom: 192px;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 2560px) {
+  .missionImgVertical {
+    display: none;
+  }
+}
 @media only screen and (min-width: 560px) and (max-width: 800px) {
   .homeEmployers {
     .employersRow {
@@ -1560,8 +1267,110 @@
     }
   }
 }
-//resource page
-@media only screen and (min-width: 700px) and (max-width: 800px) {
+//timeline-mediaquery
+@media screen and (max-width: 600px) and (max-width: 767px) {
+  .timelineMain::after {
+    left: 33px;
+  }
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+  }
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  .timelineLeft::after,
+  .timelineRight::after {
+    left: 10px;
+  }
+
+  .timelineLeft::before {
+    right: auto;
+  }
+  .timelineRight {
+    left: 0%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  //home-page
+  #home-page {
+    ul li {
+      .resource {
+        margin-left: -25px;
+      }
+    }
+  }
+  //banner
+  .Banner .row h1 {
+    margin-top: 60px;
+    font-size: 44px;
+  }
+  //contact-page
+  #contact-card-section {
+    .card {
+      padding: 16px;
+      min-height: 215px;
+      .topContent {
+        img {
+          max-width: 25px;
+        }
+        h2 {
+          font-size: 14px;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+  #contact-form {
+    .container {
+      .get-in-touch {
+        h2 {
+          font-size: 27px;
+          font-weight: 500;
+        }
+        p {
+          padding: 0 26px;
+          line-height: 21px;
+        }
+      }
+      .row {
+        max-width: 100%;
+      }
+    }
+  }
+  //faq
+  .faq .accordion {
+    width: 100%;
+    margin-left: 24px;
+  }
+  //aboutMission
+  .aboutMissionSec {
+    .missionContent {
+      padding-left: 0;
+    }
+    .missionImgCol {
+      .missionImg {
+        max-width: 100%;
+      }
+    }
+    .missionContent {
+      .missionPara {
+        font-size: 13px;
+        margin-top: 10px;
+      }
+      .missionH1 {
+        font-size: 18px;
+        font-weight: 550;
+        margin-top: 8px;
+      }
+    }
+  }
+  //resource page
   .trainCardH5 {
     font-size: 19px;
   }
@@ -1579,5 +1388,171 @@
   }
   .interviewH1 {
     font-size: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .product-designer {
+    .candidates {
+      width: auto;
+      height: auto;
+      img {
+        width: 100px;
+        height: 100px;
+        display: block;
+      }
+      .senior-product {
+        h5 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .product {
+    .page {
+      .job-page {
+        .in-page {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .employers {
+    .cardMain {
+      height: 420px;
+    }
+  }
+  .employersRow {
+    .bagImgCol {
+      .employersImg {
+        max-width: 100%;
+      }
+    }
+  }
+  //time-line
+  .timelineMain::after {
+    content: '';
+    bottom: 216px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+  .Job {
+    .candidate-card {
+      margin-top: 20px;
+      .Job-Seeker {
+        h5 {
+          font-weight: 500;
+          font-size: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    .last-card {
+      margin-top: 20px;
+    }
+  }
+  .product {
+    .page {
+      .job-page {
+        .in-page {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .employers {
+    .cardMain {
+      height: 350px;
+    }
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 400px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  //contact-page
+  #contact-card-section {
+    .card {
+      .topContent {
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  //about-page
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -101px;
+  }
+  //banner
+  .Banner .row h1 {
+    margin-top: 50px;
+    font-size: 57px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  //about-page
+  #carousel-section .row .owl-theme .card {
+    min-height: 215px;
+    img {
+      margin: 37px -158px;
+    }
+  }
+  .trainingPara {
+    margin: 1rem 18rem;
+  }
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 321px;
+  }
+  //contact button
+  #home-page {
+    .btnDiv {
+      margin: 15px 15px;
+    }
+  }
+  .product-designer {
+    .senior-product {
+      padding-left: 0;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+  .timelineMain::after {
+    content: '';
+    bottom: 175px;
+  }
+  //contact-button
+  #home-page {
+    .btnDiv {
+      margin-left: 58px;
+    }
+  }
+  .Job {
+    .candidate-card {
+      height: 400px;
+      .Job-Seeker {
+        h5 {
+          font-size: 29px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    .Learn {
+      height: 320px;
+    }
+    .last-card {
+      margin-top: 0px;
+      height: 320px;
+    }
   }
 }

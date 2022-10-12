@@ -50,6 +50,66 @@
   background-color: #166433;
 }
 
+.carouselSlide {
+  margin-top: 71px;
+  background-color: black;
+}
+
+.carouselSlide .carouselInner {
+  opacity: 0.4;
+}
+
+.Banner {
+  margin-top: 71px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 41vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.Banner .row {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Banner .row h1 {
+  text-align: center;
+  margin-top: 85px;
+  font-size: 66px;
+  font-weight: 600;
+}
+
+.contact-banner {
+  background-image: url("../images/resourcesHero.jpg");
+}
+
+.about-banner {
+  background-image: url("../images/bannerImages/aboutBanner.png");
+}
+
+.resources-banner {
+  background-image: url("../images/bannerImages/aboutBanner.png");
+}
+
+.jobs-banner {
+  background-image: url("../images/jobs_banner.jpg");
+  background-position: 50% 50%;
+}
+
 .Job {
   background-color: #f4f5f7;
   padding: 40px 0 60px 0;
@@ -247,25 +307,16 @@
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0%;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: black;
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -278,7 +329,6 @@
   border: 1px solid #888;
   width: 70%;
   overflow: auto;
-  /* Enable scroll if needed */
 }
 
 /* The Close Button */
@@ -315,66 +365,6 @@
   padding: 20px;
   border: none;
   font-weight: 300;
-}
-
-.carouselSlide {
-  margin-top: 71px;
-  background-color: black;
-}
-
-.carouselSlide .carouselInner {
-  opacity: 0.4;
-}
-
-.Banner {
-  margin-top: 71px;
-  position: relative;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 41vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-size: cover;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  color: #fff;
-}
-
-.Banner .row {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.Banner .row h1 {
-  text-align: center;
-  margin-top: 75px;
-  font-size: 66px;
-  font-weight: 600;
-}
-
-.contact-banner {
-  background-image: url("../images/resourcesHero.jpg");
-}
-
-.about-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
-}
-
-.resources-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
-}
-
-.jobs-banner {
-  background-image: url("../images/jobs_banner.jpg");
-  background-position: 50% 50%;
 }
 
 #carousel-section {
@@ -821,7 +811,7 @@
 }
 
 .timelineMain .timeline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 45px;
   height: 45px;
@@ -834,7 +824,7 @@
 }
 
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1041,9 +1031,18 @@
   background-color: #166433;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 350px) {
+@media only screen and (min-width: 320px) and (max-width: 374px) {
   .employers .cardMain {
     height: 347px;
+  }
+  .timelineRight::after {
+    left: 9px;
+  }
+  .timelineMain::after {
+    bottom: 248px;
+  }
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -127px;
   }
 }
 
@@ -1154,7 +1153,7 @@
     min-height: 30vh;
   }
   .Banner .row h1 {
-    margin-top: 45px;
+    margin-top: 65px;
     font-size: 29px;
   }
   #carousel-section .row .owl-carousel .color-back {
@@ -1171,7 +1170,7 @@
     right: 90px;
   }
   #carousel-section .row .owl-theme .card img {
-    margin: 18px -122px;
+    margin: 18px -142px;
   }
   #carousel-section .row .owl-theme .card .card-body .card-title {
     font-size: 17px;
@@ -1239,15 +1238,62 @@
   }
 }
 
-@media only screen and (min-width: 678px) and (max-width: 1000px) {
-  .employersRow .bagImgCol .employersImg {
-    max-width: 100%;
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: none;
+    padding: 6px;
+  }
+  .employersRow .bagImgCol {
+    text-align: center;
+    margin: inherit;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 392px;
+  }
+  .missionImg {
+    display: none;
+  }
+  .aboutMissionSec .missionContent .missionH1 {
+    margin-top: 19px;
+  }
+  .aboutMissionSec .missionContent .OurMissionPara {
+    margin-bottom: 45px;
+  }
+  #carousel-section {
+    margin-top: 40px;
+  }
+  .aboutEmployersSec .cardMain {
+    margin: 17px 5px;
+    border: 3px solid #f5f6f8;
+    height: 346px;
+  }
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: none;
+    padding: 6px;
+  }
+  .employersRow .bagImgCol {
+    text-align: center;
+    margin: inherit;
+  }
+  .trending-jobs .trendingH3 {
+    margin-left: 8px;
+    font-size: larger;
+  }
+  .trending-jobs .viewallCol .atag .viewallPara {
+    margin-right: 0;
+  }
+  #home-page .btnDiv {
+    margin: 15px 0;
   }
 }
 
-@media only screen and (min-width: 760px) and (max-width: 1000px) {
-  .employers .cardMain {
-    height: 420px;
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  #carousel-section .row .owl-theme .card img {
+    margin: 37px -160px;
+  }
+  .timelineMain::after {
+    content: '';
+    bottom: 192px;
   }
 }
 
@@ -1257,18 +1303,46 @@
   }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-  .employers .cardMain {
-    height: 350px;
+@media only screen and (min-width: 560px) and (max-width: 800px) {
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: 112%;
   }
-  .interviewSec .interviewCard .interviewCardBody {
-    height: 400px;
+  .homeEmployers .employersRow .bagImgCol .employersImg {
+    max-width: 112%;
+  }
+  .aboutEmployersSec .cardMain {
+    margin: 24px 5px;
+    border: 3px solid #f5f6f8;
+    height: 409px;
+  }
+  #home-page .btnDiv {
+    margin: 15px 0;
   }
 }
 
-@media only screen and (min-width: 425px) and (max-width: 767px) {
-  #carousel-section .row .owl-theme .card img {
-    margin: 37px -174px;
+@media screen and (max-width: 600px) and (max-width: 767px) {
+  .timelineMain::after {
+    left: 33px;
+  }
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+  }
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  .timelineLeft::after,
+  .timelineRight::after {
+    left: 10px;
+  }
+  .timelineLeft::before {
+    right: auto;
+  }
+  .timelineRight {
+    left: 0%;
   }
 }
 
@@ -1323,6 +1397,83 @@
     font-weight: 550;
     margin-top: 8px;
   }
+  .trainCardH5 {
+    font-size: 19px;
+  }
+  .trainCardPara {
+    font-size: 13px;
+  }
+  .trainingPara {
+    font-size: 13px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 413px;
+  }
+  .trainingH1 {
+    font-size: 20px;
+  }
+  .interviewH1 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .product-designer .candidates {
+    width: auto;
+    height: auto;
+  }
+  .product-designer .candidates img {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+  .product-designer .candidates .senior-product h5 {
+    font-size: 16px;
+  }
+  .product-designer .candidates .senior-product p {
+    font-size: 12px;
+  }
+  .product .page .job-page .in-page {
+    margin-bottom: 20px;
+  }
+  .employers .cardMain {
+    height: 420px;
+  }
+  .employersRow .bagImgCol .employersImg {
+    max-width: 100%;
+  }
+  .timelineMain::after {
+    content: '';
+    bottom: 216px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+  .Job .candidate-card {
+    margin-top: 20px;
+  }
+  .Job .candidate-card .Job-Seeker h5 {
+    font-weight: 500;
+    font-size: 28px;
+  }
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 16px;
+  }
+  .Job .last-card {
+    margin-top: 20px;
+  }
+  .product .page .job-page .in-page {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .employers .cardMain {
+    height: 350px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 400px;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1330,7 +1481,7 @@
     font-size: 18px;
   }
   #carousel-section .row .owl-theme .card img {
-    margin: 30px -123px;
+    margin: 37px -101px;
   }
   .Banner .row h1 {
     margin-top: 50px;
@@ -1361,113 +1512,9 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .product-designer .candidates {
-    width: auto;
-    height: auto;
-  }
-  .product-designer .candidates img {
-    width: 100px;
-    height: 100px;
-    display: block;
-  }
-  .product-designer .candidates .senior-product h5 {
-    font-size: 16px;
-  }
-  .product-designer .candidates .senior-product p {
-    font-size: 12px;
-  }
-  .product .page .job-page .in-page {
-    margin-bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1400px) {
-  .Job .candidate-card {
-    margin-top: 20px;
-  }
-  .Job .candidate-card .Job-Seeker h5 {
-    font-weight: 500;
-    font-size: 28px;
-  }
-  .Job .candidate-card .Job-Seeker p {
-    font-size: 16px;
-  }
-  .Job .last-card {
-    margin-top: 20px;
-  }
-  .product .page .job-page .in-page {
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .timelineMain::after {
-    left: 31px;
-  }
-  .timeline {
-    width: 100%;
-    padding-left: 70px;
-  }
-  .timeline::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-  .timelineLeft::after,
-  .timelineRight::after {
-    left: 10px;
-  }
-  .timelineLeft::before {
-    right: auto;
-  }
-  .timelineRight {
-    left: 0%;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 375px) {
-  .timelineRight::after {
-    left: 9px;
-  }
-  .timelineMain::after {
-    bottom: 248px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 374px) {
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -120px;
-  }
-}
-
-@media only screen and (min-width: 375px) and (max-width: 400px) {
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -143px;
-  }
-}
-
-@media only screen and (min-width: 425px) and (max-width: 700px) {
-  .timelineMain::after {
-    content: "";
-    bottom: 192px;
-  }
-  #carousel-section .row .owl-theme .card img {
-    margin: 33px -173px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1000px) {
-  .timelineMain::after {
-    content: "";
-    bottom: 216px;
-  }
-}
-
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 175px;
   }
   #home-page .btnDiv {
@@ -1488,93 +1535,6 @@
   .Job .last-card {
     margin-top: 0px;
     height: 320px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 550px) {
-  .homeEmployers .employersRow .bagImgCol .employersImg {
-    max-width: none;
-    padding: 6px;
-  }
-  .employersRow .bagImgCol {
-    text-align: center;
-    margin: inherit;
-  }
-  .interviewSec .interviewCard .interviewCardBody {
-    height: 392px;
-  }
-  .missionImg {
-    display: none;
-  }
-  .aboutMissionSec .missionContent .missionH1 {
-    margin-top: 19px;
-  }
-  .aboutMissionSec .missionContent .OurMissionPara {
-    margin-bottom: 45px;
-  }
-  #carousel-section {
-    margin-top: 40px;
-  }
-  .aboutEmployersSec .cardMain {
-    margin: 17px 5px;
-    border: 3px solid #f5f6f8;
-    height: 346px;
-  }
-  .homeEmployers .employersRow .bagImgCol .employersImg {
-    max-width: none;
-    padding: 6px;
-  }
-  .employersRow .bagImgCol {
-    text-align: center;
-    margin: inherit;
-  }
-  .trending-jobs .trendingH3 {
-    margin-left: 8px;
-    font-size: larger;
-  }
-  .trending-jobs .viewallCol .atag .viewallPara {
-    margin-right: 0;
-  }
-  #home-page .btnDiv {
-    margin: 15px 0;
-  }
-}
-
-@media only screen and (min-width: 560px) and (max-width: 800px) {
-  .homeEmployers .employersRow .bagImgCol .employersImg {
-    max-width: 112%;
-  }
-  .homeEmployers .employersRow .bagImgCol .employersImg {
-    max-width: 112%;
-  }
-  .aboutEmployersSec .cardMain {
-    margin: 24px 5px;
-    border: 3px solid #f5f6f8;
-    height: 409px;
-  }
-  #home-page .btnDiv {
-    margin: 15px 0;
-  }
-}
-
-@media only screen and (min-width: 700px) and (max-width: 800px) {
-  .trainCardH5 {
-    font-size: 19px;
-  }
-  .trainCardPara {
-    font-size: 13px;
-  }
-  .trainingPara {
-    font-size: 13px;
-  }
-  .interviewSec .interviewCard .interviewCardBody {
-    height: 413px;
-  }
-  .trainingH1 {
-    font-size: 20px;
-  }
-  .interviewH1 {
-    font-size: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
