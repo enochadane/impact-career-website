@@ -93,6 +93,10 @@
   font-weight: 600;
 }
 
+.Banner .row h4 {
+  text-align: center;
+}
+
 .contact-banner {
   background-image: url("../images/resourcesHero.jpg");
 }
@@ -283,7 +287,7 @@
 }
 
 .aboutMissionSec .missionImgCol .missionImg {
-  max-width: 88%;
+  max-width: 100%;
 }
 
 .aboutMissionSec .missionImgCol .missionImgVertical {
@@ -375,8 +379,12 @@
 #carousel-section .our-values-title {
   color: #474c55;
   font-size: 29px;
-  margin-bottom: 81px;
+  margin-bottom: 54px;
   padding-top: 59px;
+}
+
+#carousel-section .pride {
+  margin-bottom: 4rem;
 }
 
 #carousel-section .row {
@@ -811,7 +819,7 @@
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -824,7 +832,7 @@
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1292,7 +1300,7 @@
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
 }
@@ -1313,7 +1321,7 @@
   .aboutEmployersSec .cardMain {
     margin: 24px 5px;
     border: 3px solid #f5f6f8;
-    height: 409px;
+    height: 457px;
   }
   #home-page .btnDiv {
     margin: 15px 0;
@@ -1443,7 +1451,7 @@
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
@@ -1514,17 +1522,17 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 175px;
   }
   #home-page .btnDiv {
     margin-left: 58px;
   }
   .Job .candidate-card {
-    height: 400px;
+    height: 430px;
   }
   .Job .candidate-card .Job-Seeker h5 {
-    font-size: 29px;
+    font-size: 27px;
   }
   .Job .candidate-card .Job-Seeker p {
     font-size: 16px;
