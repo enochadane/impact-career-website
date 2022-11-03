@@ -54,8 +54,13 @@
 .carouselSlide {
   margin-top: 71px;
   background-color: black;
-  .carouselInner {
+  .slide-clr {
     opacity: 0.4;
+  }
+  .carousel-caption {
+    color: white;
+    text-align: center;
+    top: 190px;
   }
 }
 //banner
@@ -927,6 +932,16 @@
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  .carouselSlide .carousel-caption {
+    top: 3px;
+    h1 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 10px;
+      line-height: 1.5;
+    }
+  }
   .employersRow {
     .bagImgCol {
       .employersImg {
@@ -1243,7 +1258,11 @@
     }
   }
 }
+
 @media only screen and (min-width: 425px) and (max-width: 767px) {
+  .carouselSlide .carousel-caption {
+    top: 30px;
+  }
   //about-page
   #carousel-section .row .owl-theme .card img {
     margin: 37px -160px;
@@ -1324,6 +1343,12 @@
       .resource {
         margin-left: -25px;
       }
+    }
+  }
+  .carouselSlide .carousel-caption {
+    top: 73px;
+    h1 {
+      font-size: 25px;
     }
   }
   //banner
@@ -1499,6 +1524,15 @@
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .carouselSlide .carousel-caption {
+    top: 119px;
+    h1 {
+      font-size: 34px;
+    }
+    p {
+      font-size: 19px;
+    }
+  }
   //contact-page
   #contact-card-section {
     .card {
@@ -1558,6 +1592,7 @@
       margin-left: 58px;
     }
   }
+
   .Job {
     .candidate-card {
       height: 430px;
@@ -1576,6 +1611,17 @@
     .last-card {
       margin-top: 0px;
       height: 320px;
+    }
+  }
+}
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+  .carouselSlide .carousel-caption {
+    top: 198px;
+    h1 {
+      font-size: 42px;
+    }
+    p {
+      font-size: 24px;
     }
   }
 }
