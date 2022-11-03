@@ -269,12 +269,12 @@
                       you learn more and provide you with higher chances of
                       landing roles.
                     </p>
-                    <a
-                      href="./form.html"
-                      class="btn btn-outline-dark access-btn"
+                    <button
+                      id="myBtn2"
+                      class="btn btn-outline-white access-btn"
                     >
-                      Request Access
-                    </a>
+                      Request access
+                    </button>
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-5 icon learnIcon">
@@ -994,32 +994,46 @@
     </footer>
     <!--Footer-->
     <script>
-      var modal = document.getElementById('myModal');
-      var btn = document.getElementById('myBtn');
-      var span = document.getElementsByClassName('close')[0];
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("close")[0];
       btn.onclick = function () {
-        modal.style.display = 'block';
+        modal.style.display = "block";
       };
       span.onclick = function () {
-        modal.style.display = 'none';
+        modal.style.display = "none";
       };
       window.onclick = function (event) {
         if (event.target == modal) {
-          modal.style.display = 'none';
+          modal.style.display = "none";
         }
       };
-      var modal = document.getElementById('myModal');
-      var btn = document.getElementById('myBtn1');
-      var span = document.getElementsByClassName('close')[0];
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn1");
+      var span = document.getElementsByClassName("close")[0];
       btn.onclick = function () {
-        modal.style.display = 'block';
+        modal.style.display = "block";
       };
       span.onclick = function () {
-        modal.style.display = 'none';
+        modal.style.display = "none";
       };
       window.onclick = function (event) {
         if (event.target == modal) {
-          modal.style.display = 'none';
+          modal.style.display = "none";
+        }
+      };
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn2");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
       };
     </script>

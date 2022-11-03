@@ -717,16 +717,17 @@
   font-size: 14px;
 }
 
-.product .page .job-page a {
+.product .page .job-page .sub-btn {
   margin-bottom: 20px;
   color: #166433;
   font-weight: 600;
   font-size: 16px;
   border-color: #166433;
   background-color: transparent;
+  margin-bottom: 20px;
 }
 
-.product .page .job-page a:hover {
+.product .page .job-page .sub-btn:hover {
   color: white;
   background-color: #166433;
 }
@@ -842,7 +843,7 @@
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -855,7 +856,7 @@
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1336,7 +1337,7 @@
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
 }
@@ -1493,7 +1494,7 @@
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 384px;
   }
 }
@@ -1573,23 +1574,26 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 265px;
   }
   #home-page .btnDiv {
     margin-left: 58px;
   }
   .Job .candidate-card {
-    height: 430px;
+    height: 420px;
   }
   .Job .candidate-card .Job-Seeker h5 {
-    font-size: 27px;
+    font-size: 23px;
   }
   .Job .candidate-card .Job-Seeker p {
     font-size: 16px;
   }
   .Job .Learn {
     height: 320px;
+  }
+  .Job .Learn p {
+    font-size: 16px;
   }
   .Job .last-card {
     margin-top: 0px;
