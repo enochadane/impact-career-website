@@ -447,6 +447,11 @@
 #carousel-section .row .owl-theme .card .card-body .card-text {
   font-size: 15px;
   margin-left: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
 .aboutEmployersSec {
@@ -509,6 +514,13 @@
 
 .aboutLocationSec .locationRow .locationPara {
   text-align: justify;
+}
+
+.jobSearchH2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #474c55;
 }
 
 .trending-jobs {
@@ -813,13 +825,18 @@
   padding: 5px;
 }
 
+.timelineH1 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
 .timelineMain {
   margin-top: 8rem;
   position: relative;
 }
 
 .timelineMain .timeline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 45px;
   height: 45px;
@@ -832,12 +849,12 @@
 }
 
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
   top: 84px;
-  bottom: 150px;
+  bottom: 304px;
   left: 50%;
   margin-left: -3px;
 }
@@ -1047,7 +1064,7 @@
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 248px;
+    bottom: 384px;
   }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -127px;
@@ -1300,7 +1317,7 @@
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
 }
@@ -1451,8 +1468,8 @@
     max-width: 100%;
   }
   .timelineMain::after {
-    content: "";
-    bottom: 216px;
+    content: '';
+    bottom: 384px;
   }
 }
 
@@ -1522,8 +1539,8 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
-    bottom: 175px;
+    content: '';
+    bottom: 265px;
   }
   #home-page .btnDiv {
     margin-left: 58px;

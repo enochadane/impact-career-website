@@ -90,16 +90,16 @@
   }
 }
 .contact-banner {
-  background-image: url("../images/resourcesHero.jpg");
+  background-image: url('../images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("../images/bannerImages/aboutBanner.png");
+  background-image: url('../images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("../images/jobs_banner.jpg");
+  background-image: url('../images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 //jobs section
@@ -168,7 +168,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("../images/aboutUsHero.jpg");
+    background-image: url('../images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -390,6 +390,11 @@
           .card-text {
             font-size: 15px;
             margin-left: 3px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
           }
         }
       }
@@ -448,6 +453,14 @@
     }
   }
 }
+//about-Job search
+.jobSearchH2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #474c55;
+}
+
 //jobs page
 //jobcards//
 .trending-jobs {
@@ -705,11 +718,15 @@
   }
 }
 //timeLine
+.timelineH1 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 .timelineMain {
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -722,12 +739,12 @@
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
   top: 84px;
-  bottom: 150px;
+  bottom: 304px;
   left: 50%;
   margin-left: -3px;
 }
@@ -868,7 +885,7 @@
   }
   .UploadImg {
     padding-left: 100px;
-    background-image: url("../images/cloudIcon.png");
+    background-image: url('../images/cloudIcon.png');
     background-repeat: no-repeat;
     background-position-y: 17px;
     background-position-x: 60px;
@@ -903,7 +920,7 @@
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 248px;
+    bottom: 384px;
   }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -127px;
@@ -1233,7 +1250,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
 }
@@ -1439,8 +1456,8 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
-    bottom: 216px;
+    content: '';
+    bottom: 384px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
@@ -1532,8 +1549,8 @@
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
-    bottom: 175px;
+    content: '';
+    bottom: 265px;
   }
   //contact-button
   #home-page {
