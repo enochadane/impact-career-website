@@ -1,9 +1,9 @@
 {
-  "version": 3,
-  "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CAIpB;;AAPD,AAIE,IAJE,CAIF,KAAK,CAAC;EACJ,SAAS,EAAE,IAAI;CAChB",
-  "sources": [
-    "Nav.scss"
-  ],
-  "names": [],
-  "file": "Nav.css"
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CAIpB;;AAPD,AAIE,IAJE,CAIF,KAAK,CAAC;EACJ,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "Nav.scss"
+    ],
+    "names": [],
+    "file": "Nav.css"
 }

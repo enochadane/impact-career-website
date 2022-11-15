@@ -1,12 +1,15 @@
-// import { ApolloClient, InMemoryCache } from '@apollo/client';
-// import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
-// import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import Footer from "../components/Footer/Footer";
-import { Html, Head, Main, NextScript } from "next/document";
+import { useState, useEffect } from "react";
 
 export default function Home({}) {
+  const [modal, setModal] = useState(false);
+  useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition(
+      (newPos) => setPosition(newPos),
+      console.error
+    );
+  }, []);
   return (
     <div>
       <div
@@ -112,18 +115,15 @@ export default function Home({}) {
                     <div className='card-body Job-Seeker'>
                       <h5 className='card-title'>Looking for employment?</h5>
                       <p className='card-text'>
-                        In order to be connected to career opportunities in
-                        state, national and remote positions, we need to learn
-                        about you first. Our recruiters review your resume to
-                        understand your skillset, qualifications, and experience
-                        before suggesting suitable positions. If we find you
-                        meet our talent expectations, we’ll invite you for an
-                        interview to learn more and assist with your work
-                        search.
+                        The first step to entering an exciting new career is to
+                        share your resume with us! If we find you meet our
+                        talent expectations, we’ll invite you for an interview
+                        to learn more and assist with your work search.
                       </p>
                       <button
+                        onClick={() => setModal(true)}
                         id='myBtn'
-                        className='btn btn-outline-success sub-btn'
+                        class='btn btn-outline-success sub-btn'
                       >
                         Submit your Resume
                       </button>
@@ -148,16 +148,14 @@ export default function Home({}) {
                     <div className='card-body Job-Seeker'>
                       <h5 className='card-title'>Connect with candidates</h5>
                       <p className='card-text'>
-                        With over 60 years of experience combined in recruitment
-                        and tech, we know what to look for when hiring. At
-                        Impact Careers, we have an extensive and experienced
-                        database of skilled talent suited to help build teams
-                        and organizations. All of these have undergone thorough
-                        screenings, background checks, and interviews to ensure
-                        they can face challenges and fit into your business
+                        Utilize our extensive and experienced database of
+                        skilled screened talent suited to help build teams and
+                        organizations. Our 60 years in recruitment and tech,
+                        allows us to find people who fit into your business
                         culture.
                       </p>
                       <button
+                        onClick={() => setModal(true)}
                         id='myBtn1'
                         class='btn btn-outline-success sub-btn'
                       >
@@ -194,6 +192,7 @@ export default function Home({}) {
                         of landing roles.
                       </p>
                       <button
+                        onClick={() => setModal(true)}
                         id='myBtn2'
                         class='btn btn-outline-white access-btn'
                       >
@@ -253,9 +252,15 @@ export default function Home({}) {
             </div>
           </div>
         </div>
-        <div id='myModal' className='modal'>
+        <div
+          id='myModal'
+          className='modal'
+          style={{ display: modal ? "block" : "none" }}
+        >
           <div className='modal-content'>
-            <span className='close'>&times;</span>
+            <span className='close' onClick={() => setModal(false)}>
+              &times;
+            </span>
             <section id='contact-form'>
               <div className='container'>
                 <div className='get-in-touch'>
@@ -271,7 +276,7 @@ export default function Home({}) {
                         type='text'
                         className='form-control'
                         id='firstName'
-                        placeholder='First Name'
+                        placeholder='First-Name'
                         value=''
                         required
                       />
@@ -284,7 +289,7 @@ export default function Home({}) {
                         type='text'
                         className='form-control'
                         id='lastName'
-                        placeholder='Last Name'
+                        placeholder='Last-Name'
                         value=''
                         required
                       />
@@ -331,6 +336,7 @@ export default function Home({}) {
                         value=''
                         required
                       />
+
                       <div className='invalid-feedback'>
                         Please enter position location .
                       </div>
@@ -339,8 +345,8 @@ export default function Home({}) {
                       <input
                         type='text'
                         className='form-control'
-                        id='Title of Position'
-                        placeholder='Title of Position'
+                        id='Current-Salary'
+                        placeholder='Current-Salary'
                         value=''
                         required
                       />
@@ -355,7 +361,7 @@ export default function Home({}) {
                         <input
                           type='text'
                           className='form-control'
-                          id='Title of Position'
+                          id='Notice period'
                           placeholder='Notice period'
                           value=''
                           required
@@ -367,8 +373,8 @@ export default function Home({}) {
                         <input
                           type='text'
                           className='form-control'
-                          id='Title of Position'
-                          placeholder='Linked in URL'
+                          id='Linked in URL'
+                          placeholder='LinkedIn URL'
                           value=''
                           required
                         />
@@ -589,164 +595,166 @@ export default function Home({}) {
           </div>
         </section>
       </div>
-      <section class='faq'>
-        <div class='container col-sm-8'>
-          <div class='row acc-faq'>
-            <div class='col-md-12'>
-              <h2 class='mt-5 mb-5 text-center faqHeading'>
-                Employers Frequently Asked Questions
-              </h2>
-              <div class='accordion' id='accordionSection'>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseOne'
+      <div>
+        <section className='faq'>
+          <div className='container col-sm-8'>
+            <div className='row acc-faq'>
+              <div className='col-md-12'>
+                <h1 className='mt-5 mb-5 text-center faqHeading'>
+                  Employers Frequently Asked Questions
+                </h1>
+                <div className='accordion' id='accordionSection'>
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseOne'
+                      >
+                        How fast can you fill up a position?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseOne'
+                      data-bs-parent='#accordionSection'
                     >
-                      How fast can you fill up a position?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseOne'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      When it comes to recruitment, we always deliver based on
-                      your deadlines required. We listen to your needs,
-                      streamline our process and find you skilled talent
-                      quickly.
+                      <div className='accordion-body pt-0'>
+                        We always deliver based on your deadlines required. We
+                        listen to your needs, streamline our process and find
+                        you skilled talent quickly.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseTwo'
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseTwo'
+                      >
+                        What do your selection and recruitment processes entail?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseTwo'
+                      data-bs-parent='#accordionSection'
                     >
-                      What do your selection and recruitment processes entail?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseTwo'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      Our recruitment process is extensive; it involves a phone
-                      screening, skill based interviews, thorough application,
-                      face to face interviews, and assessment to determine the
-                      ideal job/role for the candidate.
+                      <div className='accordion-body pt-0'>
+                        Our recruitment process is extensive; it involves a
+                        phone screening, skill based interviews, thorough
+                        application, face to face interviews, and assessment to
+                        determine the ideal job/role for the candidate.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseThree'
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseThree'
+                      >
+                        How does Impact Careers find talent?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseThree'
+                      data-bs-parent='#accordionSection'
                     >
-                      How does Impact Careers find talent?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseThree'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      We have a huge database consisting of information and
-                      resumes of various talents holding different skill sets
-                      and backgrounds. When finding talent from our database, we
-                      conduct further background checks on them before
-                      presenting them to you.
+                      <div className='accordion-body pt-0'>
+                        We have a huge database consisting of information and
+                        resumes of various talents holding different skill sets
+                        and backgrounds. When finding talent from our database,
+                        we conduct further background checks on them before
+                        presenting them to you.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseFour'
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseFour'
+                      >
+                        Does impact career offer talents for contract and part
+                        time roles?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseFour'
+                      data-bs-parent='#accordionSection'
                     >
-                      Does impact career offer talents for contract and part
-                      time roles?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseFour'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      Yes, Impact Careers offer talents for permanent and
-                      contract and part-time roles.
+                      <div className='accordion-body pt-0'>
+                        Yes, Impact Careers offer talents for permanent and
+                        contract and part-time roles.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseFive'
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseFive'
+                      >
+                        How does Impact Careers know the right fit for us?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseFive'
+                      data-bs-parent='#accordionSection'
                     >
-                      How does Impact Careers know the right fit for us?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseFive'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      Before finding the right company for you, we take the time
-                      to understand your needs first. Based on this information,
-                      we then locate the right talent for your company that
-                      aligns with your requirements.
+                      <div className='accordion-body pt-0'>
+                        Before finding the right company for you, we take the
+                        time to understand your needs. Then we locate the right
+                        talent for your company that aligns with your
+                        requirements.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class='accordion-item mb-3'>
-                  <h2 class='accordion-header'>
-                    <button
-                      type='button'
-                      class='accordion-button collapsed'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#collapseSix'
+                  <div className='accordion-item mb-3'>
+                    <h2 className='accordion-header'>
+                      <button
+                        type='button'
+                        className='accordion-button collapsed'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#collapseSix'
+                      >
+                        Is it compulsory that we get involved in the whole
+                        recruitment process?
+                      </button>
+                    </h2>
+                    <div
+                      className='accordion-collapse collapse'
+                      id='collapseSix'
+                      data-bs-parent='#accordionSection'
                     >
-                      Is it compulsory that we get involved in the whole
-                      recruitment process?
-                    </button>
-                  </h2>
-                  <div
-                    class='accordion-collapse collapse'
-                    id='collapseSix'
-                    data-bs-parent='#accordionSection'
-                  >
-                    <div class='accordion-body pt-0'>
-                      It's not mandatory to be hands on in the entire
-                      recruitment process; however, if you wish, you can do it.
-                      Our main purpose is to serve you and remove any excess
-                      responsibilities to allow you to focus on your business.
+                      <div className='accordion-body pt-0'>
+                        It's not mandatory to be hands on in the entire
+                        recruitment process; however, if you wish, you can do
+                        it. Our main purpose is to serve you and remove any
+                        excess responsibilities to allow you to focus on your
+                        business.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section className='container homeEmployers'>
         <div>
           <h2 className='homeEmployersH2'>Employers</h2>
@@ -853,85 +861,60 @@ export default function Home({}) {
           </div>
         </div>
       </section>
-      <section className='timeLine'>
-        <div className='container'>
-          <div>
-            <h1 className='timelineH1'>Our Process</h1>
-            <p>
-              When choosing us to find candidates or a new employer for your job
-              search, we help you by doing the following:
-            </p>
-          </div>
-          <div className='main-timeline timelineMain'>
-            <div className='timeline right timelineRight'>
-              <div className='card cardSec'>
-                <div className='card-body p-4'>
-                  <h6 className='timelineH6'>STEP 1:</h6>
-                  <h5 className='timelineH5'>Understand your needs</h5>
-                  <p className='timelinePara'>
-                    If you're looking for a new position or a suitable
-                    candidate, our work kicks off when we understand your
-                    requirements. We ask you relevant questions through a call
-                    or in person meet to understand what you need. Here we
-                    uncover your preferred job prospects, staffing needs, skills
-                    required, and qualities ideal candidates/employers must
-                    possess.
-                  </p>
+      <div>
+        <section className='timeLine'>
+          <div className='container'>
+            <div>
+              <h1 className='timelineH1'>Our Process</h1>
+              <p>
+                When choosing us to find candidates or a new employer for your
+                job search, we help you by doing the following:
+              </p>
+            </div>
+            <div className='main-timeline timelineMain'>
+              <div className='timeline right timelineRight'>
+                <div className='card cardSec'>
+                  <div className='card-body p-4'>
+                    <h6 className='timelineH6'>1.</h6>
+                    <h5 className='timelineH5'> Understand your needs</h5>
+                    <p className='timelinePara'>
+                      Jump on a call with us, so we can learn about your
+                      preferred job prospects and staffing needs!
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='timeline left timelineLeft'>
-              <div className='card cardSec'>
-                <div className='card-body p-4'>
-                  <h6 className='timelineH6'>STEP 2:</h6>
-                  <h5 className='timelineH5'>Develop a strategy</h5>
-                  <p className='timelinePara'>
-                    Based on this, we prepare a customized strategy specifically
-                    around your timeline and goals. This strategy also considers
-                    our expertise, and once formulated, we communicate the
-                    deliverables to you.
-                  </p>
+
+              <div className='timeline left timelineLeft'>
+                <div className='card cardSec'>
+                  <div className='card-body p-4'>
+                    <h6 className='timelineH6'>2.</h6>
+                    <h5 className='timelineH5'>Develop a strategy</h5>
+                    <p className='timelinePara'>
+                      Let us prepare a customized strategy based on your
+                      timeline, goals and expertise.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='timeline right timelineRight'>
-              <div className='card cardSec'>
-                <div className='card-body p-4'>
-                  <h6 className='timelineH6'>STEP 3:</h6>
-                  <h5 className='timelineH5'>Deliver the results</h5>
-                  <p className='timelinePara'>
-                    After this, we deliver on our strategy by implementing it in
-                    our search for skilled professionals for your roles. We
-                    handle background screenings, recruiting, testing, and more
-                    to find the best professional for your business, to save you
-                    the stress. We also utilize our rich network to present you
-                    with empowering career opportunities in leading
-                    corporations, startups, and organizations across the USA.
-                  </p>
+              <div className='timeline right timelineRight'>
+                <div className='card cardSec'>
+                  <div className='card-body p-4'>
+                    <h6 className='timelineH6'>3.</h6>
+                    <h5 className='timelineH5'>Deliver the results</h5>
+                    <p className='timelinePara'>
+                      We handle your background screenings, recruiting, testing,
+                      and more to find the best professional for your business,
+                      saving you the stress.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <Footer />
     </div>
   );
 }
-
-// export async function getServerSideProps() {
-//   const client = new ApolloClient({
-//     uri: "http://localhost:1337/graphql",
-//     cache: new InMemoryCache(),
-//   });
-
-//   const { data } = await client.query({
-//     query: GET_ALL_POSTS,
-//   });
-
-//   return {
-//     props: {
-//       posts: data.blogPosts.data,
-//     },
-//   };
-// }

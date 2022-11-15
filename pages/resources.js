@@ -1,6 +1,5 @@
 import Head from "next/head";
-// import { ApolloClient, InMemoryCache } from '@apollo/client';
-// import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
+
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";

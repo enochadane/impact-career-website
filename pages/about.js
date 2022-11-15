@@ -1,19 +1,13 @@
-// import Head from 'next/head';
-// import { ApolloClient, InMemoryCache } from '@apollo/client';
-// import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
-import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import Footer from "../components/Footer/Footer";
 import Head from "next/head";
-
+import React from "react";
 export default function Home({}) {
   return (
     <div>
       <Head>
         <title>About Us</title>
       </Head>
-
       <div className='Banner about-banner'>
         <div className='container-fluid'>
           <div className='row m-0'>
@@ -21,7 +15,7 @@ export default function Home({}) {
               <h1>About Us</h1>
               <h4>
                 Tying up local emerging and experienced tech talent to
-                specialized firms
+                specialized firms.
               </h4>
             </div>
           </div>
@@ -98,7 +92,7 @@ export default function Home({}) {
             <div>
               <h1 className='text-center our-values-title'>Our Values</h1>
               <h4 className='pride'>
-                We pride ourselves on the following values:
+                We pride ourselves on the following values:{" "}
               </h4>
             </div>
             <div className='row'>
@@ -174,9 +168,8 @@ export default function Home({}) {
                       <div className='card-body'>
                         <h3 className='card-title'>Inclusive</h3>
                         <p className='card-text'>
-                          Regarding job applications and recruitment, we treat
-                          you as a human first, never discriminating based on
-                          your background or experience.
+                          We treat you as a human first, never discriminating
+                          based on your background or experience.
                         </p>
                       </div>
                     </div>
@@ -212,10 +205,9 @@ export default function Home({}) {
                       <div className='card-body'>
                         <h3 className='card-title'>Supportive</h3>
                         <p className='card-text'>
-                          We're available and accessible to all via emails or
-                          phone calls. Whether you have an inquiry or
-                          application, or searching for a candidate or position,
-                          we always support your decision.
+                          Whether you have an inquiry or application, or
+                          searching for a candidate or position, we always
+                          support your decision through a phone call or email.
                         </p>
                       </div>
                     </div>
@@ -247,12 +239,10 @@ export default function Home({}) {
                     Collaboration with clients
                   </h5>
                   <p className='card-text cardText'>
-                    We know finding the right candidate(s) is not a one size
-                    fits all approach. This is why we consciously tailor our
-                    solutions around your business model and goals. The same
-                    applies to job searches and resources; we assist in
-                    upskilling you and get you a foot in the door for entry
-                    level or high impact positions.
+                    We consciously tailor our solutions around your business
+                    model and goals. The same applies to job searches and
+                    resources; we assist in upskilling you and get you a foot in
+                    the door for entry level or high impact positions.
                   </p>
                 </div>
               </div>
@@ -271,11 +261,9 @@ export default function Home({}) {
                     Economical and effective
                   </h5>
                   <p className='card-text cardText'>
-                    Fine tuned solutions allow us to provide resources and
-                    recruitment services that don't disrupt your bank balance.
-                    Our pricing is competitive, and we provide free hours of
-                    senior/architect time to save you from being overcharged for
-                    advice.
+                    Our resources and recruitment services don't disrupt your
+                    bank balance. The pricing we have is competitive, and we
+                    provide free hours of senior/architect time.
                   </p>
                 </div>
               </div>
@@ -294,11 +282,9 @@ export default function Home({}) {
                     Consistent with communication
                   </h5>
                   <p className='card-text cardText'>
-                    We're on standby to connect you to the relevant resources,
-                    recruitment, and tech professionals, to ensure you receive
-                    meaningful communication. Whether you're an organization,
-                    candidate, or contractor, we care about your concerns and
-                    are always ready to address them.
+                    Whether you're an organization, candidate, or contractor, we
+                    care about your concerns and are always ready to address
+                    them.
                   </p>
                 </div>
               </div>
@@ -317,9 +303,7 @@ export default function Home({}) {
                   <p className='card-text cardText'>
                     We work around your requirements and timelines, connecting
                     you to our rich pool of high caliber tech talent when you
-                    need them. Plus, as an employer, we listen to our team's
-                    needs and priorities, devising solutions based on your
-                    preferences.
+                    need them.
                   </p>
                 </div>
               </div>
@@ -338,10 +322,7 @@ export default function Home({}) {
                   <p className='card-text cardText'>
                     To guarantee excellence, we undergo a strict and thorough
                     screening and interview process. Tests, employment
-                    verification, and background checks are conducted before
-                    presenting you with options for talent. With extensive
-                    experience, we know how to look exclusive for those who are
-                    qualified for the task.
+                    verification, and background checks are conducted first.
                   </p>
                 </div>
               </div>
@@ -360,10 +341,7 @@ export default function Home({}) {
                   <p className='card-text cardText'>
                     With over 60 years of combined experience and rare resources
                     supplied by our team, we provide unmatched opportunities, a
-                    rich network, and extensive support for those in the tech
-                    community. Our steady growth, and constant hunger to upskill
-                    sets us apart from our current competitors and the ones
-                    before us.
+                    rich network, and extensive support in the tech community.
                   </p>
                 </div>
               </div>
@@ -398,10 +376,9 @@ export default function Home({}) {
                       data-bs-parent='#accordionSection'
                     >
                       <div className='accordion-body pt-0'>
-                        When it comes to recruitment, we always deliver based on
-                        your deadlines required. We listen to your needs,
-                        streamline our process and find you skilled talent
-                        quickly.
+                        We always deliver based on your deadlines required. We
+                        listen to your needs, streamline our process and find
+                        you skilled talent quickly.
                       </div>
                     </div>
                   </div>
@@ -495,9 +472,9 @@ export default function Home({}) {
                     >
                       <div className='accordion-body pt-0'>
                         Before finding the right company for you, we take the
-                        time to understand your needs first. Based on this
-                        information, we then locate the right talent for your
-                        company that aligns with your requirements.
+                        time to understand your needs. Then we locate the right
+                        talent for your company that aligns with your
+                        requirements.
                       </div>
                     </div>
                   </div>
@@ -661,20 +638,16 @@ export default function Home({}) {
               engagement, we familiarize your concerns and provide you with
               training resources and career counseling to diminish them.
             </p>
+
             <p>
-              In parallel, we connect you to high value job opportunities in
-              local, national, and remote positions with a high retention rate.
               Through our extensive vetted employer network and proven tested
               methods, we remove any stress you may have encountered in your job
-              search. After all, our tried and tested methods have helped
-              thousands of professionals land notable jobs with employers and as
-              contractors at Impact Careers.
+              search. Our methods have helped thousands of professionals land
+              notable jobs with employers and as contractors at Impact Careers.
             </p>
             <p>
-              Most importantly, being a recruitment agency is not our only
-              priority; we nurture your needs as a mentor, coach, and bridge
-              your network first. Whether you need a full-time, part-time, or
-              temporary job or even guidance, we're ready to assist you.
+              Send us your resume to be the first to hear about exciting
+              employment opportunities!
             </p>
           </div>
         </section>
@@ -694,30 +667,24 @@ export default function Home({}) {
               <div className='timeline right timelineRight'>
                 <div className='card cardSec'>
                   <div className='card-body p-4'>
-                    <h6 className='timelineH6'>STEP 1:</h6>
-                    <h5 className='timelineH5'>Understand your needs</h5>
+                    <h6 className='timelineH6'>1.</h6>
+                    <h5 className='timelineH5'> Understand your needs</h5>
                     <p className='timelinePara'>
-                      If you're looking for a new position or a suitable
-                      candidate, our work kicks off when we understand your
-                      requirements. We ask you relevant questions through a call
-                      or in person meet to understand what you need. Here we
-                      uncover your preferred job prospects, staffing needs,
-                      skills required, and qualities ideal candidates/employers
-                      must possess.
+                      Jump on a call with us, so we can learn about your
+                      preferred job prospects and staffing needs!
                     </p>
                   </div>
                 </div>
               </div>
+
               <div className='timeline left timelineLeft'>
                 <div className='card cardSec'>
                   <div className='card-body p-4'>
-                    <h6 className='timelineH6'>STEP 2:</h6>
+                    <h6 className='timelineH6'>2.</h6>
                     <h5 className='timelineH5'>Develop a strategy</h5>
                     <p className='timelinePara'>
-                      Based on this, we prepare a customized strategy
-                      specifically around your timeline and goals. This strategy
-                      also considers our expertise, and once formulated, we
-                      communicate the deliverables to you.
+                      Let us prepare a customized strategy based on your
+                      timeline, goals and expertise.
                     </p>
                   </div>
                 </div>
@@ -725,17 +692,12 @@ export default function Home({}) {
               <div className='timeline right timelineRight'>
                 <div className='card cardSec'>
                   <div className='card-body p-4'>
-                    <h6 className='timelineH6'>STEP 3:</h6>
+                    <h6 className='timelineH6'>3.</h6>
                     <h5 className='timelineH5'>Deliver the results</h5>
                     <p className='timelinePara'>
-                      After this, we deliver on our strategy by implementing it
-                      in our search for skilled professionals for your roles. We
-                      handle background screenings, recruiting, testing, and
-                      more to find the best professional for your business, to
-                      save you the stress. We also utilize our rich network to
-                      present you with empowering career opportunities in
-                      leading corporations, startups, and organizations across
-                      the USA.
+                      We handle your background screenings, recruiting, testing,
+                      and more to find the best professional for your business,
+                      saving you the stress.
                     </p>
                   </div>
                 </div>
@@ -748,3 +710,35 @@ export default function Home({}) {
     </div>
   );
 }
+// const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+//   ssr: false,
+// });
+// const $ = require("jquery");
+// if (typeof window !== "undefined") {
+//   window.$ = window.jQuery = require("jquery");
+// }
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel";
+// $(".owl-carousel").owlCarousel({
+//   loop: true,
+//   autoplaySpeed: 500,
+//   dots: false,
+//   margin: 30,
+//   nav: true,
+//   navText: [
+//     "<img class='color-back' src='./assets/images/left-carousel.png'>",
+//     "<img class='color-back' src='./assets/images/right-carousel.png'>",
+//   ],
+//   autoplay: true,
+//   responsive: {
+//     0: {
+//       items: 1,
+//     },
+//     600: {
+//       items: 2,
+//     },
+//     1000: {
+//       items: 3,
+//     },
+//   },
+// });
