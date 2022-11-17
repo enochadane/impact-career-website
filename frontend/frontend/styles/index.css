@@ -240,7 +240,7 @@
 
 .Job .last-card p {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .Job .last-card .text-field {
@@ -401,87 +401,241 @@
   font-weight: 300;
 }
 
-#carousel-section {
+#owl-carousel-products {
   background-color: #f4f5f7;
   margin-top: 80px;
 }
 
-#carousel-section .our-values-title {
+#owl-carousel-products .heading {
   color: #474c55;
   font-size: 29px;
   margin-bottom: 54px;
   padding-top: 59px;
 }
 
-#carousel-section .pride {
-  margin-bottom: 4rem;
+#owl-carousel-products .pride {
+  color: #474c55;
+  font-size: 24px;
+  padding-bottom: 54px;
+  padding-top: 59px;
 }
 
-#carousel-section .row {
-  padding-bottom: 47px;
+#owl-carousel-products #owl-carousel-ul {
+  float: left;
+  padding: 0;
+  max-width: 100%;
+  padding-top: 100px;
+  background-color: #f4f5f7;
+  padding-bottom: 96px;
 }
 
-#carousel-section .row .owl-carousel {
-  margin: 0;
+#owl-carousel-products #owl-carousel-ul .owl-stage-outer {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding-bottom: 90px;
 }
 
-#carousel-section .row .owl-carousel .color-back {
-  background-color: #166433;
+#owl-carousel-ul .owl-nav .owl-prev {
+  color: #000000 !important;
+  position: absolute !important;
+  top: 0 !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  font-size: 35px !important;
+  top: -225px !important;
+}
+
+#owl-carousel-ul .owl-nav .owl-next {
+  font-size: 35px !important;
+  color: #000000 !important;
+  position: absolute !important;
+  right: 0% !important;
+  top: 0 !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  top: -225px !important;
+}
+
+#owl-carousel-products #owl-carousel-ul .owl-item {
+  width: 100%;
+  border: 0 solid #c5c5c5;
+  background-color: #02631ad2;
+}
+
+#owl-carousel-products #owl-carousel-ul {
   color: #fff;
   padding: 10px 10px;
   border-radius: 8px;
-  position: absolute;
 }
 
-#carousel-section .row .owl-carousel .owl-prev,
-#carousel-section .row .owl-carousel .owl-next {
-  position: absolute;
-  top: -70px;
-  margin: auto !important;
+#owl-carousel-products #owl-carousel-ul #featuredProducts {
+  margin: 5px 0.8% 0 0;
+  max-width: 100%;
+  height: 200px;
 }
 
-#carousel-section .row .owl-carousel .owl-prev {
-  right: 120px;
-}
-
-#carousel-section .row .owl-carousel .owl-next {
-  right: 60px;
-}
-
-#carousel-section .row .owl-theme {
-  margin-bottom: 50px;
-}
-
-#carousel-section .row .owl-theme .card {
+#owl-carousel-products #owl-carousel-ul .owl-theme #featuredProducts .card {
   border-top: 3px solid #166433;
   border-style: solid none none none;
   border-radius: 8px;
 }
 
-#carousel-section .row .owl-theme .card img {
+#owl-carousel-products #owl-carousel-ul #featuredProducts .productListing {
+  margin: 0 0 0 0;
+  width: 100% !important;
+  max-width: 100%;
+  border: none;
+  font-size: 100px;
+}
+
+#owl-carousel-ul .owl-carousel .owl-nav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+
+#owl-carousel-ul .owl-carousel .owl-nav.disabled,
+#owl-carousel-ul .owl-carousel .owl-dots.disabled {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.productListing
+.image
+span {
+  width: 100% !important;
+  text-align: center;
+}
+
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.productListing
+.image
+span
+span {
+  width: 100%;
+}
+
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.productListing
+.image
+img {
   height: 40px;
-  margin: 37px -138px;
-  padding-left: 36px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100% !important;
 }
 
-#carousel-section .row .owl-theme .card .card-body {
-  padding-top: 0px;
+#owl-carousel-products #owl-carousel-ul #featuredProducts .hp-featured-overlay {
+  width: 100%;
+  height: 100%;
+  float: none;
+  position: absolute;
+  top: 0;
+  display: none;
+  left: 0;
 }
 
-#carousel-section .row .owl-theme .card .card-body .card-title {
-  font-size: 22px;
-  font-weight: 430;
-  margin-left: 3px;
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.hp-featured-overlay
+button {
+  background: #c5c5c5;
+  width: 130px;
+  height: 35px;
+  float: none;
+  border: 0px;
+  border-radius: 5px;
+  color: #000;
+  text-align: center;
+  font-family: "Montserrat-Regular";
+  text-transform: capitalize;
+  font-size: 0.87rem;
+  line-height: 34px;
+  display: block;
+  margin: 69% auto 0;
+  text-decoration: none;
+  z-index: 3;
+  position: relative;
 }
 
-#carousel-section .row .owl-theme .card .card-body .card-text {
-  font-size: 15px;
-  margin-left: 3px;
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.productListing:hover
+.hp-featured-overlay {
+  display: block;
+}
+
+#owl-carousel-products
+#owl-carousel-ul
+#featuredProducts
+.hp-featured-overlay
+button {
+  max-width: 90%;
+}
+
+#featuredProducts .productListing .image img {
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#featuredProducts .productListing a.product {
+  z-index: 2 !important;
+  position: relative;
+}
+
+#featuredProducts .productListing span {
+  padding: 10px;
+  float: left;
+  width: 100%;
+  font-size: 0.75rem;
+  color: #000000;
+  font-family: "Mulish";
+}
+
+#featuredProducts .productListing .brand {
+  margin: 10px 0 0 0;
+  padding: 0 0 0 5px;
+  text-transform: capitalize;
+  font-size: 18px;
+  color: #172026;
+  font-family: "Mulish";
+  width: 100%;
+}
+
+#featuredProducts .productListing .name {
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
+  padding: 0 5px 0 5px;
+  font-weight: normal;
+  text-transform: capitalize;
+  height: 30px;
+  font-size: 14px;
+  color: #172026;
+  font-family: "Mulish";
+  line-height: normal;
+}
+
+#featuredProducts .productListing .image img {
+  max-width: 100%;
 }
 
 .aboutEmployersSec {
@@ -595,6 +749,11 @@
   transition: all 0.3s linear;
 }
 
+.trending-jobs .candidates .candidatesLink {
+  text-decoration: none;
+  color: black;
+}
+
 .trending-jobs .candidates:hover {
   background-color: #f4f4f4;
 }
@@ -631,7 +790,7 @@
 }
 
 .faq #accordionSection {
-  margin-bottom: 60px;
+  margin-bottom: 24px;
 }
 
 .faq .accordion {
@@ -867,7 +1026,7 @@
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -880,12 +1039,12 @@
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
   top: 84px;
-  bottom: 304px;
+  bottom: 204px;
   left: 50%;
   margin-left: -3px;
 }
@@ -1094,7 +1253,7 @@
     left: 9px;
   }
   .timelineMain::after {
-    bottom: 384px;
+    bottom: 232px;
   }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -127px;
@@ -1360,7 +1519,7 @@
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
 }
@@ -1517,8 +1676,8 @@
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
-    bottom: 384px;
+    content: "";
+    bottom: 254px;
   }
 }
 
@@ -1597,8 +1756,8 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
-    bottom: 265px;
+    content: "";
+    bottom: 194px;
   }
   #home-page .btnDiv {
     margin-left: 58px;
@@ -1630,6 +1789,12 @@
   }
   .carouselSlide .carousel-caption p {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .product-container {
+    padding: 0 15px;
   }
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,9 @@
-import Image from 'next/image';
-import Footer from '../components/Footer/Footer';
-import Head from 'next/head';
-import React from 'react';
+import Image from "next/image";
+import Footer from "../components/Footer/Footer";
+import Head from "next/head";
+import React from "react";
+import Slider from "../components/Slider/Slider";
+
 export default function Home({}) {
   return (
     <div>
@@ -85,8 +87,10 @@ export default function Home({}) {
         </section>
       </div>
       {/* our values */}
-
-      <div>
+      <div className='container-fluid'>
+        <Slider />
+      </div>
+      {/* <div>
         <section id='carousel-section'>
           <div className='container'>
             <div>
@@ -217,7 +221,7 @@ export default function Home({}) {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
       {/* our-value-section */}
       <div>
         <section className='container aboutEmployersSec'>

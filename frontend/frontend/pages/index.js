@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import Footer from '../components/Footer/Footer';
+import Head from "next/head";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import Footer from "../components/Footer/Footer";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -253,7 +253,7 @@ export default function Home({ posts, name }) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? 'block' : 'none' }}
+          style={{ display: modal ? "block" : "none" }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>
@@ -407,10 +407,7 @@ export default function Home({ posts, name }) {
             </div>
             <div className='col viewallCol'>
               <a className='atag' href='./jobs.html'>
-                <p className='viewallPara'>
-                  View all jobs
-                  <span>{/* <img src='/images/arrow.svg' alt='' /> */}</span>
-                </p>
+                <p className='viewallPara'>View all jobs</p>
               </a>
             </div>
           </div>
@@ -421,7 +418,11 @@ export default function Home({ posts, name }) {
                   return (
                     <div className='col-md-6'>
                       <div className='card col-12 candidates'>
-                        <Link key={i} href={val.attributes.urlSlug}>
+                        <Link
+                          className='candidatesLink'
+                          key={i}
+                          href={val.attributes.urlSlug}
+                        >
                           <div className='row g-1 '>
                             <div className='col-md-4 col-4 '>
                               <Image
@@ -454,16 +455,15 @@ export default function Home({ posts, name }) {
       <div>
         <section className='faq'>
           <div className='container col-sm-8'>
+            <h1 className='mt-5 mb-5 text-center faqHeading'>
+              Employers Frequently Asked Questions
+            </h1>
             <div className='row acc-faq'>
               <div className='col-md-12'>
-                <h1 className='mt-5 mb-5 text-center faqHeading'>
-                  Employers Frequently Asked Questions
-                </h1>
-
-                <div className='accordion' id='accordionSection'>
-                  {name.map((val, i) => {
-                    return (
-                      <div>
+                {name.map((val) => {
+                  return (
+                    <div>
+                      <div className='accordion' id='accordionSection'>
                         <div className='accordion-item mb-3'>
                           <h2 className='accordion-header'>
                             <button
@@ -475,20 +475,21 @@ export default function Home({ posts, name }) {
                               {val.attributes.heading}
                             </button>
                           </h2>
+
                           <div
                             className='accordion-collapse collapse'
                             id='collapseOne'
                             data-bs-parent='#accordionSection'
                           >
                             <div className='accordion-body pt-0'>
-                              {val.attributes.content}
+                              <p>{val.attributes.content}</p>
                             </div>
                           </div>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -660,7 +661,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: 'http://localhost:1337/graphql',
+    uri: "http://13.59.166.79:1337/graphql",
     cache: new InMemoryCache(),
   });
 
@@ -671,7 +672,7 @@ export async function getServerSideProps() {
     query: GET_FAQ,
   });
 
-  console.log('gerjhds:', getfaqdata);
+  console.log("gerjhds:", getfaqdata);
   return {
     props: {
       posts: data.blogPosts.data,

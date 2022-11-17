@@ -1,11 +1,11 @@
-import React from 'react';
-import Footer from '../components/Footer/Footer';
-import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import Head from 'next/head';
+import React from "react";
+import Footer from "../components/Footer/Footer";
+import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../graphql/queries";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import Head from "next/head";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: "http://13.59.166.79:1337/graphql",
   cache: new InMemoryCache(),
 });
 
