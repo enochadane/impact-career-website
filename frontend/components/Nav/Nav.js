@@ -1,8 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Nav() {
+  const router = useRouter();
+
   return (
     <>
       <div className='nav'>
@@ -29,16 +32,17 @@ export default function Nav() {
                 id='navbarNavDropdown'
               >
                 <ul className='navbar-nav ms-auto'>
-                  <li className='nav-item'>
-                    <a className='nav-link resource px-4' href='/about'>
+                  <li className={(router.pathname == "/about") == "active"}>
+                    <Link className='nav-link resource px-4' href='/about'>
                       About
-                    </a>
+                    </Link>
                   </li>
-                  <li className='nav-item'>
-                    <a className='nav-link resource px-4' href='jobs'>
+                  <li className={router.pathname == "/jobs" ? "active" : ""}>
+                    <Link className='nav-link resource px-4' href='/jobs'>
                       Jobs
-                    </a>
+                    </Link>
                   </li>
+
                   <li className='nav-item dropdown'>
                     <a
                       className='nav-link'

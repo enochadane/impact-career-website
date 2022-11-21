@@ -1,12 +1,12 @@
-import React from 'react';
-import Footer from '../components/Footer/Footer';
-import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import Head from 'next/head';
-import { useState } from 'react';
+import React from "react";
+import Footer from "../components/Footer/Footer";
+import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../graphql/queries";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import Head from "next/head";
+import { useState } from "react";
 
 const client = new ApolloClient({
-  uri: 'http://13.59.166.79:1337/graphql',
+  uri: "http://13.59.166.79:1337/graphql",
   cache: new InMemoryCache(),
 });
 
@@ -20,16 +20,16 @@ export default function post({ post }) {
       </Head>
 
       <div>
-        <div className="container product">
-          <div className="card page mt-5">
-            <div className="job-page">
-              <h3 className="m-3">{post.title}</h3>
-              <h6 className="m-3">{post.description}</h6>
+        <div className='container product'>
+          <div className='card page mt-5'>
+            <div className='job-page'>
+              <h3 className='m-3'>{post.title}</h3>
+              <h6 className='m-3'>{post.description}</h6>
               <p>{post.content}</p>
               <button
                 onClick={() => setModal(true)}
-                id="myBtn"
-                className="btn btn-outline-success submit-btn"
+                id='myBtn'
+                className='btn btn-outline-success submit-btn'
               >
                 Apply for this job
               </button>
@@ -38,145 +38,145 @@ export default function post({ post }) {
         </div>
       </div>
       <div
-        id="myModal"
-        className="modal"
-        style={{ display: modal ? 'block' : 'none' }}
+        id='myModal'
+        className='modal'
+        style={{ display: modal ? "block" : "none" }}
       >
-        <div className="modal-content">
-          <span className="close" onClick={() => setModal(false)}>
+        <div className='modal-content'>
+          <span className='close' onClick={() => setModal(false)}>
             &times;
           </span>
-          <section id="contact-form">
-            <div className="container">
-              <div className="get-in-touch">
+          <section id='contact-form'>
+            <div className='container'>
+              <div className='get-in-touch'>
                 <h2>Apply for this Job</h2>
                 <p>
                   Please fill the details below to evaluate your candidature
                 </p>
               </div>
-              <form className="needs-validation" method="post">
-                <div className="row">
-                  <div className="col-sm-6">
+              <form className='needs-validation' method='post'>
+                <div className='row'>
+                  <div className='col-sm-6'>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="firstName"
-                      placeholder="First-Name"
+                      type='text'
+                      className='form-control'
+                      id='firstName'
+                      placeholder='First-Name'
                     />
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Valid first name is required.
                     </div>
                   </div>
-                  <div className="col-sm-6">
+                  <div className='col-sm-6'>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="lastName"
-                      placeholder="Last-Name"
+                      type='text'
+                      className='form-control'
+                      id='lastName'
+                      placeholder='Last-Name'
                     />
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Valid last name is required.
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-sm-6">
+                <div className='row'>
+                  <div className='col-sm-6'>
                     <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      placeholder="Email"
+                      type='email'
+                      className='form-control'
+                      id='email'
+                      placeholder='Email'
                     />
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Valid email address is required.
                     </div>
                   </div>
-                  <div className="col-sm-6">
+                  <div className='col-sm-6'>
                     <input
-                      type="tel"
-                      className="form-control"
-                      id="Phone"
-                      placeholder="Mobile number"
+                      type='tel'
+                      className='form-control'
+                      id='Phone'
+                      placeholder='Mobile number'
                     />
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Valid phone number is required.
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div class="col-sm-6">
+                <div className='row'>
+                  <div class='col-sm-6'>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="Position Location"
-                      placeholder="Your Location"
+                      type='text'
+                      className='form-control'
+                      id='Position Location'
+                      placeholder='Your Location'
                     />
 
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Please enter position location .
                     </div>
                   </div>
-                  <div className="col-sm-6">
+                  <div className='col-sm-6'>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="Current-Salary"
-                      placeholder="Current-Salary"
+                      type='text'
+                      className='form-control'
+                      id='Current-Salary'
+                      placeholder='Current-Salary'
                     />
-                    <div className="invalid-feedback">
+                    <div className='invalid-feedback'>
                       Please enter Title of Position.
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-sm-6">
+                <div className='row'>
+                  <div className='col-sm-6'>
                     <div>
                       <input
-                        type="text"
-                        className="form-control"
-                        id="Notice period"
-                        placeholder="Notice period"
+                        type='text'
+                        className='form-control'
+                        id='Notice period'
+                        placeholder='Notice period'
                       />
                     </div>
                   </div>
-                  <div className="col-sm-6">
-                    <div className="form-group">
+                  <div className='col-sm-6'>
+                    <div className='form-group'>
                       <input
-                        type="text"
-                        className="form-control"
-                        id="Linked in URL"
-                        placeholder="LinkedIn URL"
+                        type='text'
+                        className='form-control'
+                        id='Linked in URL'
+                        placeholder='LinkedIn URL'
                       />
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-sm-12">
+                <div className='row'>
+                  <div className='col-sm-12'>
                     <div>
                       <input
-                        type="file"
-                        className="w-file-upload-input form-control"
-                        accept=".pdf, .doc, .docx, .txt"
-                        name="Resume-Upload"
-                        data-iconName="fa-solid fa-cloud-arrow-up"
-                        data-name="Upload Job Description, If Available"
-                        aria-hidden="true"
-                        id="Resume-Upload"
-                        aria-placeholder=" Upload Job Description, If Available"
+                        type='file'
+                        className='w-file-upload-input form-control'
+                        accept='.pdf, .doc, .docx, .txt'
+                        name='Resume-Upload'
+                        data-iconName='fa-solid fa-cloud-arrow-up'
+                        data-name='Upload Job Description, If Available'
+                        aria-hidden='true'
+                        id='Resume-Upload'
+                        aria-placeholder=' Upload Job Description, If Available'
                       />
-                      <p className="text-center">
+                      <p className='text-center'>
                         Accepted formats : PDF, DOC, DOCX, TXT (Max file size
                         10MB)
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="form-group text-center">
+                <div className='form-group text-center'>
                   <input
-                    type="submit"
-                    value="Submit"
-                    data-wait="Please wait..."
-                    className="site-btn"
+                    type='submit'
+                    value='Submit'
+                    data-wait='Please wait...'
+                    className='site-btn'
                   />
                 </div>
               </form>

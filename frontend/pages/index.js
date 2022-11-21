@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import Footer from '../components/Footer/Footer';
+import Head from "next/head";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import Footer from "../components/Footer/Footer";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -23,7 +23,7 @@ export default function Home({ posts, name }) {
               alt='Los Angeles'
               src='/images/bannerImages/homeBanner1.jpg'
               width={1400}
-              height={600}
+              height={500}
             ></Image>
             <div className='carousel-caption'>
               <h1>Stretch your search for tech talent</h1>
@@ -40,7 +40,7 @@ export default function Home({ posts, name }) {
               alt='Chicago'
               src='/images/bannerImages/homeBanner2.jpg'
               width={1400}
-              height={600}
+              height={500}
             ></Image>
             <div className='carousel-caption'>
               <h1>Commence your career with confidence</h1>
@@ -57,7 +57,7 @@ export default function Home({ posts, name }) {
               alt='Los Angeles'
               src='/images/bannerImages/homeBanner1.jpg'
               width={1400}
-              height={600}
+              height={500}
             ></Image>
             <div className='carousel-caption'>
               <h1>Staffing solutions streamlined</h1>
@@ -74,7 +74,7 @@ export default function Home({ posts, name }) {
               alt='Chicago'
               src='/images/bannerImages/homeBanner2.jpg'
               width={1400}
-              height={600}
+              height={500}
             ></Image>
             <div className='carousel-caption'>
               <h1>Empowering professionals and organizations</h1>
@@ -253,7 +253,7 @@ export default function Home({ posts, name }) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? 'block' : 'none' }}
+          style={{ display: modal ? "block" : "none" }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>
@@ -661,7 +661,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: 'http://13.59.166.79:1337/graphql',
+    uri: "http://13.59.166.79:1337/graphql",
     cache: new InMemoryCache(),
   });
 

@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_ALL_POSTS, GET_FAQ_JOBS } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import Footer from '../components/Footer/Footer';
+import Head from "next/head";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_ALL_POSTS, GET_FAQ_JOBS } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import Footer from "../components/Footer/Footer";
 
 export default function Home({ posts, name }) {
   return (
@@ -121,7 +121,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: 'http://13.59.166.79:1337/graphql',
+    uri: "http://13.59.166.79:1337/graphql",
     cache: new InMemoryCache(),
   });
 
