@@ -55,4 +55,23 @@ const GET_FAQ = gql`
   }
 `;
 
-export { GET_ALL_POSTS, GET_INDIVIDUAL_POST, GET_ALL_SLUGS, GET_FAQ };
+const GET_FAQ_JOBS = gql`
+  query {
+    faqJobs {
+      data {
+        attributes {
+          heading
+          content
+        }
+      }
+    }
+  }
+`;
+
+export {
+  GET_ALL_POSTS,
+  GET_INDIVIDUAL_POST,
+  GET_ALL_SLUGS,
+  GET_FAQ,
+  GET_FAQ_JOBS,
+};
