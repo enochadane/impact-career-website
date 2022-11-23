@@ -1,4 +1,4 @@
-@import "./../components/Nav/Nav.scss";
+@import './../components/Nav/Nav.scss';
 
 .app_wrapper {
   margin: auto;
@@ -102,16 +102,16 @@
   }
 }
 .contact-banner {
-  background-image: url("/images/resourcesHero.jpg");
+  background-image: url('/images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("/images/jobs_banner.jpg");
+  background-image: url('/images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 //jobs section
@@ -180,7 +180,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("/images/aboutUsHero.jpg");
+    background-image: url('/images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -877,7 +877,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -890,7 +890,7 @@
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -1012,7 +1012,7 @@
     max-width: 832px;
     .get-in-touch {
       margin-top: 85px;
-      margin-bottom: 35px;
+      margin-bottom: 150px;
       text-align: center;
       h2 {
         color: #474c55;
@@ -1042,7 +1042,7 @@
   }
   .site-btn {
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 125px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1057,6 +1057,15 @@
       color: #fff;
       background-color: #166433;
     }
+  }
+  .alert-primary {
+    --bs-alert-color: black;
+    --bs-alert-bg: #dddddd;
+    padding: 20px 230px;
+    border-radius: 0px;
+    border: none;
+    font-size: 15px;
+    font-weight: 400;
   }
 }
 //media queries
@@ -1416,7 +1425,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
 }
@@ -1637,7 +1646,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 254px;
   }
 }
@@ -1746,7 +1755,7 @@
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 194px;
   }
   //contact-button

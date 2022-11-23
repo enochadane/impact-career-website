@@ -11,12 +11,14 @@
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "bootstrap": "^5.2.2",
+    "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "next": "13.0.3",
     "next-mdx-remote": "^4.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-owl-carousel": "^2.3.3",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "yup": "^0.32.11"
   }
 }
