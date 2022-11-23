@@ -4,6 +4,7 @@ import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../graphql/queries";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Head from "next/head";
 import { useState } from "react";
+import ContactForm from "../components/form/ContactForm";
 
 const client = new ApolloClient({
   uri: "http://13.59.166.79:1337/graphql",
@@ -46,7 +47,7 @@ export default function post({ post }) {
           <span className='close' onClick={() => setModal(false)}>
             &times;
           </span>
-          <section id='contact-form'>
+          {/* <section id='contact-form'>
             <div className='container'>
               <div className='get-in-touch'>
                 <h2>Apply for this Job</h2>
@@ -180,6 +181,21 @@ export default function post({ post }) {
                   />
                 </div>
               </form>
+            </div>
+          </section> */}
+          <section id='contact-form'>
+            <div className='container'>
+              <div className='get-in-touch'>
+                <h2>Get in Touch</h2>
+                <p>
+                  We do not believe staffing and recruiting are limited to
+                  finding and hiring people to fill open positions. To locate
+                  the most suitable consultant or client for each individual, we
+                  take the time to develop true connections with both parties.
+                </p>
+              </div>
+
+              <ContactForm />
             </div>
           </section>
         </div>

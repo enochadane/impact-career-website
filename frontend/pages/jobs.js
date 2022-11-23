@@ -72,7 +72,8 @@ export default function Home({ posts, name }) {
             </div>
           </div>
         </section>
-        <section className='faq'>
+
+        {/* <section className='faq'>
           <div className='container col-sm-8'>
             <div className='row acc-faq'>
               <div className='col-md-12'>
@@ -112,7 +113,51 @@ export default function Home({ posts, name }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <div>
+          <section className='faq'>
+            <div className='container col-sm-8'>
+              <div className='row acc-faq'>
+                <div className='col-md-12'>
+                  <h1 className='mt-5 mb-5 text-center faqHeading'>
+                    Job Search Frequently Asked Questions
+                  </h1>
+                  {name.map((val, index) => {
+                    // console.log("index", index);
+                    return (
+                      <div>
+                        <div className='accordion' id='accordionSection'>
+                          <div className='accordion-item mb-3'>
+                            <h2 className='accordion-header'>
+                              <button
+                                type='button'
+                                className='accordion-button collapsed'
+                                data-bs-toggle='collapse'
+                                data-bs-target={`#collapseOne${index}`}
+                              >
+                                {val.attributes.heading}
+                              </button>
+                            </h2>
+
+                            <div
+                              className='accordion-collapse collapse'
+                              id={`collapseOne${index}`}
+                              data-bs-parent='#accordionSection'
+                            >
+                              <div className='accordion-body pt-0'>
+                                <p>{val.attributes.content}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
       <Footer />
     </div>

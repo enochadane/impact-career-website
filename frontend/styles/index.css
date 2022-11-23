@@ -990,7 +990,7 @@ button {
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -1003,7 +1003,7 @@ button {
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1051,6 +1051,10 @@ button {
 
 .timelineRight::after {
   left: -23px;
+}
+
+.cardSection {
+  background-color: #166433;
 }
 
 .black-footer {
@@ -1495,7 +1499,7 @@ button {
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
 }
@@ -1659,7 +1663,7 @@ button {
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 254px;
   }
 }
@@ -1745,7 +1749,7 @@ button {
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 194px;
   }
   #home-page .btnDiv {

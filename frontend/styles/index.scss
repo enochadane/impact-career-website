@@ -1,4 +1,4 @@
-@import './../components/Nav/Nav.scss';
+@import "./../components/Nav/Nav.scss";
 
 .app_wrapper {
   margin: auto;
@@ -102,16 +102,16 @@
   }
 }
 .contact-banner {
-  background-image: url('/images/resourcesHero.jpg');
+  background-image: url("/images/resourcesHero.jpg");
 }
 .about-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .resources-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .jobs-banner {
-  background-image: url('/images/jobs_banner.jpg');
+  background-image: url("/images/jobs_banner.jpg");
   background-position: 50% 50%;
 }
 //jobs section
@@ -180,7 +180,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url('/images/aboutUsHero.jpg');
+    background-image: url("/images/aboutUsHero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -706,6 +706,7 @@
       background-color: white;
       // border-radius: 20px;
     }
+
     .accordion-button:not(.collapsed) {
       border-top-left-radius: 1.25rem;
       border-top-right-radius: 1.25rem;
@@ -733,6 +734,10 @@
       border-top-left-radius: 1.25rem;
       border-top-right-radius: 1.25rem;
     }
+    // .accordion-item:last-of-type .accordion-button.collapsed {
+    //   border-bottom-right-radius: var(--bs-accordion-inner-border-radius);
+    //   border-bottom-left-radius: var(--bs-accordion-inner-border-radius);
+    // }
   }
 }
 //Resources page
@@ -877,7 +882,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 45px;
     height: 45px;
@@ -890,7 +895,7 @@
   }
 }
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -913,6 +918,7 @@
   padding: 0px 0px 68px 40px;
   left: 50%;
 }
+
 .cardSec {
   background-color: #f0f0f0;
   border-radius: 20px;
@@ -931,6 +937,9 @@
 }
 .timelineRight::after {
   left: -23px;
+}
+.cardSection {
+  background-color: #166433;
 }
 //footer-section
 .black-footer {
@@ -1425,7 +1434,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
 }
@@ -1646,7 +1655,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 254px;
   }
 }
@@ -1755,7 +1764,7 @@
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 194px;
   }
   //contact-button

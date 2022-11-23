@@ -4,6 +4,7 @@ import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
+import ContactForm from "../components/form/ContactForm";
 
 import { useState, useEffect } from "react";
 
@@ -262,138 +263,17 @@ export default function Home({ posts, name }) {
             <section id='contact-form'>
               <div className='container'>
                 <div className='get-in-touch'>
-                  <h2>Apply for this Job</h2>
+                  <h2>Get in Touch</h2>
                   <p>
-                    Please fill the details below to evaluate your candidature
+                    We do not believe staffing and recruiting are limited to
+                    finding and hiring people to fill open positions. To locate
+                    the most suitable consultant or client for each individual,
+                    we take the time to develop true connections with both
+                    parties.
                   </p>
                 </div>
-                <form className='needs-validation' method='post'>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <input
-                        type='text'
-                        className='form-control'
-                        id='firstName'
-                        placeholder='First-Name'
-                      />
-                      <div className='invalid-feedback'>
-                        Valid first name is required.
-                      </div>
-                    </div>
-                    <div className='col-sm-6'>
-                      <input
-                        type='text'
-                        className='form-control'
-                        id='lastName'
-                        placeholder='Last-Name'
-                      />
-                      <div className='invalid-feedback'>
-                        Valid last name is required.
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <input
-                        type='email'
-                        className='form-control'
-                        id='email'
-                        placeholder='Email'
-                      />
-                      <div className='invalid-feedback'>
-                        Valid email address is required.
-                      </div>
-                    </div>
-                    <div className='col-sm-6'>
-                      <input
-                        type='tel'
-                        className='form-control'
-                        id='Phone'
-                        placeholder='Mobile number'
-                      />
-                      <div className='invalid-feedback'>
-                        Valid phone number is required.
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <div class='col-sm-6'>
-                      <input
-                        type='text'
-                        className='form-control'
-                        id='Position Location'
-                        placeholder='Your Location'
-                      />
 
-                      <div className='invalid-feedback'>
-                        Please enter position location .
-                      </div>
-                    </div>
-                    <div className='col-sm-6'>
-                      <input
-                        type='text'
-                        className='form-control'
-                        id='Current-Salary'
-                        placeholder='Current-Salary'
-                      />
-                      <div className='invalid-feedback'>
-                        Please enter Title of Position.
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <div>
-                        <input
-                          type='text'
-                          className='form-control'
-                          id='Notice period'
-                          placeholder='Notice period'
-                        />
-                      </div>
-                    </div>
-                    <div className='col-sm-6'>
-                      <div className='form-group'>
-                        <input
-                          type='text'
-                          className='form-control'
-                          id='Linked in URL'
-                          placeholder='LinkedIn URL'
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <div className='col-sm-12'>
-                      <div>
-                        <input
-                          type='file'
-                          className='w-file-upload-input form-control'
-                          accept='.pdf, .doc, .docx, .txt'
-                          name='Resume-Upload'
-                          data-iconName='fa-solid fa-cloud-arrow-up'
-                          data-name='Upload Job Description, If Available'
-                          aria-hidden='true'
-                          id='Resume-Upload'
-                          aria-placeholder=' Upload Job Description, If Available'
-                          // tabindex='-1'
-                        />
-                        <p className='text-center'>
-                          Accepted formats : PDF, DOC, DOCX, TXT (Max file size
-                          10MB)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='form-group text-center'>
-                    <input
-                      type='submit'
-                      value='Submit'
-                      data-wait='Please wait...'
-                      className='site-btn'
-                    />
-                  </div>
-                </form>
+                <ContactForm />
               </div>
             </section>
           </div>
@@ -460,7 +340,8 @@ export default function Home({ posts, name }) {
                 <h1 className='mt-5 mb-5 text-center faqHeading'>
                   Employers Frequently Asked Questions
                 </h1>
-                {name.map((val) => {
+                {name.map((val, index) => {
+                  // console.log("index", index);
                   return (
                     <div>
                       <div className='accordion' id='accordionSection'>
@@ -470,7 +351,7 @@ export default function Home({ posts, name }) {
                               type='button'
                               className='accordion-button collapsed'
                               data-bs-toggle='collapse'
-                              data-bs-target='#collapseOne'
+                              data-bs-target={`#collapseOne${index}`}
                             >
                               {val.attributes.heading}
                             </button>
@@ -478,7 +359,7 @@ export default function Home({ posts, name }) {
 
                           <div
                             className='accordion-collapse collapse'
-                            id='collapseOne'
+                            id={`collapseOne${index}`}
                             data-bs-parent='#accordionSection'
                           >
                             <div className='accordion-body pt-0'>
@@ -613,7 +494,7 @@ export default function Home({ posts, name }) {
             </div>
             <div className='main-timeline timelineMain'>
               <div className='timeline right timelineRight'>
-                <div className='card cardSec'>
+                <div className='card cardSection'>
                   <div className='card-body p-4'>
                     <h6 className='timelineH6'>1.</h6>
                     <h5 className='timelineH5'> Understand your needs</h5>
