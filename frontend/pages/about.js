@@ -390,7 +390,7 @@ export default function about({ name }) {
       {/* job search */}
       <div>
         <section>
-          <div className='container'>
+          <div className='container chooseus'>
             <h1 className='jobSearchH2'>Choose us for your job search</h1>
             <p>
               Whether you're looking to enter the IT industry, want to climb the
@@ -419,7 +419,7 @@ export default function about({ name }) {
           <div className='container'>
             <div>
               <h1 className='timelineH1'>Our Process</h1>
-              <p>
+              <p className='timepara'>
                 When choosing us to find candidates or a new employer for your
                 job search, we help you by doing the following:
               </p>

@@ -30,7 +30,7 @@ export default function post({ post }) {
               <button
                 onClick={() => setModal(true)}
                 id='myBtn'
-                className='btn btn-outline-success submit-btn'
+                className='btn btn-outline-success sub-btn'
               >
                 Apply for this job
               </button>
@@ -186,12 +186,9 @@ export default function post({ post }) {
           <section id='contact-form'>
             <div className='container'>
               <div className='get-in-touch'>
-                <h2>Get in Touch</h2>
+                <h2>Apply for this Job</h2>
                 <p>
-                  We do not believe staffing and recruiting are limited to
-                  finding and hiring people to fill open positions. To locate
-                  the most suitable consultant or client for each individual, we
-                  take the time to develop true connections with both parties.
+                  Please fill the details below to evaluate your candidature
                 </p>
               </div>
 

@@ -765,6 +765,7 @@ button {
 .faq .accordion {
   --bs-accordion-bg: none;
   --bs-accordion-border-color: none;
+  --bs-accordion-inner-border-radius: none;
   width: 80%;
   margin-left: 100px;
 }
@@ -820,6 +821,12 @@ button {
 .faq .accordion .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
+}
+
+.faq .accordion .accordion-item:last-of-type .accordion-button.collapsed {
+  border-radius: 22px;
+  border-bottom-right-radius: -10px;
+  border-bottom-left-radius: -10px;
 }
 
 .product {
@@ -1029,6 +1036,14 @@ button {
   left: 50%;
 }
 
+.timelineMain .timelineRight .cardSec {
+  background-color: #f0f0f0;
+}
+
+.timelineMain .timelineLeft .cardSec {
+  background-color: #f0f0f0;
+}
+
 .cardSec {
   background-color: #f0f0f0;
   border-radius: 20px;
@@ -1051,10 +1066,6 @@ button {
 
 .timelineRight::after {
   left: -23px;
-}
-
-.cardSection {
-  background-color: #166433;
 }
 
 .black-footer {
@@ -1158,8 +1169,8 @@ button {
 }
 
 #contact-form .container .get-in-touch {
-  margin-top: 85px;
-  margin-bottom: 150px;
+  margin-top: 35px;
+  margin-bottom: 300px;
   text-align: center;
 }
 
@@ -1194,7 +1205,7 @@ button {
 
 #contact-form .site-btn {
   margin-top: 10px;
-  margin-bottom: 125px;
+  margin-bottom: 295px;
   padding: 10px 15px;
   border-style: solid;
   border-width: 2px;
@@ -1221,6 +1232,14 @@ button {
   border: none;
   font-size: 15px;
   font-weight: 400;
+}
+
+.information {
+  padding: 80px 100px;
+}
+
+.information p {
+  font-size: 14px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 374px) {
@@ -1788,6 +1807,459 @@ button {
 @media (max-width: 1320px) {
   .product-container {
     padding: 0 15px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+  .carouselSlide .slide-clr {
+    height: 600px;
+    width: 1780px;
+  }
+  .Job .candidate-card {
+    height: 250px;
+  }
+  .Learn .icon img {
+    width: 88%;
+  }
+  .trending-jobs .viewallCol .atag .viewallPara {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media (width: 2560px) {
+  #home-page .navbar-brqnd {
+    height: 200px;
+  }
+  #home-page ul li a {
+    font-size: 25px;
+  }
+  #home-page ul li .fa-solid {
+    font-size: 1.1em;
+  }
+  #home-page .btnDiv .ContactButton {
+    font-size: 25px;
+  }
+  .carouselSlide .carousel-caption h1 {
+    font-size: 70px;
+  }
+  .carouselSlide .carousel-caption p {
+    font-size: 40px;
+  }
+  .carouselSlide .slide-clr {
+    height: 900px;
+    width: 2580px;
+  }
+  .Job .candidate-card {
+    height: 350px;
+  }
+  .Job .candidate-card .Job-Seeker h5 {
+    font-size: 29px;
+  }
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 20px;
+  }
+  .Job .candidate-card .Job-Seeker .sub-btn {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .Job .Learn h5 {
+    font-size: 27px;
+  }
+  .Job .Learn p {
+    font-size: 19px;
+    font-weight: 300;
+  }
+  .Job .Learn .access-btn {
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .Job .last-card h5 {
+    font-size: 29px;
+  }
+  .Job .last-card p {
+    font-size: 20px;
+  }
+  .Job .last-card .text-field {
+    font-size: 18px;
+  }
+  .Job .last-card .sign-up .signup-btn {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .trending-jobs .candidates .senior-product h5 {
+    font-size: 27px;
+  }
+  .trending-jobs .candidates .senior-product p {
+    font-size: 20px;
+  }
+  .trending-jobs .trendingRow {
+    margin: 60px 520px;
+  }
+  .trending-jobs .viewallCol .atag .viewallPara {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .faq .accordion .accordion-button {
+    font-size: 25px;
+  }
+  .faq .accordion .accordion-body {
+    font-size: 24px;
+  }
+  .faq .faqHeading {
+    font-size: 48px;
+  }
+  .timepara {
+    font-size: 26px;
+  }
+  .cardSec .timelineH6 {
+    font-size: 28px;
+  }
+  .cardSec .timelineH5 {
+    font-size: 28px;
+  }
+  .cardSec .timelinePara {
+    font-size: 24px;
+  }
+  .aboutMissionSec .missionContent .missionH1 {
+    font-size: 28px;
+  }
+  .aboutMissionSec .missionContent .missionPara {
+    font-size: 20px;
+  }
+  .aboutLocationSec .locationRow .locationH1 {
+    font-size: 32px;
+  }
+  .aboutLocationSec .locationRow .locationPara {
+    font-size: 21px;
+  }
+  .homeEmployers .employersRow .employersContent .employersH5 {
+    font-size: 24px;
+  }
+  .homeEmployers .employersRow .employersContent .employersPara {
+    font-size: 22px;
+  }
+  #owl-carousel-products .heading {
+    font-size: 32px;
+  }
+  #owl-carousel-products .pride {
+    font-size: 28px;
+  }
+  #featuredProducts .productListing .brand {
+    font-size: 28px;
+  }
+  #featuredProducts .productListing .name {
+    font-size: 19px;
+  }
+  #owl-carousel-products #owl-carousel-ul #featuredProducts {
+    height: 270px;
+  }
+  .aboutEmployersSec .employersHeader {
+    font-size: 32px;
+  }
+  .aboutEmployersSec .employersHeader .employerH1 {
+    font-size: 45px;
+  }
+  .aboutEmployersSec .cardMain {
+    height: 400px;
+  }
+  .aboutEmployersSec .cardMain .cardContent .cardTitle {
+    font-size: 30px;
+  }
+  .aboutEmployersSec .cardMain .cardContent .cardText {
+    font-size: 22px;
+  }
+  .employees .business-meet h1 {
+    font-size: 34px;
+  }
+  .employees .contents .content-box p {
+    font-size: 27px;
+    font-weight: 300;
+  }
+  .chooseus p {
+    font-size: 25px;
+  }
+  #contact-form .site-btn {
+    margin-bottom: 0px;
+  }
+  #contact-form .container {
+    max-width: 832px;
+  }
+  #contact-form .container .get-in-touch {
+    margin-top: 40px;
+    margin-bottom: -45px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 42px;
+  }
+  #contact-form .container .get-in-touch p {
+    font-size: 19px;
+  }
+  .modal .modal-content {
+    width: 40%;
+  }
+  .modal .close {
+    font-size: 68px;
+  }
+  .trainingSec .trainingCol .trainingH1 {
+    font-size: 43px;
+  }
+  .trainingSec .trainingCol .trainingPara {
+    font-size: 22px;
+  }
+  .trainingSec .trainCardCol .trainCardH5 {
+    font-size: 26px;
+  }
+  .trainingSec .trainCardCol .trainCardPara {
+    font-size: 21px;
+  }
+  .interviewSec .interviewH1 {
+    font-size: 42px;
+  }
+  .interviewSec .interviewPara {
+    font-size: 21px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 500px;
+  }
+  .interviewSec .interviewCard .interviewCardBody .trainCardH5 {
+    font-size: 26px;
+  }
+  .interviewSec .interviewCard .interviewCardBody .trainCardPara {
+    font-size: 21px;
+  }
+  .black-footer .social h4 {
+    font-size: 42px;
+  }
+  .black-footer .bottom-footer .bottom-footer-content h4 {
+    font-size: 20px;
+  }
+  .black-footer .bottom-footer .bottom-footer-content .privacy-link {
+    font-size: 24px;
+  }
+  .modal .modal-content {
+    width: 40%;
+  }
+  .modal .close {
+    font-size: 68px;
+  }
+  .information h4 {
+    font-size: 28px;
+  }
+  .information p {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 2000px) {
+  #home-page .navbar-brqnd {
+    height: 200px;
+  }
+  #home-page ul li a {
+    font-size: 25px;
+  }
+  #home-page ul li .fa-solid {
+    font-size: 1.1em;
+  }
+  #home-page .btnDiv .ContactButton {
+    font-size: 25px;
+  }
+  .carouselSlide .carousel-caption h1 {
+    font-size: 70px;
+  }
+  .carouselSlide .carousel-caption p {
+    font-size: 40px;
+  }
+  .carouselSlide .slide-clr {
+    height: 900px;
+    width: 2580px;
+  }
+  .Job .candidate-card {
+    height: 350px;
+  }
+  .Job .candidate-card .Job-Seeker h5 {
+    font-size: 29px;
+  }
+  .Job .candidate-card .Job-Seeker p {
+    font-size: 20px;
+  }
+  .Job .candidate-card .Job-Seeker .sub-btn {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .Job .Learn h5 {
+    font-size: 27px;
+  }
+  .Job .Learn p {
+    font-size: 19px;
+    font-weight: 300;
+  }
+  .Job .Learn .access-btn {
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .Job .last-card h5 {
+    font-size: 29px;
+  }
+  .Job .last-card p {
+    font-size: 20px;
+  }
+  .Job .last-card .text-field {
+    font-size: 18px;
+  }
+  .Job .last-card .sign-up .signup-btn {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .trending-jobs .candidates .senior-product h5 {
+    font-size: 27px;
+  }
+  .trending-jobs .candidates .senior-product p {
+    font-size: 20px;
+  }
+  .trending-jobs .trendingRow {
+    margin: 60px 520px;
+  }
+  .trending-jobs .viewallCol .atag .viewallPara {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .faq .accordion .accordion-button {
+    font-size: 25px;
+  }
+  .faq .accordion .accordion-body {
+    font-size: 24px;
+  }
+  .faq .faqHeading {
+    font-size: 48px;
+  }
+  .timepara {
+    font-size: 26px;
+  }
+  .cardSec .timelineH6 {
+    font-size: 28px;
+  }
+  .cardSec .timelineH5 {
+    font-size: 28px;
+  }
+  .cardSec .timelinePara {
+    font-size: 24px;
+  }
+  .aboutMissionSec .missionContent .missionH1 {
+    font-size: 28px;
+  }
+  .aboutMissionSec .missionContent .missionPara {
+    font-size: 20px;
+  }
+  .aboutLocationSec .locationRow .locationH1 {
+    font-size: 32px;
+  }
+  .aboutLocationSec .locationRow .locationPara {
+    font-size: 21px;
+  }
+  .homeEmployers .employersRow .employersContent .employersH5 {
+    font-size: 24px;
+  }
+  .homeEmployers .employersRow .employersContent .employersPara {
+    font-size: 22px;
+  }
+  #owl-carousel-products .heading {
+    font-size: 32px;
+  }
+  #owl-carousel-products .pride {
+    font-size: 28px;
+  }
+  #featuredProducts .productListing .brand {
+    font-size: 28px;
+  }
+  #featuredProducts .productListing .name {
+    font-size: 19px;
+  }
+  #owl-carousel-products #owl-carousel-ul #featuredProducts {
+    height: 270px;
+  }
+  .aboutEmployersSec .employersHeader {
+    font-size: 32px;
+  }
+  .aboutEmployersSec .employersHeader .employerH1 {
+    font-size: 45px;
+  }
+  .aboutEmployersSec .cardMain {
+    height: 400px;
+  }
+  .aboutEmployersSec .cardMain .cardContent .cardTitle {
+    font-size: 30px;
+  }
+  .aboutEmployersSec .cardMain .cardContent .cardText {
+    font-size: 22px;
+  }
+  .employees .business-meet h1 {
+    font-size: 34px;
+  }
+  .employees .contents .content-box p {
+    font-size: 27px;
+    font-weight: 300;
+  }
+  .chooseus p {
+    font-size: 25px;
+  }
+  #contact-form .site-btn {
+    margin-bottom: 0px;
+  }
+  #contact-form .container {
+    max-width: 832px;
+  }
+  #contact-form .container .get-in-touch {
+    margin-top: 40px;
+    margin-bottom: -45px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 42px;
+  }
+  #contact-form .container .get-in-touch p {
+    font-size: 19px;
+  }
+  .modal .modal-content {
+    width: 40%;
+  }
+  .modal .close {
+    font-size: 68px;
+  }
+  .trainingSec .trainingCol .trainingH1 {
+    font-size: 43px;
+  }
+  .trainingSec .trainingCol .trainingPara {
+    font-size: 22px;
+  }
+  .trainingSec .trainCardCol .trainCardH5 {
+    font-size: 26px;
+  }
+  .trainingSec .trainCardCol .trainCardPara {
+    font-size: 21px;
+  }
+  .interviewSec .interviewH1 {
+    font-size: 42px;
+  }
+  .interviewSec .interviewPara {
+    font-size: 21px;
+  }
+  .interviewSec .interviewCard .interviewCardBody {
+    height: 500px;
+  }
+  .interviewSec .interviewCard .interviewCardBody .trainCardH5 {
+    font-size: 26px;
+  }
+  .interviewSec .interviewCard .interviewCardBody .trainCardPara {
+    font-size: 21px;
+  }
+  .black-footer .social h4 {
+    font-size: 42px;
+  }
+  .black-footer .bottom-footer .bottom-footer-content h4 {
+    font-size: 20px;
+  }
+  .black-footer .bottom-footer .bottom-footer-content .privacy-link {
+    font-size: 24px;
   }
 }
 /*# sourceMappingURL=index.css.map */

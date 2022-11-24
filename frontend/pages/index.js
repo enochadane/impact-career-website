@@ -263,13 +263,9 @@ export default function Home({ posts, name }) {
             <section id='contact-form'>
               <div className='container'>
                 <div className='get-in-touch'>
-                  <h2>Get in Touch</h2>
+                  <h2>Apply for this Job</h2>
                   <p>
-                    We do not believe staffing and recruiting are limited to
-                    finding and hiring people to fill open positions. To locate
-                    the most suitable consultant or client for each individual,
-                    we take the time to develop true connections with both
-                    parties.
+                    Please fill the details below to evaluate your candidature
                   </p>
                 </div>
 
@@ -287,7 +283,9 @@ export default function Home({ posts, name }) {
             </div>
             <div className='col viewallCol'>
               <a className='atag' href='./jobs.html'>
-                <p className='viewallPara'>View all jobs</p>
+                <p className='viewallPara'>
+                  View all jobs <img src='/images/arrow.svg' />
+                </p>
               </a>
             </div>
           </div>
@@ -304,14 +302,14 @@ export default function Home({ posts, name }) {
                           href={val.attributes.urlSlug}
                         >
                           <div className='row g-1 '>
-                            <div className='col-md-4 col-4 '>
+                            <div className='col-md-4 col-lg-3 col-4 '>
                               <Image
                                 src='/images/blueCircle.jpg'
                                 width={100}
                                 height={100}
                               ></Image>
                             </div>
-                            <div className='col-md-8 col-8'>
+                            <div className='col-md-8  col-8'>
                               <div className='card-body senior-product '>
                                 <h5 className='card-title mt-3'>
                                   {val.attributes.title}
@@ -487,14 +485,14 @@ export default function Home({ posts, name }) {
           <div className='container'>
             <div>
               <h1 className='timelineH1'>Our Process</h1>
-              <p>
+              <p className='timepara'>
                 When choosing us to find candidates or a new employer for your
                 job search, we help you by doing the following:
               </p>
             </div>
             <div className='main-timeline timelineMain'>
               <div className='timeline right timelineRight'>
-                <div className='card cardSection'>
+                <div className='card cardSec'>
                   <div className='card-body p-4'>
                     <h6 className='timelineH6'>1.</h6>
                     <h5 className='timelineH5'> Understand your needs</h5>

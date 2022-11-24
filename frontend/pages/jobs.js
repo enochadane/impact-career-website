@@ -22,16 +22,6 @@ export default function Home({ posts, name }) {
       </div>
       <div>
         <section className='trending-jobs mt-5'>
-          <div className='row trendingRow'>
-            <div className='col'>
-              <h3 className='trendingH3'>Trending Jobs</h3>
-            </div>
-            <div className='col viewallCol'>
-              <a className='atag' href='./jobs.html'>
-                <p className='viewallPara'>View all jobs</p>
-              </a>
-            </div>
-          </div>
           <div className='product-designer'>
             <div className='container'>
               <div className='row'>
@@ -45,7 +35,7 @@ export default function Home({ posts, name }) {
                           href={val.attributes.urlSlug}
                         >
                           <div className='row g-1 '>
-                            <div className='col-md-4 col-4 '>
+                            <div className='col-md-4 col-lg-3 col-4'>
                               <Image
                                 src='/images/blueCircle.jpg'
                                 width={100}
