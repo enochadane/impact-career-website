@@ -282,7 +282,7 @@ export default function Home({ posts, name }) {
               <h3 className='trendingH3'>Trending Jobs</h3>
             </div>
             <div className='col viewallCol'>
-              <a className='atag' href='./jobs.html'>
+              <a className='atag' href='/jobs'>
                 <p className='viewallPara'>
                   View all jobs <img src='/images/arrow.svg' />
                 </p>

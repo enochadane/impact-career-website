@@ -1038,10 +1038,12 @@ button {
 
 .timelineMain .timelineRight .cardSec {
   background-color: #f0f0f0;
+  border: 0px;
 }
 
 .timelineMain .timelineLeft .cardSec {
   background-color: #f0f0f0;
+  border: 0px;
 }
 
 .cardSec {
