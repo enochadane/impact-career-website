@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const GET_ALL_SLUGS = gql`
   query {
@@ -21,6 +21,13 @@ const GET_ALL_POSTS = gql`
           title
           description
           urlSlug
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
         }
       }
     }
