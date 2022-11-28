@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "faq_jobs",
+  "collectionName": "jobs_faqs",
   "info": {
-    "singularName": "faq-job",
-    "pluralName": "faq-jobs",
-    "displayName": "faqJob"
+    "singularName": "jobs-faq",
+    "pluralName": "jobs-faqs",
+    "displayName": "jobsFaq"
   },
   "options": {
     "draftAndPublish": true

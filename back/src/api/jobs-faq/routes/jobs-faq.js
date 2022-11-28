@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * faq-job router
+ * jobs-faq router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::faq-job.faq-job');
+module.exports = createCoreRouter('api::jobs-faq.jobs-faq');
