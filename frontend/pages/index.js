@@ -303,12 +303,11 @@ export default function Home({ posts, name }) {
                         >
                           <div className='row g-1 '>
                             <div className='col-md-4 col-lg-3 col-4 '>
-                              <Image
-                                src='/images/blueCircle.jpg'
+                              <img
+                                src={`http://13.59.166.79:1337${val.attributes.image.data.attributes.url}`}
                                 width={100}
                                 height={100}
-                              ></Image>
-                            </div>
+                              ></img>                  </div>
                             <div className='col-md-8  col-8'>
                               <div className='card-body senior-product '>
                                 <h5 className='card-title mt-3'>
