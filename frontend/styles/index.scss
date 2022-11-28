@@ -16,11 +16,14 @@
   }
   ul {
     li {
-      a {
+      margin-right: 30px;
+      margin-top: 8px;
+      .ActiveLink {
         color: black;
         font-weight: 500;
         font-size: 14px;
         justify-content: space-between;
+        margin-right: 30px;
         &:hover {
           color: #166433;
           background: none;
@@ -32,7 +35,12 @@
           color: #166433 !important;
         }
       }
-
+      .dropdown-item {
+        color: black;
+      }
+      .dropdown-menu {
+        --bs-dropdown-link-active-bg: hwb(225 98% 1%);
+      }
       .fa-solid {
         float: right;
         margin-left: 10px;
@@ -220,6 +228,9 @@
       }
     }
   }
+}
+.registerForm {
+  display: none;
 }
 //homeEmployers
 .homeEmployers {
@@ -1028,6 +1039,62 @@
     }
   }
 }
+//index apply form
+#apply-form {
+  margin-bottom: 50px;
+  .container {
+    max-width: 832px;
+    .apply-this-job {
+      margin-top: 35px;
+      margin-bottom: 20px;
+      text-align: center;
+      h2 {
+        color: #474c55;
+        font-size: 32px;
+        line-height: 120%;
+        font-weight: 600;
+      }
+    }
+  }
+  .form-control {
+    margin: 10px;
+    box-shadow: none;
+    padding: 13px;
+  }
+  .UploadImg {
+    padding-left: 100px;
+    background-repeat: no-repeat;
+    background-position-y: 17px;
+    background-position-x: 60px;
+  }
+  .site-btn {
+    margin-top: 10px;
+    margin-bottom: 95px;
+    padding: 10px 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #166433;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #166433;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s linear;
+    &:hover {
+      color: #fff;
+      background-color: #166433;
+    }
+  }
+  .alert-primary {
+    --bs-alert-color: black;
+    --bs-alert-bg: #dddddd;
+    padding: 20px 230px;
+    border-radius: 0px;
+    border: none;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
 //form-section
 #contact-form {
   margin-bottom: 50px;
@@ -1035,7 +1102,7 @@
     max-width: 832px;
     .get-in-touch {
       margin-top: 35px;
-      margin-bottom: 300px;
+      margin-bottom: 200px;
       text-align: center;
       h2 {
         color: #474c55;
@@ -1065,7 +1132,7 @@
   }
   .site-btn {
     margin-top: 10px;
-    margin-bottom: 295px;
+    margin-bottom: 165px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1289,10 +1356,34 @@
       }
     }
   }
+  // #apply-form {
+  //   .container {
+  //     .apply-this-job {
+  //       margin-top: 50px;
+  //       h2 {
+  //         font-size: 20px;
+  //         font-weight: 500;
+  //       }
+  //       p {
+  //         font-size: 14px;
+  //         line-height: 20px;
+  //         padding: 0px;
+  //       }
+  //     }
+  //     .row {
+  //       max-width: 100%;
+  //       .form-control {
+  //         padding: 8px;
+  //         font-size: 13px;
+  //       }
+  //     }
+  //   }
+  // }
   #contact-form {
     .container {
       .get-in-touch {
         margin-top: 50px;
+        margin-bottom: 840px;
         h2 {
           font-size: 20px;
           font-weight: 500;
@@ -1302,6 +1393,9 @@
           line-height: 20px;
           padding: 0px;
         }
+      }
+      .site-btn {
+        margin-bottom: 813px;
       }
       .row {
         max-width: 100%;
@@ -1581,6 +1675,7 @@
   #contact-form {
     .container {
       .get-in-touch {
+        margin-bottom: 470px;
         h2 {
           font-size: 27px;
           font-weight: 500;
@@ -1589,6 +1684,9 @@
           padding: 0 26px;
           line-height: 21px;
         }
+      }
+      .site-btn {
+        margin-bottom: 414px;
       }
       .row {
         max-width: 100%;
@@ -1826,6 +1924,27 @@
       height: 320px;
     }
   }
+  #contact-form {
+    .container {
+      .get-in-touch {
+        margin-bottom: 470px;
+        h2 {
+          font-size: 27px;
+          font-weight: 500;
+        }
+        p {
+          padding: 0 26px;
+          line-height: 21px;
+        }
+      }
+      .site-btn {
+        margin-bottom: 414px;
+      }
+      .row {
+        max-width: 100%;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide .carousel-caption {
@@ -1835,6 +1954,27 @@
     }
     p {
       font-size: 24px;
+    }
+  }
+  #contact-form {
+    .container {
+      .get-in-touch {
+        margin-bottom: 430px;
+        h2 {
+          font-size: 27px;
+          font-weight: 500;
+        }
+        p {
+          padding: 0 26px;
+          line-height: 21px;
+        }
+      }
+      .site-btn {
+        margin-bottom: 414px;
+      }
+      .row {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -2096,31 +2236,44 @@
       font-size: 25px;
     }
   }
-  #contact-form {
-    .site-btn {
-      margin-bottom: 0px;
-    }
+  #apply-form {
     .container {
-      max-width: 832px;
-      .get-in-touch {
-        margin-top: 40px;
-        margin-bottom: -45px;
-        h2 {
-          font-size: 42px;
-        }
-        p {
-          font-size: 19px;
-        }
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: -100px;
       }
     }
+    .site-btn {
+      margin-bottom: -0px;
+    }
   }
-
   .modal {
     .modal-content {
       width: 40%;
     }
     .close {
       font-size: 68px;
+    }
+  }
+  #contact-form {
+    .container {
+      .get-in-touch {
+        margin-bottom: 140px;
+        h2 {
+          font-size: 27px;
+          font-weight: 500;
+        }
+        p {
+          padding: 0 26px;
+          line-height: 21px;
+        }
+      }
+      .site-btn {
+        margin-bottom: 204px;
+      }
+      .row {
+        max-width: 100%;
+      }
     }
   }
   .trainingSec {
@@ -2416,24 +2569,6 @@
       font-size: 25px;
     }
   }
-  #contact-form {
-    .site-btn {
-      margin-bottom: 0px;
-    }
-    .container {
-      max-width: 832px;
-      .get-in-touch {
-        margin-top: 40px;
-        margin-bottom: -45px;
-        h2 {
-          font-size: 42px;
-        }
-        p {
-          font-size: 19px;
-        }
-      }
-    }
-  }
 
   .modal {
     .modal-content {
@@ -2495,6 +2630,82 @@
           font-size: 24px;
         }
       }
+    }
+  }
+}
+
+@media (width: 1440px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 150px;
+      }
+    }
+  }
+}
+@media (width: 1024px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 180px;
+      }
+    }
+  }
+}
+@media (width: 768px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 170px;
+      }
+    }
+  }
+}
+@media (width: 425px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
+    }
+  }
+}
+@media (width: 375px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
+    }
+  }
+}
+@media (width: 320px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 380px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
     }
   }
 }

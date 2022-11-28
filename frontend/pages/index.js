@@ -4,7 +4,7 @@ import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
-import ContactForm from "../components/form/ContactForm";
+import Applyform from "../components/Applyform/Applyform";
 
 import { useState, useEffect } from "react";
 
@@ -260,16 +260,16 @@ export default function Home({ posts, name }) {
             <span className='close' onClick={() => setModal(false)}>
               &times;
             </span>
-            <section id='contact-form'>
+            <section id='apply-form'>
               <div className='container'>
-                <div className='get-in-touch'>
+                <div className='apply-this-job'>
                   <h2>Apply for this Job</h2>
                   <p>
                     Please fill the details below to evaluate your candidature
                   </p>
                 </div>
 
-                <ContactForm />
+                <Applyform />
               </div>
             </section>
           </div>
@@ -282,7 +282,7 @@ export default function Home({ posts, name }) {
               <h3 className='trendingH3'>Trending Jobs</h3>
             </div>
             <div className='col viewallCol'>
-              <a className='atag' href='/jobs'>
+              <a className='atag' href='./jobs'>
                 <p className='viewallPara'>
                   View all jobs <img src='/images/arrow.svg' />
                 </p>

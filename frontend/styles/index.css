@@ -27,26 +27,40 @@
   height: 60px;
 }
 
-#home-page ul li a {
+#home-page ul li {
+  margin-right: 30px;
+  margin-top: 8px;
+}
+
+#home-page ul li .ActiveLink {
   color: black;
   font-weight: 500;
   font-size: 14px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-right: 30px;
 }
 
-#home-page ul li a:hover {
+#home-page ul li .ActiveLink:hover {
   color: #166433;
   background: none;
 }
 
-#home-page ul li a:focus {
+#home-page ul li .ActiveLink:focus {
   color: #166433;
 }
 
-#home-page ul li a:active {
+#home-page ul li .ActiveLink:active {
   color: #166433 !important;
+}
+
+#home-page ul li .dropdown-item {
+  color: black;
+}
+
+#home-page ul li .dropdown-menu {
+  --bs-dropdown-link-active-bg: hwb(225 98% 1%);
 }
 
 #home-page ul li .fa-solid {
@@ -263,6 +277,10 @@
 .Job .last-card .sign-up .signup-btn:hover {
   background-color: white;
   color: yellow;
+}
+
+.registerForm {
+  display: none;
 }
 
 .homeEmployers {
@@ -1162,6 +1180,72 @@ button {
   text-decoration: none;
 }
 
+#apply-form {
+  margin-bottom: 50px;
+}
+
+#apply-form .container {
+  max-width: 832px;
+}
+
+#apply-form .container .apply-this-job {
+  margin-top: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#apply-form .container .apply-this-job h2 {
+  color: #474c55;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+#apply-form .form-control {
+  margin: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 13px;
+}
+
+#apply-form .UploadImg {
+  padding-left: 100px;
+  background-repeat: no-repeat;
+  background-position-y: 17px;
+  background-position-x: 60px;
+}
+
+#apply-form .site-btn {
+  margin-top: 10px;
+  margin-bottom: 95px;
+  padding: 10px 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #166433;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #166433;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#apply-form .site-btn:hover {
+  color: #fff;
+  background-color: #166433;
+}
+
+#apply-form .alert-primary {
+  --bs-alert-color: black;
+  --bs-alert-bg: #dddddd;
+  padding: 20px 230px;
+  border-radius: 0px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+}
+
 #contact-form {
   margin-bottom: 50px;
 }
@@ -1172,7 +1256,7 @@ button {
 
 #contact-form .container .get-in-touch {
   margin-top: 35px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
   text-align: center;
 }
 
@@ -1207,7 +1291,7 @@ button {
 
 #contact-form .site-btn {
   margin-top: 10px;
-  margin-bottom: 295px;
+  margin-bottom: 165px;
   padding: 10px 15px;
   border-style: solid;
   border-width: 2px;
@@ -1391,6 +1475,7 @@ button {
   }
   #contact-form .container .get-in-touch {
     margin-top: 50px;
+    margin-bottom: 840px;
   }
   #contact-form .container .get-in-touch h2 {
     font-size: 20px;
@@ -1400,6 +1485,9 @@ button {
     font-size: 14px;
     line-height: 20px;
     padding: 0px;
+  }
+  #contact-form .container .site-btn {
+    margin-bottom: 813px;
   }
   #contact-form .container .row {
     max-width: 100%;
@@ -1608,6 +1696,9 @@ button {
   #contact-card-section .card p {
     font-size: 13px;
   }
+  #contact-form .container .get-in-touch {
+    margin-bottom: 470px;
+  }
   #contact-form .container .get-in-touch h2 {
     font-size: 27px;
     font-weight: 500;
@@ -1615,6 +1706,9 @@ button {
   #contact-form .container .get-in-touch p {
     padding: 0 26px;
     line-height: 21px;
+  }
+  #contact-form .container .site-btn {
+    margin-bottom: 414px;
   }
   #contact-form .container .row {
     max-width: 100%;
@@ -1792,6 +1886,23 @@ button {
     margin-top: 0px;
     height: 320px;
   }
+  #contact-form .container .get-in-touch {
+    margin-bottom: 470px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 27px;
+    font-weight: 500;
+  }
+  #contact-form .container .get-in-touch p {
+    padding: 0 26px;
+    line-height: 21px;
+  }
+  #contact-form .container .site-btn {
+    margin-bottom: 414px;
+  }
+  #contact-form .container .row {
+    max-width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
@@ -1803,6 +1914,23 @@ button {
   }
   .carouselSlide .carousel-caption p {
     font-size: 24px;
+  }
+  #contact-form .container .get-in-touch {
+    margin-bottom: 430px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 27px;
+    font-weight: 500;
+  }
+  #contact-form .container .get-in-touch p {
+    padding: 0 26px;
+    line-height: 21px;
+  }
+  #contact-form .container .site-btn {
+    margin-bottom: 414px;
+  }
+  #contact-form .container .row {
+    max-width: 100%;
   }
 }
 
@@ -1981,27 +2109,35 @@ button {
   .chooseus p {
     font-size: 25px;
   }
-  #contact-form .site-btn {
-    margin-bottom: 0px;
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: -100px;
   }
-  #contact-form .container {
-    max-width: 832px;
-  }
-  #contact-form .container .get-in-touch {
-    margin-top: 40px;
-    margin-bottom: -45px;
-  }
-  #contact-form .container .get-in-touch h2 {
-    font-size: 42px;
-  }
-  #contact-form .container .get-in-touch p {
-    font-size: 19px;
+  #apply-form .site-btn {
+    margin-bottom: -0px;
   }
   .modal .modal-content {
     width: 40%;
   }
   .modal .close {
     font-size: 68px;
+  }
+  #contact-form .container .get-in-touch {
+    margin-bottom: 140px;
+  }
+  #contact-form .container .get-in-touch h2 {
+    font-size: 27px;
+    font-weight: 500;
+  }
+  #contact-form .container .get-in-touch p {
+    padding: 0 26px;
+    line-height: 21px;
+  }
+  #contact-form .container .site-btn {
+    margin-bottom: 204px;
+  }
+  #contact-form .container .row {
+    max-width: 100%;
   }
   .trainingSec .trainingCol .trainingH1 {
     font-size: 43px;
@@ -2205,22 +2341,6 @@ button {
   .chooseus p {
     font-size: 25px;
   }
-  #contact-form .site-btn {
-    margin-bottom: 0px;
-  }
-  #contact-form .container {
-    max-width: 832px;
-  }
-  #contact-form .container .get-in-touch {
-    margin-top: 40px;
-    margin-bottom: -45px;
-  }
-  #contact-form .container .get-in-touch h2 {
-    font-size: 42px;
-  }
-  #contact-form .container .get-in-touch p {
-    font-size: 19px;
-  }
   .modal .modal-content {
     width: 40%;
   }
@@ -2262,6 +2382,57 @@ button {
   }
   .black-footer .bottom-footer .bottom-footer-content .privacy-link {
     font-size: 24px;
+  }
+}
+
+@media (width: 1440px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 150px;
+  }
+}
+
+@media (width: 1024px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 180px;
+  }
+}
+
+@media (width: 768px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 170px;
+  }
+}
+
+@media (width: 425px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 370px;
+  }
+  .modal .modal-content {
+    width: 80%;
+  }
+}
+
+@media (width: 375px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 370px;
+  }
+  .modal .modal-content {
+    width: 80%;
+  }
+}
+
+@media (width: 320px) {
+  #apply-form .container .apply-this-job {
+    margin-top: 35px;
+    margin-bottom: 380px;
+  }
+  .modal .modal-content {
+    width: 80%;
   }
 }
 /*# sourceMappingURL=index.css.map */

@@ -13,10 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [validationSchema, setvalidationSchema] = useState("");
-  // function SubmitHandler() {
-  //   <h1>Thank you So much</h1>;
-  // }
+  // const [validationSchema, setValidationSchema] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -36,7 +33,8 @@ const ContactForm = () => {
     onSubmit: () => {
       setMessage("Thank you! Your submission has been received!");
       setSubmitted(true);
-      setvalidationSchema(false);
+
+      // setValidationSchema(true);
     },
     validationSchema: yup.object({
       First_Name: yup.string().trim().required("First Name is required"),
@@ -321,6 +319,7 @@ const ContactForm = () => {
         </button> */}
         <div className='form-group text-center'>
           <input
+            id='formButton'
             // onClick={SubmitHandler}
             type='submit'
             value='Submit'
@@ -334,3 +333,6 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+// $("#formButton").click(function () {
+//   $("#registerForm").toggle();
+// });

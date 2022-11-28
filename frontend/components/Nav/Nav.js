@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 export default function Nav() {
   const router = useRouter();
@@ -32,27 +33,20 @@ export default function Nav() {
                 id='navbarNavDropdown'
               >
                 <ul className='navbar-nav ms-auto'>
-                  <li className={(router.pathname == "/about") == "active"}>
-                    <Link className='nav-link resource px-4' href='/about'>
+                  <li>
+                    <ActiveLink
+                      className='nav-link resource px-4'
+                      href='/about'
+                    >
                       About
-                    </Link>
+                    </ActiveLink>
                   </li>
-                  <li className={router.pathname == "/jobs" ? "active" : ""}>
-                    <Link className='nav-link resource px-4' href='/jobs'>
+                  <li>
+                    <ActiveLink className='nav-link resource px-4' href='/jobs'>
                       Jobs
-                    </Link>
+                    </ActiveLink>
                   </li>
-
-                  <li
-                    className={
-                      ("nav-item dropdown",
-                      `${
-                        router.pathname == "/resources#training-Section"
-                          ? "active"
-                          : ""
-                      }`)
-                    }
-                  >
+                  <li>
                     <a
                       className='nav-link'
                       href='resources'
@@ -68,20 +62,21 @@ export default function Nav() {
                       aria-labelledby='navbarDropdown'
                     >
                       <li>
-                        <a
+                        <ActiveLink
                           className='dropdown-item color'
                           href='/resources#training-Section'
                         >
+                          {" "}
                           Training Resources
-                        </a>
+                        </ActiveLink>{" "}
                       </li>
                       <li>
-                        <a
+                        <ActiveLink
                           className='dropdown-item'
                           href='/resources#interview-Section'
                         >
                           Interview Prep
-                        </a>
+                        </ActiveLink>
                       </li>
                     </ul>
                   </li>
