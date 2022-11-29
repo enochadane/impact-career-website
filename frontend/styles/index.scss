@@ -16,14 +16,17 @@
   }
   ul {
     li {
-      margin-right: 30px;
+      margin-left: 10px;
+      margin-right: 0px;
       margin-top: 8px;
-      .ActiveLink {
+      a {
         color: black;
         font-weight: 500;
         font-size: 14px;
         justify-content: space-between;
         margin-right: 30px;
+        margin-top: -5px;
+
         &:hover {
           color: #166433;
           background: none;
@@ -1156,7 +1159,7 @@
     border: none;
     font-size: 15px;
     font-weight: 400;
-     margin-bottom: -300px;
+    margin-bottom: -300px;
   }
 }
 .information {

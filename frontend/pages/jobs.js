@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_ALL_POSTS, GET_FAQ_JOBS } from "../graphql/queries";
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
+import Head from 'next/head';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_ALL_POSTS, GET_FAQ_JOBS } from '../graphql/queries';
+import Link from 'next/link';
+import Image from 'next/image';
+import Footer from '../components/Footer/Footer';
 
 export default function Home({ posts, name }) {
   return (
@@ -34,14 +34,14 @@ export default function Home({ posts, name }) {
                           key={i}
                           href={val.attributes.urlSlug}
                         >
-                             <div className='row g-1 '>
-                            <div className='col-md-4 col-lg-3 col-4 '>
+                          <div className='row g-1 '>
+                            <div className='col-md-4 col-lg-3 col-4'>
                               <img
                                 src={`http://13.59.166.79:1337${val.attributes.image.data.attributes.url}`}
                                 width={100}
                                 height={100}
-                              ></img>                  </div>
- 
+                              ></img>
+                            </div>
                             <div className='col-md-8 col-8'>
                               <div className='card-body senior-product '>
                                 <h5 className='card-title mt-3'>
@@ -115,7 +115,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: "http://13.59.166.79:1337/graphql",
+    uri: 'http://13.59.166.79:1337/graphql',
     cache: new InMemoryCache(),
   });
 
@@ -129,7 +129,7 @@ export async function getServerSideProps() {
   return {
     props: {
       posts: data.blogPosts.data,
-      name: getfaqdata.data.faqJobs.data,
+      name: getfaqdata.data.jobsFaqs.data,
     },
   };
 }

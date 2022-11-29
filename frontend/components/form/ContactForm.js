@@ -31,13 +31,13 @@ const ContactForm = () => {
       message: "",
     },
     onSubmit: () => {
-      $('form').hide(
-        setMessage('Thank you! Your submission has been received!')
+      $("form").hide(
+        setMessage("Thank you! Your submission has been received!")
       );
       setSubmitted(true);
       setvalidationSchema(false);
     },
-	  validationSchema: yup.object({
+    validationSchema: yup.object({
       First_Name: yup.string().trim().required("First Name is required"),
       Last_Name: yup.string().trim().required("Last Name is required"),
       email: yup

@@ -42,6 +42,13 @@ const GET_INDIVIDUAL_POST = gql`
           title
           description
           content
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
         }
       }
     }
@@ -64,7 +71,7 @@ const GET_FAQ = gql`
 
 const GET_FAQ_JOBS = gql`
   query {
-    faqJobs {
+    jobsFaqs {
       data {
         attributes {
           heading

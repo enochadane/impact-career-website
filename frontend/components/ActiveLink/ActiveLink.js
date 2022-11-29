@@ -1,8 +1,8 @@
-import { withRouter } from "next/router";
+import { withRouter } from 'next/router';
 
 const ActiveLink = ({ router, href, children }) => {
   (function prefetchPages() {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       router.prefetch(router.pathname);
     }
   })();
@@ -18,8 +18,8 @@ const ActiveLink = ({ router, href, children }) => {
         href={href}
         onClick={handleClick}
         style={{
-          textDecoration: "none",
-          color: isCurrentPath ? "green" : "black",
+          textDecoration: 'none',
+          color: isCurrentPath ? 'green' : 'black',
         }}
       >
         {children}

@@ -10,13 +10,9 @@ import * as yup from "yup";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ContactForm = () => {
+const ApplyForm = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [validationSchema, setvalidationSchema] = useState("");
-  // function SubmitHandler() {
-  //   <h1>Thank you So much</h1>;
-  // }
 
   const formik = useFormik({
     initialValues: {
@@ -31,7 +27,9 @@ const ContactForm = () => {
       Resume_Upload: "",
     },
     onSubmit: () => {
-      setMessage("Thank you! Your submission has been received!");
+      $("form").hide(
+        setMessage("Thank you! Your submission has been received!")
+      );
       setSubmitted(true);
       setvalidationSchema(false);
     },
@@ -234,6 +232,7 @@ const ContactForm = () => {
         </button> */}
         <div className='form-group text-center'>
           <input
+            id='formButton'
             // onClick={SubmitHandler}
             type='submit'
             value='Submit'
@@ -246,4 +245,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ApplyForm;

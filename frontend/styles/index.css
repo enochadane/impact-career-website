@@ -28,11 +28,12 @@
 }
 
 #home-page ul li {
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 0px;
   margin-top: 8px;
 }
 
-#home-page ul li .ActiveLink {
+#home-page ul li a {
   color: black;
   font-weight: 500;
   font-size: 14px;
@@ -40,18 +41,19 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-right: 30px;
+  margin-top: -5px;
 }
 
-#home-page ul li .ActiveLink:hover {
+#home-page ul li a:hover {
   color: #166433;
   background: none;
 }
 
-#home-page ul li .ActiveLink:focus {
+#home-page ul li a:focus {
   color: #166433;
 }
 
-#home-page ul li .ActiveLink:active {
+#home-page ul li a:active {
   color: #166433 !important;
 }
 
@@ -1318,6 +1320,7 @@ button {
   border: none;
   font-size: 15px;
   font-weight: 400;
+  margin-bottom: -300px;
 }
 
 .information {
