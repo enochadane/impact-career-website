@@ -236,7 +236,6 @@ export default function about({ name }) {
                   Employers Frequently Asked Questions
                 </h1>
                 {name.map((val, index) => {
-                  // console.log('index', index);
                   return (
                     <div>
                       <div className='accordion' id='accordionSection'>
