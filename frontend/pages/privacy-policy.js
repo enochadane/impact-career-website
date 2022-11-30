@@ -1,8 +1,8 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
+import Link from 'next/link';
+import Image from 'next/image';
+import Footer from '../components/Footer/Footer';
 
 export default function Home({ posts, name }) {
   return (
@@ -10,9 +10,9 @@ export default function Home({ posts, name }) {
       <Head>
         <title>Jobs</title>
       </Head>
-      <div className='Banner jobs-banner'>
-        <div className='container-fluid'>
-          <div className='row m-0'>
+      <div className="Banner privacy-banner">
+        <div className="container-fluid">
+          <div className="row m-0">
             <div>
               <h1>Privacy Policy</h1>
             </div>
@@ -20,7 +20,7 @@ export default function Home({ posts, name }) {
         </div>
       </div>
       <div></div>
-      <div className='container information'>
+      <div className="container information">
         <h4>Information We Collect</h4>
         <p>
           We gather information about you from various sources, including

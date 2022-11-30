@@ -57,9 +57,9 @@ export default function post({ post }) {
           <span className="close" onClick={() => setModal(false)}>
             &times;
           </span>
-          <section id="contact-form">
+          <section id="apply-form">
             <div className="container">
-              <div className="get-in-touch">
+              <div className="apply-this-job">
                 <h2>Apply for this Job</h2>
                 <p>
                   Please fill the details below to evaluate your candidature
