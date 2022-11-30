@@ -15,7 +15,7 @@ const GET_ALL_SLUGS = gql`
 
 const GET_ALL_POSTS = gql`
   query {
-    blogPosts {
+    blogPosts(pagination: { limit: 100 }) {
       data {
         attributes {
           title
@@ -69,23 +69,4 @@ const GET_FAQ = gql`
   }
 `;
 
-const GET_FAQ_JOBS = gql`
-  query {
-    jobsFaqs {
-      data {
-        attributes {
-          heading
-          content
-        }
-      }
-    }
-  }
-`;
-
-export {
-  GET_ALL_POSTS,
-  GET_INDIVIDUAL_POST,
-  GET_ALL_SLUGS,
-  GET_FAQ,
-  GET_FAQ_JOBS,
-};
+export { GET_ALL_POSTS, GET_INDIVIDUAL_POST, GET_ALL_SLUGS, GET_FAQ };

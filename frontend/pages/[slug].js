@@ -19,19 +19,24 @@ export default function post({ post }) {
       <Head>
         <title>product-page</title>
       </Head>
-
-      <div>
-        <div className='container product'>
-          <div className='card page mt-5'>
-            <div className='job-page'>
+      <div class='container product'>
+        <div class='card page mt-5'>
+          <div class='row mx-1 job-page'>
+            <div class='col-3 col-md-2 col-lg-1 mb-2 in-page'>
               <img
                 src={`http://13.59.166.79:1337${post.image.data.attributes.url}`}
                 width={80}
                 height={80}
               ></img>
-              <h3 className='m-3'>{post.title}</h3>
-              <h6 className='m-3'>{post.description}</h6>
-              <p>{post.content}</p>
+            </div>
+            <div class='col-8 col-md-7 col-lg-4'>
+              <div class='card-body inner-content'>
+                <h5 class='card-title'>{post.title}</h5>
+                <h6 className='slugDescription'>{post.description}</h6>
+              </div>
+            </div>
+            <p className='slugPara'>{post.content}</p>
+            <div class='col-12 contents'>
               <button
                 onClick={() => setModal(true)}
                 id='myBtn'
