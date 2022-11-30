@@ -4,7 +4,7 @@ import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import Head from 'next/head';
 import { useState } from 'react';
-import ContactForm from '../components/form/ContactForm';
+import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
   uri: 'http://13.59.166.79:1337/graphql',
@@ -19,28 +19,28 @@ export default function post({ post }) {
       <Head>
         <title>product-page</title>
       </Head>
-      <div class='container product'>
-        <div class='card page mt-5'>
-          <div class='row mx-1 job-page'>
-            <div class='col-3 col-md-2 col-lg-1 mb-2 in-page'>
+      <div class="container product">
+        <div class="card page mt-5">
+          <div class="row mx-1 job-page">
+            <div class="col-3 col-md-2 col-lg-1 mb-2 in-page">
               <img
                 src={`http://13.59.166.79:1337${post.image.data.attributes.url}`}
                 width={80}
                 height={80}
               ></img>
             </div>
-            <div class='col-8 col-md-7 col-lg-4'>
-              <div class='card-body inner-content'>
-                <h5 class='card-title'>{post.title}</h5>
-                <h6 className='slugDescription'>{post.description}</h6>
+            <div class="col-8 col-md-7 col-lg-4">
+              <div class="card-body inner-content">
+                <h5 class="card-title">{post.title}</h5>
+                <h6 className="slugDescription">{post.description}</h6>
               </div>
             </div>
-            <p className='slugPara'>{post.content}</p>
-            <div class='col-12 contents'>
+            <p className="slugPara">{post.content}</p>
+            <div class="col-12 contents">
               <button
                 onClick={() => setModal(true)}
-                id='myBtn'
-                className='btn btn-outline-success sub-btn'
+                id="myBtn"
+                className="btn btn-outline-success sub-btn"
               >
                 Apply for this job
               </button>
@@ -49,24 +49,24 @@ export default function post({ post }) {
         </div>
       </div>
       <div
-        id='myModal'
-        className='modal'
+        id="myModal"
+        className="modal"
         style={{ display: modal ? 'block' : 'none' }}
       >
-        <div className='modal-content'>
-          <span className='close' onClick={() => setModal(false)}>
+        <div className="modal-content">
+          <span className="close" onClick={() => setModal(false)}>
             &times;
           </span>
-          <section id='contact-form'>
-            <div className='container'>
-              <div className='get-in-touch'>
+          <section id="contact-form">
+            <div className="container">
+              <div className="get-in-touch">
                 <h2>Apply for this Job</h2>
                 <p>
                   Please fill the details below to evaluate your candidature
                 </p>
               </div>
 
-              <ContactForm />
+              <Applyform />
             </div>
           </section>
         </div>
