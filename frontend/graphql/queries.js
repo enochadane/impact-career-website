@@ -5,8 +5,10 @@ const GET_ALL_SLUGS = gql`
     blogPosts {
       data {
         attributes {
-          description
+          jobsName
           urlSlug
+          jobsLocation
+          jobsPrice
         }
       }
     }
@@ -19,7 +21,9 @@ const GET_ALL_POSTS = gql`
       data {
         attributes {
           title
-          description
+          jobsName
+          jobsLocation
+          jobsPrice
           urlSlug
           image {
             data {
@@ -40,7 +44,9 @@ const GET_INDIVIDUAL_POST = gql`
       data {
         attributes {
           title
-          description
+          jobsName
+          jobsLocation
+          jobsPrice
           content
           image {
             data {

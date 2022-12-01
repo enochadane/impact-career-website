@@ -315,7 +315,9 @@ export default function Home({ posts, name }) {
                                   {val.attributes.title}
                                 </h5>
                                 <p className='card-text'>
-                                  {val.attributes.description}
+                                  {val.attributes.jobsName}
+                                  {val.attributes.jobsLocation}
+                                  {val.attributes.jobsPrice}
                                 </p>
                               </div>
                             </div>
