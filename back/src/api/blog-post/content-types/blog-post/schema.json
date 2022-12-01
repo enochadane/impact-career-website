@@ -18,7 +18,7 @@
     "urlSlug": {
       "type": "string"
     },
-    "description": {
+    "jobsName": {
       "type": "string"
     },
     "content": {
@@ -34,6 +34,12 @@
         "videos",
         "audios"
       ]
+    },
+    "jobsLocation": {
+      "type": "string"
+    },
+    "jobsPrice": {
+      "type": "string"
     }
   }
 }
