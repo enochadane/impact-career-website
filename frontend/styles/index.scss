@@ -1109,12 +1109,12 @@
 }
 //form-section
 #contact-form {
-  margin-bottom: 50px;
+  margin-bottom: 79px;
   .container {
     max-width: 832px;
     .get-in-touch {
       margin-top: 35px;
-      margin-bottom: 200px;
+      margin-bottom: 300px;
       text-align: center;
       h2 {
         color: #474c55;
@@ -1144,7 +1144,7 @@
   }
   .site-btn {
     margin-top: 10px;
-    //margin-bottom: 165px;
+    margin-bottom: 165px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1374,7 +1374,7 @@
     .container {
       .get-in-touch {
         margin-top: 50px;
-        margin-bottom: 840px;
+        margin-bottom: 700px;
         h2 {
           font-size: 20px;
           font-weight: 500;
@@ -1386,7 +1386,7 @@
         }
       }
       .site-btn {
-        margin-bottom: 813px;
+        margin-bottom: 682px;
       }
       .row {
         max-width: 100%;
@@ -1666,7 +1666,7 @@
   #contact-form {
     .container {
       .get-in-touch {
-        margin-bottom: 470px;
+        margin-bottom: 300px;
         h2 {
           font-size: 27px;
           font-weight: 500;
@@ -1677,7 +1677,7 @@
         }
       }
       .site-btn {
-        margin-bottom: 414px;
+        margin-bottom: 261px;
       }
       .row {
         max-width: 100%;
@@ -1775,7 +1775,7 @@
   //time-line
   .timelineMain::after {
     content: '';
-    bottom: 254px;
+    bottom: 216px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
@@ -1882,9 +1882,10 @@
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
+  //time-line
   .timelineMain::after {
     content: '';
-    bottom: 194px;
+    bottom: 213px;
   }
   //contact-button
   #home-page {
@@ -1918,21 +1919,10 @@
   #contact-form {
     .container {
       .get-in-touch {
-        margin-bottom: 470px;
-        h2 {
-          font-size: 27px;
-          font-weight: 500;
-        }
-        p {
-          padding: 0 26px;
-          line-height: 21px;
-        }
+        margin-bottom: 150px;
       }
       .site-btn {
-        margin-bottom: 414px;
-      }
-      .row {
-        max-width: 100%;
+        margin-bottom: 94px;
       }
     }
   }
@@ -1947,27 +1937,6 @@
       font-size: 24px;
     }
   }
-  // #contact-form {
-  //   .container {
-  //     .get-in-touch {
-  //       margin-bottom: 430px;
-  //       h2 {
-  //         font-size: 27px;
-  //         font-weight: 500;
-  //       }
-  //       p {
-  //         padding: 0 26px;
-  //         line-height: 21px;
-  //       }
-  //     }
-  //     .site-btn {
-  //        margin-bottom: 414px;
-  //     }
-  //     .row {
-  //       max-width: 100%;
-  //     }
-  //   }
-  // }
 }
 @media (max-width: 1320px) {
   .product-container {
@@ -2004,7 +1973,13 @@
       }
     }
   }
+  //time-line
+  .timelineMain::after {
+    content: '';
+    bottom: 189px;
+  }
 }
+
 @media (width: 2560px) {
   #home-page {
     .navbar-brqnd {
@@ -2023,6 +1998,14 @@
     .btnDiv {
       .ContactButton {
         font-size: 25px;
+      }
+    }
+  }
+  #contact-form {
+    margin-bottom: -200px;
+    .container {
+      .get-in-touch {
+        margin-bottom: -200px;
       }
     }
   }
@@ -2089,6 +2072,11 @@
     }
   }
 
+  //time-line
+  .timelineMain::after {
+    content: '';
+    bottom: 227px;
+  }
   .trending-jobs {
     .candidates {
       .senior-product {
@@ -2246,27 +2234,7 @@
       font-size: 68px;
     }
   }
-  #contact-form {
-    .container {
-      .get-in-touch {
-        margin-bottom: 140px;
-        h2 {
-          font-size: 27px;
-          font-weight: 500;
-        }
-        p {
-          padding: 0 26px;
-          line-height: 21px;
-        }
-      }
-      .site-btn {
-        margin-bottom: 204px;
-      }
-      .row {
-        max-width: 100%;
-      }
-    }
-  }
+
   .trainingSec {
     .trainingCol {
       .trainingH1 {
@@ -2631,6 +2599,27 @@
       .apply-this-job {
         margin-top: 35px;
         margin-bottom: 150px;
+      }
+    }
+  }
+  #contact-form {
+    .container {
+      .get-in-touch {
+        margin-bottom: 40px;
+        h2 {
+          font-size: 36px;
+        }
+        p {
+          padding: 0 33px;
+          font-size: 22px;
+          line-height: 1.5;
+        }
+      }
+      .site-btn {
+        margin-bottom: 10px;
+      }
+      .row {
+        max-width: 100%;
       }
     }
   }
