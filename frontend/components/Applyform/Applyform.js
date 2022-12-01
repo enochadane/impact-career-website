@@ -213,11 +213,11 @@ const ApplyForm = () => {
             className='w-file-upload-input form-control UploadImg'
             accept='.pdf, .doc, .docx, .txt'
             name='Resume_Upload'
-            data-iconName='fa-solid fa-cloud-arrow-up'
+            data-iconname='fa-solid fa-cloud-arrow-up'
             data-name='Upload Job Description, If Available'
             aria-hidden='true'
             placeholder='Upload Job Description, If Available'
-            tabindex='-1'
+            tabIndex='-1'
             value={formik.values.Resume_Upload}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}

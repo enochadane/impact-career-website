@@ -1,6 +1,6 @@
-import '../styles/index.scss';
-import Nav from '../components/Nav/Nav';
-import Head from 'next/head';
+import "../styles/index.scss";
+import Nav from "../components/Nav/Nav";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (

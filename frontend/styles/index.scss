@@ -1,4 +1,4 @@
-@import './../components/Nav/Nav.scss';
+@import "./../components/Nav/Nav.scss";
 
 .app_wrapper {
   margin: auto;
@@ -113,20 +113,20 @@
   }
 }
 .contact-banner {
-  background-image: url('/images/resourcesHero.jpg');
+  background-image: url("/images/resourcesHero.jpg");
 }
 .about-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .resources-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .jobs-banner {
-  background-image: url('/images/jobs_banner.jpg');
+  background-image: url("/images/jobs_banner.jpg");
   background-position: 50% 50%;
 }
 .privacy-banner {
-  background-image: url('/images/bannerImages/privacy-policy.jpg');
+  background-image: url("/images/bannerImages/privacy-policy.jpg");
   background-position: 50% 0;
 }
 //jobs section
@@ -195,7 +195,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url('/images/aboutUsHero.jpg');
+    background-image: url("/images/aboutUsHero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -368,11 +368,6 @@
 .ourValue {
   background-color: #f4f5f7;
   margin-top: 30px;
-}
-
-#owl-carousel-products {
-  background-color: #f4f5f7;
-  margin-top: 50px;
 }
 
 #owl-carousel-products .heading {
@@ -668,7 +663,7 @@
       background-color: #f4f4f4;
     }
     img {
-      padding: 20px;
+      padding: 15px;
       margin-left: 20px;
       border-radius: 76px;
     }
@@ -909,7 +904,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 45px;
     height: 45px;
@@ -922,7 +917,7 @@
   }
 }
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -1112,12 +1107,12 @@
 }
 //form-section
 #contact-form {
-  margin-bottom: 79px;
+  margin-bottom: 50px;
   .container {
     max-width: 832px;
     .get-in-touch {
       margin-top: 35px;
-      margin-bottom: 300px;
+      // margin-bottom: 300px;
       text-align: center;
       h2 {
         color: #474c55;
@@ -1147,7 +1142,7 @@
   }
   .site-btn {
     margin-top: 10px;
-    margin-bottom: 165px;
+    // margin-bottom: 165px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1204,14 +1199,19 @@
       width: 380px;
     }
   }
-  // .modal {
-  //   .modal-content {
-  //     width: 100%;
-  //   }
-  //   .close {
-  //     font-size: 48px;
-  //   }
-  // }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 380px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
+    }
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .carouselSlide .carousel-caption {
@@ -1377,7 +1377,7 @@
     .container {
       .get-in-touch {
         margin-top: 50px;
-        margin-bottom: 700px;
+        // margin-bottom: 700px;
         h2 {
           font-size: 20px;
           font-weight: 500;
@@ -1389,7 +1389,7 @@
         }
       }
       .site-btn {
-        margin-bottom: 682px;
+        // margin-bottom: 682px;
       }
       .row {
         max-width: 100%;
@@ -1451,6 +1451,19 @@
     .slide-clr {
       height: 160px;
       width: 380px;
+    }
+  }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
     }
   }
 }
@@ -1552,8 +1565,21 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
+  }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 80%;
+    }
   }
 }
 @media only screen and (min-width: 500px) and (max-width: 2560px) {
@@ -1669,7 +1695,7 @@
   #contact-form {
     .container {
       .get-in-touch {
-        margin-bottom: 300px;
+        // margin-bottom: 300px;
         h2 {
           font-size: 27px;
           font-weight: 500;
@@ -1680,7 +1706,7 @@
         }
       }
       .site-btn {
-        margin-bottom: 261px;
+        // margin-bottom: 261px;
       }
       .row {
         max-width: 100%;
@@ -1777,7 +1803,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
@@ -1805,6 +1831,14 @@
         .in-page {
           margin-bottom: 20px;
         }
+      }
+    }
+  }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 170px;
       }
     }
   }
@@ -1887,7 +1921,7 @@
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 213px;
   }
   //contact-button
@@ -1922,10 +1956,18 @@
   #contact-form {
     .container {
       .get-in-touch {
-        margin-bottom: 150px;
+        // margin-bottom: 150px;
       }
       .site-btn {
-        margin-bottom: 94px;
+        // margin-bottom: 94px;
+      }
+    }
+  }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 180px;
       }
     }
   }
@@ -1978,7 +2020,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 189px;
   }
 }
@@ -1991,7 +2033,8 @@
     ul {
       li {
         a {
-          font-size: 25px;
+          font-size: 23px;
+          margin-top: -8px;
         }
         .fa-solid {
           font-size: 1.1em;
@@ -2005,10 +2048,10 @@
     }
   }
   #contact-form {
-    margin-bottom: -200px;
+    // margin-bottom: -200px;
     .container {
       .get-in-touch {
-        margin-bottom: -200px;
+        // margin-bottom: -200px;
       }
     }
   }
@@ -2077,7 +2120,7 @@
 
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 227px;
   }
   .trending-jobs {
@@ -2317,7 +2360,8 @@
     ul {
       li {
         a {
-          font-size: 25px;
+          font-size: 22px;
+          margin-top: -8px;
         }
         .fa-solid {
           font-size: 1.1em;
@@ -2624,71 +2668,6 @@
       .row {
         max-width: 100%;
       }
-    }
-  }
-}
-@media (width: 1024px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 180px;
-      }
-    }
-  }
-}
-@media (width: 768px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 170px;
-      }
-    }
-  }
-}
-@media (width: 425px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 370px;
-      }
-    }
-  }
-  .modal {
-    .modal-content {
-      width: 80%;
-    }
-  }
-}
-@media (width: 375px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 370px;
-      }
-    }
-  }
-  .modal {
-    .modal-content {
-      width: 80%;
-    }
-  }
-}
-@media (width: 320px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 380px;
-      }
-    }
-  }
-  .modal {
-    .modal-content {
-      width: 80%;
     }
   }
 }
