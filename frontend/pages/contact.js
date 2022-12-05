@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import Script from "next/script";
-import Head from "next/head";
-import Footer from "../components/Footer/Footer";
-import ContactForm from "../components/form/ContactForm";
+import Link from 'next/link';
+import Image from 'next/image';
+import Script from 'next/script';
+import Head from 'next/head';
+import Footer from '../components/Footer/Footer';
+import ContactForm from '../components/form/ContactForm';
 
 export default function Contact({ posts, name }) {
   return (
@@ -13,9 +13,9 @@ export default function Contact({ posts, name }) {
           <title>Contact Us</title>
         </Head>
         <div>
-          <div className='Banner contact-banner'>
-            <div className='container-fluid'>
-              <div className='row m-0'>
+          <div className="Banner contact-banner">
+            <div className="container-fluid">
+              <div className="row m-0">
                 <div>
                   <h1>Contact</h1>
                 </div>
@@ -25,22 +25,22 @@ export default function Contact({ posts, name }) {
         </div>
         {/* cards section */}
         <div>
-          <section id='contact-card-section'>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-md-4'>
-                  <div className='card border-0'>
-                    <div className='topContent'>
+          <section id="contact-card-section">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="card border-0">
+                    <div className="topContent">
                       <Image
-                        src='/images/find-job.svg'
-                        alt='find-job'
-                        className='img-fluid'
+                        src="/images/find-job.svg"
+                        alt="find-job"
+                        className="img-fluid"
                         width={50}
                         height={50}
                       ></Image>
                       <h2>Find a Job</h2>
                     </div>
-                    <div className='para'>
+                    <div className="para">
                       <p>
                         Find the best contract, temp, or permanent company with
                         the best company through Impact Career
@@ -48,39 +48,39 @@ export default function Contact({ posts, name }) {
                     </div>
                   </div>
                 </div>
-                <div className='col-md-4'>
-                  <div className='card border-0'>
-                    <div className='topContent'>
+                <div className="col-md-4">
+                  <div className="card border-0">
+                    <div className="topContent">
                       <Image
-                        src='/images/hire-talent.svg'
+                        src="/images/hire-talent.svg"
                         width={50}
                         height={50}
-                        alt='hire-talent'
-                        className='img-fluid'
+                        alt="hire-talent"
+                        className="img-fluid"
                       ></Image>
                       <h2>Hire a Talent</h2>
                     </div>
-                    <div className='para'>
+                    <div className="para">
                       <p>
                         Let Impact Careers find the best talent for your company
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className='col-md-4'>
-                  <div className='card border-0'>
-                    <div className='topContent'>
+                <div className="col-md-4">
+                  <div className="card border-0">
+                    <div className="topContent">
                       <Image
-                        src='/images/ask-question.svg'
+                        src="/images/ask-question.svg"
                         width={50}
                         height={50}
-                        alt='ask-question'
-                        className='img-fluid'
+                        alt="ask-question"
+                        className="img-fluid"
                       ></Image>
                       <h2>Ask any Question</h2>
                     </div>
                     <div>
-                      <p className='para'>
+                      <p className="para">
                         Do you have any questions for us? The team is ready to
                         respond to any questions, issues, and problems you face.
                       </p>
@@ -95,9 +95,9 @@ export default function Contact({ posts, name }) {
         {/* form section */}
         <div>
           {/* <ContactForm /> */}
-          <section id='contact-form'>
-            <div className='container'>
-              <div className='get-in-touch'>
+          <section id="contact-form">
+            <div className="container">
+              <div className="get-in-touch">
                 <h2>Get in Touch</h2>
                 <p>
                   We do not believe staffing and recruiting are limited to

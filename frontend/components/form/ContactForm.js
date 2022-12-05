@@ -1,444 +1,279 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import { useState } from "react";
-import { useFormik } from "formik";
-import * as yup from "yup";
-import { sendContactForm } from "../../lib/api";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Button,
-  FormControl,
-  Container,
-  Heading,
-  FormErrorMessage,
-  Input,
-  Textarea,
-  useToast,
-  ChakraProvider,
-} from "@chakra-ui/react";
-
-const initValues = {
-  Firstname: "",
-  Lastname: "",
-  email: "",
-  Phone: Number,
-  Title: "",
-  Organization: "",
-  Website: "",
-  Position_Type: "",
-  Position_Location: "",
-  Title_of_Position: "",
-  How_Did_You_Hear_About_Us: "",
-  Resume_Upload: "",
-  message: "",
-};
-
-const initState = { isLoading: false, error: "", values: initValues };
-
-export default function Home() {
-  const toast = useToast();
-  const [state, setState] = useState(initState);
-  const [touched, setTouched] = useState({});
-
-  const { values, isLoading, error } = state;
-
-  const onBlur = ({ target }) =>
-    setTouched((prev) => ({ ...prev, [target.name]: true }));
-
-  const handleChange = ({ target }) =>
-    setState((prev) => ({
-      ...prev,
-      values: {
-        ...prev.values,
-        [target.name]: target.value,
-      },
+import axios from 'axios';
+import { useState } from 'react';
+const GETFORM_FORM_ENDPOINT =
+  'https://getform.io/f/022b177a-59f5-4697-9c3c-6b6b4d4cf7ba';
+function Form() {
+  const [formStatus, setFormStatus] = useState(false);
+  const [query, setQuery] = useState({
+    First_Name: '',
+    Last_Name: '',
+    email: '',
+    Phone: '',
+    Title: '',
+    Organization: '',
+    Website: '',
+    Position_Location: '',
+    Title_of_Position: '',
+    How_Did_You_Hear_About_Us: '',
+    Resume_Upload: '',
+    message: '',
+  });
+  const handleFileChange = () => (e) => {
+    setQuery((prevState) => ({
+      ...prevState,
+      files: e.target.files[0],
     }));
-
-  const onSubmit = async () => {
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
-    try {
-      await sendContactForm(values);
-      setTouched({});
-      setState(initState);
-      toast({
-        title: "Thank you. Your submission has been received.",
-        status: "success",
-        // duration: 2000,
-        position: "top",
-      });
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error: error.message,
-      }));
-    }
   };
-
+  const handleChange = () => (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuery((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    Object.entries(query).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    axios
+      .post(GETFORM_FORM_ENDPOINT, formData, {
+        headers: { Accept: 'application/json' },
+      })
+      .then(function (response) {
+        setFormStatus(true);
+        setQuery({
+          First_Name: '',
+          Last_Name: '',
+          email: '',
+          Phone: '',
+          Title: '',
+          Organization: '',
+          Website: '',
+          Position_Location: '',
+          Title_of_Position: '',
+          How_Did_You_Hear_About_Us: '',
+          message: '',
+        });
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   return (
-    <>
-      <ChakraProvider>
-        {/* <Container> */}
-        {error && (
-          <Text color='red.300' my={4} fontSize='xl'>
-            {error}
-          </Text>
-        )}
-        <div>
-          <div>
-            <div>
-              <div className='mb-3'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Firstname && !values.Firstname}
-                    >
-                      <Input
-                        type='text'
-                        name='Firstname'
-                        className='form-control p-4'
-                        placeholder='First Name'
-                        errorbordercolor='red.300'
-                        value={values.Firstname}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>Firstname is Required</FormErrorMessage>
-                    </FormControl>
-                  </div>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Lastname && !values.Lastname}
-                      mb={5}
-                    >
-                      <Input
-                        type='text'
-                        name='Lastname'
-                        className='form-control p-4'
-                        placeholder='Last Name'
-                        errorbordercolor='red.300'
-                        value={values.Lastname}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>Lastname is Required</FormErrorMessage>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
+    // <div class="container-md">
+    <form
+      acceptCharset="UTF-8"
+      method="POST"
+      enctype="multipart/form-data"
+      id="ajaxForm"
+      onSubmit={handleSubmit}
+    >
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="First_Name"
+              className="form-control"
+              placeholder="First Name"
+              required
+              value={query.First_Name}
+              onChange={handleChange()}
+            />
+          </div>
 
-              {/* <FormLabel>Lastname</FormLabel> */}
-
-              <div className='mb-3'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.email && !values.email}
-                      mb={5}
-                    >
-                      <Input
-                        type='email'
-                        name='email'
-                        className='form-control p-4'
-                        placeholder='Email'
-                        errorbordercolor='red.300'
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>Email is Required</FormErrorMessage>
-                    </FormControl>
-                  </div>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Phone && !values.Phone}
-                      mb={5}
-                    >
-                      <Input
-                        type='tel'
-                        name='Phone'
-                        className='form-control p-4'
-                        placeholder='Phone'
-                        errorbordercolor='red.300'
-                        value={values.Phone}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>
-                        Phone number is Required
-                      </FormErrorMessage>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
-
-              <div className='mb-3'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Title && !values.Title}
-                      mb={5}
-                    >
-                      <Input
-                        type='text'
-                        name='Title'
-                        className='form-control p-4'
-                        placeholder='Title'
-                        errorbordercolor='red.300'
-                        value={values.Title}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>Title is Required</FormErrorMessage>
-                    </FormControl>
-                  </div>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Organization && !values.Organization}
-                      mb={5}
-                    >
-                      <Input
-                        type='text'
-                        name='Organization'
-                        className='form-control p-4'
-                        placeholder='Organization'
-                        errorbordercolor='red.300'
-                        value={values.Organization}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>
-                        Organization is Required
-                      </FormErrorMessage>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
-
-              <div className='mb-3'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Website && !values.Website}
-                      mb={5}
-                    >
-                      <Input
-                        type='text'
-                        name='Website'
-                        className='form-control p-4'
-                        placeholder='Website'
-                        errorbordercolor='red.300'
-                        value={values.Website}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>Website is Required</FormErrorMessage>
-                    </FormControl>
-                  </div>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={touched.Position_Type && !values.Position_Type}
-                      mb={5}
-                    >
-                      <select
-                        className='form-control'
-                        type='text'
-                        placeholder='Website'
-                        name='Position_Type'
-                        value={values.Position_Type}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      >
-                        <option value='Temporary / Contract'>
-                          Temporary / Contract
-                        </option>
-                        <option value='Direct Hire / Permanent'>
-                          Direct Hire / Permanent
-                        </option>
-                        <option value='Executive / Search'>
-                          Executive / Search
-                        </option>
-                        <option value='Payrolling'>Payrolling</option>
-                        <option value='Apply With Us As A Candidate'>
-                          Apply With Us As A Candidate
-                        </option>
-                      </select>
-                      <FormErrorMessage>
-                        Position type is Required
-                      </FormErrorMessage>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
-
-              <div className='mb-3'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      isRequired
-                      isInvalid={
-                        touched.Position_Location && !values.Position_Location
-                      }
-                      mb={5}
-                    >
-                      <Input
-                        type='email'
-                        className='form-control p-4'
-                        placeholder='Position Location'
-                        name='Position_Location'
-                        errorbordercolor='red.300'
-                        value={values.Position_Location}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>
-                        Position Location is Required
-                      </FormErrorMessage>
-                    </FormControl>
-                  </div>
-                  <div className='col-sm-6'>
-                    <FormControl
-                      mb={5}
-                      isRequired
-                      isInvalid={
-                        touched.Title_of_Position && !values.Title_of_Position
-                      }
-                    >
-                      <Input
-                        type='text'
-                        className='form-control p-4'
-                        placeholder='Title of Position'
-                        name='Title_of_Position'
-                        errorbordercolor='red.300'
-                        value={values.Title_of_Position}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                      <FormErrorMessage>
-                        Title of position is Required
-                      </FormErrorMessage>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
-
-              <FormControl
-                mb={5}
-                isRequired
-                isInvalid={touched.Resume_Upload && !values.Resume_Upload}
-              >
-                <div className='mb-3'>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <Input
-                        type='file'
-                        className='w-file-upload-input form-control UploadImg p-4'
-                        name='Resume_Upload'
-                        accept='.pdf, .doc, .docx, .txt'
-                        data-name='Upload Job Description, If Available'
-                        aria-hidden='true'
-                        placeholder='Upload Job Description, If Available'
-                        tabIndex='-1'
-                        errorbordercolor='red.300'
-                        value={values.Resume_Upload}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                      />
-                    </div>
-                    <div className='col-sm-6'>
-                      <FormControl
-                        mb={5}
-                        isRequired
-                        isInvalid={
-                          touched.How_Did_You_Hear_About_Us &&
-                          !values.How_Did_You_Hear_About_Us
-                        }
-                      >
-                        <Input
-                          type='text'
-                          className='form-control p-4'
-                          placeholder='How Did You Hear About Us?'
-                          name='How_Did_You_Hear_About_Us'
-                          errorbordercolor='red.300'
-                          value={values.How_Did_You_Hear_About_Us}
-                          onChange={handleChange}
-                          onBlur={onBlur}
-                        />
-                        <FormErrorMessage>
-                          Hear About us is Required
-                        </FormErrorMessage>
-                      </FormControl>
-                    </div>
-                  </div>
-                </div>
-
-                <FormErrorMessage>Required</FormErrorMessage>
-              </FormControl>
-
-              <FormControl
-                mb={5}
-                isRequired
-                isInvalid={touched.message && !values.message}
-              >
-                <textarea
-                  type='text'
-                  name='message'
-                  className='form-control p-4'
-                  placeholder='Or Alternately, Describe Position:'
-                  errorbordercolor='red.300'
-                  value={values.message}
-                  onChange={handleChange}
-                  onBlur={onBlur}
-                />
-                <FormErrorMessage>Message is Required</FormErrorMessage>
-              </FormControl>
-            </div>
-            <div className='form-group text-center'>
-              <Button
-                id='formButton'
-                type='submit'
-                value='Submit'
-                data-wait='Please wait...'
-                className='site-btn'
-                variant='outline'
-                colorScheme='blue'
-                isLoading={isLoading}
-                disabled={
-                  !values.Firstname ||
-                  !values.Lastname ||
-                  !values.email ||
-                  !values.Phone ||
-                  !values.Title ||
-                  !values.Organization ||
-                  !values.Website ||
-                  !values.Position_Type ||
-                  !values.Position_Location ||
-                  !values.Title_of_Position ||
-                  !values.How_Did_You_Hear_About_Us ||
-                  !values.Resume_Upload ||
-                  !values.message
-                }
-                onClick={onSubmit}
-              >
-                Submit
-              </Button>
-            </div>
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Last_Name"
+              className="form-control"
+              placeholder="Last Name"
+              required
+              value={query.Last_Name}
+              onChange={handleChange()}
+            />
           </div>
         </div>
-        {/* </Container> */}
-      </ChakraProvider>
-    </>
+      </div>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Email"
+              required
+              value={query.email}
+              onChange={handleChange()}
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <input
+              type="tel"
+              name="Phone"
+              className="form-control"
+              placeholder="Phone"
+              required
+              value={query.Phone}
+              onChange={handleChange()}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Title"
+              className="form-control"
+              placeholder="Title"
+              required
+              value={query.Title}
+              onChange={handleChange()}
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Organization"
+              className="form-control"
+              placeholder="Organization"
+              required
+              value={query.Organization}
+              onChange={handleChange()}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Website"
+              className="form-control"
+              placeholder="Website"
+              required
+              value={query.Website}
+              onChange={handleChange()}
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <select
+              className="form-select form-control"
+              name="Position_Type"
+              required
+              value={query.Position_Type}
+              onChange={handleChange()}
+            >
+              <option value="Temporary / Contract">Temporary / Contract</option>
+              <option value="Direct Hire / Permanent">
+                Direct Hire / Permanent
+              </option>
+              <option value="Executive / Search">Executive / Search</option>
+              <option value="Payrolling">Payrolling</option>
+              <option value="Apply With Us As A Candidate">
+                Apply With Us As A Candidate
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Position_Location"
+              className="form-control"
+              placeholder="Position Location"
+              required
+              value={query.Position_Location}
+              onChange={handleChange()}
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="Title_of_Position"
+              className="form-control"
+              placeholder="Title of Position"
+              required
+              value={query.Title_of_Position}
+              onChange={handleChange()}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
+            <input
+              type="file"
+              className="w-file-upload-input form-control UploadImg"
+              accept=".pdf, .doc, .docx, .txt"
+              name="Resume_Upload"
+              data-iconName="fa-solid fa-cloud-arrow-up"
+              data-name="Upload Job Description, If Available"
+              aria-hidden="true"
+              placeholder="Upload Job Description, If Available"
+              tabindex="-1"
+              required
+              onChange={handleFileChange()}
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <input
+              type="text"
+              name="How_Did_You_Hear_About_Us"
+              className="form-control"
+              placeholder="How Did You Hear About Us?"
+              required
+              value={query.How_Did_You_Hear_About_Us}
+              onChange={handleChange()}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-3">
+        <textarea
+          name="message"
+          className="form-control"
+          placeholder="Or Alternately, Describe Position:"
+          required
+          value={query.message}
+          onChange={handleChange()}
+        />
+      </div>
+      {/* <hr /> */}
+      {/* $("form").hide(
+        setMessage("Thank you! Your submission has been received!")
+      ); */}
+      {formStatus ? (
+        <div className="thank">
+          Thank you! Your submission has been received!
+        </div>
+      ) : (
+        ''
+      )}
+      <button type="submit" className="site-btn text-center ">
+        Submit
+      </button>
+    </form>
+    // </div>
   );
 }
+export default Form;
