@@ -63,181 +63,181 @@ const ApplyForm = () => {
   });
 
   return (
-    <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
-      <div hidden={!submitted} className="alert alert-primary" role="alert">
+    <div className='vh-100 d-flex flex-column justify-content-center align-items-center'>
+      <div hidden={!submitted} className='alert alert-primary' role='alert'>
         {message}
       </div>
       <form
-        id="registerForm"
-        className="needs-validation"
-        method="post"
+        id='registerForm'
+        className='needs-validation'
+        method='post'
         onSubmit={formik.handleSubmit}
       >
-        <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-6">
+        <div className='mb-3'>
+          <div className='row'>
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="First_Name"
-                className="form-control"
-                placeholder="First Name"
+                type='text'
+                name='First_Name'
+                className='form-control'
+                placeholder='First Name'
                 value={formik.values.First_Name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.First_Name && (
-                <div className="text-danger">{formik.errors.First_Name}</div>
+                <div className='text-danger'>{formik.errors.First_Name}</div>
               )}
             </div>
 
-            <div className="col-sm-6">
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="Last_Name"
-                className="form-control"
-                placeholder="Last Name"
+                type='text'
+                name='Last_Name'
+                className='form-control'
+                placeholder='Last Name'
                 value={formik.values.Last_Name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.Last_Name && (
-                <div className="text-danger">{formik.errors.Last_Name}</div>
+                <div className='text-danger'>{formik.errors.Last_Name}</div>
               )}
             </div>
           </div>
         </div>
-        <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-6">
+        <div className='mb-3'>
+          <div className='row'>
+            <div className='col-sm-6'>
               <input
-                type="email"
-                name="email"
-                className="form-control"
-                placeholder="Email"
+                type='email'
+                name='email'
+                className='form-control'
+                placeholder='Email'
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.email && (
-                <div className="text-danger">{formik.errors.email}</div>
+                <div className='text-danger'>{formik.errors.email}</div>
               )}
             </div>
 
-            <div className="col-sm-6">
+            <div className='col-sm-6'>
               <input
-                type="tel"
-                name="Mobile_number"
-                className="form-control"
-                placeholder="Mobile number"
+                type='tel'
+                name='Mobile_number'
+                className='form-control'
+                placeholder='Mobile number'
                 value={formik.values.Mobile_number}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.Mobile_number && (
-                <div className="text-danger">{formik.errors.Mobile_number}</div>
+                <div className='text-danger'>{formik.errors.Mobile_number}</div>
               )}
             </div>
           </div>
         </div>
 
-        <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-6">
+        <div className='mb-3'>
+          <div className='row'>
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="Your_Location"
-                className="form-control"
-                placeholder="Your location"
+                type='text'
+                name='Your_Location'
+                className='form-control'
+                placeholder='Your location'
                 value={formik.values.Your_Location}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.Your_Location && (
-                <div className="text-danger">{formik.errors.Your_Location}</div>
+                <div className='text-danger'>{formik.errors.Your_Location}</div>
               )}
             </div>
-            <div className="col-sm-6">
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="Current_Salary"
-                className="form-control"
-                placeholder="Current-Salary"
+                type='text'
+                name='Current_Salary'
+                className='form-control'
+                placeholder='Current-Salary'
                 value={formik.values.Current_Salary}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.Current_Salary && (
-                <div className="text-danger">
+                <div className='text-danger'>
                   {formik.errors.Current_Salary}
                 </div>
               )}
             </div>
           </div>
         </div>
-        <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-6">
+        <div className='mb-3'>
+          <div className='row'>
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="Notice_Period"
-                className="form-control"
-                placeholder="Notice period"
+                type='text'
+                name='Notice_Period'
+                className='form-control'
+                placeholder='Notice period'
                 value={formik.values.Notice_Period}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.Notice_Period && (
-                <div className="text-danger">{formik.errors.Notice_Period}</div>
+                <div className='text-danger'>{formik.errors.Notice_Period}</div>
               )}
             </div>
 
-            <div className="col-sm-6">
+            <div className='col-sm-6'>
               <input
-                type="text"
-                name="LinkedIn_URL"
-                className="form-control"
-                placeholder="LinkedIn URL"
+                type='text'
+                name='LinkedIn_URL'
+                className='form-control'
+                placeholder='LinkedIn URL'
                 value={formik.values.LinkedIn_URL}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
               {formik.errors.LinkedIn_URL && (
-                <div className="text-danger">{formik.errors.LinkedIn_URL}</div>
+                <div className='text-danger'>{formik.errors.LinkedIn_URL}</div>
               )}
             </div>
           </div>
         </div>
-        <div className="mb-3">
+        <div className='mb-3'>
           <input
-            type="file"
-            className="w-file-upload-input form-control UploadImg"
-            accept=".pdf, .doc, .docx, .txt"
-            name="Resume_Upload"
-            data-iconname="fa-solid fa-cloud-arrow-up"
-            data-name="Upload Job Description, If Available"
-            aria-hidden="true"
-            placeholder="Upload Job Description, If Available"
-            tabIndex="-1"
+            type='file'
+            className='w-file-upload-input form-control UploadImg'
+            accept='.pdf, .doc, .docx, .txt'
+            name='Resume_Upload'
+            data-iconname='fa-solid fa-cloud-arrow-up'
+            data-name='Upload Job Description, If Available'
+            aria-hidden='true'
+            placeholder='Upload Job Description, If Available'
+            tabIndex='-1'
             value={formik.values.Resume_Upload}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
           {formik.errors.Resume_Upload && (
-            <div className="text-danger">{formik.errors.Resume_Upload}</div>
+            <div className='text-danger'>{formik.errors.Resume_Upload}</div>
           )}
         </div>
 
         {/* <button type="submit" className="btn btn-primary">
           Send
         </button> */}
-        <div className="form-group text-center">
+        <div className='form-group text-center'>
           <input
-            id="formButton"
+            id='formButton'
             // onClick={SubmitHandler}
-            type="submit"
-            value="Submit"
-            data-wait="Please wait..."
-            className="site-btn"
+            type='submit'
+            value='Submit'
+            data-wait='Please wait...'
+            className='site-btn'
           />
         </div>
       </form>

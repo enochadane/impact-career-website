@@ -1,19 +1,18 @@
-import React from "react";
-import Footer from "../components/Footer/Footer";
-import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../graphql/queries";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import Head from "next/head";
-import { useState } from "react";
-import Applyform from "../components/Applyform/Applyform";
+import React from 'react';
+import Footer from '../components/Footer/Footer';
+import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import Head from 'next/head';
+import { useState } from 'react';
+import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
-  uri: "http://13.59.166.79:1337/graphql",
+  uri: 'http://13.59.166.79:1337/graphql',
   cache: new InMemoryCache(),
 });
 
 export default function post({ post }) {
   const [modal, setModal] = useState(false);
-
   return (
     <>
       <div>
@@ -28,6 +27,7 @@ export default function post({ post }) {
                   src={`http://13.59.166.79:1337${post.image.data.attributes.url}`}
                   width={80}
                   height={80}
+                  alt={'Trending-Img'}
                 ></img>
               </div>
               <div className='col-8 col-md-7 col-lg-4'>
@@ -58,7 +58,7 @@ export default function post({ post }) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? "block" : "none" }}
+          style={{ display: modal ? 'block' : 'none' }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>

@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Script from "next/script";
-import Footer from "../components/Footer/Footer";
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import Script from 'next/script';
+import Footer from '../components/Footer/Footer';
 
 export default function Resource({ posts, name }) {
   return (
@@ -41,6 +41,7 @@ export default function Resource({ posts, name }) {
                       src='/images/employeesWebinar.jpg'
                       width={350}
                       height={250}
+                      alt='employeesWebinar-Img'
                     ></Image>
                     <div className='card-body'>
                       <h5 className='card-title trainCardH5'>
@@ -63,6 +64,7 @@ export default function Resource({ posts, name }) {
                       src='/images/employeesWebinar2.jpg'
                       width={350}
                       height={250}
+                      alt='employeesWebinar-Img'
                     ></Image>
                     <div className='card-body'>
                       <h5 className='card-title trainCardH5'>
@@ -85,6 +87,7 @@ export default function Resource({ posts, name }) {
                       src='/images/employeesWebinar3.jpg'
                       width={350}
                       height={250}
+                      alt='employeesWebinar-Img'
                     ></Image>
                     <div className='card-body'>
                       <h5 className='card-title trainCardH5'>
@@ -122,6 +125,7 @@ export default function Resource({ posts, name }) {
                         src='/images/youTube1.png'
                         width={350}
                         height={250}
+                        alt='interviewImg-Img'
                       ></Image>
                     </a>
                     <div className='card-body interviewCardBody'>
@@ -146,6 +150,7 @@ export default function Resource({ posts, name }) {
                         src='/images/youTube2.png'
                         width={350}
                         height={250}
+                        alt='youtube-Img'
                       ></Image>
                     </a>
                     <div className='card-body interviewCardBody'>
@@ -170,6 +175,7 @@ export default function Resource({ posts, name }) {
                         src='/images/discussion.jpg'
                         width={350}
                         height={250}
+                        alt='interview-Img'
                       ></Image>
                     </a>
                     <div className='card-body interviewCardBody'>

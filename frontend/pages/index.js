@@ -1,12 +1,12 @@
-import Head from "next/head";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
-import Applyform from "../components/Applyform/Applyform";
+import Head from 'next/head';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_ALL_POSTS, GET_FAQ } from '../graphql/queries';
+import Link from 'next/link';
+import Image from 'next/image';
+import Footer from '../components/Footer/Footer';
+import Applyform from '../components/Applyform/Applyform';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -207,7 +207,7 @@ export default function Home({ posts, name }) {
                         width={300}
                         height={100}
                         className='img-fluid rounded-start'
-                        alt='learn'
+                        alt='learn-Img'
                       ></Image>
                     </div>
                   </div>
@@ -255,7 +255,7 @@ export default function Home({ posts, name }) {
           <div
             id='myModal'
             className='modal'
-            style={{ display: modal ? "block" : "none" }}
+            style={{ display: modal ? 'block' : 'none' }}
           >
             <div className='modal-content'>
               <span className='close' onClick={() => setModal(false)}>
@@ -285,7 +285,8 @@ export default function Home({ posts, name }) {
               <div className='col viewallCol'>
                 <a className='atag' href='/jobs'>
                   <p className='viewallPara'>
-                    View all jobs <img src='/images/arrow.svg' />
+                    View all jobs{' '}
+                    <img src='/images/arrow.svg' alt='arrow-Img' />
                   </p>
                 </a>
               </div>
@@ -308,6 +309,7 @@ export default function Home({ posts, name }) {
                                   src={`http://13.59.166.79:1337${val.attributes.image.data.attributes.url}`}
                                   width={100}
                                   height={100}
+                                  alt={'jobs-Img'}
                                 ></img>
                               </div>
                               <div className='col-md-8  col-8'>
@@ -543,7 +545,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: "http://13.59.166.79:1337/graphql",
+    uri: 'http://13.59.166.79:1337/graphql',
     cache: new InMemoryCache(),
   });
 
