@@ -49,10 +49,7 @@ if (typeof window !== 'undefined') {
 }
 
 // This is for Next.js. On Rect JS remove this line
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
-  ssr: false,
-});
-
+const OwlCarousel = dynamic(import('react-owl-carousel'), { ssr: false });
 // This is for React JS, Remove this for Next.js
 // import OwlCarousel from 'react-owl-carousel';
 
