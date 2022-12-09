@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { useState } from 'react';
-const GETFORM_FORM_ENDPOINT =
-  'https://getform.io/f/022b177a-59f5-4697-9c3c-6b6b4d4cf7ba';
 function Form() {
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
@@ -37,10 +35,31 @@ function Form() {
     const formData = new FormData();
     Object.entries(query).forEach(([key, value]) => {
       formData.append(key, value);
+      console.log(value);
     });
+
     axios
-      .post(GETFORM_FORM_ENDPOINT, formData, {
-        headers: { Accept: 'application/json' },
+      .post('/api/contact', formData, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({
+          First_Name: formData.First_Name,
+          Last_Name: formData.Last_Name,
+          email: formData.email,
+          Phone: formData.Phone,
+          Title: formData.Title,
+          Organization: formData.Organization,
+          Website: formData.Website,
+          Position_Location: formData.Position_Location,
+          Title_of_Position: formData.Title_of_Position,
+          How_Did_You_Hear_About_Us: formData.How_Did_You_Hear_About_Us,
+          message: formData.message,
+          file: formData.File,
+        }),
       })
       .then(function (response) {
         setFormStatus(true);
@@ -62,34 +81,74 @@ function Form() {
       .catch(function (error) {
         console.log(error);
       });
+    // fetch('/api/contact', formData, {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json, text/plain, */*',
+    //     'Content-Type': 'application/json',
+    //   },
+
+    //   body: JSON.stringify({
+    //     // email: 'tbanumathi15@gmail.com',
+    //     // meassage: 'hai',
+    //     // name: 'sai',
+    //     // email: formData.value.email,
+    //     email: formData.email,
+    //   }),
+    // }).then((res) => {
+    //   setFormStatus(true);
+    //   setQuery({
+    //     First_Name: '',
+    //     Last_Name: '',
+    //     email: '',
+    //     Phone: '',
+    //     Title: '',
+    //     Organization: '',
+    //     Website: '',
+    //     Position_Location: '',
+    //     Title_of_Position: '',
+    //     How_Did_You_Hear_About_Us: '',
+    //     message: '',
+    //   });
+    //   console.log('Response received');
+    //   if (res.status === 200) {
+    //     console.log('Response succeeded!');
+    //     setSubmitted(true);
+    //     setName('');
+    //     setEmail('');
+    //     setBody('');
+    //   }
+    // });
   };
+
   return (
     <form
-      acceptCharset='UTF-8'
-      method='POST'
-      encType='multipart/form-data'
-      id='ajaxForm'
+      acceptCharset="UTF-8"
+      method="POST"
+      enctype="multipart/form-data"
+      id="ajaxForm"
       onSubmit={handleSubmit}
     >
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='First_Name'
-              className='form-control'
-              placeholder='First Name'
+              type="text"
+              name="First_Name"
+              className="form-control"
+              placeholder="First Name"
               required
               value={query.First_Name}
               onChange={handleChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Last_Name'
-              className='form-control'
-              placeholder='Last Name'
+              type="text"
+              name="Last_Name"
+              className="form-control"
+              placeholder="Last Name"
               required
               value={query.Last_Name}
               onChange={handleChange()}
@@ -97,25 +156,26 @@ function Form() {
           </div>
         </div>
       </div>
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='email'
-              name='email'
-              className='form-control'
-              placeholder='Email'
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Email"
               required
               value={query.email}
               onChange={handleChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <input
-              type='tel'
-              name='Phone'
-              className='form-control'
-              placeholder='Phone'
+              type="tel"
+              name="Phone"
+              className="form-control"
+              placeholder="Phone"
               required
               value={query.Phone}
               onChange={handleChange()}
@@ -123,25 +183,27 @@ function Form() {
           </div>
         </div>
       </div>
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Title'
-              className='form-control'
-              placeholder='Title'
+              type="text"
+              name="Title"
+              className="form-control"
+              placeholder="Title"
               required
               value={query.Title}
               onChange={handleChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Organization'
-              className='form-control'
-              placeholder='Organization'
+              type="text"
+              name="Organization"
+              className="form-control"
+              placeholder="Organization"
               required
               value={query.Organization}
               onChange={handleChange()}
@@ -149,59 +211,61 @@ function Form() {
           </div>
         </div>
       </div>
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Website'
-              className='form-control'
-              placeholder='Website'
+              type="text"
+              name="Website"
+              className="form-control"
+              placeholder="Website"
               required
               value={query.Website}
               onChange={handleChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <select
-              className='form-select form-control'
-              name='Position_Type'
+              className="form-select form-control"
+              name="Position_Type"
               required
               value={query.Position_Type}
               onChange={handleChange()}
             >
-              <option value='Temporary / Contract'>Temporary / Contract</option>
-              <option value='Direct Hire / Permanent'>
+              <option value="Temporary / Contract">Temporary / Contract</option>
+              <option value="Direct Hire / Permanent">
                 Direct Hire / Permanent
               </option>
-              <option value='Executive / Search'>Executive / Search</option>
-              <option value='Payrolling'>Payrolling</option>
-              <option value='Apply With Us As A Candidate'>
+              <option value="Executive / Search">Executive / Search</option>
+              <option value="Payrolling">Payrolling</option>
+              <option value="Apply With Us As A Candidate">
                 Apply With Us As A Candidate
               </option>
             </select>
           </div>
         </div>
       </div>
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Position_Location'
-              className='form-control'
-              placeholder='Position Location'
+              type="text"
+              name="Position_Location"
+              className="form-control"
+              placeholder="Position Location"
               required
               value={query.Position_Location}
               onChange={handleChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='Title_of_Position'
-              className='form-control'
-              placeholder='Title of Position'
+              type="text"
+              name="Title_of_Position"
+              className="form-control"
+              placeholder="Title of Position"
               required
               value={query.Title_of_Position}
               onChange={handleChange()}
@@ -209,29 +273,30 @@ function Form() {
           </div>
         </div>
       </div>
-      <div className='mb-3'>
-        <div className='row'>
-          <div className='col-sm-6'>
+      <div className="mb-3">
+        <div className="row">
+          <div className="col-sm-6">
             <input
-              type='file'
-              className='w-file-upload-input form-control UploadImg'
-              accept='.pdf, .doc, .docx, .txt'
-              name='Resume_Upload'
-              data-iconname='fa-solid fa-cloud-arrow-up'
-              data-name='Upload Job Description, If Available'
-              aria-hidden='true'
-              placeholder='Upload Job Description, If Available'
-              tabIndex='-1'
+              type="file"
+              className="w-file-upload-input form-control UploadImg"
+              accept=".pdf, .doc, .docx, .txt"
+              name="Resume_Upload"
+              data-iconName="fa-solid fa-cloud-arrow-up"
+              data-name="Upload Job Description, If Available"
+              aria-hidden="true"
+              placeholder="Upload Job Description, If Available"
+              tabindex="-1"
               required
               onChange={handleFileChange()}
             />
           </div>
-          <div className='col-sm-6'>
+
+          <div className="col-sm-6">
             <input
-              type='text'
-              name='How_Did_You_Hear_About_Us'
-              className='form-control'
-              placeholder='How Did You Hear About Us?'
+              type="text"
+              name="How_Did_You_Hear_About_Us"
+              className="form-control"
+              placeholder="How Did You Hear About Us?"
               required
               value={query.How_Did_You_Hear_About_Us}
               onChange={handleChange()}
@@ -239,27 +304,33 @@ function Form() {
           </div>
         </div>
       </div>
-      <div className='mb-3'>
+
+      <div className="mb-3">
         <textarea
-          name='message'
-          className='form-control'
-          placeholder='Or Alternately, Describe Position:'
+          name="message"
+          className="form-control"
+          placeholder="Or Alternately, Describe Position:"
           required
           value={query.message}
           onChange={handleChange()}
         />
       </div>
+      {/* <hr /> */}
+      {/* $("form").hide(
+        setMessage("Thank you! Your submission has been received!")
+      ); */}
       {formStatus ? (
-        <div className='thank'>
+        <div className="thank">
           Thank you! Your submission has been received!
         </div>
       ) : (
         ''
       )}
-      <button type='submit' className='site-btn text-center '>
+      <button type="submit" className="site-btn text-center ">
         Submit
       </button>
     </form>
+    // </div>
   );
 }
 export default Form;

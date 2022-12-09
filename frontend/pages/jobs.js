@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_ALL_POSTS, GET_FAQ_JOBS } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import Footer from '../components/Footer/Footer';
+import Head from "next/head";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_ALL_POSTS, GET_FAQ_JOBS } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import Footer from "../components/Footer/Footer";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Job({ posts, name }) {
   return (
@@ -43,7 +43,6 @@ export default function Job({ posts, name }) {
                                   src={`http://13.59.166.79:1337${val.attributes.image.data.attributes.url}`}
                                   width={100}
                                   height={100}
-                                  alt={'Trending-Img'}
                                 ></img>
                               </div>
                               <div className='col-md-8 col-8'>
@@ -118,7 +117,7 @@ export default function Job({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: 'http://13.59.166.79:1337/graphql',
+    uri: "http://13.59.166.79:1337/graphql",
     cache: new InMemoryCache(),
   });
 

@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import Footer from '../components/Footer/Footer';
-import { useState, useEffect } from 'react';
+import Head from "next/head";
+import Footer from "../components/Footer/Footer";
+import { useState, useEffect } from "react";
 
 export default function Page({}) {
   const [modal, setModal] = useState(false);
@@ -18,7 +18,7 @@ export default function Page({}) {
                   <img
                     src='/images/blue-img.jpeg'
                     class='imgrounded-start'
-                    alt='logo-Img'
+                    alt='logo'
                   />
                 </div>
                 <div class='col-8 col-md-7 col-lg-4'>
@@ -80,7 +80,7 @@ export default function Page({}) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? 'block' : 'none' }}
+          style={{ display: modal ? "block" : "none" }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>
