@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import ActiveLink from "../ActiveLink/ActiveLink";
 
-export default function Nav() {
+export default function Footer() {
   const router = useRouter();
 
   return (
@@ -13,13 +13,13 @@ export default function Nav() {
         <section id='home-page'>
           <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top p-0 shadow-sm'>
             <div className='container'>
-              <a href='/' className='navbar-brand'>
+              <Link href='/' className='navbar-brand'>
                 <Image
                   src='/images/headerLogo.png'
                   width={60}
                   height={60}
                 ></Image>
-              </a>
+              </Link>
               <button
                 className='navbar-toggler'
                 type='button'
@@ -82,9 +82,9 @@ export default function Nav() {
                   </li>
                 </ul>
                 <div className='btnDiv'>
-                  <a href='/contact'>
+                  <Link href='/contact'>
                     <button className='ContactButton'>contact</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

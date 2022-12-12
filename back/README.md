@@ -55,3 +55,119 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+                            BACKEND:
+
+In Strapi:
+npx create-strapi-app@latest my-project.
+
+Choose an installation type:
+Quickstart (recommended), which uses the default database (SQLite)
+Custom (manual settings), which allows to choose your preferred database.
+
+To start the Strapi application, run the following command in the project folder:
+npm run develop or yarn develop.
+Now the backend will open in UI it's open in the url of http://loccalhost:1337/admin
+We have to Register and login and will the UI will be setup.
+
+Project structure:
+
+├──── .cache # files used to build the admin panel
+├──── .tmp
+├──── build # build of the admin panel
+├──── config # API configurations
+│ ├ api.js
+│ ├ admin.js
+│ ├ cron-tasks.js
+│ ├ database.js
+│ ├ middlewares.js
+│ ├ plugins.js
+│ └ server.js
+├──── database
+│ └──── migrations
+├──── node_modules # npm packages used by the project
+├──── public # files accessible to the outside world
+│ └──── uploads
+├──── src
+│ ├──── admin # admin customization files
+│ ├──── extensions # files to extend the admin panel
+│ │ ├ app.js
+│ │ └ webpack.config.js
+│ ├──── api # business logic of the project split into subfolders per API
+│ │ └──── (api-name)
+│ │ ├──── content-types
+│ │ │ └──── (content-type-name)
+│ │ │ └ lifecycles.js
+│ │ │ └ schema.json
+│ │ ├──── controllers
+│ │ ├──── middlewares
+│ │ ├──── policies
+│ │ ├──── routes
+│ │ ├──── services
+│ │ └ index.js
+│ ├──── components
+│ │ └──── (category-name)
+│ │ ├ (componentA).json
+│ │ └ (componentB).json
+│ ├──── extensions # files to extend installed plugins
+│ │ └──── (plugin-to-be-extended)
+│ │ ├──── content-types
+│ │ │ └──── (content-type-name)
+│ │ │ └ schema.json
+│ │ └ strapi-server.js
+│ ├──── middlewares
+│ │ └──── (middleware-name).js
+│ ├──── plugins # local plugins files
+│ │ └──── (plugin-name)
+│ │ ├──── admin
+│ │ │ └──── src
+│ │ │ └ index.js
+│ │ ├──── server
+│ │ │ ├──── content-types
+│ │ │ ├──── controllers
+│ │ │ └──── policies
+│ │ ├ package.json
+│ │ ├ strapi-admin.js
+│ │ └ strapi-server.js
+│ ├─── policies
+│ └ index.js # include register(), bootstrap() and destroy() functions
+├ .env
+└ package.json
+
+.env file we have to add.
+Installation Packages:
+
+Strapi graphql : npm run strapi install graphql
+See the query in http://localhost:1337/graphql.
+
+Example query:
+query Restaurants {
+restaurants {
+id
+name
+description
+categories {
+name
+}
+}
+}
+
+Example Response for above:
+{
+"data": {
+"restaurants": [
+{
+"id": "1",
+"name": "Biscotte Restaurant",
+"description": "Welcome to Biscotte restaurant! Restaurant Biscotte offers a cuisine based on fresh, quality products, often local, organic when possible, and always produced by passionate producers.",
+"categories": [
+{
+"name": "French Food"
+}
+]
+}
+]
+}
+}
+
+Apollo Client package: npm i @apollo/client.

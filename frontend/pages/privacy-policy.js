@@ -1,5 +1,5 @@
-import Head from 'next/head';
-export default function Privacy({ posts, name }) {
+import Head from "next/head";
+export default function Privacy() {
   return (
     <>
       <div>

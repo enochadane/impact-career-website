@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import ContactForm from '../components/form/ContactForm';
+import Image from "next/image";
+import Head from "next/head";
+import ContactForm from "../components/form/ContactForm";
 
-export default function Contact({ posts, name }) {
+export default function Contact() {
   return (
     <>
       <div>

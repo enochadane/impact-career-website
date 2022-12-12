@@ -1,9 +1,9 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import Applyform from '../components/Applyform/Applyform';
-import { useState } from 'react';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_FAQ, GET_ALL_JOBS } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import Applyform from "../components/Applyform/Applyform";
+import { useState } from "react";
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -235,12 +235,12 @@ export default function Home({ posts, name }) {
                           </div>
                         </div>
                         <div className='form-group'>
-                          <a
+                          <Link
                             href='#'
                             className='btn btn-outline-success signup-btn'
                           >
                             Subscribe
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -252,7 +252,7 @@ export default function Home({ posts, name }) {
           <div
             id='myModal'
             className='modal'
-            style={{ display: modal ? 'block' : 'none' }}
+            style={{ display: modal ? "block" : "none" }}
           >
             <div className='modal-content'>
               <span className='close' onClick={() => setModal(false)}>
@@ -280,11 +280,11 @@ export default function Home({ posts, name }) {
                 <h3 className='trendingH3'>Trending Jobs</h3>
               </div>
               <div className='col viewallCol'>
-                <a className='atag' href='/jobs'>
+                <Link className='atag' href='/jobs'>
                   <p className='viewallPara'>
                     View all jobs <img src='/images/arrow.svg' />
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className='product-designer'>

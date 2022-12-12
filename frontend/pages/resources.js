@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
-
-export default function Resource({ posts, name }) {
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+export default function Resource() {
   return (
     <>
       <div>
@@ -113,14 +113,14 @@ export default function Resource({ posts, name }) {
               <div className='row'>
                 <div className='col-md-4 trainCardCol'>
                   <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <a href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
+                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
                       <Image
                         className='card-img-top interviewImg'
                         src='/images/youTube1.png'
                         width={350}
                         height={250}
                       ></Image>
-                    </a>
+                    </Link>
                     <div className='card-body interviewCardBody'>
                       <h5 className='card-title trainCardH5'>
                         Employees Webinar
@@ -137,14 +137,14 @@ export default function Resource({ posts, name }) {
                 </div>
                 <div className='col-md-4 trainCardCol'>
                   <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <a href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
+                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
                       <Image
                         className='card-img-top interviewImg'
                         src='/images/youTube2.png'
                         width={350}
                         height={250}
                       ></Image>
-                    </a>
+                    </Link>
                     <div className='card-body interviewCardBody'>
                       <h5 className='card-title trainCardH5'>
                         Employees Webinar
@@ -161,14 +161,14 @@ export default function Resource({ posts, name }) {
                 </div>
                 <div className='col-md-4 trainCardCol'>
                   <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <a href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
+                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
                       <Image
                         className='card-img-top interviewImg'
                         src='/images/discussion.jpg'
                         width={350}
                         height={250}
                       ></Image>
-                    </a>
+                    </Link>
                     <div className='card-body interviewCardBody'>
                       <h5 className='card-title trainCardH5'>
                         Blog Impact Careers
