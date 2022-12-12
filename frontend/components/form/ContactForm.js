@@ -45,21 +45,7 @@ function Form() {
           Accept: 'application/json, text/plain, */*',
           'Content-Type': 'application/json',
         },
-
-        body: JSON.stringify({
-          First_Name: formData.First_Name,
-          Last_Name: formData.Last_Name,
-          email: formData.email,
-          Phone: formData.Phone,
-          Title: formData.Title,
-          Organization: formData.Organization,
-          Website: formData.Website,
-          Position_Location: formData.Position_Location,
-          Title_of_Position: formData.Title_of_Position,
-          How_Did_You_Hear_About_Us: formData.How_Did_You_Hear_About_Us,
-          message: formData.message,
-          file: formData.File,
-        }),
+        body: formData,
       })
       .then(function (response) {
         setFormStatus(true);
@@ -81,44 +67,6 @@ function Form() {
       .catch(function (error) {
         console.log(error);
       });
-    // fetch('/api/contact', formData, {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json',
-    //   },
-
-    //   body: JSON.stringify({
-    //     // email: 'tbanumathi15@gmail.com',
-    //     // meassage: 'hai',
-    //     // name: 'sai',
-    //     // email: formData.value.email,
-    //     email: formData.email,
-    //   }),
-    // }).then((res) => {
-    //   setFormStatus(true);
-    //   setQuery({
-    //     First_Name: '',
-    //     Last_Name: '',
-    //     email: '',
-    //     Phone: '',
-    //     Title: '',
-    //     Organization: '',
-    //     Website: '',
-    //     Position_Location: '',
-    //     Title_of_Position: '',
-    //     How_Did_You_Hear_About_Us: '',
-    //     message: '',
-    //   });
-    //   console.log('Response received');
-    //   if (res.status === 200) {
-    //     console.log('Response succeeded!');
-    //     setSubmitted(true);
-    //     setName('');
-    //     setEmail('');
-    //     setBody('');
-    //   }
-    // });
   };
 
   return (

@@ -1,12 +1,27 @@
 export default function (req, res) {
   require('dotenv').config();
 
+  const {
+    First_Name,
+    Last_Name,
+    email,
+    Phone,
+    Title,
+    Organization,
+    Website,
+    Position_Location,
+    Title_of_Position,
+    How_Did_You_Hear_About_Us,
+    Resume_Upload,
+    message,
+  } = req.body;
+
   let nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
-      user: 'banumathi.thangavelu@tridentsqa.com',
+      user: process.env.username,
       pass: process.env.password,
     },
     secure: true,
@@ -17,17 +32,32 @@ export default function (req, res) {
 
     subject: `Message From ${req.body.First_Name}`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
-    html: `<p>Sent from:
-    ${req.body.email}</p><div>First_Name:${req.body.First_Name}</div><div>Last_Name:${req.body.Last_Name}</div><div>Phone:${req.body.Phone}</div><div>Title:${req.body.Title}</div><div>Organization:${req.body.Organization}</div><div>Website:${req.body.Website}</div><div>Position_Location:${req.body.Position_Location}</div>Title_of_Position:${req.body.Title_of_Position}</div></div>How_Did_You_Hear_About_Us:${req.body.How_Did_You_Hear_About_Us}</div></div>message:${req.body.message}</div>`,
-    // File: `${File}`,
-
+    html: `<p>You have a contact form submission</p><br>
+    <p><strong>First_Name: </strong> ${First_Name}</p>
+    <p><strong>Last_Name: </strong> ${Last_Name}</p>
+    <p><strong>Email: </strong> ${email}</p>
+    <p><strong>Phone: </strong> ${Phone}</p>
+    <p><strong>Title: </strong> ${Title}</p>
+    <p><strong>Organization: </strong> ${Organization}</p>
+    <p><strong>Website: </strong> ${Website}</p>
+    <p><strong>Position_Location: </strong> ${Position_Location}</p>
+    <p><strong>Title_of_Position: </strong> ${Title_of_Position}</p>
+    <p><strong>How_Did_You_Hear_About_Us: </strong> ${How_Did_You_Hear_About_Us}</p>
+    <p><strong>Resume_Upload: </strong> ${Resume_Upload}</p>
+    <p><strong>Message: </strong> ${message}</p>`,
     // attachments: [
     //   {
-    //     filename: 'image_name.png',
-    //     path: 'public/upload/image_name.png',
-    //     cid: 'SOME_ID_FOR_NODEMAILER',
+    //     File: `req.files[0],
+    //     raw:
+    //       'Content-Type: text.txt\r\n' +
+    //       'Content-Disposition: attachment;\r\n' +
+    //       '\r\n' +
+    //       'Hello world!',
     //   },
     // ],
+    attachments: {
+      path: '/home/banumathi/Documents/Banumathi/testing.txt',
+    },
   };
   transporter.sendMail(mailData, function (err, info) {
     if (err) console.log(err);
