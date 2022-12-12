@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trending_jobs",
+  "info": {
+    "singularName": "trending-job",
+    "pluralName": "trending-jobs",
+    "displayName": "trendingJob"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "jobsName": {
+      "type": "string"
+    },
+    "jobsLocation": {
+      "type": "string"
+    },
+    "jobsPrice": {
+      "type": "string"
+    },
+    "urlSlug": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

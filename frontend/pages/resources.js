@@ -1,8 +1,5 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Script from "next/script";
-import Footer from "../components/Footer/Footer";
+import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Resource({ posts, name }) {
   return (
@@ -194,7 +191,6 @@ export default function Resource({ posts, name }) {
             </section>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

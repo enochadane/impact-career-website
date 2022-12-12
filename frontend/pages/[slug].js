@@ -1,19 +1,20 @@
-import React from "react";
-import Footer from "../components/Footer/Footer";
-import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../graphql/queries";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import Head from "next/head";
-import { useState } from "react";
-import Applyform from "../components/Applyform/Applyform";
+import React from 'react';
+import {
+  GET_INDIVIDUAL_JOBS_POST,
+  GET_ALL_JOBS_SLUGS,
+} from '../graphql/queries';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import Head from 'next/head';
+import { useState } from 'react';
+import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
-  uri: "http://13.59.166.79:1337/graphql",
+  uri: process.env.backend_url,
   cache: new InMemoryCache(),
 });
 
 export default function post({ post }) {
   const [modal, setModal] = useState(false);
-
   return (
     <>
       <div>
@@ -58,7 +59,7 @@ export default function post({ post }) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? "block" : "none" }}
+          style={{ display: modal ? 'block' : 'none' }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>
@@ -72,22 +73,20 @@ export default function post({ post }) {
                     Please fill the details below to evaluate your candidature
                   </p>
                 </div>
-
                 <Applyform />
               </div>
             </section>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );
 }
 
 export async function getStaticPaths() {
-  const { data } = await client.query({ query: GET_ALL_SLUGS });
+  const { data } = await client.query({ query: GET_ALL_JOBS_SLUGS });
 
-  const paths = data.blogPosts.data.map((post) => {
+  const paths = data.trendingJobs.data.map((post) => {
     return {
       params: {
         slug: post.attributes.urlSlug,
@@ -103,11 +102,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { data } = await client.query({
-    query: GET_INDIVIDUAL_POST,
+    query: GET_INDIVIDUAL_JOBS_POST,
     variables: { slugUrl: params.slug },
   });
 
-  const attrs = data.blogPosts.data[0].attributes;
+  const attrs = data.trendingJobs.data[0].attributes;
 
   return {
     props: {

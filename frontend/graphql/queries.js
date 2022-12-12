@@ -1,66 +1,5 @@
 import { gql } from '@apollo/client';
 
-const GET_ALL_SLUGS = gql`
-  query {
-    blogPosts {
-      data {
-        attributes {
-          jobsName
-          urlSlug
-          jobsLocation
-          jobsPrice
-        }
-      }
-    }
-  }
-`;
-
-const GET_ALL_POSTS = gql`
-  query {
-    blogPosts(pagination: { limit: 100 }) {
-      data {
-        attributes {
-          title
-          jobsName
-          jobsLocation
-          jobsPrice
-          urlSlug
-          image {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const GET_INDIVIDUAL_POST = gql`
-  query ($slugUrl: String!) {
-    blogPosts(filters: { urlSlug: { eq: $slugUrl } }) {
-      data {
-        attributes {
-          title
-          jobsName
-          jobsLocation
-          jobsPrice
-          content
-          image {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
 //faq
 const GET_FAQ = gql`
   query {
@@ -88,10 +27,73 @@ const GET_FAQ_JOBS = gql`
   }
 `;
 
+//Trending Jobs
+const GET_ALL_JOBS = gql`
+  query {
+    trendingJobs(pagination: { limit: 1000 }) {
+      data {
+        attributes {
+          title
+          jobsName
+          jobsLocation
+          jobsPrice
+          content
+          urlSlug
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_INDIVIDUAL_JOBS_POST = gql`
+  query ($slugUrl: String!) {
+    trendingJobs(filters: { urlSlug: { eq: $slugUrl } }) {
+      data {
+        attributes {
+          title
+          jobsName
+          jobsLocation
+          jobsPrice
+          urlSlug
+          content
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+const GET_ALL_JOBS_SLUGS = gql`
+  query {
+    trendingJobs {
+      data {
+        attributes {
+          jobsName
+          urlSlug
+          jobsLocation
+          jobsPrice
+        }
+      }
+    }
+  }
+`;
+
 export {
-  GET_ALL_POSTS,
-  GET_INDIVIDUAL_POST,
-  GET_ALL_SLUGS,
   GET_FAQ,
   GET_FAQ_JOBS,
+  GET_ALL_JOBS,
+  GET_INDIVIDUAL_JOBS_POST,
+  GET_ALL_JOBS_SLUGS,
 };

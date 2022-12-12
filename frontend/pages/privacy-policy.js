@@ -1,9 +1,4 @@
-import Head from "next/head";
-
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
-
+import Head from 'next/head';
 export default function Privacy({ posts, name }) {
   return (
     <>
@@ -95,7 +90,6 @@ export default function Privacy({ posts, name }) {
             privacy regulations and has mechanisms to do so.
           </p>
         </div>
-        <Footer />
       </div>
     </>
   );

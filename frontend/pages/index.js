@@ -1,12 +1,9 @@
-import Head from "next/head";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
-import Applyform from "../components/Applyform/Applyform";
-
-import { useState, useEffect } from "react";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
+import Link from 'next/link';
+import Image from 'next/image';
+import Applyform from '../components/Applyform/Applyform';
+import { useState } from 'react';
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -255,7 +252,7 @@ export default function Home({ posts, name }) {
           <div
             id='myModal'
             className='modal'
-            style={{ display: modal ? "block" : "none" }}
+            style={{ display: modal ? 'block' : 'none' }}
           >
             <div className='modal-content'>
               <span className='close' onClick={() => setModal(false)}>
@@ -535,7 +532,6 @@ export default function Home({ posts, name }) {
             </div>
           </section>
         </div>
-        <Footer />
       </div>
     </>
   );
@@ -543,12 +539,12 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: "http://13.59.166.79:1337/graphql",
+    uri: process.env.backend_url,
     cache: new InMemoryCache(),
   });
 
   const { data } = await client.query({
-    query: GET_ALL_POSTS,
+    query: GET_ALL_JOBS,
   });
   const getfaqdata = await client.query({
     query: GET_FAQ,
@@ -556,7 +552,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      posts: data.blogPosts.data,
+      posts: data.trendingJobs.data,
       name: getfaqdata.data.faqs.data,
     },
   };

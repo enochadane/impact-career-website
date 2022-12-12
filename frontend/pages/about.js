@@ -1,11 +1,9 @@
-import Image from "next/image";
-import Footer from "../components/Footer/Footer";
-import Head from "next/head";
-import React from "react";
-import Slider from "../components/Slider/Slider";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_ALL_POSTS, GET_FAQ } from "../graphql/queries";
-import Link from "next/link";
+import Image from 'next/image';
+import Head from 'next/head';
+import React from 'react';
+import Slider from '../components/Slider/Slider';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_ALL_JOBS, GET_FAQ } from '../graphql/queries';
 
 export default function About({ name }) {
   return (
@@ -476,19 +474,18 @@ export default function About({ name }) {
             </div>
           </section>
         </div>
-        <Footer />
       </div>
     </>
   );
 }
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: "http://13.59.166.79:1337/graphql",
+    uri: 'http://13.59.166.79:1337/graphql',
     cache: new InMemoryCache(),
   });
 
   const { data } = await client.query({
-    query: GET_ALL_POSTS,
+    query: GET_ALL_JOBS,
   });
   const getfaqdata = await client.query({
     query: GET_FAQ,
@@ -496,7 +493,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      posts: data.blogPosts.data,
+      posts: data.trendingJobs.data,
       name: getfaqdata.data.faqs.data,
     },
   };
