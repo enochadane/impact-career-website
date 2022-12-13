@@ -302,7 +302,10 @@ export default function Home({ posts, name }) {
                             <div className="row g-1 ">
                               <div className="col-md-4 col-lg-3 col-4 ">
                                 <img
-                                  src={`http://13.59.166.79:1337${val.attributes.image.data.attributes.url}`}
+                                  src={
+                                    process.env.BACKEND_IMG +
+                                    val.attributes.image.data.attributes.url
+                                  }
                                   width={100}
                                   height={100}
                                 ></img>
@@ -539,7 +542,7 @@ export default function Home({ posts, name }) {
 
 export async function getServerSideProps() {
   const client = new ApolloClient({
-    uri: process.env.backend_url,
+    uri: process.env.BACKEND_URL,
     cache: new InMemoryCache(),
   });
 

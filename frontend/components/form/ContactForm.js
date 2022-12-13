@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react';
+
 function Form() {
   const [formStatus, setFormStatus] = useState(false);
+
   const [query, setQuery] = useState({
     First_Name: '',
     Last_Name: '',
@@ -10,17 +12,31 @@ function Form() {
     Title: '',
     Organization: '',
     Website: '',
+    Position_Type: 'Temporary / Contract',
     Position_Location: '',
     Title_of_Position: '',
     How_Did_You_Hear_About_Us: '',
     Resume_Upload: '',
+    Resume_title: '',
     message: '',
   });
+
   const handleFileChange = () => (e) => {
-    setQuery((prevState) => ({
-      ...prevState,
-      files: e.target.files[0],
-    }));
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      setQuery((prevState) => ({
+        ...prevState,
+        Resume_Upload: reader.result,
+        Resume_title: e.target.files[0].name,
+      }));
+    };
+    if (e.target.files[0].size <= 1000000) {
+      alert('file uploaded successful');
+    } else {
+      alert('file size should be less then 1MB');
+    }
   };
   const handleChange = () => (e) => {
     const name = e.target.name;
@@ -36,6 +52,7 @@ function Form() {
     Object.entries(query).forEach(([key, value]) => {
       formData.append(key, value);
       console.log(value);
+      e.target.reset();
     });
 
     axios
@@ -49,6 +66,7 @@ function Form() {
       })
       .then(function (response) {
         setFormStatus(true);
+
         setQuery({
           First_Name: '',
           Last_Name: '',
@@ -57,6 +75,7 @@ function Form() {
           Title: '',
           Organization: '',
           Website: '',
+          Position_Type: '',
           Position_Location: '',
           Title_of_Position: '',
           How_Did_You_Hear_About_Us: '',
@@ -73,7 +92,7 @@ function Form() {
     <form
       acceptCharset="UTF-8"
       method="POST"
-      enctype="multipart/form-data"
+      encType="multipart/form-data"
       id="ajaxForm"
       onSubmit={handleSubmit}
     >

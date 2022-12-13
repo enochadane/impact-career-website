@@ -9,7 +9,7 @@ import { useState } from 'react';
 import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
-  uri: process.env.backend_url,
+  uri: process.env.BACKEND_URL,
   cache: new InMemoryCache(),
 });
 
@@ -26,7 +26,7 @@ export default function post({ post }) {
             <div className="row mx-1 job-page">
               <div className="col-3 col-md-2 col-lg-1 mb-2 in-page">
                 <img
-                  src={`http://13.59.166.79:1337${post.image.data.attributes.url}`}
+                  src={process.env.BACKEND_IMG + post.image.data.attributes.url}
                   width={80}
                   height={80}
                 ></img>

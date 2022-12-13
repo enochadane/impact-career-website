@@ -1,6 +1,7 @@
-export default function (req, res) {
-  require('dotenv').config();
+import nodemailer from 'nodemailer';
+import 'dotenv/config';
 
+export default function (req, res) {
   const {
     First_Name,
     Last_Name,
@@ -9,14 +10,15 @@ export default function (req, res) {
     Title,
     Organization,
     Website,
+    Position_Type,
     Position_Location,
     Title_of_Position,
     How_Did_You_Hear_About_Us,
     Resume_Upload,
+    Resume_title,
     message,
   } = req.body;
 
-  let nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',
@@ -40,28 +42,32 @@ export default function (req, res) {
     <p><strong>Title: </strong> ${Title}</p>
     <p><strong>Organization: </strong> ${Organization}</p>
     <p><strong>Website: </strong> ${Website}</p>
+    <p><strong>Position_Type: </strong> ${Position_Type}</p>
     <p><strong>Position_Location: </strong> ${Position_Location}</p>
     <p><strong>Title_of_Position: </strong> ${Title_of_Position}</p>
     <p><strong>How_Did_You_Hear_About_Us: </strong> ${How_Did_You_Hear_About_Us}</p>
-    <p><strong>Resume_Upload: </strong> ${Resume_Upload}</p>
+    <p><strong>Resume_Upload: </strong> ${Resume_title}</p>
     <p><strong>Message: </strong> ${message}</p>`,
-    // attachments: [
-    //   {
-    //     File: `req.files[0],
-    //     raw:
-    //       'Content-Type: text.txt\r\n' +
-    //       'Content-Disposition: attachment;\r\n' +
-    //       '\r\n' +
-    //       'Hello world!',
-    //   },
-    // ],
+
     attachments: {
-      path: '/home/banumathi/Documents/Banumathi/testing.txt',
+      filename: Resume_title,
+      path: Resume_Upload,
     },
   };
+
   transporter.sendMail(mailData, function (err, info) {
-    if (err) console.log(err);
-    else console.log(info);
+    if (err) {
+      console.log(err);
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong',
+      });
+    } else {
+      console.log(info);
+      res.status(200).json({
+        success: true,
+        message: 'Mail successfully sent',
+      });
+    }
   });
-  res.status(200);
 }
