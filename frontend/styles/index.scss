@@ -1,4 +1,4 @@
-@import './../components/Nav/Nav.scss';
+@import "./../components/Nav/Nav.scss";
 
 .app_wrapper {
   margin: auto;
@@ -113,20 +113,20 @@
   }
 }
 .contact-banner {
-  background-image: url('/images/resourcesHero.jpg');
+  background-image: url("/images/resourcesHero.jpg");
 }
 .about-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .resources-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 .jobs-banner {
-  background-image: url('/images/jobs_banner.jpg');
+  background-image: url("/images/jobs_banner.jpg");
   background-position: 50% 50%;
 }
 .privacy-banner {
-  background-image: url('/images/bannerImages/privacy-policy.jpg');
+  background-image: url("/images/bannerImages/privacy-policy.jpg");
   background-position: 50% 0;
 }
 //jobs section
@@ -195,7 +195,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url('/images/aboutUsHero.jpg');
+    background-image: url("/images/aboutUsHero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -905,7 +905,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 45px;
     height: 45px;
@@ -918,7 +918,7 @@
   }
 }
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -1079,8 +1079,9 @@
     background-position-y: 17px;
     background-position-x: 60px;
   }
-  .site-btn {
+  .submit-btn {
     margin-top: 10px;
+    margin-left: 373px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1091,8 +1092,6 @@
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s linear;
-    text-align: center;
-
     &:hover {
       color: #fff;
       background-color: #166433;
@@ -1200,14 +1199,7 @@
       width: 380px;
     }
   }
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 380px;
-      }
-    }
-  }
+
   .modal {
     .modal-content {
       width: 80%;
@@ -1418,6 +1410,26 @@
       font-size: 20px;
     }
   }
+  //index apply
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 50px;
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+        }
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          padding: 0px;
+        }
+      }
+      .submit-btn {
+        margin-left: 50px;
+      }
+    }
+  }
   //footer-page
   .bottom-footer {
     .bottom-footer-content {
@@ -1455,14 +1467,7 @@
       width: 380px;
     }
   }
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 370px;
-      }
-    }
-  }
+
   .modal {
     .modal-content {
       width: 80%;
@@ -1570,17 +1575,10 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 370px;
-      }
-    }
-  }
+
   .modal {
     .modal-content {
       width: 80%;
@@ -1727,6 +1725,14 @@
     width: 100%;
     margin-left: 24px;
   }
+  //index apply
+  #apply-form {
+    .container {
+      .submit-btn {
+        margin-left: 197px;
+      }
+    }
+  }
   //aboutMission
   .aboutMissionSec {
     .missionContent {
@@ -1812,7 +1818,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
@@ -1842,17 +1848,6 @@
         }
       }
     }
-  }
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 170px;
-      }
-    }
-  }
-  .site-btn {
-    margin-left: 346px;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -1929,11 +1924,18 @@
       height: 420px;
     }
   }
+  #apply-form {
+    .container {
+      .submit-btn {
+        margin-left: 285px;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 213px;
   }
   //contact-button
@@ -1963,15 +1965,6 @@
     .last-card {
       margin-top: 0px;
       height: 320px;
-    }
-  }
-
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 180px;
-      }
     }
   }
 }
@@ -2023,7 +2016,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 189px;
   }
 }
@@ -2116,7 +2109,7 @@
 
   //time-line
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 227px;
   }
   .trending-jobs {
@@ -2257,17 +2250,7 @@
       font-size: 25px;
     }
   }
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: -100px;
-      }
-    }
-    .site-btn {
-      margin-bottom: -0px;
-    }
-  }
+
   .modal {
     .modal-content {
       width: 40%;
@@ -2637,14 +2620,6 @@
 }
 
 @media (width: 1440px) {
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 35px;
-        margin-bottom: 150px;
-      }
-    }
-  }
   #contact-form {
     .container {
       .get-in-touch {
