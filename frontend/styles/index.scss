@@ -1,4 +1,4 @@
-@import "./../components/Nav/Nav.scss";
+@import './../components/Nav/Nav.scss';
 
 .app_wrapper {
   margin: auto;
@@ -113,20 +113,20 @@
   }
 }
 .contact-banner {
-  background-image: url("/images/resourcesHero.jpg");
+  background-image: url('/images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("/images/jobs_banner.jpg");
+  background-image: url('/images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 .privacy-banner {
-  background-image: url("/images/bannerImages/privacy-policy.jpg");
+  background-image: url('/images/bannerImages/privacy-policy.jpg');
   background-position: 50% 0;
 }
 //jobs section
@@ -195,7 +195,7 @@
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("/images/aboutUsHero.jpg");
+    background-image: url('/images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -366,317 +366,203 @@
 }
 
 //about-carousel-section
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-@media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-@media (min-width: 768px) {
-  .carousel-inner .carousel-item-end.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(25%);
-  }
-  .carousel-inner .carousel-item-start.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-25%);
-  }
-}
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
-  transform: translateX(0);
-}
-.carousel {
-  padding-top: 43px;
+.ourValue {
   background-color: #f4f5f7;
-  margin-bottom: 100px;
-  .our-values-title {
-    margin-top: 30px;
-  }
-  .our-pride {
-    .prev {
-      img {
-        background-color: #166433;
-        color: #fff;
-        padding: 10px 10px;
-        border-radius: 8px;
-        float: right;
-        margin-right: 80px;
-      }
-    }
-    .next {
-      img {
-        margin-right: 30px;
-        background-color: #166433;
-        margin-top: -40px;
-        float: right;
-        color: #fff;
-        padding: 10px 10px;
-        border-radius: 8px;
-      }
-    }
-    .pride {
-      color: #474c55;
-      font-size: 24px;
-      padding-bottom: 31px;
-      padding-top: 36px;
-      text-align: left;
-      margin-bottom: -20px;
-    }
-  }
-}
-.carousel-inner {
-  .carousel-item {
-    transition: transform (ease-in-out);
-    .carousel-type {
-      margin-right: 0px;
-      .owl-theme {
-        .card {
-          width: 92%;
-          border-top: 3px solid #166433;
-          border-style: solid none none none;
-          border-radius: 8px;
-          .card-img {
-            height: 240px;
-            img {
-              height: 40px;
-              margin: 14px -280px;
-              max-width: 100% !important;
-              align-items: left;
-              margin-right: 0px;
-              margin-bottom: -10px;
-            }
-            .card-body {
-              .card-title {
-                text-align: left;
-              }
-              .card-text {
-                text-align: left;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  margin-top: 30px;
 }
 
-// .ourValue {
-//   background-color: #f4f5f7;
-//   margin-top: 30px;
-// }
+#owl-carousel-products .heading {
+  color: #474c55;
+  font-size: 29px;
+  margin-bottom: 54px;
+  padding-top: 59px;
+}
 
-// #owl-carousel-products .heading {
-//   color: #474c55;
-//   font-size: 29px;
-//   margin-bottom: 54px;
-//   padding-top: 59px;
-// }
+#owl-carousel-products .pride {
+  color: #474c55;
+  font-size: 24px;
+  padding-bottom: 31px;
+  padding-top: 36px;
+}
+#owl-carousel-products #owl-carousel-ul {
+  float: left;
+  padding: 0;
+  max-width: 100%;
+  padding-top: 47px;
+  background-color: #f4f5f7;
+}
 
-// #owl-carousel-products .pride {
-//   color: #474c55;
-//   font-size: 24px;
-//   padding-bottom: 31px;
-//   padding-top: 36px;
-// }
-// #owl-carousel-products #owl-carousel-ul {
-//   float: left;
-//   padding: 0;
-//   max-width: 100%;
-//   padding-top: 47px;
-//   background-color: #f4f5f7;
-// }
+#owl-carousel-products #owl-carousel-ul .owl-stage-outer {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+#owl-carousel-ul .owl-nav .owl-prev img {
+  background-color: #166433;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  position: absolute;
+}
 
-// #owl-carousel-products #owl-carousel-ul .owl-stage-outer {
-//   max-width: 100% !important;
-//   margin: 0 auto;
-//   padding-bottom: 90px;
-// }
-// #owl-carousel-ul .owl-nav .owl-prev img {
-//   background-color: #166433;
-//   color: #fff;
-//   padding: 10px 10px;
-//   border-radius: 8px;
-//   position: absolute;
-// }
+#owl-carousel-ul .owl-nav .owl-next img {
+  background-color: #166433;
+  right: 81px;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  position: absolute;
+}
+#owl-carousel-ul .owl-nav .owl-prev {
+  right: 60px;
 
-// #owl-carousel-ul .owl-nav .owl-next img {
-//   background-color: #166433;
-//   right: 81px;
-//   color: #fff;
-//   padding: 10px 10px;
-//   border-radius: 8px;
-//   position: absolute;
-// }
-// #owl-carousel-ul .owl-nav .owl-prev {
-//   right: 60px;
+  color: #000000 !important;
+  position: absolute !important;
+  top: 0 !important;
+  transform: none !important;
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  font-size: 35px !important;
+  top: -254px !important;
+}
 
-//   color: #000000 !important;
-//   position: absolute !important;
-//   top: 0 !important;
-//   transform: none !important;
-//   display: block !important;
-//   background: none !important;
-//   border: none !important;
-//   font-size: 35px !important;
-//   top: -254px !important;
-// }
+#owl-carousel-ul .owl-nav .owl-next {
+  font-size: 35px !important;
+  color: #000000 !important;
+  position: absolute !important;
+  right: 0% !important;
+  top: 0 !important;
+  transform: none !important;
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  top: -254px !important;
+}
+#owl-carousel-products #owl-carousel-ul #featuredProducts {
+  max-width: 100%;
+  height: 230px;
+}
+#owl-carousel-products #owl-carousel-ul .owl-item {
+  border-top: 3px solid #166433;
+  border-style: solid none none none;
+  border-radius: 8px;
+}
+#owl-carousel-products #owl-carousel-ul #featuredProducts .productListing {
+  margin: 0 0 0 0;
+  width: 100% !important;
+  max-width: 100%;
+  border: none;
+  font-size: 100px;
+}
 
-// #owl-carousel-ul .owl-nav .owl-next {
-//   font-size: 35px !important;
-//   color: #000000 !important;
-//   position: absolute !important;
-//   right: 0% !important;
-//   top: 0 !important;
-//   transform: none !important;
-//   display: block !important;
-//   background: none !important;
-//   border: none !important;
-//   top: -254px !important;
-// }
-// #owl-carousel-products #owl-carousel-ul #featuredProducts {
-//   max-width: 100%;
-//   height: 230px;
-// }
-// #owl-carousel-products #owl-carousel-ul .owl-item {
-//   border-top: 3px solid #166433;
-//   border-style: solid none none none;
-//   border-radius: 8px;
-// }
-// #owl-carousel-products #owl-carousel-ul #featuredProducts .productListing {
-//   margin: 0 0 0 0;
-//   width: 100% !important;
-//   max-width: 100%;
-//   border: none;
-//   font-size: 100px;
-// }
+#owl-carousel-ul .owl-carousel .owl-nav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
 
-// #owl-carousel-ul .owl-carousel .owl-nav {
-//   display: block;
-//   position: absolute;
-//   width: 100%;
-//   top: 50%;
-// }
+#owl-carousel-ul .owl-carousel .owl-nav.disabled,
+#owl-carousel-ul .owl-carousel .owl-dots.disabled {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
 
-// #owl-carousel-ul .owl-carousel .owl-nav.disabled,
-// #owl-carousel-ul .owl-carousel .owl-dots.disabled {
-//   display: block;
-//   position: absolute;
-//   width: 100%;
-//   top: 50%;
-// }
+#owl-carousel-products
+  #owl-carousel-ul
+  #featuredProducts
+  .productListing
+  .image
+  span {
+  width: 100% !important;
+  text-align: center;
+}
 
-// #owl-carousel-products
-//   #owl-carousel-ul
-//   #featuredProducts
-//   .productListing
-//   .image
-//   span {
-//   width: 100% !important;
-//   text-align: center;
-// }
+#owl-carousel-products
+  #owl-carousel-ul
+  #featuredProducts
+  .productListing
+  .image
+  span
+  span {
+  width: 100%;
+}
 
-// #owl-carousel-products
-//   #owl-carousel-ul
-//   #featuredProducts
-//   .productListing
-//   .image
-//   span
-//   span {
-//   width: 100%;
-// }
+#owl-carousel-products
+  #owl-carousel-ul
+  #featuredProducts
+  .productListing
+  .image
+  img {
+  height: 40px;
+  margin: 14px -128px;
+  max-width: 100% !important;
+}
 
-// #owl-carousel-products
-//   #owl-carousel-ul
-//   #featuredProducts
-//   .productListing
-//   .image
-//   img {
-//   height: 40px;
-//   margin: 14px -128px;
-//   max-width: 100% !important;
-// }
+#owl-carousel-products #owl-carousel-ul #featuredProducts .hp-featured-overlay {
+  width: 100%;
+  height: 100%;
+  float: none;
+  position: absolute;
+  top: 0;
+  display: none;
+  left: 0;
+}
+#owl-carousel-products
+  #owl-carousel-ul
+  #featuredProducts
+  .productListing:hover
+  .hp-featured-overlay {
+  display: block;
+}
 
-// #owl-carousel-products #owl-carousel-ul #featuredProducts .hp-featured-overlay {
-//   width: 100%;
-//   height: 100%;
-//   float: none;
-//   position: absolute;
-//   top: 0;
-//   display: none;
-//   left: 0;
-// }
-// #owl-carousel-products
-//   #owl-carousel-ul
-//   #featuredProducts
-//   .productListing:hover
-//   .hp-featured-overlay {
-//   display: block;
-// }
+#owl-carousel-products
+  #owl-carousel-ul
+  #featuredProducts
+  .hp-featured-overlay
+  button {
+  max-width: 90%;
+}
 
-// #owl-carousel-products
-//   #owl-carousel-ul
-//   #featuredProducts
-//   .hp-featured-overlay
-//   button {
-//   max-width: 90%;
-// }
+#featuredProducts .productListing .image img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 
-// #featuredProducts .productListing .image img {
-//   max-width: 100%;
-//   width: 100%;
-//   object-fit: contain;
-// }
+#featuredProducts .productListing a.product {
+  z-index: 2 !important;
+  position: relative;
+}
 
-// #featuredProducts .productListing a.product {
-//   z-index: 2 !important;
-//   position: relative;
-// }
+#featuredProducts .productListing span {
+  padding: 0px 22px;
+  float: left;
+  width: 100%;
+  font-size: 0.75rem;
+  color: #000000;
+}
 
-// #featuredProducts .productListing span {
-//   padding: 0px 22px;
-//   float: left;
-//   width: 100%;
-//   font-size: 0.75rem;
-//   color: #000000;
-// }
+#featuredProducts .productListing .brand {
+  font-size: 23px;
+  color: #172026;
+  width: 100%;
+}
 
-// #featuredProducts .productListing .brand {
-//   font-size: 23px;
-//   color: #172026;
-//   width: 100%;
-// }
+#featuredProducts .productListing .name {
+  //overflow: hidden;
+  font-weight: 367;
+  font-size: 14px;
+  color: #172026;
+  line-height: 1.5;
+}
 
-// #featuredProducts .productListing .name {
-//   //overflow: hidden;
-//   font-weight: 367;
-//   font-size: 14px;
-//   color: #172026;
-//   line-height: 1.5;
-// }
-
-// #featuredProducts .productListing .image img {
-//   max-width: 100%;
-// }
+#featuredProducts .productListing .image img {
+  max-width: 100%;
+}
 //aboutEmployers section
 .aboutEmployersSec {
   margin-top: 5rem;
@@ -1019,7 +905,7 @@
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -1032,7 +918,7 @@
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -1193,9 +1079,8 @@
     background-position-y: 17px;
     background-position-x: 60px;
   }
-  .submit-btn {
+  .site-btn {
     margin-top: 10px;
-    margin-left: 373px;
     padding: 10px 15px;
     border-style: solid;
     border-width: 2px;
@@ -1206,6 +1091,8 @@
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s linear;
+    text-align: center;
+
     &:hover {
       color: #fff;
       background-color: #166433;
@@ -1313,7 +1200,14 @@
       width: 380px;
     }
   }
-
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 380px;
+      }
+    }
+  }
   .modal {
     .modal-content {
       width: 80%;
@@ -1524,26 +1418,6 @@
       font-size: 20px;
     }
   }
-  //index apply
-  #apply-form {
-    .container {
-      .apply-this-job {
-        margin-top: 50px;
-        h2 {
-          font-size: 20px;
-          font-weight: 500;
-        }
-        p {
-          font-size: 14px;
-          line-height: 20px;
-          padding: 0px;
-        }
-      }
-      .submit-btn {
-        margin-left: 50px;
-      }
-    }
-  }
   //footer-page
   .bottom-footer {
     .bottom-footer-content {
@@ -1581,7 +1455,14 @@
       width: 380px;
     }
   }
-
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
   .modal {
     .modal-content {
       width: 80%;
@@ -1671,23 +1552,6 @@
       margin: 15px 0;
     }
   }
-  .carousel-inner {
-    .carousel-item {
-      .carousel-type {
-        .owl-theme {
-          .card {
-            width: 100%;
-            .card-img {
-              height: 290px;
-              img {
-                margin: 0px -50px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
@@ -1706,10 +1570,17 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
-
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 370px;
+      }
+    }
+  }
   .modal {
     .modal-content {
       width: 80%;
@@ -1856,14 +1727,6 @@
     width: 100%;
     margin-left: 24px;
   }
-  //index apply
-  #apply-form {
-    .container {
-      .submit-btn {
-        margin-left: 197px;
-      }
-    }
-  }
   //aboutMission
   .aboutMissionSec {
     .missionContent {
@@ -1949,26 +1812,8 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 216px;
-  }
-  .carousel-inner {
-    .carousel-item {
-      .carousel-type {
-        margin-right: 6px;
-        .owl-theme {
-          .card {
-            width: 100%;
-            .card-img {
-              height: 340px;
-              img {
-                margin: 14px -180px;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
@@ -1997,6 +1842,17 @@
         }
       }
     }
+  }
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 170px;
+      }
+    }
+  }
+  .site-btn {
+    margin-left: 346px;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -2073,18 +1929,11 @@
       height: 420px;
     }
   }
-  #apply-form {
-    .container {
-      .submit-btn {
-        margin-left: 285px;
-      }
-    }
-  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 213px;
   }
   //contact-button
@@ -2114,6 +1963,15 @@
     .last-card {
       margin-top: 0px;
       height: 320px;
+    }
+  }
+
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 180px;
+      }
     }
   }
 }
@@ -2165,7 +2023,7 @@
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 189px;
   }
 }
@@ -2258,7 +2116,7 @@
 
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 227px;
   }
   .trending-jobs {
@@ -2399,7 +2257,17 @@
       font-size: 25px;
     }
   }
-
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: -100px;
+      }
+    }
+    .site-btn {
+      margin-bottom: -0px;
+    }
+  }
   .modal {
     .modal-content {
       width: 40%;
@@ -2769,6 +2637,14 @@
 }
 
 @media (width: 1440px) {
+  #apply-form {
+    .container {
+      .apply-this-job {
+        margin-top: 35px;
+        margin-bottom: 150px;
+      }
+    }
+  }
   #contact-form {
     .container {
       .get-in-touch {
