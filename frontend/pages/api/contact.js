@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer';
-import 'dotenv/config';
+import nodemailer from "nodemailer";
+import "dotenv/config";
 
 export default function (req, res) {
   const {
@@ -21,7 +21,7 @@ export default function (req, res) {
 
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: 'smtp.gmail.com',
+    host: "smtp.gmail.com",
     auth: {
       user: process.env.username,
       pass: process.env.password,
@@ -29,11 +29,10 @@ export default function (req, res) {
     secure: true,
   });
   const mailData = {
-    from: 'banumathi.thangavelu@tridentsqa.com',
-    to: 'banumathi.thangavelu@tridentsqa.com',
-
+    from: "lakshmigayathri.sivasankar@tridentsqa.com",
+    to: "lakshmigayathri.sivasankar@tridentsqa.com",
     subject: `Message From ${req.body.First_Name}`,
-    text: req.body.message + ' | Sent from: ' + req.body.email,
+    text: req.body.message + " | Sent from: " + req.body.email,
     html: `<p>You have a contact form submission</p><br>
     <p><strong>First_Name: </strong> ${First_Name}</p>
     <p><strong>Last_Name: </strong> ${Last_Name}</p>
@@ -60,13 +59,13 @@ export default function (req, res) {
       console.log(err);
       res.status(500).json({
         success: false,
-        message: 'Something went wrong',
+        message: "Something went wrong",
       });
     } else {
       console.log(info);
       res.status(200).json({
         success: true,
-        message: 'Mail successfully sent',
+        message: "Mail successfully sent",
       });
     }
   });

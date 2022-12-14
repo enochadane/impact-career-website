@@ -1,9 +1,9 @@
 import axios from "axios";
+import { result } from "lodash";
 import { useState } from "react";
 
 function Form() {
   const [formStatus, setFormStatus] = useState(false);
-
   const [query, setQuery] = useState({
     First_Name: "",
     Last_Name: "",
@@ -20,7 +20,6 @@ function Form() {
     Resume_title: "",
     message: "",
   });
-
   const handleFileChange = () => (e) => {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -54,7 +53,6 @@ function Form() {
       console.log(value);
       e.target.reset();
     });
-
     axios
       .post("/api/contact", formData, {
         method: "POST",
@@ -66,7 +64,6 @@ function Form() {
       })
       .then(function (response) {
         setFormStatus(true);
-
         setQuery({
           First_Name: "",
           Last_Name: "",
@@ -108,6 +105,7 @@ function Form() {
               onChange={handleChange()}
             />
           </div>
+
           <div className='col-sm-6'>
             <input
               type='text'
@@ -134,6 +132,7 @@ function Form() {
               onChange={handleChange()}
             />
           </div>
+
           <div className='col-sm-6'>
             <input
               type='tel'
@@ -147,6 +146,7 @@ function Form() {
           </div>
         </div>
       </div>
+
       <div className='mb-3'>
         <div className='row'>
           <div className='col-sm-6'>
@@ -160,6 +160,7 @@ function Form() {
               onChange={handleChange()}
             />
           </div>
+
           <div className='col-sm-6'>
             <input
               type='text'
@@ -221,6 +222,7 @@ function Form() {
               onChange={handleChange()}
             />
           </div>
+
           <div className='col-sm-6'>
             <input
               type='text'
@@ -242,11 +244,11 @@ function Form() {
               className='w-file-upload-input form-control UploadImg'
               accept='.pdf, .doc, .docx, .txt'
               name='Resume_Upload'
-              data-iconname='fa-solid fa-cloud-arrow-up'
+              data-iconName='fa-solid fa-cloud-arrow-up'
               data-name='Upload Job Description, If Available'
               aria-hidden='true'
               placeholder='Upload Job Description, If Available'
-              tabIndex='-1'
+              tabindex='-1'
               required
               onChange={handleFileChange()}
             />
@@ -276,10 +278,6 @@ function Form() {
           onChange={handleChange()}
         />
       </div>
-      {/* <hr /> */}
-      {/* $("form").hide(
-        setMessage("Thank you! Your submission has been received!")
-      ); */}
       {formStatus ? (
         <div className='thank'>
           Thank you! Your submission has been received!
@@ -291,7 +289,6 @@ function Form() {
         Submit
       </button>
     </form>
-    // </div>
   );
 }
 export default Form;
