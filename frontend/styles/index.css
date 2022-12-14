@@ -420,210 +420,100 @@
   font-weight: 300;
 }
 
-.ourValue {
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#Owl-carousel .carousel {
+  padding-top: 43px;
   background-color: #f4f5f7;
+  margin-bottom: 100px;
+}
+
+#Owl-carousel .carousel .our-values-title {
   margin-top: 30px;
 }
 
-#owl-carousel-products .heading {
-  color: #474c55;
-  font-size: 29px;
-  margin-bottom: 54px;
-  padding-top: 59px;
+#Owl-carousel .carousel .our-pride .prev img {
+  background-color: #166433;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  float: right;
+  margin-right: 80px;
 }
 
-#owl-carousel-products .pride {
+#Owl-carousel .carousel .our-pride .next img {
+  margin-right: 30px;
+  background-color: #166433;
+  margin-top: -40px;
+  float: right;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+
+#Owl-carousel .carousel .our-pride .pride {
   color: #474c55;
   font-size: 24px;
   padding-bottom: 31px;
   padding-top: 36px;
+  text-align: left;
+  margin-bottom: -20px;
 }
 
-#owl-carousel-products #owl-carousel-ul {
-  float: left;
-  padding: 0;
-  max-width: 100%;
-  padding-top: 47px;
-  background-color: #f4f5f7;
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item {
+  -webkit-transition: opacity 0.6s ease-out;
+  -webkit-transition: -webkit-transform 0.6s linear;
+  transition: -webkit-transform 0.6s linear;
+  transition: transform 0.6s linear;
+  transition: transform 0.6s linear, -webkit-transform 0.6s linear;
 }
 
-#owl-carousel-products #owl-carousel-ul .owl-stage-outer {
-  max-width: 100% !important;
-  margin: 0 auto;
-  padding-bottom: 90px;
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type {
+  margin-right: 0px;
 }
 
-#owl-carousel-ul .owl-nav .owl-prev img {
-  background-color: #166433;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 8px;
-  position: absolute;
-}
-
-#owl-carousel-ul .owl-nav .owl-next img {
-  background-color: #166433;
-  right: 81px;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 8px;
-  position: absolute;
-}
-
-#owl-carousel-ul .owl-nav .owl-prev {
-  right: 60px;
-  color: #000000 !important;
-  position: absolute !important;
-  top: 0 !important;
-  -webkit-transform: none !important;
-          transform: none !important;
-  display: block !important;
-  background: none !important;
-  border: none !important;
-  font-size: 35px !important;
-  top: -254px !important;
-}
-
-#owl-carousel-ul .owl-nav .owl-next {
-  font-size: 35px !important;
-  color: #000000 !important;
-  position: absolute !important;
-  right: 0% !important;
-  top: 0 !important;
-  -webkit-transform: none !important;
-          transform: none !important;
-  display: block !important;
-  background: none !important;
-  border: none !important;
-  top: -254px !important;
-}
-
-#owl-carousel-products #owl-carousel-ul #featuredProducts {
-  max-width: 100%;
-  height: 230px;
-}
-
-#owl-carousel-products #owl-carousel-ul .owl-item {
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
+  width: 92%;
   border-top: 3px solid #166433;
   border-style: solid none none none;
   border-radius: 8px;
 }
 
-#owl-carousel-products #owl-carousel-ul #featuredProducts .productListing {
-  margin: 0 0 0 0;
-  width: 100% !important;
-  max-width: 100%;
-  border: none;
-  font-size: 100px;
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
+  height: 235px;
 }
 
-#owl-carousel-ul .owl-carousel .owl-nav {
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 50%;
-}
-
-#owl-carousel-ul .owl-carousel .owl-nav.disabled,
-#owl-carousel-ul .owl-carousel .owl-dots.disabled {
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 50%;
-}
-
-#owl-carousel-products
-#owl-carousel-ul
-#featuredProducts
-.productListing
-.image
-span {
-  width: 100% !important;
-  text-align: center;
-}
-
-#owl-carousel-products
-#owl-carousel-ul
-#featuredProducts
-.productListing
-.image
-span
-span {
-  width: 100%;
-}
-
-#owl-carousel-products
-#owl-carousel-ul
-#featuredProducts
-.productListing
-.image
-img {
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
   height: 40px;
-  margin: 14px -128px;
+  margin: 14px -280px;
   max-width: 100% !important;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  margin-right: 0px;
+  margin-bottom: -10px;
 }
 
-#owl-carousel-products #owl-carousel-ul #featuredProducts .hp-featured-overlay {
-  width: 100%;
-  height: 100%;
-  float: none;
-  position: absolute;
-  top: 0;
-  display: none;
-  left: 0;
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img .card-body .card-title {
+  text-align: left;
 }
 
-#owl-carousel-products
-#owl-carousel-ul
-#featuredProducts
-.productListing:hover
-.hp-featured-overlay {
-  display: block;
-}
-
-#owl-carousel-products
-#owl-carousel-ul
-#featuredProducts
-.hp-featured-overlay
-button {
-  max-width: 90%;
-}
-
-#featuredProducts .productListing .image img {
-  max-width: 100%;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-#featuredProducts .productListing a.product {
-  z-index: 2 !important;
-  position: relative;
-}
-
-#featuredProducts .productListing span {
-  padding: 0px 22px;
-  float: left;
-  width: 100%;
-  font-size: 0.75rem;
-  color: #000000;
-}
-
-#featuredProducts .productListing .brand {
-  font-size: 23px;
-  color: #172026;
-  width: 100%;
-}
-
-#featuredProducts .productListing .name {
-  font-weight: 367;
-  font-size: 14px;
-  color: #172026;
-  line-height: 1.5;
-}
-
-#featuredProducts .productListing .image img {
-  max-width: 100%;
+#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img .card-body .card-text {
+  text-align: left;
 }
 
 .aboutEmployersSec {
@@ -1027,7 +917,7 @@ button {
 }
 
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
@@ -1040,7 +930,7 @@ button {
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -1202,7 +1092,6 @@ button {
 
 #apply-form .container .apply-this-job {
   margin-top: 35px;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -1227,8 +1116,9 @@ button {
   background-position-x: 60px;
 }
 
-#apply-form .site-btn {
+#apply-form .submit-btn {
   margin-top: 10px;
+  margin-left: 373px;
   padding: 10px 15px;
   border-style: solid;
   border-width: 2px;
@@ -1240,10 +1130,9 @@ button {
   font-weight: 600;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
-  text-align: center;
 }
 
-#apply-form .site-btn:hover {
+#apply-form .submit-btn:hover {
   color: #fff;
   background-color: #166433;
 }
@@ -1356,7 +1245,6 @@ button {
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 380px;
   }
   .modal .modal-content {
     width: 80%;
@@ -1524,6 +1412,21 @@ button {
   .faq .faqHeading {
     font-size: 20px;
   }
+  #apply-form .container .apply-this-job {
+    margin-top: 50px;
+  }
+  #apply-form .container .apply-this-job h2 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  #apply-form .container .apply-this-job p {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px;
+  }
+  #apply-form .container .submit-btn {
+    margin-left: 50px;
+  }
   .bottom-footer .bottom-footer-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1559,7 +1462,6 @@ button {
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 370px;
   }
   .modal .modal-content {
     width: 80%;
@@ -1619,6 +1521,15 @@ button {
   #home-page .btnDiv {
     margin: 15px 0;
   }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
+    width: 100%;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
+    height: 310px;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
+    margin: 14px -96px;
+  }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
@@ -1633,12 +1544,11 @@ button {
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 370px;
   }
   .modal .modal-content {
     width: 80%;
@@ -1743,6 +1653,9 @@ button {
     width: 100%;
     margin-left: 24px;
   }
+  #apply-form .container .submit-btn {
+    margin-left: 197px;
+  }
   .aboutMissionSec .missionContent {
     padding-left: 0;
   }
@@ -1804,8 +1717,17 @@ button {
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
+    width: 96%;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
+    height: 340px;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
+    margin: 14px -196px;
   }
 }
 
@@ -1828,7 +1750,6 @@ button {
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 170px;
   }
   .site-btn {
     margin-left: 346px;
@@ -1893,11 +1814,20 @@ button {
   .carouselSlide .slide-clr {
     height: 420px;
   }
+  #apply-form .container .submit-btn {
+    margin-left: 285px;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
+    width: 96%;
+  }
+  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
+    height: 280px;
+  }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 213px;
   }
   #home-page .btnDiv {
@@ -1921,7 +1851,6 @@ button {
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 180px;
   }
 }
 
@@ -1959,7 +1888,7 @@ button {
     font-weight: 700;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 189px;
   }
 }
@@ -2026,7 +1955,7 @@ button {
     font-weight: 600;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 227px;
   }
   .trending-jobs .candidates .senior-product h5 {
@@ -2080,21 +2009,6 @@ button {
   }
   .homeEmployers .employersRow .employersContent .employersPara {
     font-size: 22px;
-  }
-  #owl-carousel-products .heading {
-    font-size: 32px;
-  }
-  #owl-carousel-products .pride {
-    font-size: 28px;
-  }
-  #featuredProducts .productListing .brand {
-    font-size: 28px;
-  }
-  #featuredProducts .productListing .name {
-    font-size: 19px;
-  }
-  #owl-carousel-products #owl-carousel-ul #featuredProducts {
-    height: 270px;
   }
   .aboutEmployersSec .employersHeader {
     font-size: 32px;
@@ -2297,21 +2211,6 @@ button {
   .homeEmployers .employersRow .employersContent .employersPara {
     font-size: 22px;
   }
-  #owl-carousel-products .heading {
-    font-size: 32px;
-  }
-  #owl-carousel-products .pride {
-    font-size: 28px;
-  }
-  #featuredProducts .productListing .brand {
-    font-size: 28px;
-  }
-  #featuredProducts .productListing .name {
-    font-size: 19px;
-  }
-  #owl-carousel-products #owl-carousel-ul #featuredProducts {
-    height: 270px;
-  }
   .aboutEmployersSec .employersHeader {
     font-size: 32px;
   }
@@ -2384,7 +2283,6 @@ button {
 @media (width: 1440px) {
   #apply-form .container .apply-this-job {
     margin-top: 35px;
-    margin-bottom: 150px;
   }
   #contact-form .container .get-in-touch {
     margin-bottom: 40px;
@@ -2403,5 +2301,22 @@ button {
   #contact-form .container .row {
     max-width: 100%;
   }
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=index.css.map */

@@ -6,17 +6,13 @@ export default function (req, res) {
     First_Name,
     Last_Name,
     email,
-    Phone,
-    Title,
-    Organization,
-    Website,
-    Position_Type,
-    Position_Location,
-    Title_of_Position,
-    How_Did_You_Hear_About_Us,
+    Mobile_Number,
+    Your_Location,
+    Current_Salary,
+    Notice_Period,
+    LinkedIn_URL,
     Resume_Upload,
     Resume_title,
-    message,
   } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -29,29 +25,27 @@ export default function (req, res) {
     secure: true,
   });
   const mailData = {
-    from: "kamalnath.srinivasan@tridentsqa.com",
-    to: "rajeshwar.rajakumar@tridentsqa.com",
+    from: "lakshmigayathri.sivasankar@tridentsqa.com",
+    to: "lakshmigayathri.sivasankar@tridentsqa.com",
     subject: `Message From ${req.body.First_Name}`,
     text: req.body.message + " | Sent from: " + req.body.email,
     html: `<p>You have a contact form submission</p><br>
-    <p><strong>First_Name: </strong> ${First_Name}</p>
-    <p><strong>Last_Name: </strong> ${Last_Name}</p>
+    <p><strong>First Name: </strong> ${First_Name}</p>
+    <p><strong>Last Name: </strong> ${Last_Name}</p>
     <p><strong>Email: </strong> ${email}</p>
-    <p><strong>Phone: </strong> ${Phone}</p>
-    <p><strong>Title: </strong> ${Title}</p>
-    <p><strong>Organization: </strong> ${Organization}</p>
-    <p><strong>Website: </strong> ${Website}</p>
-    <p><strong>Position_Type: </strong> ${Position_Type}</p>
-    <p><strong>Position_Location: </strong> ${Position_Location}</p>
-    <p><strong>Title_of_Position: </strong> ${Title_of_Position}</p>
-    <p><strong>How_Did_You_Hear_About_Us: </strong> ${How_Did_You_Hear_About_Us}</p>
-    <p><strong>Resume_Upload: </strong> ${Resume_title}</p>
-    <p><strong>Message: </strong> ${message}</p>`,
+    <p><strong>Mobile Number: </strong> ${Mobile_Number}</p>
+    <p><strong>Your Location: </strong> ${Your_Location}</p>
+    <p><strong>Current Salary: </strong> ${Current_Salary}</p>
+    <p><strong>Notice Period: </strong> ${Notice_Period}</p>
+    <p><strong>LinkedIn URL: </strong> ${LinkedIn_URL}</p>
+    <p><strong>Resume Upload: </strong> ${Resume_title}</p>`,
+
     attachments: {
       filename: Resume_title,
       path: Resume_Upload,
     },
   };
+
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
       console.log(err);
