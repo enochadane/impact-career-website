@@ -3,6 +3,10 @@
 .app_wrapper {
   margin: auto;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 
 //bootstrap
 //Header
@@ -69,16 +73,19 @@
 }
 //banner section
 //home-banner
-.carouselSlide {
-  margin-top: 71px;
-  background-color: black;
-  .slide-clr {
-    opacity: 0.4;
-  }
-  .carousel-caption {
-    color: white;
-    text-align: center;
-    top: 190px;
+#demo {
+  .carouselSlide {
+    margin-top: 71px;
+    background-color: black;
+    .slide-clr {
+      opacity: 0.4;
+      background-color: black;
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      top: 190px;
+    }
   }
 }
 //banner
@@ -362,100 +369,32 @@
     }
   }
 }
-
-//about-carousel-section
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-#Owl-carousel {
-  .carousel {
-    padding-top: 43px;
-    background-color: #f4f5f7;
+.carousel {
+  background-color: #f4f5f7;
+  .outer-card {
+    width: 92%;
+    border-top: 3px solid #166433;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 265px;
+    margin-top: 40px;
     margin-bottom: 100px;
-    .our-values-title {
-      margin-top: 30px;
+    border-style: solid none none none;
+    img {
+      margin-left: 40px;
     }
-    .our-pride {
-      .prev {
-        img {
-          background-color: #166433;
-          color: #fff;
-          padding: 10px 10px;
-          border-radius: 8px;
-          float: right;
-          margin-right: 80px;
-        }
-      }
-      .next {
-        img {
-          margin-right: 30px;
-          background-color: #166433;
-          margin-top: -40px;
-          float: right;
-          color: #fff;
-          padding: 10px 10px;
-          border-radius: 8px;
-        }
-      }
-      .pride {
-        color: #474c55;
-        font-size: 24px;
-        padding-bottom: 31px;
-        padding-top: 36px;
-        text-align: left;
-        margin-bottom: -20px;
-      }
-    }
-  }
-  #recipeCarousel {
-    .carousel-inner {
-      .carousel-item {
-        -webkit-transition: opacity 0.6s ease-out;
-        transition: transform (0.6s linear);
-        .carousel-type {
-          margin-right: 0px;
-          .owl-theme {
-            .card {
-              width: 92%;
-              border-top: 3px solid #166433;
-              border-style: solid none none none;
-              border-radius: 8px;
-              .card-img {
-                height: 235px;
-                img {
-                  height: 40px;
-                  margin: 14px -280px;
-                  max-width: 100% !important;
-                  align-items: left;
-                  margin-right: 0px;
-                  margin-bottom: -10px;
-                }
-                .card-body {
-                  .card-title {
-                    text-align: left;
-                  }
-                  .card-text {
-                    text-align: left;
-                  }
-                }
-              }
-            }
-          }
-        }
+    .card-body {
+      .card-text {
+        font-size: 16px;
       }
     }
   }
 }
+.slick-arrow {
+  display: none;
+}
+
 //aboutEmployers section
 .aboutEmployersSec {
   margin-top: 5rem;
@@ -1464,27 +1403,6 @@
       margin: 15px 0;
     }
   }
-  #Owl-carousel {
-    #recipeCarousel {
-      .carousel-inner {
-        .carousel-item {
-          .carousel-type {
-            .owl-theme {
-              .card {
-                width: 100%;
-                .card-img {
-                  height: 310px;
-                  img {
-                    margin: 14px -96px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
@@ -1756,27 +1674,6 @@
     content: "";
     bottom: 216px;
   }
-  #Owl-carousel {
-    #recipeCarousel {
-      .carousel-inner {
-        .carousel-item {
-          .carousel-type {
-            .owl-theme {
-              .card {
-                width: 96%;
-                .card-img {
-                  height: 340px;
-                  img {
-                    margin: 14px -196px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
   .Job {
@@ -1895,24 +1792,6 @@
     .container {
       .submit-btn {
         margin-left: 285px;
-      }
-    }
-  }
-  #Owl-carousel {
-    #recipeCarousel {
-      .carousel-inner {
-        .carousel-item {
-          .carousel-type {
-            .owl-theme {
-              .card {
-                width: 96%;
-                .card-img {
-                  height: 280px;
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
@@ -2623,17 +2502,4 @@
       }
     }
   }
-}
-@media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
 }

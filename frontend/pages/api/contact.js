@@ -29,23 +29,23 @@ export default function (req, res) {
     secure: true,
   });
   const mailData = {
-    from: "kamalnath.srinivasan@tridentsqa.com",
-    to: "rajeshwar.rajakumar@tridentsqa.com",
-    subject: `Message From ${req.body.First_Name}`,
+    from: "lakshmigayathri.sivasankar@tridentsqa.com",
+    to: "lakshmigayathri.sivasankar@tridentsqa.com",
+    subject: `Contact Form Submitted by ${req.body.First_Name}`,
     text: req.body.message + " | Sent from: " + req.body.email,
-    html: `<p>You have a contact form submission</p><br>
-    <p><strong>First_Name: </strong> ${First_Name}</p>
-    <p><strong>Last_Name: </strong> ${Last_Name}</p>
+    html: `<p>Contact Form Submission Details</p><br>
+    <p><strong>First Name: </strong> ${First_Name}</p>
+    <p><strong>Last Name: </strong> ${Last_Name}</p>
     <p><strong>Email: </strong> ${email}</p>
     <p><strong>Phone: </strong> ${Phone}</p>
     <p><strong>Title: </strong> ${Title}</p>
     <p><strong>Organization: </strong> ${Organization}</p>
     <p><strong>Website: </strong> ${Website}</p>
-    <p><strong>Position_Type: </strong> ${Position_Type}</p>
-    <p><strong>Position_Location: </strong> ${Position_Location}</p>
-    <p><strong>Title_of_Position: </strong> ${Title_of_Position}</p>
-    <p><strong>How_Did_You_Hear_About_Us: </strong> ${How_Did_You_Hear_About_Us}</p>
-    <p><strong>Resume_Upload: </strong> ${Resume_title}</p>
+    <p><strong>Position Type: </strong> ${Position_Type}</p>
+    <p><strong>Position Location: </strong> ${Position_Location}</p>
+    <p><strong>Title of Position: </strong> ${Title_of_Position}</p>
+    <p><strong>How Did You Hear About Us: </strong> ${How_Did_You_Hear_About_Us}</p>
+    <p><strong>Resume Upload: </strong> ${Resume_title}</p>
     <p><strong>Message: </strong> ${message}</p>`,
     attachments: {
       filename: Resume_title,

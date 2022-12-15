@@ -18,6 +18,11 @@
   margin: auto;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 #home-page .navbar-light .navbar-nav .nav-link.active,
 #home-page .navbar-light .navbar-nav .show > .nav-link {
   color: #166433;
@@ -86,16 +91,17 @@
   background-color: #166433;
 }
 
-.carouselSlide {
+#demo .carouselSlide {
   margin-top: 71px;
   background-color: black;
 }
 
-.carouselSlide .slide-clr {
+#demo .carouselSlide .slide-clr {
   opacity: 0.4;
+  background-color: black;
 }
 
-.carouselSlide .carousel-caption {
+#demo .carouselSlide .carousel-caption {
   color: white;
   text-align: center;
   top: 190px;
@@ -420,100 +426,32 @@
   font-weight: 300;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-#Owl-carousel .carousel {
-  padding-top: 43px;
+.carousel {
   background-color: #f4f5f7;
-  margin-bottom: 100px;
 }
 
-#Owl-carousel .carousel .our-values-title {
-  margin-top: 30px;
-}
-
-#Owl-carousel .carousel .our-pride .prev img {
-  background-color: #166433;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 8px;
-  float: right;
-  margin-right: 80px;
-}
-
-#Owl-carousel .carousel .our-pride .next img {
-  margin-right: 30px;
-  background-color: #166433;
-  margin-top: -40px;
-  float: right;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 8px;
-}
-
-#Owl-carousel .carousel .our-pride .pride {
-  color: #474c55;
-  font-size: 24px;
-  padding-bottom: 31px;
-  padding-top: 36px;
-  text-align: left;
-  margin-bottom: -20px;
-}
-
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item {
-  -webkit-transition: opacity 0.6s ease-out;
-  -webkit-transition: -webkit-transform 0.6s linear;
-  transition: -webkit-transform 0.6s linear;
-  transition: transform 0.6s linear;
-  transition: transform 0.6s linear, -webkit-transform 0.6s linear;
-}
-
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type {
-  margin-right: 0px;
-}
-
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
+.carousel .outer-card {
   width: 92%;
   border-top: 3px solid #166433;
-  border-style: solid none none none;
   border-radius: 8px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 265px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  border-style: solid none none none;
 }
 
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
-  height: 235px;
+.carousel .outer-card img {
+  margin-left: 40px;
 }
 
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
-  height: 40px;
-  margin: 14px -280px;
-  max-width: 100% !important;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  margin-right: 0px;
-  margin-bottom: -10px;
+.carousel .outer-card .card-body .card-text {
+  font-size: 16px;
 }
 
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img .card-body .card-title {
-  text-align: left;
-}
-
-#Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img .card-body .card-text {
-  text-align: left;
+.slick-arrow {
+  display: none;
 }
 
 .aboutEmployersSec {
@@ -1521,15 +1459,6 @@
   #home-page .btnDiv {
     margin: 15px 0;
   }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
-    width: 100%;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
-    height: 310px;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
-    margin: 14px -96px;
-  }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
@@ -1720,15 +1649,6 @@
     content: "";
     bottom: 216px;
   }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
-    width: 96%;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
-    height: 340px;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img img {
-    margin: 14px -196px;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
@@ -1816,12 +1736,6 @@
   }
   #apply-form .container .submit-btn {
     margin-left: 285px;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card {
-    width: 96%;
-  }
-  #Owl-carousel #recipeCarousel .carousel-inner .carousel-item .carousel-type .owl-theme .card .card-img {
-    height: 280px;
   }
 }
 
@@ -2301,22 +2215,5 @@
   #contact-form .container .row {
     max-width: 100%;
   }
-}
-
-@media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 /*# sourceMappingURL=index.css.map */
