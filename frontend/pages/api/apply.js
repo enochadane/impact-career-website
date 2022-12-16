@@ -1,6 +1,12 @@
 import nodemailer from "nodemailer";
 import "dotenv/config";
-
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "3mb",
+    },
+  },
+};
 export default function (req, res) {
   const {
     First_Name,

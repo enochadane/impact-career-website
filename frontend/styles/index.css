@@ -729,7 +729,7 @@ body {
   font-size: 14px;
 }
 
-.product .page .job-page .sub-btn {
+.product .page .job-page .submit-btn {
   margin-bottom: 20px;
   color: #166433;
   font-weight: 600;
@@ -739,7 +739,7 @@ body {
   margin-bottom: 20px;
 }
 
-.product .page .job-page .sub-btn:hover {
+.product .page .job-page .submit-btn:hover {
   color: white;
   background-color: #166433;
 }

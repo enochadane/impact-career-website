@@ -1,8 +1,11 @@
 import axios from "axios";
+import { result } from "lodash";
 import { useState } from "react";
 
-function Form() {
-  const [formStatus, setFormStatus] = useState(false);
+export default function Form() {
+  const [formStatus, setFormStatus] = useState();
+  const [selectedFile, setSelectedFile] = useState(false);
+  const [isFilePicked, setIsFilePicked] = useState(false);
   const [query, setQuery] = useState({
     First_Name: "",
     Last_Name: "",
@@ -15,24 +18,6 @@ function Form() {
     Resume_Upload: "",
     Resume_title: "",
   });
-
-  const handleFileChange = () => (e) => {
-    let file = e.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      setQuery((prevState) => ({
-        ...prevState,
-        Resume_Upload: reader.result,
-        Resume_title: e.target.files[0].name,
-      }));
-    };
-    if (e.target.files[0].size <= 1000000) {
-      alert("file uploaded successful");
-    } else {
-      alert("file size should be less then 1MB");
-    }
-  };
   const handleChange = () => (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -40,6 +25,27 @@ function Form() {
       ...prevState,
       [name]: value,
     }));
+  };
+  const handleFileChange = () => (e) => {
+    let file = e.target.files[0];
+    console.log("banu-file", file);
+    if (e.target.files[0].name.split(".").pop() != "pdf") {
+      alert("file should be pdf only");
+      return false;
+    } else {
+      alert("file uploaded successful");
+      setIsFilePicked(true);
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        setQuery((prevState) => ({
+          ...prevState,
+          Resume_Upload: reader.result,
+          Resume_title: e.target.files[0].name,
+          Resume_ext: e.target.files[0].name.split(".").pop(),
+        }));
+      };
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,34 +55,35 @@ function Form() {
       console.log(value);
       e.target.reset();
     });
-
-    axios
-      .post("/api/apply", formData, {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: formData,
-      })
-      .then(function (response) {
-        setFormStatus(true);
-
-        setQuery({
-          First_Name: "",
-          Last_Name: "",
-          email: "",
-          Mobile_Number: "",
-          Your_Location: "",
-          Current_Salary: "",
-          Notice_Period: "",
-          LinkedIn_URL: "",
-        });
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    isFilePicked
+      ? axios
+          .post("/api/apply", formData, {
+            method: "POST",
+            headers: {
+              Accept: "application/json, text/plain, */*",
+              "Content-Type": "application/json",
+            },
+            body: formData,
+          })
+          .then(function (response) {
+            setFormStatus(true);
+            setQuery({
+              First_Name: "",
+              Last_Name: "",
+              email: "",
+              Mobile_Number: "",
+              Your_Location: "",
+              Current_Salary: "",
+              Notice_Period: "",
+              LinkedIn_URL: "",
+            });
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+      : setSelectedFile(true);
+    //alert('pls select only pdf');
   };
 
   return (
@@ -201,38 +208,33 @@ function Form() {
         <div className='row'>
           <div className='col-sm-12'>
             <input
+              id='file'
               type='file'
               className='w-file-upload-input form-control UploadImg'
-              accept='.pdf, .doc, .docx, .txt'
+              accept='application/pdf'
               name='Resume_Upload'
-              data-iconname='fa-solid fa-cloud-arrow-up'
+              data-iconName='fa-solid fa-cloud-arrow-up'
               data-name='Upload Job Description, If Available'
               aria-hidden='true'
               placeholder='Upload Job Description, If Available'
-              tabIndex='-1'
+              tabindex='-1'
               required
               onChange={handleFileChange()}
             />
           </div>
         </div>
       </div>
-
-      {/* <hr /> */}
-      {/* $("form").hide(
-        setMessage("Thank you! Your submission has been received!")
-      ); */}
-      {formStatus ? (
+      {formStatus && (
         <div className='thank'>
           Thank you! Your submission has been received!
         </div>
-      ) : (
-        ""
+      )}
+      {selectedFile && (
+        <div className='thank'>Form submission failed!!! Upload pdf only.</div>
       )}
       <button type='submit' className='submit-btn text-center '>
         Submit
       </button>
     </form>
-    // </div>
   );
 }
-export default Form;
