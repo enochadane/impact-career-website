@@ -9,7 +9,7 @@ import { useState } from 'react';
 import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: process.env.BACKEND_URL,
   cache: new InMemoryCache(),
 });
 
