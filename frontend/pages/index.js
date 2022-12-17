@@ -1,9 +1,9 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_FAQ, GET_ALL_JOBS } from "../graphql/queries";
-import Link from "next/link";
-import Image from "next/image";
-import Applyform from "../components/Applyform/Applyform";
-import { useState } from "react";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
+import Link from 'next/link';
+import Image from 'next/image';
+import Applyform from '../components/Applyform/Applyform';
+import { useState } from 'react';
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -250,7 +250,7 @@ export default function Home({ posts, name }) {
           <div
             id='myModal'
             className='modal'
-            style={{ display: modal ? "block" : "none" }}
+            style={{ display: modal ? 'block' : 'none' }}
           >
             <div className='modal-content'>
               <span className='close' onClick={() => setModal(false)}>
@@ -289,6 +289,10 @@ export default function Home({ posts, name }) {
               <div className='container'>
                 <div className='row'>
                   {posts.slice(0, 6).map((val, i) => {
+                    console.log(
+                      '123123',
+                      val.attributes.image.data.attributes.url
+                    );
                     return (
                       <div className='col-md-6'>
                         <div className='card col-12 candidates'>

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "trending-job",
     "pluralName": "trending-jobs",
-    "displayName": "trendingJob"
+    "displayName": "trendingJob",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,6 +27,9 @@
     "urlSlug": {
       "type": "string"
     },
+    "content": {
+      "type": "richtext"
+    },
     "image": {
       "allowedTypes": [
         "images",
@@ -34,10 +38,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
-    },
-    "content": {
-      "type": "richtext"
+      "multiple": false
     }
   }
 }

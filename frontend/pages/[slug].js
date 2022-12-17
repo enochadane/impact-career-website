@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 import {
   GET_INDIVIDUAL_JOBS_POST,
   GET_ALL_JOBS_SLUGS,
-} from "../graphql/queries";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import Head from "next/head";
-import { useState } from "react";
-import Applyform from "../components/Applyform/Applyform";
+} from '../graphql/queries';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import Head from 'next/head';
+import { useState } from 'react';
+import Applyform from '../components/Applyform/Applyform';
 
 const client = new ApolloClient({
-  uri: process.env.BACKEND_URL,
+  uri: 'http://localhost:1337/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -59,7 +59,7 @@ export default function post({ post }) {
         <div
           id='myModal'
           className='modal'
-          style={{ display: modal ? "block" : "none" }}
+          style={{ display: modal ? 'block' : 'none' }}
         >
           <div className='modal-content'>
             <span className='close' onClick={() => setModal(false)}>

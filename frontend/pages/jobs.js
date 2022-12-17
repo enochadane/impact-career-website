@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_FAQ_JOBS, GET_ALL_JOBS } from "../graphql/queries";
-import Link from "next/link";
+import Head from 'next/head';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_FAQ_JOBS, GET_ALL_JOBS } from '../graphql/queries';
+import Link from 'next/link';
 
 export default function Job({ posts, name }) {
   return (
