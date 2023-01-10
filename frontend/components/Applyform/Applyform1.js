@@ -13,7 +13,6 @@ export default function Form() {
     Mobile_Number: '',
     Your_Location: '',
     Current_Salary: '',
-    Notice_Period: '',
     LinkedIn_URL: '',
     Resume_Upload: '',
     Resume_title: '',
@@ -57,7 +56,7 @@ export default function Form() {
     });
     isFilePicked
       ? axios
-          .post('/api/apply', formData, {
+          .post('/api/apply1', formData, {
             method: 'POST',
             headers: {
               Accept: 'application/json, text/plain, */*',
@@ -75,7 +74,6 @@ export default function Form() {
               Mobile_Number: '',
               Your_Location: '',
               Current_Salary: '',
-              Notice_Period: '',
               LinkedIn_URL: '',
             });
             console.log(response);

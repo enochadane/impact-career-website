@@ -13,7 +13,6 @@ export default function Form() {
     Mobile_Number: '',
     Your_Location: '',
     Current_Salary: '',
-    Notice_Period: '',
     LinkedIn_URL: '',
     Resume_Upload: '',
     Resume_title: '',
@@ -33,8 +32,8 @@ export default function Form() {
       return false;
     } else {
       alert('file uploaded successful');
-      setSelectedFile(false);
       setIsFilePicked(true);
+      setSelectedFile(false);
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function () {
@@ -57,7 +56,7 @@ export default function Form() {
     });
     isFilePicked
       ? axios
-          .post('/api/apply', formData, {
+          .post('/api/apply2', formData, {
             method: 'POST',
             headers: {
               Accept: 'application/json, text/plain, */*',
@@ -75,7 +74,6 @@ export default function Form() {
               Mobile_Number: '',
               Your_Location: '',
               Current_Salary: '',
-              Notice_Period: '',
               LinkedIn_URL: '',
             });
             console.log(response);

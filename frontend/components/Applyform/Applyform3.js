@@ -2,7 +2,8 @@ import axios from 'axios';
 import { result } from 'lodash';
 import { useState } from 'react';
 
-export default function Form() {
+export default function Form(props) {
+  console.log('BANUMATHI', props.jobsName);
   const [formStatus, setFormStatus] = useState();
   const [selectedFile, setSelectedFile] = useState(false);
   const [isFilePicked, setIsFilePicked] = useState(false);
@@ -33,8 +34,8 @@ export default function Form() {
       return false;
     } else {
       alert('file uploaded successful');
-      setSelectedFile(false);
       setIsFilePicked(true);
+      setSelectedFile(false);
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function () {
@@ -55,9 +56,12 @@ export default function Form() {
       console.log(value);
       e.target.reset();
     });
+
+    console.log('FORM_DATA_BANU', formData);
+    formData.append('subject', props.jobsName);
     isFilePicked
       ? axios
-          .post('/api/apply', formData, {
+          .post('/api/apply3', formData, {
             method: 'POST',
             headers: {
               Accept: 'application/json, text/plain, */*',

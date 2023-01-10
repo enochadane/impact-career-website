@@ -6,7 +6,7 @@ import {
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import Head from 'next/head';
 import { useState } from 'react';
-import Applyform from '../components/Applyform/Applyform';
+import Applyform3 from '../components/Applyform/Applyform3';
 
 const client = new ApolloClient({
   uri: process.env.BACKEND_URL,
@@ -14,41 +14,42 @@ const client = new ApolloClient({
 });
 
 export default function post({ post }) {
-  const [modal, setModal] = useState(false);
+  console.log('BANU-POST', post);
+  const [modal3, setModal3] = useState(false);
   return (
     <>
       <div>
         <Head>
           <title>product-page</title>
         </Head>
-        <div className='container product'>
-          <div className='card page mt-5'>
-            <div className='row mx-1 job-page'>
-              <div className='col-3 col-md-2 col-lg-1 mb-2 in-page'>
+        <div className="container product">
+          <div className="card page mt-5">
+            <div className="row mx-1 job-page">
+              <div className="col-3 col-md-2 col-lg-1 mb-2 in-page">
                 <img
                   src={process.env.BACKEND_IMG + post.image.data.attributes.url}
                   width={80}
                   height={80}
                 ></img>
               </div>
-              <div className='col-8 col-md-7 col-lg-4'>
-                <div className='card-body inner-content'>
-                  <h5 className='card-title'>{post.title}</h5>
+              <div className="col-8 col-md-7 col-lg-4">
+                <div className="card-body inner-content">
+                  <h5 className="card-title">{post.title}</h5>
                   <div>
-                    <h6 className='slugDescription'>
-                      <span className='slugSpan'>{post.jobsName}</span>
+                    <h6 className="slugDescription">
+                      <span className="slugSpan">{post.jobsName}</span>
                       <span>{post.jobsLocation}</span>
                     </h6>
                   </div>
-                  <h6 className='slugDescription'>{post.jobsPrice}</h6>
+                  <h6 className="slugDescription">{post.jobsPrice}</h6>
                 </div>
               </div>
-              <p className='slugPara'>{post.content}</p>
-              <div class='col-12 contents'>
+              <p className="slugPara">{post.content}</p>
+              <div class="col-12 contents">
                 <button
-                  onClick={() => setModal(true)}
-                  id='myBtn'
-                  className='btn btn-outline-success submit-btn'
+                  onClick={() => setModal3(true)}
+                  id="myBtn"
+                  className="btn btn-outline-success submit-btn"
                 >
                   Apply for this job
                 </button>
@@ -57,23 +58,23 @@ export default function post({ post }) {
           </div>
         </div>
         <div
-          id='myModal'
-          className='modal'
-          style={{ display: modal ? 'block' : 'none' }}
+          id="myModal"
+          className="modal"
+          style={{ display: modal3 ? 'block' : 'none' }}
         >
-          <div className='modal-content'>
-            <span className='close' onClick={() => setModal(false)}>
+          <div className="modal-content">
+            <span className="close" onClick={() => setModal3(false)}>
               &times;
             </span>
-            <section id='apply-form'>
-              <div className='container'>
-                <div className='apply-this-job'>
-                  <h2>Apply for this Job</h2>
+            <section id="apply-form">
+              <div className="container">
+                <div className="apply-this-job">
+                  <h2>Apply for this Job3</h2>
                   <p>
                     Please fill the details below to evaluate your candidature
                   </p>
                 </div>
-                <Applyform />
+                <Applyform3 jobsName={post.title} />
               </div>
             </section>
           </div>

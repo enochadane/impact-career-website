@@ -1,3 +1,8 @@
+import {
+  GET_INDIVIDUAL_JOBS_POST,
+  GET_ALL_JOBS_SLUGS,
+} from '../../graphql/queries';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 export const config = {
@@ -7,8 +12,14 @@ export const config = {
     },
   },
 };
-export default function (req, res) {
+const client = new ApolloClient({
+  uri: process.env.BACKEND_URL,
+  cache: new InMemoryCache(),
+});
+export default function (req, res, post) {
+  console.log('KAMAL', post);
   const {
+    subject,
     First_Name,
     Last_Name,
     email,
@@ -32,7 +43,7 @@ export default function (req, res) {
   const mailData = {
     from: 'yourimpactcareers@gmail.com',
     to: 'yourimpactcareers@gmail.com',
-    subject: `Consultant seeking opportunity`,
+    subject: `${subject} of open job`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
     html: `<p>Contact Form Submission Details</p><br>
     <p><strong>First Name: </strong> ${First_Name}</p>
@@ -65,4 +76,42 @@ export default function (req, res) {
       });
     }
   });
+}
+
+export async function getStaticPaths() {
+  const { data } = await client.query({ query: GET_ALL_JOBS_SLUGS });
+
+  const paths = data.trendingJobs.data.map((post) => {
+    return {
+      params: {
+        slug: post.attributes.urlSlug,
+      },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+export async function getStaticProps({ params }) {
+  const { data } = await client.query({
+    query: GET_INDIVIDUAL_JOBS_POST,
+    variables: { slugUrl: params.slug },
+  });
+
+  const attrs = data.trendingJobs.data[0].attributes;
+
+  return {
+    props: {
+      post: {
+        title: attrs.title,
+        jobsName: attrs.jobsName,
+        jobsLocation: attrs.jobsLocation,
+        jobsPrice: attrs.jobsPrice,
+        content: attrs.content,
+        image: attrs.image,
+      },
+    },
+  };
 }

@@ -7,23 +7,17 @@ export const config = {
     },
   },
 };
-
 export default function (req, res) {
   const {
     First_Name,
     Last_Name,
     email,
-    Phone,
-    Title,
-    Organization,
-    Website,
-    Position_Type,
-    Position_Location,
-    Title_of_Position,
-    How_Did_You_Hear_About_Us,
+    Mobile_Number,
+    Your_Location,
+    Current_Salary,
+    LinkedIn_URL,
     Resume_Upload,
     Resume_title,
-    message,
   } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -38,27 +32,24 @@ export default function (req, res) {
   const mailData = {
     from: 'yourimpactcareers@gmail.com',
     to: 'yourimpactcareers@gmail.com',
-    subject: `Contact Form Submitted by ${req.body.First_Name}`,
+    subject: `Request access form submitted`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
     html: `<p>Contact Form Submission Details</p><br>
     <p><strong>First Name: </strong> ${First_Name}</p>
     <p><strong>Last Name: </strong> ${Last_Name}</p>
     <p><strong>Email: </strong> ${email}</p>
-    <p><strong>Phone: </strong> ${Phone}</p>
-    <p><strong>Title: </strong> ${Title}</p>
-    <p><strong>Organization: </strong> ${Organization}</p>
-    <p><strong>Website: </strong> ${Website}</p>
-    <p><strong>Position Type: </strong> ${Position_Type}</p>
-    <p><strong>Position Location: </strong> ${Position_Location}</p>
-    <p><strong>Title of Position: </strong> ${Title_of_Position}</p>
-    <p><strong>How Did You Hear About Us: </strong> ${How_Did_You_Hear_About_Us}</p>
-    <p><strong>Resume Upload: </strong> ${Resume_title}</p>
-    <p><strong>Message: </strong> ${message}</p>`,
+    <p><strong>Mobile Number: </strong> ${Mobile_Number}</p>
+    <p><strong>Your Location: </strong> ${Your_Location}</p>
+    <p><strong>Current Salary: </strong> ${Current_Salary}</p>
+    <p><strong>LinkedIn URL: </strong> ${LinkedIn_URL}</p>
+    <p><strong>Resume Upload: </strong> ${Resume_title}</p>`,
+
     attachments: {
       filename: Resume_title,
       path: Resume_Upload,
     },
   };
+
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
       console.log(err);

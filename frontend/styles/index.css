@@ -3,11 +3,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .nav .logo {
@@ -43,8 +43,8 @@ body {
   font-weight: 500;
   font-size: 14px;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-right: 30px;
   margin-top: -5px;
 }
@@ -116,8 +116,8 @@ body {
   display: flex;
   min-height: 41vh;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -146,24 +146,24 @@ body {
 }
 
 .contact-banner {
-  background-image: url("/images/resourcesHero.jpg");
+  background-image: url('/images/resourcesHero.jpg');
 }
 
 .about-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 
 .resources-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 
 .jobs-banner {
-  background-image: url("/images/jobs_banner.jpg");
+  background-image: url('/images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 
 .privacy-banner {
-  background-image: url("/images/bannerImages/privacy-policy.jpg");
+  background-image: url('/images/bannerImages/privacy-policy.jpg');
   background-position: 50% 0;
 }
 
@@ -247,7 +247,7 @@ body {
 
 .Job .last-card {
   border-radius: 15px;
-  background-image: url("/images/aboutUsHero.jpg");
+  background-image: url('/images/aboutUsHero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -649,7 +649,7 @@ body {
 .faq .accordion .accordion-button:focus {
   border: none;
   -webkit-box-shadow: 0 0 0 0;
-          box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
 }
 
 .faq .accordion .accordion-collapse {
@@ -829,7 +829,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 #contact-card-section .card .topContent h2 {
@@ -855,7 +855,7 @@ body {
 }
 
 .timelineMain .timeline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 45px;
   height: 45px;
@@ -868,7 +868,7 @@ body {
 }
 
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: #a67d2d;
@@ -944,11 +944,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   grid-column-gap: 60px;
 }
 
@@ -1004,8 +1004,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-size: 15px;
   font-weight: 300;
 }
@@ -1043,7 +1043,7 @@ body {
 #apply-form .form-control {
   margin: 10px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   padding: 13px;
 }
 
@@ -1113,7 +1113,7 @@ body {
 #contact-form .form-control {
   margin: 10px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   padding: 13px;
 }
 
@@ -1368,8 +1368,8 @@ body {
   .bottom-footer .bottom-footer-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     text-align: center;
   }
   .bottom-footer .bottom-footer-content h4 {
@@ -1473,7 +1473,7 @@ body {
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
   #apply-form .container .apply-this-job {
@@ -1646,7 +1646,7 @@ body {
     max-width: 100%;
   }
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 216px;
   }
 }
@@ -1741,7 +1741,7 @@ body {
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 213px;
   }
   #home-page .btnDiv {
@@ -1802,7 +1802,7 @@ body {
     font-weight: 700;
   }
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 189px;
   }
 }
@@ -1869,7 +1869,7 @@ body {
     font-weight: 600;
   }
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 227px;
   }
   .trending-jobs .candidates .senior-product h5 {
