@@ -77,7 +77,7 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
 `;
 const GET_ALL_JOBS_SLUGS = gql`
   query {
-    trendingJobs {
+    trendingJobs(pagination: { limit: 1000 }) {
       data {
         attributes {
           jobsName

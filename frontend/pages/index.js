@@ -339,10 +339,10 @@ export default function Home({ posts, name }) {
               <div className="container">
                 <div className="row">
                   {posts.slice(0, 6).map((val, i) => {
-                    console.log(
-                      '123123',
-                      val.attributes.image.data.attributes.url
-                    );
+                    // console.log(
+                    //   '123123',
+                    //   val.attributes.image.data.attributes.url
+                    // );
                     return (
                       <div className="col-md-6">
                         <div className="card col-12 candidates">
@@ -356,7 +356,8 @@ export default function Home({ posts, name }) {
                                 <img
                                   src={
                                     process.env.BACKEND_IMG +
-                                    val.attributes.image.data.attributes.url
+                                    '/uploads/orange_img_7cd28e9ae5.jpg'
+                                    // val.attributes.image.data.attributes.url
                                   }
                                   width={100}
                                   height={100}

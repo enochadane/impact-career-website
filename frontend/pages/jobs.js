@@ -38,7 +38,11 @@ export default function Job({ posts, name }) {
                                 <img
                                   src={
                                     process.env.BACKEND_IMG +
-                                    val.attributes.image.data.attributes.url
+                                    '/uploads/orange_img_7cd28e9ae5.jpg'
+                                    //   val.attributes.image.data !==
+                                    // null
+                                    //   ? val.attributes.image.data.attributes.url
+                                    //   : "/uploads/orange_img_7cd28e9ae5.jpg"
                                   }
                                   width={100}
                                   height={100}
