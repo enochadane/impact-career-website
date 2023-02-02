@@ -39,6 +39,7 @@ const GET_ALL_JOBS = gql`
           jobsPrice
           content
           urlSlug
+          url
           image {
             data {
               attributes {
@@ -63,6 +64,7 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
           jobsPrice
           urlSlug
           content
+          url
           image {
             data {
               attributes {

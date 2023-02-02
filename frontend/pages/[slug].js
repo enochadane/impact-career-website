@@ -7,6 +7,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import Head from 'next/head';
 import { useState } from 'react';
 import Applyform3 from '../components/Applyform/Applyform3';
+import Link from 'next/link';
 
 const client = new ApolloClient({
   uri: process.env.BACKEND_URL,
@@ -50,13 +51,15 @@ export default function post({ post }) {
               </div>
               <p className="slugPara">{post.content}</p>
               <div class="col-12 contents">
-                <button
-                  onClick={() => setModal3(true)}
-                  id="myBtn"
-                  className="btn btn-outline-success submit-btn"
-                >
-                  Apply for this job
-                </button>
+                <Link href={post.url}>
+                  <button
+                    // onClick={() => setModal3(true)}
+                    id="myBtn"
+                    className="btn btn-outline-success submit-btn"
+                  >
+                    Apply for this job
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -122,6 +125,7 @@ export async function getStaticProps({ params }) {
         jobsPrice: attrs.jobsPrice,
         content: attrs.content,
         image: attrs.image,
+        url: attrs.url,
       },
     },
   };
