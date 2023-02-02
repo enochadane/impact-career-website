@@ -49,7 +49,16 @@ export default function post({ post }) {
                   <h6 className="slugDescription">{post.jobsPrice}</h6>
                 </div>
               </div>
-              <p className="slugPara">{post.content}</p>
+              {/* <p className="slugPara">{post.content}</p> */}
+              <pre
+                style={{
+                  whiteSpace: 'pre-wrap',
+                  overflowWrap: 'break-word',
+                  maxWidth: '100%',
+                }}
+              >
+                {post.content}
+              </pre>
               <div class="col-12 contents">
                 <Link href={post.url}>
                   <button
