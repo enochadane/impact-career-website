@@ -32,6 +32,7 @@ const GET_ALL_JOBS = gql`
   query {
     trendingJobs(pagination: { limit: 1000 }) {
       data {
+        id
         attributes {
           title
           jobsName

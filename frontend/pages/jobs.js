@@ -1,11 +1,26 @@
+import { useState } from 'react';
+
 import Head from 'next/head';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_FAQ_JOBS, GET_ALL_JOBS } from '../graphql/queries';
+import Button from '@mui/material/Button';
 import Link from 'next/link';
 
+import ApplyModal from '../components/ApplyModal/ApplyModal';
+
 export default function Job({ posts, name }) {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [jobId, setJobId] = useState();
+  const [jobUrl, setJobUrl] = useState();
+
   return (
     <>
+      <ApplyModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        jobId={jobId}
+        jobUrl={jobUrl}
+      />
       <div>
         <Head>
           <title>Jobs</title>
@@ -23,22 +38,37 @@ export default function Job({ posts, name }) {
           <section className='trending-jobs mt-5'>
             <div className='product-designer'>
               <div className='container'>
-                <div className='row'>
+                <div
+                  className='row'
+                  style={{
+                    maxWidth: '900px',
+                    margin: '0 auto',
+                  }}
+                >
                   {posts.map((val, i) => {
                     return (
-                      <div className='col-md-6'>
-                        <div className='card col-12 candidates'>
-                          <Link
-                            className='candidatesLink'
-                            key={i}
-                            href={val.attributes.urlSlug}
-                          >
-                            <div className='row g-1 '>
-                              <div className='col-md-4 col-lg-3 col-4 '>
+                      <div className='col-md-12'>
+                        <div
+                          className='card col-12 candidates'
+                          style={{
+                            border: '1px solid #ddd',
+                          }}
+                        >
+                          <div className='row g-1 '>
+                            <div
+                              className='col-md-2 col-lg-2 col-2 '
+                              style={{ margin: 'auto' }}
+                            >
+                              <Link
+                                className='candidatesLink'
+                                key={i}
+                                href={val.attributes.urlSlug}
+                              >
                                 <img
                                   src={
-                                    process.env.BACKEND_IMG +
-                                    '/uploads/orange_img_7cd28e9ae5.jpg'
+                                    '/images/brif_case_2.png'
+                                    // process.env.BACKEND_IMG +
+                                    // '/uploads/orange_img_7cd28e9ae5.jpg'
                                     //   val.attributes.image.data !==
                                     // null
                                     //   ? val.attributes.image.data.attributes.url
@@ -47,8 +77,14 @@ export default function Job({ posts, name }) {
                                   width={100}
                                   height={100}
                                 ></img>
-                              </div>
-                              <div className='col-md-8 col-8'>
+                              </Link>
+                            </div>
+                            <div className='col-md-8 col-8'>
+                              <Link
+                                className='candidatesLink'
+                                key={i}
+                                href={val.attributes.urlSlug}
+                              >
                                 <div className='card-body senior-product '>
                                   <h5 className='card-title mt-3'>
                                     {val.attributes.title}
@@ -59,9 +95,28 @@ export default function Job({ posts, name }) {
                                     {val.attributes.jobsPrice}
                                   </p>
                                 </div>
-                              </div>
+                              </Link>
                             </div>
-                          </Link>
+                            <div
+                              className='col-md-2 col-lg-2 col-2 '
+                              style={{ margin: 'auto' }}
+                            >
+                              <Button
+                                variant='contained'
+                                sx={{
+                                  borderRadius: '5',
+                                  backgroundColor: '#009F01',
+                                }}
+                                onClick={() => {
+                                  setModalVisible(true);
+                                  setJobUrl(val.attributes.url);
+                                  setJobId(val.id);
+                                }}
+                              >
+                                Apply
+                              </Button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     );
