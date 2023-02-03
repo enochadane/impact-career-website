@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     BACKEND_IMG: process.env.BACKEND_IMG,
+    BACKEND_URL: process.env.BACKEND_URL,
   },
 };
 

@@ -7,7 +7,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import Head from 'next/head';
 import { useState } from 'react';
 import Applyform3 from '../components/Applyform/Applyform3';
-import Link from 'next/link';
+import ApplyModal from '../components/ApplyModal/ApplyModal';
 
 const client = new ApolloClient({
   uri: process.env.BACKEND_URL,
@@ -60,23 +60,23 @@ export default function post({ post }) {
                 {post.content}
               </pre>
               <div class="col-12 contents">
-                <Link href={post.url}>
-                  <button
-                    // onClick={() => setModal3(true)}
-                    id="myBtn"
-                    className="btn btn-outline-success submit-btn"
-                  >
-                    Apply for this job
-                  </button>
-                </Link>
+                {/* <Link href={post.url}> */}
+                <button
+                  onClick={() => setModal3(true)}
+                  id="myBtn"
+                  className="btn btn-outline-success submit-btn"
+                >
+                  Apply for this job
+                </button>
+                {/* </Link> */}
               </div>
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           id="myModal"
           className="modal"
-          style={{ display: modal3 ? 'block' : 'none' }}
+          style={{ display: modal3 ? "block" : "none" }}
         >
           <div className="modal-content">
             <span className="close" onClick={() => setModal3(false)}>
@@ -94,8 +94,14 @@ export default function post({ post }) {
               </div>
             </section>
           </div>
-        </div>
+        </div> */}
       </div>
+      <ApplyModal
+        visible={modal3}
+        onClose={() => setModal3(false)}
+        jobId={post.id}
+        jobUrl={post.url}
+      />
     </>
   );
 }
@@ -135,6 +141,7 @@ export async function getStaticProps({ params }) {
         content: attrs.content,
         image: attrs.image,
         url: attrs.url,
+        id: data.trendingJobs.data[0].id,
       },
     },
   };

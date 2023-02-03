@@ -57,6 +57,7 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
   query ($slugUrl: String!) {
     trendingJobs(filters: { urlSlug: { eq: $slugUrl } }) {
       data {
+        id
         attributes {
           title
           jobsName
