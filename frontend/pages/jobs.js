@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
@@ -6,12 +6,41 @@ import { GET_FAQ_JOBS, GET_ALL_JOBS } from '../graphql/queries';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
 
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
+
 import ApplyModal from '../components/ApplyModal/ApplyModal';
 
 export default function Job({ posts, name }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [jobId, setJobId] = useState();
   const [jobUrl, setJobUrl] = useState();
+  const [search, setSearch] = useState();
+  const [filtered, setFiltered] = useState(posts);
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    if (search) {
+      const filteredList = posts.filter(
+        (post) =>
+          post.attributes.title.toLowerCase().includes(search.toLowerCase()) ||
+          post.attributes.jobsName
+            .toLowerCase()
+            .includes(search.toLowerCase()) ||
+          post.attributes.jobsLocation
+            .toLowerCase()
+            .includes(search.toLowerCase())
+      );
+
+      setFiltered(filteredList);
+    }
+  }, [search]);
 
   return (
     <>
@@ -34,6 +63,28 @@ export default function Job({ posts, name }) {
             </div>
           </div>
         </div>
+        <div
+          className='col-md-12'
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '10px',
+            marginBottom: '0px',
+          }}
+        >
+          <FormControl sx={{ m: 1, width: '25ch' }} variant='filled'>
+            <InputLabel htmlFor='filled-adornment-password'>Search</InputLabel>
+            <OutlinedInput
+              value={search}
+              onChange={handleSearchChange}
+              endAdornment={
+                <InputAdornment position='end'>
+                  <SearchIcon />
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+        </div>
         <div>
           <section className='trending-jobs mt-5'>
             <div className='product-designer'>
@@ -45,7 +96,7 @@ export default function Job({ posts, name }) {
                     margin: '0 auto',
                   }}
                 >
-                  {posts.map((val, i) => {
+                  {filtered.map((val, i) => {
                     return (
                       <div className='col-md-12'>
                         <div
