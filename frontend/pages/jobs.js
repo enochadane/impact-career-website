@@ -103,11 +103,12 @@ export default function Job({ posts, name }) {
                           className='card col-12 candidates'
                           style={{
                             border: '1px solid #ddd',
+                            paddingBottom: '10px',
                           }}
                         >
                           <div className='row g-1 '>
                             <div
-                              className='col-md-2 col-lg-2 col-2 '
+                              className='col-md-2 col-lg-2 col-4'
                               style={{ margin: 'auto' }}
                             >
                               <Link
@@ -149,8 +150,13 @@ export default function Job({ posts, name }) {
                               </Link>
                             </div>
                             <div
-                              className='col-md-2 col-lg-2 col-2 '
-                              style={{ margin: 'auto' }}
+                              className='col-md-2 col-lg-2 col-12'
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                margin: '0 auto',
+                              }}
                             >
                               <Button
                                 variant='contained'

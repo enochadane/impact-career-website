@@ -19,7 +19,8 @@ const containerStyle = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 550,
+  maxWidth: 550,
+  width: '100%',
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
@@ -135,14 +136,14 @@ export default function ApplyModal(props) {
   return (
     <Modal open={props.visible} onClose={props.onClose}>
       <Box sx={containerStyle}>
-        <Typography variant="h6" component="h2" sx={headerStyle}>
+        <Typography variant='h6' component='h2' sx={headerStyle}>
           Please fill the details below
         </Typography>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
-              label="First Name"
-              variant="outlined"
+              label='First Name'
+              variant='outlined'
               required
               sx={{ width: '100%' }}
               value={firstName}
@@ -151,10 +152,10 @@ export default function ApplyModal(props) {
               error={firstNameHasError}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
-              label="Last Name"
-              variant="outlined"
+              label='Last Name'
+              variant='outlined'
               required
               sx={{ width: '100%' }}
               value={lastName}
@@ -163,11 +164,11 @@ export default function ApplyModal(props) {
               error={lastNameHasError}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
-              label="Email"
-              variant="outlined"
-              type="email"
+              label='Email'
+              variant='outlined'
+              type='email'
               required
               sx={{ width: '100%' }}
               value={email}
@@ -176,10 +177,10 @@ export default function ApplyModal(props) {
               error={emailHasError}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
-              label="Phone Number"
-              variant="outlined"
+              label='Phone Number'
+              variant='outlined'
               sx={{ width: '100%' }}
               value={phone}
               onBlur={phoneBlurHandler}
@@ -187,11 +188,11 @@ export default function ApplyModal(props) {
               error={phoneHasError}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
-              label="LinkedIn Url"
-              variant="outlined"
-              type="url"
+              label='LinkedIn Url'
+              variant='outlined'
+              type='url'
               sx={{ width: '100%' }}
               value={linkedInUrl}
               onBlur={linkedInUrlBlurHandler}
@@ -212,16 +213,16 @@ export default function ApplyModal(props) {
               checked={similarJobs}
               onChange={(e) => setSimilarJobs(e.target.checked)}
             />
-            <Typography variant="body1">
+            <Typography variant='body1'>
               Contact me for similar jobs like this
             </Typography>
           </Grid>
           {similarJobs && (
             <>
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
-                  label="Preferred country or remote"
-                  variant="outlined"
+                  label='Preferred country or remote'
+                  variant='outlined'
                   sx={{ width: '100%' }}
                   value={country}
                   onBlur={countryBlurHandler}
@@ -229,12 +230,12 @@ export default function ApplyModal(props) {
                   error={countryHasError}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
-                  id="outlined-basic"
-                  label="City"
-                  variant="outlined"
-                  type="url"
+                  id='outlined-basic'
+                  label='City'
+                  variant='outlined'
+                  type='url'
                   sx={{ width: '100%' }}
                   value={city}
                   onBlur={cityBlurHandler}
@@ -253,7 +254,7 @@ export default function ApplyModal(props) {
                 justifyContent: 'center',
               }}
             >
-              <Typography variant="body1" sx={{ color: 'red' }}>
+              <Typography variant='body1' sx={{ color: 'red' }}>
                 All required fields need to be field
               </Typography>
             </Grid>
@@ -267,7 +268,7 @@ export default function ApplyModal(props) {
             }}
           >
             <Button
-              variant="contained"
+              variant='contained'
               sx={{ backgroundColor: '#136533', width: '130px' }}
               onClick={handleApply}
             >
