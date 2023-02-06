@@ -23,30 +23,31 @@ export default function post({ post }) {
         <Head>
           <title>product-page</title>
         </Head>
-        <div className="container product">
-          <div className="card page mt-5">
-            <div className="row mx-1 job-page">
-              <div className="col-3 col-md-2 col-lg-1 mb-2 in-page">
+        <div className='container product'>
+          <div className='card page mt-5'>
+            <div className='row mx-1 job-page'>
+              <div className='col-3 col-md-2 col-lg-1 mb-2 in-page'>
                 <img
                   src={
-                    process.env.BACKEND_IMG +
-                    '/uploads/orange_img_7cd28e9ae5.jpg'
+                    '/images/brif_case_2.png'
+                    // process.env.BACKEND_IMG +
+                    // '/uploads/orange_img_7cd28e9ae5.jpg'
                     // post.image.data.attributes.url
                   }
                   width={80}
                   height={80}
                 ></img>
               </div>
-              <div className="col-8 col-md-7 col-lg-4">
-                <div className="card-body inner-content">
-                  <h5 className="card-title">{post.title}</h5>
+              <div className='col-8 col-md-7 col-lg-4'>
+                <div className='card-body inner-content'>
+                  <h5 className='card-title'>{post.title}</h5>
                   <div>
-                    <h6 className="slugDescription">
-                      <span className="slugSpan">{post.jobsName}</span>
+                    <h6 className='slugDescription'>
+                      <span className='slugSpan'>{post.jobsName}</span>
                       <span>{post.jobsLocation}</span>
                     </h6>
                   </div>
-                  <h6 className="slugDescription">{post.jobsPrice}</h6>
+                  <h6 className='slugDescription'>{post.jobsPrice}</h6>
                 </div>
               </div>
               {/* <p className="slugPara">{post.content}</p> */}
@@ -59,12 +60,12 @@ export default function post({ post }) {
               >
                 {post.content}
               </pre>
-              <div class="col-12 contents">
+              <div class='col-12 contents'>
                 {/* <Link href={post.url}> */}
                 <button
                   onClick={() => setModal3(true)}
-                  id="myBtn"
-                  className="btn btn-outline-success submit-btn"
+                  id='myBtn'
+                  className='btn btn-outline-success submit-btn'
                 >
                   Apply for this job
                 </button>
