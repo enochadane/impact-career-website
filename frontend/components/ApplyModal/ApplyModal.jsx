@@ -8,6 +8,7 @@ import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Checkbox from '@mui/material/Checkbox';
+import CloseIcon from '@mui/icons-material/Close';
 
 import useInput from '../../hooks/use-input';
 import emailValidation from '../../utils/emailValidation';
@@ -136,6 +137,14 @@ export default function ApplyModal(props) {
   return (
     <Modal open={props.visible} onClose={props.onClose}>
       <Box sx={containerStyle}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <CloseIcon onClick={props.onClose} />
+        </Box>
         <Typography variant='h6' component='h2' sx={headerStyle}>
           Please fill the details below
         </Typography>
