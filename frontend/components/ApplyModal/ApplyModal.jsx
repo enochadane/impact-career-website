@@ -32,6 +32,10 @@ const headerStyle = {
   marginBottom: 5,
 };
 
+function nameValidation(str) {
+  return str.length > 0 && str.length < 100 && !/\d/.test(str);
+}
+
 export default function ApplyModal(props) {
   const [similarJobs, setSimilarJobs] = useState(false);
   const [requiredFields, setRequiredFields] = useState(true);
@@ -43,7 +47,7 @@ export default function ApplyModal(props) {
     valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     reset: firstNameReset,
-  } = useInput((s) => s.length !== 0 && s.length < 100);
+  } = useInput(nameValidation);
 
   const {
     value: lastName,
@@ -52,7 +56,7 @@ export default function ApplyModal(props) {
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
     reset: lastNameReset,
-  } = useInput((s) => s.length !== 0 && s.length < 100);
+  } = useInput(nameValidation);
 
   const {
     value: email,
@@ -188,7 +192,7 @@ export default function ApplyModal(props) {
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
-              label='Phone Number'
+              label='Mobile Number'
               variant='outlined'
               sx={{ width: '100%' }}
               value={phone}
