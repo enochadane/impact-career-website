@@ -1,7 +1,8 @@
-import axios from 'axios';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { gql } from '@apollo/client';
 
 const sendCandidateData = async (candidateData) => {
-  const mutation = `
+  const mutation = gql`
       mutation {createCandidate(data: {
         firstName: """${candidateData.firstName}"""
         lastName: """${candidateData.lastName}"""
@@ -34,17 +35,14 @@ const sendCandidateData = async (candidateData) => {
       }}
       `;
 
-  try {
-    const response = await axios({
-      url: process.env.BACKEND_URL,
-      method: 'post',
-      data: {
-        query: mutation,
-      },
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  const client = new ApolloClient({
+    uri: process.env.BACKEND_URL,
+    cache: new InMemoryCache(),
+  });
+
+  const response = await client.mutate({
+    mutation: mutation,
+  });
 };
 
 export default sendCandidateData;
