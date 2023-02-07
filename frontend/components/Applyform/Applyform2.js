@@ -2,6 +2,8 @@ import axios from 'axios';
 import { result } from 'lodash';
 import { useState } from 'react';
 
+import sendCandidateData from '../../utils/sendCandidateData';
+
 export default function Form() {
   const [formStatus, setFormStatus] = useState();
   const [selectedFile, setSelectedFile] = useState(false);
@@ -17,6 +19,29 @@ export default function Form() {
     Resume_Upload: '',
     Resume_title: '',
   });
+
+  const sendDataToStrapi = (data) => {
+    const {
+      First_Name: firstName,
+      Last_Name: lastName,
+      email,
+      Mobile_Number: phoneNumber,
+      Your_Location: location,
+      Current_Salary: currentSalary,
+      LinkedIn_URL: linkedIn,
+    } = data;
+
+    sendCandidateData({
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      location,
+      currentSalary,
+      linkedIn,
+    });
+  };
+
   const handleChange = () => (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -67,6 +92,7 @@ export default function Form() {
           .then(function (response) {
             $('form').hide();
             setFormStatus(true);
+            sendDataToStrapi(query);
             setQuery({
               First_Name: '',
               Last_Name: '',
