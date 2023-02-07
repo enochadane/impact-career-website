@@ -147,7 +147,6 @@ export default function Form(props) {
                 name="Mobile_Number"
                 className="form-control"
                 placeholder="Mobile-Number"
-                required
                 value={query.Mobile_Number}
                 onChange={handleChange()}
               />
@@ -163,7 +162,6 @@ export default function Form(props) {
                 name="Your_Location"
                 className="form-control"
                 placeholder="Your-Location"
-                required
                 value={query.Your_Location}
                 onChange={handleChange()}
               />
@@ -175,7 +173,6 @@ export default function Form(props) {
                 name="Current_Salary"
                 className="form-control"
                 placeholder="Current-Salary"
-                required
                 value={query.Current_Salary}
                 onChange={handleChange()}
               />
@@ -208,7 +205,6 @@ export default function Form(props) {
                 name="LinkedIn_URL"
                 className="form-control"
                 placeholder="LinkedIn URL"
-                required
                 value={query.LinkedIn_URL}
                 onChange={handleChange()}
               />
