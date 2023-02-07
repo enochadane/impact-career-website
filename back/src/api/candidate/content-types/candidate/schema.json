@@ -38,7 +38,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::trending-job.trending-job",
-      "inversedBy": "candidates"
+      "mappedBy": "candidates"
     },
     "notifyForSimilarJobs": {
       "type": "boolean"

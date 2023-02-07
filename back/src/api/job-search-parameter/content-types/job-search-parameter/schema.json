@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "job_search_parameters",
+  "info": {
+    "singularName": "job-search-parameter",
+    "pluralName": "job-search-parameters",
+    "displayName": "JobSearchParameter"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "query": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "Software Developer"
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "default": "Remote"
+    },
+    "number": {
+      "type": "integer",
+      "required": true,
+      "default": 15
+    }
+  }
+}

@@ -31,20 +31,24 @@
       "type": "richtext"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "candidates": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::candidate.candidate",
       "inversedBy": "trending_jobs"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
