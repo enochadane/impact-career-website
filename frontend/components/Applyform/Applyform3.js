@@ -172,7 +172,7 @@ export default function Form(props) {
                 type="text"
                 name="Current_Salary"
                 className="form-control"
-                placeholder="Current-Salary"
+                placeholder="Expected-salary"
                 value={query.Current_Salary}
                 onChange={handleChange()}
               />
