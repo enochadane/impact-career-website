@@ -111,12 +111,12 @@ export default function ApplyModal(props) {
         firstName,
         lastName,
         email,
-        phone,
-        linkedInUrl,
+        phoneNumber: phone,
+        linkedIn: linkedInUrl,
         notifyForSimilarJobs: similarJobs,
         countryPreference: country,
         cityPreference: city,
-        jobId: props.jobId,
+        trending_jobs: props.jobId,
       };
 
       sendCandidateData(candidateDate);
