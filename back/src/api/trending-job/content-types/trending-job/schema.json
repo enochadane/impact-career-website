@@ -39,6 +39,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "candidates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::candidate.candidate",
+      "inversedBy": "trending_jobs"
     }
   }
 }

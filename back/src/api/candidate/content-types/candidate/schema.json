@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidates",
+  "info": {
+    "singularName": "candidate",
+    "pluralName": "candidates",
+    "displayName": "Candidate"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "linkedIn": {
+      "type": "string"
+    },
+    "countryPreference": {
+      "type": "string"
+    },
+    "cityPreference": {
+      "type": "string"
+    },
+    "trending_jobs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trending-job.trending-job",
+      "inversedBy": "candidates"
+    },
+    "notifyForSimilarJobs": {
+      "type": "boolean"
+    },
+    "location": {
+      "type": "string"
+    },
+    "currentSalary": {
+      "type": "string"
+    },
+    "noticePeriod": {
+      "type": "string"
+    }
+  }
+}
