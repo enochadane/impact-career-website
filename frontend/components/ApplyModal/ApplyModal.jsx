@@ -268,7 +268,7 @@ export default function ApplyModal(props) {
               }}
             >
               <Typography variant='body1' sx={{ color: 'red' }}>
-                All required fields need to be field
+                All required fields need to be filled
               </Typography>
             </Grid>
           )}
