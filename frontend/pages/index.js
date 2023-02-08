@@ -6,6 +6,7 @@ import Applyform from '../components/Applyform/Applyform';
 import Applyform1 from '../components/Applyform/Applyform1';
 import Applyform2 from '../components/Applyform/Applyform2';
 import { useState } from 'react';
+import JobSubmitModal from '../components/JobSubmitModal/JobSubmitModal';
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -13,6 +14,7 @@ export default function Home({ posts, name }) {
   const [modal2, setModal2] = useState(false);
   return (
     <>
+      <JobSubmitModal visible={modal1} onClose={() => setModal1(false)} />
       <div>
         <div id='demo'>
           <div className='carousel slide carouselSlide' data-bs-ride='carousel'>
@@ -270,29 +272,6 @@ export default function Home({ posts, name }) {
                   </div>
 
                   <Applyform />
-                </div>
-              </section>
-            </div>
-          </div>
-          <div
-            id='myModal'
-            className='modal'
-            style={{ display: modal1 ? 'block' : 'none' }}
-          >
-            <div className='modal-content'>
-              <span className='close' onClick={() => setModal1(false)}>
-                &times;
-              </span>
-              <section id='apply-form'>
-                <div className='container'>
-                  <div className='apply-this-job'>
-                    <h2>Apply for this Job1</h2>
-                    <p>
-                      Please fill the details below to evaluate your candidature
-                    </p>
-                  </div>
-
-                  <Applyform1 />
                 </div>
               </section>
             </div>
