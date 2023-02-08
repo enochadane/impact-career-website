@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employers",
+  "info": {
+    "singularName": "employer",
+    "pluralName": "employers",
+    "displayName": "Employer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "employmentType": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "jobDescription": {
+      "type": "string"
+    },
+    "jobLocation": {
+      "type": "string"
+    },
+    "salaryRange": {
+      "type": "string"
+    },
+    "file": {
+      "type": "string"
+    }
+  }
+}
