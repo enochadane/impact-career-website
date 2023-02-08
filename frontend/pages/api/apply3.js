@@ -54,12 +54,14 @@ export default function (req, res, post) {
     <p><strong>Current Salary: </strong> ${Current_Salary}</p>
     <p><strong>LinkedIn URL: </strong> ${LinkedIn_URL}</p>
     <p><strong>Resume Upload: </strong> ${Resume_title}</p>`,
+  };
 
-    attachments: {
+  if (Resume_Upload && Resume_title) {
+    mailData.attachments = {
       filename: Resume_title,
       path: Resume_Upload,
-    },
-  };
+    };
+  }
 
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
