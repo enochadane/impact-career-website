@@ -17,6 +17,7 @@ import useInput from '../../hooks/use-input';
 import emailValidation from '../../utils/emailValidation';
 import isValidURL from '../../utils/urlValidation';
 import sendEmployerData from '../../utils/sendEmployerData';
+import sendEmail from '../../utils/sendEmail';
 
 const containerStyle = {
   position: 'absolute',
@@ -85,7 +86,7 @@ export default function JobSubmitModal(props) {
     valueChangeHandler: jobTitleChangeHandler,
     inputBlurHandler: jobTitleBlurHandler,
     reset: jobTitleReset,
-  } = useInput((s) => isValidURL(s));
+  } = useInput((s) => s.length !== 0 && s.length < 100);
 
   const {
     value: description,
@@ -146,6 +147,11 @@ export default function JobSubmitModal(props) {
       resetFields();
 
       props.onClose();
+
+      sendEmail(
+        { ...employersData, firstName: companyName, lastName: companyName },
+        'employer_job_post'
+      );
     } else {
       setRequiredFields(false);
     }

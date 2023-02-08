@@ -13,6 +13,7 @@ import useInput from '../../hooks/use-input';
 import emailValidation from '../../utils/emailValidation';
 import isValidURL from '../../utils/urlValidation';
 import sendCandidateData from '../../utils/sendCandidateData';
+import sendEmail from '../../utils/sendEmail';
 
 const containerStyle = {
   position: 'absolute',
@@ -127,7 +128,7 @@ export default function LookingForEmployment(props) {
 
       sendCandidateData(candidateDate);
       resetFields();
-
+      sendEmail(candidateDate, props.type);
       props.onClose();
     } else {
       setRequiredFields(false);

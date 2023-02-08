@@ -18,6 +18,7 @@ export default function Home({ posts, name }) {
           setModal(false);
           setModal2(false);
         }}
+        type={modal ? 'candidate_seeking_opportunity' : 'resource_request'}
       />
       <JobSubmitModal visible={modal1} onClose={() => setModal1(false)} />
       <div>

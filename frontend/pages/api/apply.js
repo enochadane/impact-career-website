@@ -12,13 +12,15 @@ export default function (req, res) {
     First_Name,
     Last_Name,
     email,
-    Mobile_Number,
-    Your_Location,
-    Current_Salary,
-    LinkedIn_URL,
-    Resume_Upload,
-    Resume_title,
+    // Mobile_Number,
+    // Your_Location,
+    // Current_Salary,
+    // LinkedIn_URL,
+    // Resume_Upload,
+    // Resume_title,
   } = req.body;
+
+  // console.log('F: ', First_Name, 'L: ', Last_Name, 'email: ', email);
 
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -32,25 +34,28 @@ export default function (req, res) {
   const mailData = {
     from: 'yourimpactcareers@gmail.com',
     to: 'yourimpactcareers@gmail.com',
-    subject: `Consultant seeking opportunity`,
-    text: req.body.message + ' | Sent from: ' + req.body.email,
+    subject: `Candidate seeking opportunity`,
+    // text: req.body.message + ' | Sent from: ' + req.body.email,
     html: `<p>Contact Form Submission Details</p><br>
     <p><strong>First Name: </strong> ${First_Name}</p>
     <p><strong>Last Name: </strong> ${Last_Name}</p>
     <p><strong>Email: </strong> ${email}</p>
-    <p><strong>Mobile Number: </strong> ${Mobile_Number}</p>
+    ${
+      /*<p><strong>Mobile Number: </strong> ${Mobile_Number}</p>
     <p><strong>Your Location: </strong> ${Your_Location}</p>
     <p><strong>Current Salary: </strong> ${Current_Salary}</p>
     <p><strong>LinkedIn URL: </strong> ${LinkedIn_URL}</p>
-    <p><strong>Resume Upload: </strong> ${Resume_title}</p>`,
+  <p><strong>Resume Upload: </strong> ${Resume_title}</p>*/ ''
+    }
+    `,
   };
 
-  if (Resume_Upload && Resume_title) {
-    mailData.attachments = {
-      filename: Resume_title,
-      path: Resume_Upload,
-    };
-  }
+  // if (Resume_Upload && Resume_title) {
+  //   mailData.attachments = {
+  //     filename: Resume_title,
+  //     path: Resume_Upload,
+  //   };
+  // }
 
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
