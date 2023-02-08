@@ -2,11 +2,9 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
 import Link from 'next/link';
 import Image from 'next/image';
-import Applyform from '../components/Applyform/Applyform';
-import Applyform1 from '../components/Applyform/Applyform1';
-import Applyform2 from '../components/Applyform/Applyform2';
 import { useState } from 'react';
 import JobSubmitModal from '../components/JobSubmitModal/JobSubmitModal';
+import LookingForEmployment from '../components/ApplyModal/LookingForEmployment';
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -14,6 +12,13 @@ export default function Home({ posts, name }) {
   const [modal2, setModal2] = useState(false);
   return (
     <>
+      <LookingForEmployment
+        visible={modal || modal2}
+        onClose={() => {
+          setModal(false);
+          setModal2(false);
+        }}
+      />
       <JobSubmitModal visible={modal1} onClose={() => setModal1(false)} />
       <div>
         <div id='demo'>
@@ -251,52 +256,6 @@ export default function Home({ posts, name }) {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div
-            id='myModal'
-            className='modal'
-            style={{ display: modal ? 'block' : 'none' }}
-          >
-            <div className='modal-content'>
-              <span className='close' onClick={() => setModal(false)}>
-                &times;
-              </span>
-              <section id='apply-form'>
-                <div className='container'>
-                  <div className='apply-this-job'>
-                    <h2>Apply for this Job</h2>
-                    <p>
-                      Please fill the details below to evaluate your candidature
-                    </p>
-                  </div>
-
-                  <Applyform />
-                </div>
-              </section>
-            </div>
-          </div>
-          <div
-            id='myModal'
-            className='modal'
-            style={{ display: modal2 ? 'block' : 'none' }}
-          >
-            <div className='modal-content'>
-              <span className='close' onClick={() => setModal2(false)}>
-                &times;
-              </span>
-              <section id='apply-form'>
-                <div className='container'>
-                  <div className='apply-this-job'>
-                    <h2>Apply for this Job2</h2>
-                    <p>
-                      Please fill the details below to evaluate your candidature
-                    </p>
-                  </div>
-
-                  <Applyform2 />
-                </div>
-              </section>
             </div>
           </div>
         </section>
