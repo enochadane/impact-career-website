@@ -7,20 +7,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const sendCandidateData = async (candidateData) => {
-  const candidateId = await getCandidate(candidateData.email);
+const sendEmployerData = async (employerData) => {
+  const employerId = await getEmployer(employerData.email);
 
-  if (candidateId) {
-    await updateCandidateData(candidateData, candidateId);
+  if (employerId) {
+    await updateEmployerData(employerData, employerId);
   } else {
-    await createNewCandidate(candidateData);
+    await createNewEmployer(employerData);
   }
 };
 
-const updateCandidateData = async (data, id) => {
+const updateEmployerData = async (data, id) => {
   const mutation = gql`
-    mutation updateCandidate {
-      updateCandidate(id: ${id}, data: { ${objectToString(data)}}) {
+    mutation updateEmployer {
+      updateEmployer(id: ${id}, data: { ${objectToString(data)}}) {
         data {
           id
           attributes {
@@ -41,10 +41,10 @@ const updateCandidateData = async (data, id) => {
   }
 };
 
-const createNewCandidate = async (data) => {
+const createNewEmployer = async (data) => {
   const mutation = gql`
-    mutation createCandidate {
-      createCandidate(data: { ${objectToString(data)}}) {
+    mutation createEmployer {
+      createEmployer(data: { ${objectToString(data)}}) {
         data {
           id
           attributes {
@@ -59,16 +59,18 @@ const createNewCandidate = async (data) => {
     const response = await client.mutate({
       mutation: mutation,
     });
+
+    console.log('ressss: ', response);
   } catch (error) {
     console.log(error);
     return undefined;
   }
 };
 
-const getCandidate = async (email) => {
+const getEmployer = async (email) => {
   const query = gql`
       query {
-        candidates(filters: {email: {eq: """${email}"""}}) {
+        employers(filters: {email: {eq: """${email}"""}}) {
           data {
             id
             attributes{
@@ -84,11 +86,11 @@ const getCandidate = async (email) => {
       query: query,
     });
 
-    return response?.data?.candidates?.data[0]?.id;
+    return response?.data?.employers?.data[0]?.id;
   } catch (error) {
     console.log(error);
     return undefined;
   }
 };
 
-export default sendCandidateData;
+export default sendEmployerData;
