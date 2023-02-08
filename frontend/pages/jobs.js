@@ -11,6 +11,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import Pagination from '@mui/material/Pagination';
 
 import ApplyModal from '../components/ApplyModal/ApplyModal';
 
@@ -20,12 +21,19 @@ export default function Job({ posts, name }) {
   const [jobUrl, setJobUrl] = useState();
   const [search, setSearch] = useState();
   const [filtered, setFiltered] = useState(posts);
+  const [page, setPage] = useState(1);
+  const [numberOfPages, setNumberOfPages] = useState(
+    Math.ceil(posts.length / 10)
+  );
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
+    const startIndex = (page - 1) * 10;
+    const endIndex = startIndex + 10;
+
     if (search) {
       const filteredList = posts.filter(
         (post) =>
@@ -38,9 +46,15 @@ export default function Job({ posts, name }) {
             .includes(search.toLowerCase())
       );
 
-      setFiltered(filteredList);
+      setFiltered(filteredList.slice(startIndex, endIndex));
+    } else {
+      setFiltered(posts.slice(startIndex, endIndex));
     }
-  }, [search]);
+  }, [search, page]);
+
+  const handlePageChange = (e, value) => {
+    setPage(value);
+  };
 
   return (
     <>
@@ -182,6 +196,18 @@ export default function Job({ posts, name }) {
               </div>
             </div>
           </section>
+          <Pagination
+            count={numberOfPages}
+            page={page}
+            onChange={handlePageChange}
+            size='large'
+            sx={{
+              margin: '0 auto',
+              display: 'flex',
+              justifyContent: 'center',
+              paddingBottom: '20px',
+            }}
+          />
           <section className='faq'>
             <div className='container col-sm-8'>
               <div className='row acc-faq'>
