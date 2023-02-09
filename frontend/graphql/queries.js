@@ -117,6 +117,28 @@ const GET_ALL_TRAINING_RESOURCES = gql`
   }
 `;
 
+const GET_ALL_INTERVIEW_PREPS = gql`
+  query {
+    interviewPreps {
+      data {
+        attributes {
+          title
+          description
+          videoPlayListLink
+          web_articles {
+            data {
+              attributes {
+                title
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export {
   GET_FAQ,
   GET_FAQ_JOBS,
@@ -124,4 +146,5 @@ export {
   GET_INDIVIDUAL_JOBS_POST,
   GET_ALL_JOBS_SLUGS,
   GET_ALL_TRAINING_RESOURCES,
+  GET_ALL_INTERVIEW_PREPS,
 };

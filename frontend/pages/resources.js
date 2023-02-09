@@ -6,7 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 
-import { GET_ALL_TRAINING_RESOURCES } from "../graphql/queries";
+import {
+  GET_ALL_TRAINING_RESOURCES,
+  GET_ALL_INTERVIEW_PREPS,
+} from "../graphql/queries";
 import ArticlesModal from "../components/ArticlesModal/ArticlesModal";
 
 export default function Resource(props) {
@@ -62,6 +65,7 @@ export default function Resource(props) {
                       className='card trainingCard shadow-sm bg-body rounded'
                       style={{
                         border: "1px solid #009F01",
+                        height: "100%",
                       }}
                     >
                       <Image
@@ -140,82 +144,78 @@ export default function Resource(props) {
                 </p>
               </div>
               <div className='row'>
-                <div className='col-md-4 trainCardCol'>
-                  <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
-                      <Image
-                        className='card-img-top interviewImg'
-                        src='/images/youTube1.png'
-                        width={350}
-                        height={250}
-                      ></Image>
-                    </Link>
-                    <div className='card-body interviewCardBody'>
-                      <h5 className='card-title trainCardH5'>
-                        Employees Webinar
-                      </h5>
-                      <p className='card-text trainCardPara'>
-                        We have teamed up with some of the greatest career
-                        experts worldwide to provide you guidance periodically
-                        on how to find the ideal job, how to market yourself to
-                        prospective employers, the importance of and how to go
-                        about effective networking, etc.
-                      </p>
+                {props.interviewPreps.map((interviewPrep) => (
+                  <div className='col-md-4 trainCardCol'>
+                    <div
+                      className='card interviewCard shadow-sm bg-body rounded'
+                      style={{
+                        border: "1px solid #009F01",
+                      }}
+                    >
+                      <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
+                        <Image
+                          className='card-img-top interviewImg'
+                          src='/images/youTube1.png'
+                          width={350}
+                          height={250}
+                        ></Image>
+                      </Link>
+                      <div className='card-body interviewCardBody'>
+                        <h5 className='card-title trainCardH5'>
+                          {interviewPrep.attributes.title}
+                        </h5>
+                        <p className='card-text trainCardPara'>
+                          {interviewPrep.attributes.description}
+                        </p>
+                      </div>
+                      <div
+                        className='row'
+                        style={{
+                          paddingBottom: "20px",
+                        }}
+                      >
+                        <div
+                          className='col'
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Button
+                            variant='contained'
+                            sx={{ backgroundColor: "#17A700" }}
+                            onClick={() =>
+                              handleArticlesClick(
+                                interviewPrep.attributes?.web_articles
+                              )
+                            }
+                          >
+                            Articles
+                          </Button>
+                        </div>
+                        <div
+                          className='col'
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Link
+                            href={interviewPrep.attributes.videoPlayListLink}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Button
+                              variant='contained'
+                              sx={{ backgroundColor: "#17A700" }}
+                            >
+                              Tutorial
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className='col-md-4 trainCardCol'>
-                  <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
-                      <Image
-                        className='card-img-top interviewImg'
-                        src='/images/youTube2.png'
-                        width={350}
-                        height={250}
-                      ></Image>
-                    </Link>
-                    <div className='card-body interviewCardBody'>
-                      <h5 className='card-title trainCardH5'>
-                        Employees Webinar
-                      </h5>
-                      <p className='card-text trainCardPara'>
-                        We have teamed up with some of the greatest career
-                        experts worldwide to provide you guidance periodically
-                        on how to find the ideal job, how to market yourself to
-                        prospective employers, the importance of and how to go
-                        about effective networking, etc.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-md-4 trainCardCol'>
-                  <div className='card interviewCard shadow-sm bg-body rounded'>
-                    <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
-                      <Image
-                        className='card-img-top interviewImg'
-                        src='/images/discussion.jpg'
-                        width={350}
-                        height={250}
-                      ></Image>
-                    </Link>
-                    <div className='card-body interviewCardBody'>
-                      <h5 className='card-title trainCardH5'>
-                        Blog Impact Careers
-                      </h5>
-                      <p className='card-text trainCardPara'>
-                        Blog focuses on giving workplace tips for both employers
-                        and employees. We focus on current workplace issues
-                        ranging from interviewing, onboarding, employee
-                        retention, promotion, job training, team building, and
-                        corporation. We will also jump on interviews and
-                        conversations with professionals to prepare you for the
-                        future. We update the blog often, so don’t forget to
-                        check it out for helpful tips to help you better
-                        navigate your career or employees.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </section>
           </div>
@@ -231,13 +231,18 @@ export async function getServerSideProps() {
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query({
+  const trainingResources = await client.query({
     query: GET_ALL_TRAINING_RESOURCES,
+  });
+
+  const interviewPreps = await client.query({
+    query: GET_ALL_INTERVIEW_PREPS,
   });
 
   return {
     props: {
-      trainings: data.trainingResources.data,
+      trainings: trainingResources.data.trainingResources.data,
+      interviewPreps: interviewPreps.data.interviewPreps.data,
     },
   };
 }
