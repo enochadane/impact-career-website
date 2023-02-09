@@ -79,6 +79,7 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
     }
   }
 `;
+
 const GET_ALL_JOBS_SLUGS = gql`
   query {
     trendingJobs(pagination: { limit: 1000 }) {
@@ -94,10 +95,25 @@ const GET_ALL_JOBS_SLUGS = gql`
   }
 `;
 
+const GET_ALL_TRAINING_RESOURCES = gql`
+  query {
+    trainingResources {
+      data {
+        attributes {
+          title
+          description
+          videoPlayListLink
+        }
+      }
+    }
+  }
+`;
+
 export {
   GET_FAQ,
   GET_FAQ_JOBS,
   GET_ALL_JOBS,
   GET_INDIVIDUAL_JOBS_POST,
   GET_ALL_JOBS_SLUGS,
+  GET_ALL_TRAINING_RESOURCES,
 };
