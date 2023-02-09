@@ -103,6 +103,14 @@ const GET_ALL_TRAINING_RESOURCES = gql`
           title
           description
           videoPlayListLink
+          web_articles {
+            data {
+              attributes {
+                title
+                link
+              }
+            }
+          }
         }
       }
     }

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Head from "next/head";
 import Image from "next/image";
@@ -5,10 +7,27 @@ import Link from "next/link";
 import Button from "@mui/material/Button";
 
 import { GET_ALL_TRAINING_RESOURCES } from "../graphql/queries";
+import ArticlesModal from "../components/ArticlesModal/ArticlesModal";
 
 export default function Resource(props) {
+  const [articleModalVisible, setArticleModalVisible] = useState(false);
+  const [webArticles, setWebArticles] = useState([]);
+
+  const handleArticlesClick = (webArticles) => {
+    if (webArticles) {
+      setWebArticles(webArticles);
+    }
+
+    setArticleModalVisible(true);
+  };
+
   return (
     <>
+      <ArticlesModal
+        visible={articleModalVisible}
+        onClose={() => setArticleModalVisible(false)}
+        webArticles={webArticles}
+      />
       <div>
         <Head>
           <title>Resources</title>
@@ -75,6 +94,11 @@ export default function Resource(props) {
                           <Button
                             variant='contained'
                             sx={{ backgroundColor: "#17A700" }}
+                            onClick={() =>
+                              handleArticlesClick(
+                                training.attributes?.web_articles
+                              )
+                            }
                           >
                             Articles
                           </Button>
