@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_articles",
+  "info": {
+    "singularName": "web-article",
+    "pluralName": "web-articles",
+    "displayName": "WebArticle"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "interview_preps": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::interview-prep.interview-prep",
+      "inversedBy": "web_articles"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "training_resources": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::training-resource.training-resource",
+      "inversedBy": "web_articles"
+    }
+  }
+}
