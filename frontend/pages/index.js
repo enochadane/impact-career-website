@@ -539,17 +539,28 @@ export async function getServerSideProps() {
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query({
-    query: GET_ALL_JOBS,
-  });
-  const getfaqdata = await client.query({
-    query: GET_FAQ,
-  });
+  try {
+    const { data } = await client.query({
+      query: GET_ALL_JOBS,
+    });
+    const getfaqdata = await client.query({
+      query: GET_FAQ,
+    });
+
+    return {
+      props: {
+        posts: data.trendingJobs.data,
+        name: getfaqdata.data.faqs.data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 
   return {
     props: {
-      posts: data.trendingJobs.data,
-      name: getfaqdata.data.faqs.data,
+      posts: [],
+      name: [],
     },
   };
 }

@@ -231,18 +231,29 @@ export async function getServerSideProps() {
     cache: new InMemoryCache(),
   });
 
-  const trainingResources = await client.query({
-    query: GET_ALL_TRAINING_RESOURCES,
-  });
+  try {
+    const trainingResources = await client.query({
+      query: GET_ALL_TRAINING_RESOURCES,
+    });
 
-  const interviewPreps = await client.query({
-    query: GET_ALL_INTERVIEW_PREPS,
-  });
+    const interviewPreps = await client.query({
+      query: GET_ALL_INTERVIEW_PREPS,
+    });
+
+    return {
+      props: {
+        trainings: trainingResources.data.trainingResources.data,
+        interviewPreps: interviewPreps.data.interviewPreps.data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 
   return {
     props: {
-      trainings: trainingResources.data.trainingResources.data,
-      interviewPreps: interviewPreps.data.interviewPreps.data,
+      trainings: [],
+      interviewPreps: [],
     },
   };
 }

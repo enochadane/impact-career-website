@@ -23,7 +23,7 @@ export default function Job({ posts, name }) {
   const [filtered, setFiltered] = useState(posts);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(
-    Math.ceil(posts.length / 10)
+    posts ? Math.ceil(posts.length / 10) : 1
   );
 
   const handleSearchChange = (e) => {
@@ -260,18 +260,28 @@ export async function getServerSideProps() {
     uri: process.env.BACKEND_URL,
     cache: new InMemoryCache(),
   });
+  try {
+    const { data } = await client.query({
+      query: GET_ALL_JOBS,
+    });
+    const getfaqdata = await client.query({
+      query: GET_FAQ_JOBS,
+    });
 
-  const { data } = await client.query({
-    query: GET_ALL_JOBS,
-  });
-  const getfaqdata = await client.query({
-    query: GET_FAQ_JOBS,
-  });
+    return {
+      props: {
+        posts: data.trendingJobs.data,
+        name: getfaqdata.data.jobsFaqs.data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 
   return {
     props: {
-      posts: data.trendingJobs.data,
-      name: getfaqdata.data.jobsFaqs.data,
+      posts: [],
+      name: [],
     },
   };
 }
