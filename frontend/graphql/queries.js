@@ -103,6 +103,13 @@ const GET_ALL_TRAINING_RESOURCES = gql`
           title
           description
           videoPlayListLink
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
           web_articles {
             data {
               attributes {
@@ -125,6 +132,13 @@ const GET_ALL_INTERVIEW_PREPS = gql`
           title
           description
           videoPlayListLink
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
           web_articles {
             data {
               attributes {

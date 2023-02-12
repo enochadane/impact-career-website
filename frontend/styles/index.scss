@@ -74,8 +74,9 @@ body {
 //banner section
 //home-banner
 #demo {
+  // height: 300px;
   .carouselSlide {
-    margin-top: 71px;
+    // margin-top: 71px;
     background-color: black;
     .slide-clr {
       opacity: 0.4;
@@ -84,7 +85,7 @@ body {
     .carousel-caption {
       color: white;
       text-align: center;
-      top: 190px;
+      top: 90px;
     }
   }
 }
@@ -94,8 +95,9 @@ body {
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: 41vh;
+  min-height: 18vh;
   align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -108,9 +110,11 @@ body {
     bottom: 0%;
     z-index: -1;
     background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
     h1 {
       text-align: center;
-      margin-top: 85px;
+      margin: auto;
       font-size: 66px;
       font-weight: 600;
     }
@@ -377,7 +381,7 @@ body {
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 20px;
-    height: 265px;
+    height: 165px;
     margin-top: 40px;
     margin-bottom: 100px;
     border-style: solid none none none;
@@ -1729,10 +1733,10 @@ body {
   .carouselSlide .carousel-caption {
     top: 119px;
     h1 {
-      font-size: 34px;
+      font-size: 30px;
     }
     p {
-      font-size: 19px;
+      font-size: 16px;
     }
   }
   //contact-page
@@ -1846,10 +1850,10 @@ body {
   .carouselSlide .carousel-caption {
     top: 198px;
     h1 {
-      font-size: 42px;
+      font-size: 35px;
     }
     p {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 }
@@ -1920,10 +1924,10 @@ body {
 
   .carouselSlide .carousel-caption {
     h1 {
-      font-size: 70px;
+      font-size: 50px;
     }
     p {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
   .carouselSlide {
@@ -2224,10 +2228,10 @@ body {
   }
   .carouselSlide .carousel-caption {
     h1 {
-      font-size: 70px;
+      font-size: 50px;
     }
     p {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
   .carouselSlide {

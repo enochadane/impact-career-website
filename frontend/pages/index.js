@@ -25,13 +25,13 @@ export default function Home({ posts, name }) {
         <div id='demo'>
           <div className='carousel slide carouselSlide' data-bs-ride='carousel'>
             <div className='carousel-inner carouselInner'>
-              <div className='carousel-item active'>
+              <div className='carousel-item active' style={{ height: '400px' }}>
                 <Image
                   className='d-block slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
                   width={1400}
-                  height={500}
+                  height={200}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Stretch your search for tech talent</h1>
@@ -42,13 +42,13 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item'>
+              <div className='carousel-item' style={{ height: '400px' }}>
                 <Image
                   className='d-block slide-clr'
                   alt='Chicago'
                   src='/images/bannerImages/homeBanner2.jpg'
                   width={1400}
-                  height={500}
+                  height={200}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Commence your career with confidence</h1>
@@ -59,13 +59,13 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item'>
+              <div className='carousel-item' style={{ height: '400px' }}>
                 <Image
                   className='d-block slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
                   width={1400}
-                  height={500}
+                  height={200}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Staffing solutions streamlined</h1>
@@ -76,13 +76,13 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item'>
+              <div className='carousel-item' style={{ height: '400px' }}>
                 <Image
                   className='d-block slide-clr'
                   alt='Chicago'
                   src='/images/bannerImages/homeBanner2.jpg'
                   width={1400}
-                  height={500}
+                  height={200}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Empowering professionals and organizations</h1>

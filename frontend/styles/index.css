@@ -108,13 +108,13 @@ body {
 }
 
 .Banner {
-  margin-top: 71px;
+  /* margin-top: 71px; */
   position: relative;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  min-height: 41vh;
+  /* display: flex; */
+  /* min-height: 41vh; */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -122,6 +122,7 @@ body {
   background-position: 50% 0;
   background-repeat: no-repeat;
   color: #fff;
+  height: 50px;
 }
 
 .Banner .row {
@@ -154,7 +155,7 @@ body {
 }
 
 .resources-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  /* background-image: url('/images/bannerImages/aboutBanner.png'); */
 }
 
 .jobs-banner {
@@ -1303,7 +1304,7 @@ body {
     margin-left: -23px;
   }
   .Banner {
-    min-height: 30vh;
+    /* min-height: 30vh; */
   }
   .Banner .row h1 {
     margin-top: 65px;

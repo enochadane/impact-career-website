@@ -70,7 +70,7 @@ export default function Resource(props) {
                     >
                       <Image
                         className='card-img-top trainingImg'
-                        src='/images/employeesWebinar.jpg'
+                        src={`${training.attributes.image.data[0].attributes.url}`}
                         width={350}
                         height={250}
                       ></Image>
@@ -155,7 +155,7 @@ export default function Resource(props) {
                       <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
                         <Image
                           className='card-img-top interviewImg'
-                          src='/images/youTube1.png'
+                          src={`${interviewPrep.attributes.image.data[0].attributes.url}`}
                           width={350}
                           height={250}
                         ></Image>
