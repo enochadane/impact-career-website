@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_FAQ_JOBS, GET_ALL_JOBS } from '../graphql/queries';
+import {
+  GET_FAQ_JOBS,
+  GET_ALL_JOBS,
+  getJobsByPage,
+  GET_NUMBER_OF_JOBS,
+} from '../graphql/queries';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
 
@@ -15,7 +20,12 @@ import Pagination from '@mui/material/Pagination';
 
 import ApplyModal from '../components/ApplyModal/ApplyModal';
 
-export default function Job({ posts, name }) {
+const client = new ApolloClient({
+  uri: process.env.BACKEND_URL,
+  cache: new InMemoryCache(),
+});
+
+export default function Job({ posts, name, numberOfJobs }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [jobId, setJobId] = useState();
   const [jobUrl, setJobUrl] = useState();
@@ -23,17 +33,22 @@ export default function Job({ posts, name }) {
   const [filtered, setFiltered] = useState(posts);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(
-    posts ? Math.ceil(posts.length / 10) : 1
+    posts ? Math.ceil(numberOfJobs / 10) : 1
   );
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
-  useEffect(() => {
-    const startIndex = (page - 1) * 10;
-    const endIndex = startIndex + 10;
+  const getJobs = async () => {
+    const { data } = await client.query({
+      query: getJobsByPage(page),
+    });
 
+    setFiltered(data.trendingJobs.data);
+  };
+
+  useEffect(() => {
     if (search) {
       const filteredList = posts.filter(
         (post) =>
@@ -46,9 +61,9 @@ export default function Job({ posts, name }) {
             .includes(search.toLowerCase())
       );
 
-      setFiltered(filteredList.slice(startIndex, endIndex));
+      setFiltered(filteredList);
     } else {
-      setFiltered(posts.slice(startIndex, endIndex));
+      getJobs();
     }
   }, [search, page]);
 
@@ -267,11 +282,15 @@ export async function getServerSideProps() {
     const getfaqdata = await client.query({
       query: GET_FAQ_JOBS,
     });
+    const getNumberOfJobs = await client.query({
+      query: GET_NUMBER_OF_JOBS,
+    });
 
     return {
       props: {
         posts: data.trendingJobs.data,
         name: getfaqdata.data.jobsFaqs.data,
+        numberOfJobs: getNumberOfJobs.data.trendingJobs.meta.pagination.total,
       },
     };
   } catch (error) {
