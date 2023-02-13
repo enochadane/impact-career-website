@@ -1,10 +1,10 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
-import JobSubmitModal from '../components/JobSubmitModal/JobSubmitModal';
-import LookingForEmployment from '../components/ApplyModal/LookingForEmployment';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_FAQ, GET_ALL_JOBS } from "../graphql/queries";
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import JobSubmitModal from "../components/JobSubmitModal/JobSubmitModal";
+import LookingForEmployment from "../components/ApplyModal/LookingForEmployment";
 
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
@@ -18,21 +18,20 @@ export default function Home({ posts, name }) {
           setModal(false);
           setModal2(false);
         }}
-        type={modal ? 'candidate_seeking_opportunity' : 'resource_request'}
+        type={modal ? "candidate_seeking_opportunity" : "resource_request"}
       />
       <JobSubmitModal visible={modal1} onClose={() => setModal1(false)} />
       <div>
         <div id='demo'>
           <div className='carousel slide carouselSlide' data-bs-ride='carousel'>
             <div className='carousel-inner carouselInner'>
-              <div className='carousel-item active' style={{ height: '400px' }}>
-                <Image
-                  className='d-block slide-clr'
+              <div className='carousel-item active'>
+                <img
+                  className='slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
-                  width={1400}
-                  height={200}
-                ></Image>
+                  style={{ backgroundSize: "cover !important" }}
+                ></img>
                 <div className='carousel-caption'>
                   <h1>Stretch your search for tech talent</h1>
                   <p>
@@ -42,14 +41,15 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item' style={{ height: '400px' }}>
-                <Image
-                  className='d-block slide-clr'
-                  alt='Chicago'
+              <div className='carousel-item'>
+                <img
+                  className='slide-clr'
+                  alt='Los Angeles'
                   src='/images/bannerImages/homeBanner2.jpg'
-                  width={1400}
-                  height={200}
-                ></Image>
+                  // width='auto'
+                  // height={400}
+                  style={{ backgroundSize: "cover !important" }}
+                ></img>
                 <div className='carousel-caption'>
                   <h1>Commence your career with confidence</h1>
                   <p>
@@ -59,13 +59,13 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item' style={{ height: '400px' }}>
+              <div className='carousel-item'>
                 <Image
                   className='d-block slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
                   width={1400}
-                  height={200}
+                  height={400}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Staffing solutions streamlined</h1>
@@ -76,13 +76,13 @@ export default function Home({ posts, name }) {
                   </p>
                 </div>
               </div>
-              <div className='carousel-item' style={{ height: '400px' }}>
+              <div className='carousel-item'>
                 <Image
                   className='d-block slide-clr'
                   alt='Chicago'
                   src='/images/bannerImages/homeBanner2.jpg'
                   width={1400}
-                  height={200}
+                  height={400}
                 ></Image>
                 <div className='carousel-caption'>
                   <h1>Empowering professionals and organizations</h1>
@@ -283,7 +283,7 @@ export default function Home({ posts, name }) {
                     //   val.attributes.image.data.attributes.url
                     // );
                     return (
-                      <div className='col-md-6'>
+                      <div className='col-md-6' key={i}>
                         <div className='card col-12 candidates'>
                           <Link
                             className='candidatesLink'
@@ -294,7 +294,7 @@ export default function Home({ posts, name }) {
                               <div className='col-md-4 col-lg-3 col-4 '>
                                 <img
                                   src={
-                                    '/images/brif_case_2.png'
+                                    "/images/brif_case_2.png"
                                     // process.env.BACKEND_IMG +
                                     // '/uploads/orange_img_7cd28e9ae5.jpg'
                                     // val.attributes.image.data.attributes.url

@@ -76,16 +76,17 @@ body {
 #demo {
   // height: 300px;
   .carouselSlide {
-    // margin-top: 71px;
+    margin-top: 71px;
     background-color: black;
     .slide-clr {
-      opacity: 0.4;
+      opacity: 0.6;
       background-color: black;
     }
     .carousel-caption {
+      z-index: 100;
       color: white;
       text-align: center;
-      top: 90px;
+      // top: 90px;
     }
   }
 }
@@ -394,6 +395,12 @@ body {
       }
     }
   }
+}
+
+.carousel-item {
+  z-index: 0;
+  // height: 400px;
+  background-color: black;
 }
 .slick-arrow {
   display: none;
@@ -1418,6 +1425,7 @@ body {
     }
   }
   .carouselSlide .carousel-caption {
+    z-index: 10;
     top: 30px;
   }
   //about-page
@@ -1525,7 +1533,8 @@ body {
     }
   }
   .carouselSlide .carousel-caption {
-    top: 73px;
+    z-index: 10;
+    top: 53px;
     h1 {
       font-size: 25px;
     }
@@ -1730,8 +1739,14 @@ body {
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .carouselSlide {
+    .slide-clr {
+      height: 420px;
+    }
+  }
   .carouselSlide .carousel-caption {
-    top: 119px;
+    z-index: 10;
+    top: 50px;
     h1 {
       font-size: 30px;
     }
@@ -1760,6 +1775,21 @@ body {
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .carouselSlide {
+    .slide-clr {
+      height: 420px;
+    }
+  }
+  .carouselSlide .carousel-caption {
+    z-index: 10;
+    top: 50px;
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
   //about-page
   #carousel-section .row .owl-theme .card {
     min-height: 215px;
@@ -1848,7 +1878,8 @@ body {
 }
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide .carousel-caption {
-    top: 198px;
+    z-index: 10;
+    top: 98px;
     h1 {
       font-size: 35px;
     }
@@ -1866,7 +1897,7 @@ body {
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide {
     .slide-clr {
-      height: 600px;
+      height: 400px;
       width: 1780px;
     }
   }
@@ -1923,6 +1954,7 @@ body {
   }
 
   .carouselSlide .carousel-caption {
+    z-index: 10;
     h1 {
       font-size: 50px;
     }
@@ -1932,7 +1964,7 @@ body {
   }
   .carouselSlide {
     .slide-clr {
-      height: 900px;
+      height: 400px;
       width: 2580px;
     }
   }
@@ -2227,17 +2259,12 @@ body {
     }
   }
   .carouselSlide .carousel-caption {
+    z-index: 10;
     h1 {
       font-size: 50px;
     }
     p {
       font-size: 30px;
-    }
-  }
-  .carouselSlide {
-    .slide-clr {
-      height: 900px;
-      width: 2580px;
     }
   }
   .Job {

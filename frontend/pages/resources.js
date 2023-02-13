@@ -69,6 +69,7 @@ export default function Resource(props) {
                       }}
                     >
                       <Image
+                        alt='training image'
                         className='card-img-top trainingImg'
                         src={`${training.attributes.image.data[0].attributes.url}`}
                         width={350}
@@ -154,6 +155,7 @@ export default function Resource(props) {
                     >
                       <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
                         <Image
+                          alt='interview prep image'
                           className='card-img-top interviewImg'
                           src={`${interviewPrep.attributes.image.data[0].attributes.url}`}
                           width={350}

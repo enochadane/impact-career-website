@@ -18,6 +18,7 @@ export default function Footer() {
                   src='/images/headerLogo.png'
                   width={60}
                   height={60}
+                  alt='Header logo'
                 ></Image>
               </Link>
               <button

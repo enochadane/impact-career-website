@@ -14,6 +14,7 @@ export default function Nav() {
                   src='/images/footerLogo.png'
                   width={100}
                   height={100}
+                  alt='footer logo'
                 ></Image>
               </Link>
               <div>
@@ -21,6 +22,7 @@ export default function Nav() {
                   src='/images/navobaLogo.png'
                   width={110}
                   height={100}
+                  alt='nav bar logo'
                 ></Image>
               </div>
             </div>
