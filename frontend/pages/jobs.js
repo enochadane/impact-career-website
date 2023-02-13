@@ -17,6 +17,7 @@ import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import Pagination from '@mui/material/Pagination';
+import SchoolIcon from '@mui/icons-material/School';
 
 import ApplyModal from '../components/ApplyModal/ApplyModal';
 
@@ -41,11 +42,15 @@ export default function Job({ posts, name, numberOfJobs }) {
   };
 
   const getJobs = async () => {
-    const { data } = await client.query({
-      query: getJobsByPage(page),
-    });
+    try {
+      const { data } = await client.query({
+        query: getJobsByPage(page),
+      });
 
-    setFiltered(data.trendingJobs.data);
+      setFiltered(data.trendingJobs.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -146,21 +151,13 @@ export default function Job({ posts, name, numberOfJobs }) {
                                 href={val.attributes.urlSlug}
                               >
                                 <img
-                                  src={
-                                    '/images/brif_case_2.png'
-                                    // process.env.BACKEND_IMG +
-                                    // '/uploads/orange_img_7cd28e9ae5.jpg'
-                                    //   val.attributes.image.data !==
-                                    // null
-                                    //   ? val.attributes.image.data.attributes.url
-                                    //   : "/uploads/orange_img_7cd28e9ae5.jpg"
-                                  }
+                                  src={'/images/brif_case_2.png'}
                                   width={100}
                                   height={100}
                                 ></img>
                               </Link>
                             </div>
-                            <div className='col-md-8 col-8'>
+                            <div className='col-md-7 col-7'>
                               <Link
                                 className='candidatesLink'
                                 key={i}
@@ -182,11 +179,18 @@ export default function Job({ posts, name, numberOfJobs }) {
                               className='col-md-2 col-lg-2 col-12'
                               style={{
                                 display: 'flex',
+                                gap: '20px',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 margin: '0 auto',
                               }}
                             >
+                              {val.attributes?.training_resource?.data
+                                ?.attributes?.videoPlayListLink && (
+                                <Link href='/resources#training-Section'>
+                                  <SchoolIcon sx={{ fontSize: '35px' }} />
+                                </Link>
+                              )}
                               <Button
                                 variant='contained'
                                 sx={{

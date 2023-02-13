@@ -8,6 +8,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Applyform3 from '../components/Applyform/Applyform3';
 import ApplyModal from '../components/ApplyModal/ApplyModal';
+import SchoolIcon from '@mui/icons-material/School';
+import Link from 'next/link';
 
 const client = new ApolloClient({
   uri: process.env.BACKEND_URL,
@@ -28,12 +30,7 @@ export default function post({ post }) {
             <div className='row mx-1 job-page'>
               <div className='col-3 col-md-2 col-lg-1 mb-2 in-page'>
                 <img
-                  src={
-                    '/images/brif_case_2.png'
-                    // process.env.BACKEND_IMG +
-                    // '/uploads/orange_img_7cd28e9ae5.jpg'
-                    // post.image.data.attributes.url
-                  }
+                  src={'/images/brif_case_2.png'}
                   width={80}
                   height={80}
                 ></img>
@@ -49,6 +46,19 @@ export default function post({ post }) {
                   </div>
                   <h6 className='slugDescription'>{post.jobsPrice}</h6>
                 </div>
+              </div>
+              <div
+                className='col-1 col-md-1 col-lg-1'
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Link href='/resources#training-Section'>
+                  <SchoolIcon sx={{ fontSize: '35px' }} />
+                </Link>
               </div>
               {/* <p className="slugPara">{post.content}</p> */}
               <pre

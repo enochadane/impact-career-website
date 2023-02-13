@@ -30,7 +30,10 @@ const GET_FAQ_JOBS = gql`
 //Trending Jobs
 const GET_ALL_JOBS = gql`
   query {
-    trendingJobs(pagination: { limit: 1000 }) {
+    trendingJobs(
+      sort: "createdAt:desc"
+      pagination: { pageSize: 10, page: 1 }
+    ) {
       data {
         id
         attributes {
@@ -48,6 +51,60 @@ const GET_ALL_JOBS = gql`
               }
             }
           }
+          training_resource {
+            data {
+              attributes {
+                videoPlayListLink
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const getJobsByPage = (page) => {
+  return gql`
+    query {
+      trendingJobs(sort: "createdAt:desc", pagination: { pageSize: 10, page: ${page} }) {
+        data {
+          id
+          attributes {
+            title
+            jobsName
+            jobsLocation
+            jobsPrice
+            content
+            urlSlug
+            url
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            training_resource {
+              data {
+                attributes {
+                  videoPlayListLink
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+};
+
+const GET_NUMBER_OF_JOBS = gql`
+  query {
+    trendingJobs {
+      meta {
+        pagination {
+          total
         }
       }
     }
@@ -74,6 +131,13 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
               }
             }
           }
+          training_resource {
+            data {
+              attributes {
+                videoPlayListLink
+              }
+            }
+          }
         }
       }
     }
@@ -89,6 +153,13 @@ const GET_ALL_JOBS_SLUGS = gql`
           urlSlug
           jobsLocation
           jobsPrice
+          training_resource {
+            data {
+              attributes {
+                videoPlayListLink
+              }
+            }
+          }
         }
       }
     }
@@ -161,4 +232,6 @@ export {
   GET_ALL_JOBS_SLUGS,
   GET_ALL_TRAINING_RESOURCES,
   GET_ALL_INTERVIEW_PREPS,
+  GET_NUMBER_OF_JOBS,
+  getJobsByPage,
 };
