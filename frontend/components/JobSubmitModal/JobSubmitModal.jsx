@@ -278,16 +278,6 @@ export default function JobSubmitModal(props) {
               error={salaryHasError}
             />
           </Grid>
-          <Grid item xs={12} md={12}>
-            <Button
-              variant='contained'
-              sx={{ width: '100%' }}
-              component='label'
-            >
-              Upload File
-              <input type='file' hidden />
-            </Button>
-          </Grid>
           {!requiredFields && (
             <Grid
               item

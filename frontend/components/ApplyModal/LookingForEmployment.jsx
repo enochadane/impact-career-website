@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
@@ -38,6 +40,8 @@ function nameValidation(str) {
 
 export default function LookingForEmployment(props) {
   const [requiredFields, setRequiredFields] = useState(true);
+  const [file, setFile] = useState();
+  const [loading, setLoading] = useState(false);
 
   const {
     value: firstName,
@@ -112,23 +116,45 @@ export default function LookingForEmployment(props) {
     linkedInUrlReset();
   };
 
-  const handleApply = () => {
+  const handleFileSelect = async (e) => {
+    let file = new FormData();
+    file.append('files', e.target.files[0]);
+    setFile(file);
+  };
+
+  const handleApply = async () => {
     if (firstNameIsValid && lastNameIsValid && emailIsValid) {
       setRequiredFields(true);
-      //send request to backend to save information
-      const candidateDate = {
-        firstName,
-        lastName,
-        email,
-        phoneNumber: phone,
-        location,
-        currentSalary: salary,
-        linkedIn: linkedInUrl,
-      };
+      setLoading(true);
+      try {
+        const response = await axios.post(
+          `http://localhost:1337/api/upload`,
+          file,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
 
-      sendCandidateData(candidateDate);
-      resetFields();
-      sendEmail(candidateDate, props.type);
+        const candidateDate = {
+          firstName,
+          lastName,
+          email,
+          phoneNumber: phone,
+          location,
+          currentSalary: salary,
+          linkedIn: linkedInUrl,
+          resume: response.data[0].url,
+        };
+
+        sendCandidateData(candidateDate);
+        resetFields();
+        setLoading(false);
+        // sendEmail(candidateDate, props.type);
+      } catch (error) {
+        console.log(error);
+      }
       props.onClose();
     } else {
       setRequiredFields(false);
@@ -242,9 +268,16 @@ export default function LookingForEmployment(props) {
             <Button
               variant='contained'
               sx={{ width: '100%', height: '90%', background: 'gray' }}
+              onClick={() => document.getElementById('file')?.click()}
             >
               Resume
-              <input type='file' hidden />
+              <input
+                id='file'
+                type='file'
+                accept='application/pdf'
+                hidden
+                onChange={handleFileSelect}
+              />
             </Button>
           </Grid>
           {!requiredFields && (
@@ -269,13 +302,14 @@ export default function LookingForEmployment(props) {
               justifyContent: 'center',
             }}
           >
-            <Button
+            <LoadingButton
               variant='contained'
               sx={{ backgroundColor: '#136533', width: '130px' }}
               onClick={handleApply}
+              loading={loading}
             >
               Submit
-            </Button>
+            </LoadingButton>
           </Grid>
         </Grid>
       </Box>

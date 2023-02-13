@@ -4,7 +4,8 @@
   "info": {
     "singularName": "candidate",
     "pluralName": "candidates",
-    "displayName": "Candidate"
+    "displayName": "Candidate",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -51,6 +52,10 @@
     },
     "noticePeriod": {
       "type": "string"
+    },
+    "resume": {
+      "type": "string",
+      "required": false
     }
   }
 }
