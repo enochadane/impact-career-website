@@ -7,6 +7,7 @@ import {
   GET_ALL_JOBS,
   getJobsByPage,
   GET_NUMBER_OF_JOBS,
+  GET_FILTERED_JOBS,
 } from '../graphql/queries';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
@@ -53,20 +54,23 @@ export default function Job({ posts, name, numberOfJobs }) {
     }
   };
 
+  const getSearchedJobs = async () => {
+    try {
+      const { data } = await client.query({
+        query: GET_FILTERED_JOBS,
+        variables: { key: search },
+      });
+
+      console.log('data: ', data);
+      setFiltered(data.trendingJobs.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     if (search) {
-      const filteredList = posts.filter(
-        (post) =>
-          post.attributes.title.toLowerCase().includes(search.toLowerCase()) ||
-          post.attributes.jobsName
-            .toLowerCase()
-            .includes(search.toLowerCase()) ||
-          post.attributes.jobsLocation
-            .toLowerCase()
-            .includes(search.toLowerCase())
-      );
-
-      setFiltered(filteredList);
+      getSearchedJobs();
     } else {
       getJobs();
     }

@@ -99,6 +99,49 @@ const getJobsByPage = (page) => {
   `;
 };
 
+const GET_FILTERED_JOBS = gql`
+  query ($key: String!) {
+    trendingJobs(
+      filters: {
+        or: [
+          { title: { containsi: $key } }
+          { jobsName: { containsi: $key } }
+          { jobsLocation: { containsi: $key } }
+        ]
+      }
+      sort: "createdAt:desc"
+      pagination: { pageSize: 10, page: 1 }
+    ) {
+      data {
+        id
+        attributes {
+          title
+          jobsName
+          jobsLocation
+          jobsPrice
+          content
+          urlSlug
+          url
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          training_resource {
+            data {
+              attributes {
+                videoPlayListLink
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const GET_NUMBER_OF_JOBS = gql`
   query {
     trendingJobs {
@@ -234,4 +277,5 @@ export {
   GET_ALL_INTERVIEW_PREPS,
   GET_NUMBER_OF_JOBS,
   getJobsByPage,
+  GET_FILTERED_JOBS,
 };
