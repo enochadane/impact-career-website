@@ -49,6 +49,11 @@
     },
     "url": {
       "type": "string"
+    },
+    "training_resource": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::training-resource.training-resource"
     }
   }
 }
