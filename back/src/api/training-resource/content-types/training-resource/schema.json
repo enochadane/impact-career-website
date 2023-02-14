@@ -4,7 +4,8 @@
   "info": {
     "singularName": "training-resource",
     "pluralName": "training-resources",
-    "displayName": "TrainingResource"
+    "displayName": "TrainingResource",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -20,12 +21,12 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "videoPlayListLink": {
       "type": "string",
@@ -35,6 +36,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::web-article.web-article",
+      "inversedBy": "training_resources"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
       "inversedBy": "training_resources"
     }
   }

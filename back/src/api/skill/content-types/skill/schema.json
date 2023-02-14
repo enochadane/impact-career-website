@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "interview_preps",
+  "collectionName": "skills",
   "info": {
-    "singularName": "interview-prep",
-    "pluralName": "interview-preps",
-    "displayName": "InterviewPrep",
-    "description": ""
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Skill"
   },
   "options": {
     "draftAndPublish": false
@@ -21,12 +20,12 @@
       "required": true
     },
     "image": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "videoPlayListLink": {
       "type": "string",
@@ -36,13 +35,19 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::web-article.web-article",
-      "inversedBy": "interview_preps"
+      "inversedBy": "skills"
     },
-    "skills": {
+    "training_resources": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::skill.skill",
-      "inversedBy": "interview_preps"
+      "target": "api::training-resource.training-resource",
+      "inversedBy": "skills"
+    },
+    "interview_preps": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::interview-prep.interview-prep",
+      "inversedBy": "skills"
     }
   }
 }

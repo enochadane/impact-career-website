@@ -22,7 +22,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::interview-prep.interview-prep",
-      "inversedBy": "web_articles"
+      "mappedBy": "web_articles"
     },
     "link": {
       "type": "string",
@@ -32,6 +32,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::training-resource.training-resource",
+      "mappedBy": "web_articles"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
       "inversedBy": "web_articles"
     }
   }
