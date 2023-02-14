@@ -68,66 +68,31 @@ export default function Resource(props) {
                         height: "100%",
                       }}
                     >
-                      <Image
-                        alt='training image'
-                        className='card-img-top trainingImg'
-                        src={`${training.attributes.image.data[0].attributes.url}`}
-                        width={350}
-                        height={250}
-                      ></Image>
-                      <div className='card-body'>
-                        <h5 className='card-title trainCardH5'>
-                          {training.attributes.title}
-                        </h5>
-                        <p className='card-text trainCardPara'>
-                          {training.attributes.description}
-                        </p>
-                      </div>
-                      <div
-                        className='row'
-                        style={{
-                          paddingBottom: "20px",
-                        }}
+                      <Link
+                        href={"/skills/training" + training.id}
+                        style={{ textDecoration: "none" }}
                       >
-                        <div
-                          className='col'
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <Button
-                            variant='contained'
-                            sx={{ backgroundColor: "#17A700" }}
-                            onClick={() =>
-                              handleArticlesClick(
-                                training.attributes?.web_articles
-                              )
-                            }
-                          >
-                            Articles
-                          </Button>
+                        <Image
+                          alt='training image'
+                          className='card-img-top trainingImg'
+                          src={`${training.attributes.image.data[0].attributes.url}`}
+                          width={350}
+                          height={250}
+                        ></Image>
+                      </Link>
+                      <Link
+                        href={"/skills/training" + training.id}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        <div className='card-body'>
+                          <h5 className='card-title trainCardH5'>
+                            {training.attributes.title}
+                          </h5>
+                          <p className='card-text trainCardPara'>
+                            {training.attributes.description}
+                          </p>
                         </div>
-                        <div
-                          className='col'
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <Link
-                            href={training.attributes.videoPlayListLink}
-                            style={{ textDecoration: "none" }}
-                          >
-                            <Button
-                              variant='contained'
-                              sx={{ backgroundColor: "#17A700" }}
-                            >
-                              Tutorial
-                            </Button>
-                          </Link>
-                        </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -153,7 +118,10 @@ export default function Resource(props) {
                         border: "1px solid #009F01",
                       }}
                     >
-                      <Link href='https://www.youtube.com/watch?v=azRoTvQt0YQ&t=1s'>
+                      <Link
+                        href={"/skills/interview" + interviewPrep.id}
+                        style={{ textDecoration: "none" }}
+                      >
                         <Image
                           alt='interview prep image'
                           className='card-img-top interviewImg'
@@ -162,59 +130,19 @@ export default function Resource(props) {
                           height={250}
                         ></Image>
                       </Link>
-                      <div className='card-body interviewCardBody'>
-                        <h5 className='card-title trainCardH5'>
-                          {interviewPrep.attributes.title}
-                        </h5>
-                        <p className='card-text trainCardPara'>
-                          {interviewPrep.attributes.description}
-                        </p>
-                      </div>
-                      <div
-                        className='row'
-                        style={{
-                          paddingBottom: "20px",
-                        }}
+                      <Link
+                        href={"/skills/interview" + interviewPrep.id}
+                        style={{ textDecoration: "none", color: "black" }}
                       >
-                        <div
-                          className='col'
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <Button
-                            variant='contained'
-                            sx={{ backgroundColor: "#17A700" }}
-                            onClick={() =>
-                              handleArticlesClick(
-                                interviewPrep.attributes?.web_articles
-                              )
-                            }
-                          >
-                            Articles
-                          </Button>
+                        <div className='card-body interviewCardBody'>
+                          <h5 className='card-title trainCardH5'>
+                            {interviewPrep.attributes.title}
+                          </h5>
+                          <p className='card-text trainCardPara'>
+                            {interviewPrep.attributes.description}
+                          </p>
                         </div>
-                        <div
-                          className='col'
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <Link
-                            href={interviewPrep.attributes.videoPlayListLink}
-                            style={{ textDecoration: "none" }}
-                          >
-                            <Button
-                              variant='contained'
-                              sx={{ backgroundColor: "#17A700" }}
-                            >
-                              Tutorial
-                            </Button>
-                          </Link>
-                        </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 ))}

@@ -142,6 +142,76 @@ const GET_FILTERED_JOBS = gql`
   }
 `;
 
+const GET_TRAINING_SKILLS = gql`
+  query ($id: ID!) {
+    trainingResource(id: $id) {
+      data {
+        attributes {
+          skills {
+            data {
+              attributes {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                videoPlayListLink
+                web_articles {
+                  data {
+                    attributes {
+                      title
+                      link
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_INTERVIEW_SKILLS = gql`
+  query ($id: ID!) {
+    interviewPrep(id: $id) {
+      data {
+        attributes {
+          skills {
+            data {
+              attributes {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                videoPlayListLink
+                web_articles {
+                  data {
+                    attributes {
+                      title
+                      link
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const GET_NUMBER_OF_JOBS = gql`
   query {
     trendingJobs {
@@ -213,6 +283,7 @@ const GET_ALL_TRAINING_RESOURCES = gql`
   query {
     trainingResources {
       data {
+        id
         attributes {
           title
           description
@@ -242,6 +313,7 @@ const GET_ALL_INTERVIEW_PREPS = gql`
   query {
     interviewPreps {
       data {
+        id
         attributes {
           title
           description
@@ -278,4 +350,6 @@ export {
   GET_NUMBER_OF_JOBS,
   getJobsByPage,
   GET_FILTERED_JOBS,
+  GET_TRAINING_SKILLS,
+  GET_INTERVIEW_SKILLS,
 };
