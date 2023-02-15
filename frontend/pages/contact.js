@@ -1,10 +1,28 @@
+import { useState } from "react";
+
 import Image from "next/image";
 import Head from "next/head";
 import ContactForm from "../components/form/ContactForm";
+import LookingForEmployment from "../components/ApplyModal/LookingForEmployment";
+import JobSubmitModal from "../components/JobSubmitModal/JobSubmitModal";
+
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 export default function Contact() {
+  const [employerModalVisible, setEmployerModalVisible] = useState(false);
+  const [candidateModalVisible, setCandidateModalVisible] = useState(false);
+
   return (
     <>
+      <JobSubmitModal
+        visible={employerModalVisible}
+        onClose={() => setEmployerModalVisible(false)}
+      />
+      <LookingForEmployment
+        visible={candidateModalVisible}
+        onClose={() => setCandidateModalVisible(false)}
+      />
       <div>
         <Head>
           <title>Contact Us</title>
@@ -103,8 +121,28 @@ export default function Contact() {
                   take the time to develop true connections with both parties.
                 </p>
               </div>
-
-              <ContactForm />
+              <Box
+                sx={{
+                  // border: '1px solid red',
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "30px",
+                }}
+              >
+                <Button
+                  variant='outlined'
+                  onClick={() => setCandidateModalVisible(true)}
+                >
+                  Seeking for employment
+                </Button>
+                <Button
+                  variant='outlined'
+                  onClick={() => setEmployerModalVisible(true)}
+                >
+                  Looking for candidates
+                </Button>
+              </Box>
+              {/* <ContactForm /> */}
             </div>
           </section>
         </div>
