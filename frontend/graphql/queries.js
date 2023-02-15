@@ -51,8 +51,9 @@ const GET_ALL_JOBS = gql`
               }
             }
           }
-          training_resource {
+          skills {
             data {
+              id
               attributes {
                 videoPlayListLink
               }
@@ -85,8 +86,9 @@ const getJobsByPage = (page) => {
                 }
               }
             }
-            training_resource {
+            skills {
               data {
+                id
                 attributes {
                   videoPlayListLink
                 }
@@ -129,8 +131,9 @@ const GET_FILTERED_JOBS = gql`
               }
             }
           }
-          training_resource {
+          skills {
             data {
+              id
               attributes {
                 videoPlayListLink
               }
@@ -212,6 +215,91 @@ const GET_INTERVIEW_SKILLS = gql`
   }
 `;
 
+const GET_ALL_SKILL_ID = gql`
+  query {
+    skills {
+      data {
+        id
+      }
+    }
+  }
+`;
+
+const GET_ALL_JOBS_ID = gql`
+  query {
+    trendingJobs(pagination: { limit: 10000 }) {
+      data {
+        id
+      }
+    }
+  }
+`;
+
+const GET_JOB_SKILLS = gql`
+  query ($id: ID!) {
+    trendingJob(id: $id) {
+      data {
+        attributes {
+          skills {
+            data {
+              attributes {
+                title
+                description
+                videoPlayListLink
+                web_articles {
+                  data {
+                    attributes {
+                      title
+                      link
+                    }
+                  }
+                }
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_SKILL = gql`
+  query ($id: ID!) {
+    skill(id: $id) {
+      data {
+        id
+        attributes {
+          title
+          description
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          videoPlayListLink
+          web_articles {
+            data {
+              attributes {
+                title
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const GET_NUMBER_OF_JOBS = gql`
   query {
     trendingJobs {
@@ -244,10 +332,10 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
               }
             }
           }
-          training_resource {
+          skills {
             data {
               attributes {
-                videoPlayListLink
+                title
               }
             }
           }
@@ -259,20 +347,13 @@ const GET_INDIVIDUAL_JOBS_POST = gql`
 
 const GET_ALL_JOBS_SLUGS = gql`
   query {
-    trendingJobs(pagination: { limit: 1000 }) {
+    trendingJobs(pagination: { limit: 10000 }) {
       data {
         attributes {
           jobsName
           urlSlug
           jobsLocation
           jobsPrice
-          training_resource {
-            data {
-              attributes {
-                videoPlayListLink
-              }
-            }
-          }
         }
       }
     }
@@ -352,4 +433,8 @@ export {
   GET_FILTERED_JOBS,
   GET_TRAINING_SKILLS,
   GET_INTERVIEW_SKILLS,
+  GET_SKILL,
+  GET_ALL_SKILL_ID,
+  GET_ALL_JOBS_ID,
+  GET_JOB_SKILLS,
 };

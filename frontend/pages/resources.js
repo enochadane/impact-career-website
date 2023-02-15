@@ -143,6 +143,55 @@ export default function Resource(props) {
                           </p>
                         </div>
                       </Link>
+                      <div
+                        className='row'
+                        style={{
+                          paddingBottom: "20px",
+                        }}
+                      >
+                        <div
+                          className='col'
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Button
+                            variant='contained'
+                            sx={{ backgroundColor: "#17A700" }}
+                            onClick={() =>
+                              handleArticlesClick(
+                                interviewPrep.attributes?.web_articles
+                              )
+                            }
+                          >
+                            Articles
+                          </Button>
+                        </div>
+                        <div
+                          className='col'
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Link
+                            href={
+                              interviewPrep.attributes.videoPlayListLink
+                                ? interviewPrep.attributes.videoPlayListLink
+                                : ""
+                            }
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Button
+                              variant='contained'
+                              sx={{ backgroundColor: "#17A700" }}
+                            >
+                              Tutorial
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}

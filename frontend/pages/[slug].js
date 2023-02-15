@@ -56,9 +56,11 @@ export default function post({ post }) {
                   justifyContent: 'center',
                 }}
               >
-                <Link href='/resources#training-Section'>
-                  <SchoolIcon sx={{ fontSize: '35px' }} />
-                </Link>
+                {post.skills?.data.length > 0 && (
+                  <Link href={'/skill/' + post?.id}>
+                    <SchoolIcon sx={{ fontSize: '35px' }} />
+                  </Link>
+                )}
               </div>
               {/* <p className="slugPara">{post.content}</p> */}
               <pre
@@ -153,6 +155,7 @@ export async function getStaticProps({ params }) {
         image: attrs.image,
         url: attrs.url,
         id: data.trendingJobs.data[0].id,
+        skills: attrs.skills,
       },
     },
   };

@@ -189,9 +189,9 @@ export default function Job({ posts, name, numberOfJobs }) {
                                 margin: '0 auto',
                               }}
                             >
-                              {val.attributes?.training_resource?.data
-                                ?.attributes?.videoPlayListLink && (
-                                <Link href='/resources#training-Section'>
+                              {val.attributes?.skills?.data[0]?.attributes
+                                ?.videoPlayListLink && (
+                                <Link href={'/skill/' + val?.id}>
                                   <SchoolIcon sx={{ fontSize: '35px' }} />
                                 </Link>
                               )}
