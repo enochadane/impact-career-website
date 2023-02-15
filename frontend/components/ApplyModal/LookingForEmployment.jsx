@@ -151,7 +151,7 @@ export default function LookingForEmployment(props) {
         sendCandidateData(candidateDate);
         resetFields();
         setLoading(false);
-        // sendEmail(candidateDate, props.type);
+        sendEmail(candidateDate, props.type);
       } catch (error) {
         console.log(error);
       }

@@ -148,10 +148,10 @@ export default function JobSubmitModal(props) {
 
       props.onClose();
 
-      // sendEmail(
-      //   { ...employersData, firstName: companyName, lastName: companyName },
-      //   'employer_job_post'
-      // );
+      sendEmail(
+        { ...employersData, firstName: companyName, lastName: companyName },
+        'employer_job_post'
+      );
     } else {
       setRequiredFields(false);
     }

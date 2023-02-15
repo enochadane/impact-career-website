@@ -36,7 +36,7 @@ export default function (req, res, post) {
     host: 'smtp.gmail.com',
     auth: {
       user: process.env.username,
-      pass: process.env.password,
+      pass: process.env.email_password,
     },
     secure: true,
   });
