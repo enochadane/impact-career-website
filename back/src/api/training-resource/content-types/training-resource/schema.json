@@ -30,7 +30,7 @@
     },
     "videoPlayListLink": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "web_articles": {
       "type": "relation",

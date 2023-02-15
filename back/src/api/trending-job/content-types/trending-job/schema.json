@@ -50,10 +50,11 @@
     "url": {
       "type": "string"
     },
-    "training_resource": {
+    "skills": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::training-resource.training-resource"
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "inversedBy": "trending_jobs"
     }
   }
 }

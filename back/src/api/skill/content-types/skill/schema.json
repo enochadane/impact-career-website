@@ -41,13 +41,19 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::training-resource.training-resource",
-      "inversedBy": "skills"
+      "mappedBy": "skills"
     },
     "interview_preps": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::interview-prep.interview-prep",
       "inversedBy": "skills"
+    },
+    "trending_jobs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trending-job.trending-job",
+      "mappedBy": "skills"
     }
   }
 }
