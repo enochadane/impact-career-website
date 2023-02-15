@@ -30,7 +30,6 @@ export default function Home({ posts, name }) {
                   className='slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
-                  style={{ backgroundSize: "cover !important" }}
                 ></img>
                 <div className='carousel-caption'>
                   <h1>Stretch your search for tech talent</h1>
@@ -46,9 +45,6 @@ export default function Home({ posts, name }) {
                   className='slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner2.jpg'
-                  // width='auto'
-                  // height={400}
-                  style={{ backgroundSize: "cover !important" }}
                 ></img>
                 <div className='carousel-caption'>
                   <h1>Commence your career with confidence</h1>
@@ -60,13 +56,11 @@ export default function Home({ posts, name }) {
                 </div>
               </div>
               <div className='carousel-item'>
-                <Image
+                <img
                   className='d-block slide-clr'
                   alt='Los Angeles'
                   src='/images/bannerImages/homeBanner1.jpg'
-                  width={1400}
-                  height={400}
-                ></Image>
+                ></img>
                 <div className='carousel-caption'>
                   <h1>Staffing solutions streamlined</h1>
                   <p>
@@ -77,13 +71,11 @@ export default function Home({ posts, name }) {
                 </div>
               </div>
               <div className='carousel-item'>
-                <Image
+                <img
                   className='d-block slide-clr'
                   alt='Chicago'
                   src='/images/bannerImages/homeBanner2.jpg'
-                  width={1400}
-                  height={400}
-                ></Image>
+                ></img>
                 <div className='carousel-caption'>
                   <h1>Empowering professionals and organizations</h1>
                   <p>

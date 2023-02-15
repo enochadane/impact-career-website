@@ -1039,8 +1039,10 @@ body {
   }
   .carouselSlide {
     .slide-clr {
-      height: 150px;
-      width: 380px;
+      width: 100%;
+    }
+    .carousel-item {
+      height: 200px;
     }
   }
   #apply-form {
@@ -1306,16 +1308,14 @@ body {
   }
   .carouselSlide {
     .slide-clr {
-      height: 150px;
-      width: 380px;
+      width: 100%;
     }
   }
 }
 @media (width: 375px) {
   .carouselSlide {
     .slide-clr {
-      height: 160px;
-      width: 380px;
+      width: 100%;
     }
   }
   #apply-form {
@@ -1420,8 +1420,10 @@ body {
 @media only screen and (min-width: 425px) and (max-width: 767px) {
   .carouselSlide {
     .slide-clr {
+      width: 100%;
+    }
+    .carousel-item {
       height: 200px;
-      width: 430px;
     }
   }
   .carouselSlide .carousel-caption {
@@ -1520,8 +1522,10 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .carouselSlide {
     .slide-clr {
-      height: 320px;
-      width: 800px;
+      width: 100%;
+    }
+    .carousel-item {
+      height: 200px;
     }
   }
   //home-page
@@ -1741,7 +1745,10 @@ body {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .carouselSlide {
     .slide-clr {
-      height: 420px;
+      width: 100%;
+    }
+    .carousel-item {
+      height: 300px;
     }
   }
   .carouselSlide .carousel-caption {
@@ -1777,7 +1784,10 @@ body {
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
   .carouselSlide {
     .slide-clr {
-      height: 420px;
+      width: 100%;
+    }
+    .carousel-item {
+      height: 300px;
     }
   }
   .carouselSlide .carousel-caption {
@@ -1820,7 +1830,10 @@ body {
 @media (width: 1024px) {
   .carouselSlide {
     .slide-clr {
-      height: 420px;
+      width: 100%;
+    }
+    .carousel-item {
+      height: 300px;
     }
   }
   #apply-form {
@@ -1897,8 +1910,10 @@ body {
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide {
     .slide-clr {
+      width: 100%;
+    }
+    .carousel-item {
       height: 400px;
-      width: 1780px;
     }
   }
   .Job {
@@ -1964,8 +1979,7 @@ body {
   }
   .carouselSlide {
     .slide-clr {
-      height: 400px;
-      width: 2580px;
+      width: 100%;
     }
   }
   .Job {
