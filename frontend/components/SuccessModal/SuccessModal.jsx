@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
+import Link from "next/link";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -24,34 +26,36 @@ const SuccessModal = ({ visible, onClose }) => {
     <Modal
       open={visible}
       onClose={onClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      aria-labelledby='modal-modal-title'
+      aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
-        <Typography variant="h1" id="modal-modal-title" component="h2">
+        <Typography variant='h1' id='modal-modal-title' component='h2'>
           🎈
         </Typography>
         <Typography
-          variant="h5"
-          id="modal-modal-description"
+          variant='h5'
+          id='modal-modal-description'
           sx={{ mt: 2, lineHeight: "1px" }}
         >
           Success!
         </Typography>
         <Typography
-          variant="subtitle"
-          id="modal-modal-description"
+          variant='subtitle'
+          id='modal-modal-description'
           sx={{ mt: 2, color: "#696969" }}
         >
           Your profile is successfully saved
         </Typography>
-        <Button
-          onClick={onClose}
-          sx={{ width: "100%", height: "50px" }}
-          variant="contained"
-        >
-          Okay
-        </Button>
+        <Link href='/'>
+          <Button
+            // onClick={onClose}
+            sx={{ width: "100%", height: "50px" }}
+            variant='contained'
+          >
+            Okay
+          </Button>
+        </Link>
       </Box>
     </Modal>
   );

@@ -196,8 +196,9 @@ const Profile = () => {
     };
 
     const response = await sendRequest(reqConfig);
-    console.log("res: ", response);
+    // console.log("res: ", response);
     setShowSuccessModal(true);
+    resetFields();
   };
 
   const handleModalClose = () => {
@@ -206,8 +207,8 @@ const Profile = () => {
 
   return (
     <>
-      <div className="Banner profile-banner">
-        <div className="bg-black bg-opacity-50 px-4 rounded">
+      <div className='Banner profile-banner'>
+        <div className='bg-black bg-opacity-50 px-4 rounded'>
           <h1>Apply once and let our AI powered matching do the rest</h1>
         </div>
       </div>
@@ -215,7 +216,7 @@ const Profile = () => {
       <Box sx={{ maxWidth: "700px", margin: "auto", padding: "30px 10px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
-            <Typography variant="overline">
+            <Typography variant='overline'>
               The more details you give us the better matching we can do for
               you.
             </Typography>
@@ -232,7 +233,7 @@ const Profile = () => {
             }}
           >
             <Button
-              variant="contained"
+              variant='contained'
               sx={{ width: "100%", height: "50px" }}
               onClick={() => handleShow("add work history")}
             >
@@ -262,7 +263,7 @@ const Profile = () => {
             }}
           >
             <Button
-              variant="contained"
+              variant='contained'
               sx={{ width: "100%", height: "50px" }}
               onClick={() => handleShow("add certifications and awards")}
             >
@@ -292,7 +293,7 @@ const Profile = () => {
             }}
           >
             <Button
-              variant="contained"
+              variant='contained'
               sx={{
                 width: "100%",
                 height: "50px",
@@ -325,8 +326,8 @@ const Profile = () => {
             sx={{ display: "flex", alignItems: "center" }}
           >
             <TextField
-              label="Explain to us your ideal job"
-              variant="outlined"
+              label='Explain to us your ideal job'
+              variant='outlined'
               required
               multiline
               rows={2}
@@ -349,7 +350,7 @@ const Profile = () => {
               loading={isLoading}
               onClick={handleSubmit}
               disabled={!validApplication}
-              variant="contained"
+              variant='contained'
               sx={{ width: "100%", height: "50px" }}
             >
               Submit
