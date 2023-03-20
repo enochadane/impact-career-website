@@ -115,18 +115,20 @@ export default function Home({ posts, name }) {
                       <div className='card-body Job-Seeker'>
                         <h5 className='card-title'>Looking for employment?</h5>
                         <p className='card-text'>
-                          The first step to entering an exciting new career is
-                          to share your resume with us! If we find you meet our
-                          talent expectations, we’ll invite you for an interview
-                          to learn more and assist with your work search.
+                          Are you looking for your dream job and tired of the
+                          traditional job search process? Our service is
+                          designed to simplify the application process by
+                          matching your skills and experience with the best job
+                          opportunities available.
                         </p>
-                        <button
-                          onClick={() => setModal(true)}
-                          id='myBtn'
-                          className='btn btn-outline-success sub-btn'
-                        >
-                          Submit your Resume
-                        </button>
+                        <Link href='/profile'>
+                          <button
+                            id='myBtn'
+                            className='btn btn-outline-success sub-btn'
+                          >
+                            Get started
+                          </button>
+                        </Link>
                       </div>
                     </div>
                     <div className='col-md-4 col-12 icon'>
