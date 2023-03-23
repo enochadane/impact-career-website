@@ -3,12 +3,23 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import SignupModal from "../SignupModal/SignupModal";
+import SignInModal from "../SignInModal/SignInModal";
+
+import { userActions } from "../../store/user";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Footer() {
+  const dispatch = useDispatch();
   const router = useRouter();
+  const user = useSelector((state) => state.user);
 
   return (
     <>
+      <SignupModal />
+      <SignInModal />
       <div className='nav'>
         <section id='home-page'>
           <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top p-0 shadow-sm'>
@@ -34,6 +45,23 @@ export default function Footer() {
                 id='navbarNavDropdown'
               >
                 <ul className='navbar-nav ms-auto'>
+                  {user.email && (
+                    <li>
+                      <ActiveLink
+                        className='nav-link resource px-4'
+                        href='/profile'
+                      >
+                        Profile
+                      </ActiveLink>
+                    </li>
+                  )}
+                  {user.email && (
+                    <li>
+                      <ActiveLink className='nav-link resource px-4' href='/'>
+                        Recommendations
+                      </ActiveLink>
+                    </li>
+                  )}
                   <li>
                     <ActiveLink
                       className='nav-link resource px-4'
@@ -42,6 +70,7 @@ export default function Footer() {
                       About
                     </ActiveLink>
                   </li>
+
                   <li>
                     <ActiveLink className='nav-link resource px-4' href='/jobs'>
                       Jobs
@@ -81,12 +110,48 @@ export default function Footer() {
                       </li>
                     </ul>
                   </li>
+                  <li>
+                    <ActiveLink
+                      className='nav-link resource px-4'
+                      href='/contact'
+                    >
+                      Contact
+                    </ActiveLink>
+                  </li>
                 </ul>
-                <div className='btnDiv'>
-                  <Link href='/contact'>
-                    <button className='ContactButton'>contact</button>
-                  </Link>
-                </div>
+                <Box
+                  sx={{ display: "flex", gap: "10px", textDecoration: "none" }}
+                >
+                  {!user.email && (
+                    <Button
+                      onClick={() => dispatch(userActions.loginModalVisible())}
+                      variant='contained'
+                    >
+                      Sign In
+                    </Button>
+                  )}
+                  {!user.email && (
+                    <Button
+                      onClick={() =>
+                        dispatch(userActions.registerModalVisible())
+                      }
+                      variant='contained'
+                    >
+                      Sign Up
+                    </Button>
+                  )}
+                  {user.email && (
+                    <Button
+                      onClick={() => {
+                        dispatch(userActions.clearUserData());
+                        router.push("/");
+                      }}
+                      variant='contained'
+                    >
+                      Logout
+                    </Button>
+                  )}
+                </Box>
               </div>
             </div>
           </nav>

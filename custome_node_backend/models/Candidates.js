@@ -11,6 +11,9 @@ const CandidateSchema = new mongoose.Schema(
     email: {
       type: String,
     },
+    password: {
+      type: String,
+    },
     phone: {
       type: String,
     },

@@ -1,15 +1,19 @@
 const controller = {};
 const Candidate = require("../models/Candidates");
-const axios = require("axios");
 const { pinecone } = require("../db/pinecone");
 require("dotenv").config();
+const generateEmbedding = require("../util/generateEmbedding");
+const bcrypt = require("bcrypt");
+
+const SALT_ROUND = 10;
 
 controller.addProfile = async (req, res) => {
   try {
     const userProfile = req.body;
 
-    const candidate = new Candidate(userProfile);
-    const response = await candidate.save();
+    const id = userProfile.id;
+    delete userProfile.id;
+    const response = await Candidate.findByIdAndUpdate(id, userProfile);
     const recordId = response._id;
 
     const input = `
@@ -26,21 +30,7 @@ controller.addProfile = async (req, res) => {
     Ideal job description ${userProfile.idealJobDescription}
     `;
 
-    const embeddingConfig = {
-      method: "POST",
-      url: "https://api.openai.com/v1/embeddings",
-      headers: {
-        Authorization: `Bearer ${process.env.OPEN_AI_KEY}`,
-      },
-      data: {
-        input,
-        model: "text-embedding-ada-002",
-      },
-    };
-
-    const openAIResponse = await axios(embeddingConfig);
-    const embedding = openAIResponse.data.data[0].embedding;
-    console.log(embedding);
+    const embedding = await generateEmbedding(input);
     const index = pinecone.Index("candidates");
 
     const upsertRequest = {
@@ -58,6 +48,119 @@ controller.addProfile = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500);
+  }
+};
+
+controller.signUp = async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+
+    const exists = await Candidate.findOne({ email });
+
+    if (exists) {
+      return res
+        .status(400)
+        .json({ message: "Email already exists", payload: req.body });
+    }
+
+    const hash = bcrypt.hashSync(password, SALT_ROUND);
+
+    let candidate;
+
+    if (!exists) {
+      candidate = await Candidate.create({ ...req.body, password: hash });
+    } else {
+      candidate = await Candidate.findByIdAndUpdate(exists._id, {
+        ...req.body,
+        password: hash,
+      });
+    }
+
+    delete candidate._doc.password;
+
+    res.status(200).json(candidate);
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.signIn = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const candidate = await Candidate.findOne({ email });
+
+    const auth = await bcrypt.compare(password, candidate.password);
+
+    if (auth) {
+      res.status(200).json({
+        message: "correct authentication",
+        user: {
+          id: candidate._id,
+          firstName: candidate.firstName,
+          lastName: candidate.lastName,
+          email: candidate.email,
+          skills: candidate.skills,
+          workHistory: candidate.workHistory,
+          certifications: candidate.certifications,
+          education: candidate.education,
+          country: candidate.country,
+          idealJobDescription: candidate.idealJobDescription,
+          phone: candidate.phone,
+          yearsOfExperience: candidate.yearsOfExperience,
+        },
+      });
+    } else {
+      res.status(401).json({ message: "Invalid credentials" });
+    }
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.updateWorkHistory = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const workHistory = req.body;
+    const response = await Candidate.findByIdAndUpdate(userId, { workHistory });
+
+    res.status(200).json(response);
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.updateCertifications = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const certifications = req.body;
+    const response = await Candidate.findByIdAndUpdate(userId, {
+      certifications,
+    });
+
+    res.status(200).json(response);
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.updateEducation = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const education = req.body;
+    const response = await Candidate.findByIdAndUpdate(userId, { education });
+
+    res.status(200).json(response);
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
   }
 };
 

@@ -8,4 +8,24 @@ router.post("/add-profile", (req, res) => {
   candidateController.addProfile(req, res);
 });
 
+router.post("/sign-up", (req, res) => {
+  candidateController.signUp(req, res);
+});
+
+router.post("/sign-in", (req, res) => {
+  candidateController.signIn(req, res);
+});
+
+router.patch("/update-work-history/:userId", (req, res) => {
+  candidateController.updateWorkHistory(req, res);
+});
+
+router.patch("/update-certifications/:userId", (req, res) => {
+  candidateController.updateCertifications(req, res);
+});
+
+router.patch("/update-education/:userId", (req, res) => {
+  candidateController.updateEducation(req, res);
+});
+
 module.exports = router;

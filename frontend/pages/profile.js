@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 import SuccessModal from "../components/SuccessModal/SuccessModal";
 
@@ -13,6 +14,7 @@ import BasicInfo from "../components/CandidateProfile/BasicInfo";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import GppGoodIcon from "@mui/icons-material/GppGood";
 import SchoolIcon from "@mui/icons-material/School";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 import AddWorkHistory from "../components/CandidateProfile/AddWorkHistory";
 import AddCertifications from "../components/CandidateProfile/AddCertifications";
@@ -20,6 +22,8 @@ import AddEducation from "../components/CandidateProfile/AddEducation";
 
 import useInput from "../hooks/use-input";
 import useHttp from "../hooks/use-http";
+import { useSelector, useDispatch } from "react-redux";
+import { userActions } from "../store/user";
 
 import emailValidation from "../utils/emailValidation";
 
@@ -28,13 +32,16 @@ function nameValidation(str) {
 }
 
 const Profile = () => {
+  const user = useSelector((state) => state.user);
+
   const [show, setShow] = useState();
-  const [workHistory, setWorkHistory] = useState([]);
-  const [certifications, setCertifications] = useState([]);
-  const [education, setEducation] = useState([]);
+  const [workHistory, setWorkHistory] = useState(user.workHistory);
+  const [certifications, setCertifications] = useState(user.certifications);
+  const [education, setEducation] = useState(user.education);
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
+  const dispatch = useDispatch();
   const { sendRequest, isLoading } = useHttp();
 
   const {
@@ -44,7 +51,7 @@ const Profile = () => {
     valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     reset: firstNameReset,
-  } = useInput(nameValidation);
+  } = useInput(nameValidation, user.firstName);
 
   const {
     value: lastName,
@@ -53,7 +60,7 @@ const Profile = () => {
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
     reset: lastNameReset,
-  } = useInput(nameValidation);
+  } = useInput(nameValidation, user.lastName);
 
   const {
     value: email,
@@ -62,7 +69,7 @@ const Profile = () => {
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: emailReset,
-  } = useInput(emailValidation);
+  } = useInput(emailValidation, user.email);
 
   const {
     value: phone,
@@ -71,7 +78,7 @@ const Profile = () => {
     valueChangeHandler: phoneChangeHandler,
     inputBlurHandler: phoneBlurHandler,
     reset: phoneReset,
-  } = useInput((s) => true);
+  } = useInput((s) => true, user.phone);
 
   const {
     value: yearsOfExperience,
@@ -80,7 +87,7 @@ const Profile = () => {
     valueChangeHandler: yearsOfExperienceChangeHandler,
     inputBlurHandler: yearsOfExperienceBlurHandler,
     reset: yearsOfExperienceReset,
-  } = useInput((s) => s !== "" && +s >= 0);
+  } = useInput((s) => s !== "" && +s >= 0, user.yearsOfExperience);
 
   const {
     value: country,
@@ -89,7 +96,7 @@ const Profile = () => {
     valueChangeHandler: countryChangeHandler,
     inputBlurHandler: countryBlurHandler,
     reset: countryReset,
-  } = useInput((s) => s !== "");
+  } = useInput((s) => s !== "", user.country);
 
   const {
     value: idealJobDescription,
@@ -98,9 +105,9 @@ const Profile = () => {
     valueChangeHandler: idealJobDescriptionChangeHandler,
     inputBlurHandler: idealJobDescriptionBlurHandler,
     reset: idealJobDescriptionReset,
-  } = useInput((s) => s !== "");
+  } = useInput((s) => s !== "", user.idealJobDescription);
 
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState(user.skills);
 
   const basicInfoProps = {
     firstName,
@@ -176,6 +183,7 @@ const Profile = () => {
 
   const handleSubmit = async () => {
     const userProfile = {
+      id: user.id,
       firstName,
       lastName,
       email,
@@ -196,13 +204,58 @@ const Profile = () => {
     };
 
     const response = await sendRequest(reqConfig);
+    dispatch(userActions.setUserData(userProfile));
     // console.log("res: ", response);
     setShowSuccessModal(true);
-    resetFields();
+    // resetFields();
   };
 
   const handleModalClose = () => {
     setShowSuccessModal(false);
+  };
+
+  const handleWorkRemove = async (work) => {
+    const updatedWorkHistory = workHistory.filter((w) => w._id != work._id);
+
+    setWorkHistory(updatedWorkHistory);
+
+    const reqConfig = {
+      method: "PATCH",
+      url: `${process.env.SERVER}/candidate/update-work-history/${user.id}`,
+      data: updatedWorkHistory,
+    };
+
+    const response = await axios(reqConfig);
+  };
+
+  const handleCertificationRemove = async (certification) => {
+    const updatedCertifications = certifications.filter(
+      (c) => c._id != certification._id
+    );
+
+    setCertifications(updatedCertifications);
+
+    const reqConfig = {
+      method: "PATCH",
+      url: `${process.env.SERVER}/candidate/update-certifications/${user.id}`,
+      data: updatedCertifications,
+    };
+
+    const response = await axios(reqConfig);
+  };
+
+  const handleEducationRemove = async (edu) => {
+    const updatedEducation = education.filter((e) => e._id != edu._id);
+
+    setEducation(updatedEducation);
+
+    const reqConfig = {
+      method: "PATCH",
+      url: `${process.env.SERVER}/candidate/update-education/${user.id}`,
+      data: updatedEducation,
+    };
+
+    const response = await axios(reqConfig);
   };
 
   return (
@@ -247,11 +300,24 @@ const Profile = () => {
           )}
           {workHistory &&
             workHistory.map((work) => (
-              <Grid item xs={12} sx={{ display: "flex", gap: "10px" }}>
-                <AdjustIcon sx={{ color: "#7F7F7F" }} />
-                <Typography sx={{ color: "#696969" }}>
-                  {work.position + " / " + work.company}
-                </Typography>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  gap: "10px",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box sx={{ display: "flex", gap: "10px" }}>
+                  <AdjustIcon sx={{ color: "#7F7F7F" }} />
+                  <Typography sx={{ color: "#696969" }}>
+                    {work.position + " / " + work.company}
+                  </Typography>
+                </Box>
+                <Button onClick={() => handleWorkRemove(work)}>
+                  <DeleteForeverIcon />
+                </Button>
               </Grid>
             ))}
           <Grid
@@ -277,11 +343,24 @@ const Profile = () => {
           )}
           {certifications &&
             certifications.map((certificate) => (
-              <Grid item xs={12} sx={{ display: "flex", gap: "10px" }}>
-                <GppGoodIcon sx={{ color: "#7F7F7F" }} />
-                <Typography sx={{ color: "#696969" }}>
-                  {certificate.name}
-                </Typography>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  gap: "10px",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box sx={{ display: "flex", gap: "10px" }}>
+                  <GppGoodIcon sx={{ color: "#7F7F7F" }} />
+                  <Typography sx={{ color: "#696969" }}>
+                    {certificate.name}
+                  </Typography>
+                </Box>
+                <Button onClick={() => handleCertificationRemove(certificate)}>
+                  <DeleteForeverIcon />
+                </Button>
               </Grid>
             ))}
           <Grid
@@ -311,12 +390,25 @@ const Profile = () => {
           )}
           {education &&
             education.map((edu) => (
-              <Grid item xs={12} sx={{ display: "flex", gap: "10px" }}>
-                <SchoolIcon sx={{ color: "#7F7F7F" }} />
-                <Typography sx={{ color: "#696969" }}>
-                  {edu.degree}
-                  {/* Electrical and Computer Engineering */}
-                </Typography>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  gap: "10px",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box sx={{ display: "flex", gap: "10px" }}>
+                  <SchoolIcon sx={{ color: "#7F7F7F" }} />
+                  <Typography sx={{ color: "#696969" }}>
+                    {edu.degree}
+                    {/* Electrical and Computer Engineering */}
+                  </Typography>
+                </Box>
+                <Button onClick={() => handleEducationRemove(edu)}>
+                  <DeleteForeverIcon />
+                </Button>
               </Grid>
             ))}
           <Grid
@@ -353,7 +445,7 @@ const Profile = () => {
               variant='contained'
               sx={{ width: "100%", height: "50px" }}
             >
-              Submit
+              Save
             </LoadingButton>
           </Grid>
         </Grid>

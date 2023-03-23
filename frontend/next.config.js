@@ -5,16 +5,17 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: "https",
         hostname: process.env.AWS_S3_URL,
-        port: '',
-        pathname: '/**',
+        port: "",
+        pathname: "/**",
       },
     ],
   },
   env: {
     BACKEND_IMG: process.env.BACKEND_IMG,
     BACKEND_URL: process.env.BACKEND_URL,
+    SERVER: process.env.SERVER,
   },
 };
 

@@ -6,10 +6,16 @@ import { useState } from "react";
 import JobSubmitModal from "../components/JobSubmitModal/JobSubmitModal";
 import LookingForEmployment from "../components/ApplyModal/LookingForEmployment";
 
+import { useDispatch } from "react-redux";
+import { userActions } from "../store/user";
+
 export default function Home({ posts, name }) {
   const [modal, setModal] = useState(false);
   const [modal1, setModal1] = useState(false);
   const [modal2, setModal2] = useState(false);
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <LookingForEmployment
@@ -121,14 +127,15 @@ export default function Home({ posts, name }) {
                           matching your skills and experience with the best job
                           opportunities available.
                         </p>
-                        <Link href='/profile'>
-                          <button
-                            id='myBtn'
-                            className='btn btn-outline-success sub-btn'
-                          >
-                            Get started
-                          </button>
-                        </Link>
+                        <button
+                          onClick={() =>
+                            dispatch(userActions.registerModalVisible())
+                          }
+                          id='myBtn'
+                          className='btn btn-outline-success sub-btn'
+                        >
+                          Get started
+                        </button>
                       </div>
                     </div>
                     <div className='col-md-4 col-12 icon'>
