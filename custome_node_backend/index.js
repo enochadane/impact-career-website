@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(bodyParser());
 
-app.use("/candidate", candidate);
-app.use("/job", job);
+app.use("/example/candidate", candidate);
+app.use("/example/job", job);
 
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
