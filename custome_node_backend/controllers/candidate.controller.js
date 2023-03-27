@@ -1,5 +1,6 @@
 const controller = {};
-const Candidate = require("../models/Candidates");
+const Candidate = require("../models/Candidate");
+const Job = require("../models/Job");
 const { pinecone } = require("../db/pinecone");
 require("dotenv").config();
 const generateEmbedding = require("../util/generateEmbedding");
@@ -31,6 +32,7 @@ controller.addProfile = async (req, res) => {
     `;
 
     const embedding = await generateEmbedding(input);
+
     const index = pinecone.Index("candidates");
 
     const upsertRequest = {
@@ -89,15 +91,23 @@ controller.signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const candidate = await Candidate.findOne({ email });
-
-    const auth = await bcrypt.compare(password, candidate.password);
-
-    if (auth) {
+    const candidate = await Candidate.findOne({ email })
+      .populate({
+        path: "matches",
+        model: Job,
+      })
+      .exec();
+    let auth;
+    if (candidate) {
+      auth = await bcrypt.compare(password, candidate?.password);
+    }
+    if (!candidate) {
+      res.status(401).json({ message: "User does not exist" });
+    } else if (auth) {
       res.status(200).json({
         message: "correct authentication",
         user: {
-          id: candidate._id,
+          _id: candidate._id,
           firstName: candidate.firstName,
           lastName: candidate.lastName,
           email: candidate.email,
@@ -109,6 +119,7 @@ controller.signIn = async (req, res) => {
           idealJobDescription: candidate.idealJobDescription,
           phone: candidate.phone,
           yearsOfExperience: candidate.yearsOfExperience,
+          matches: candidate.matches,
         },
       });
     } else {

@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -12,9 +14,18 @@ import { userActions } from "../../store/user";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Footer() {
+  const [login, setLogIn] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
   const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (user.email) {
+      setLogIn(true);
+    } else {
+      setLogIn(false);
+    }
+  }, [user.email]);
 
   return (
     <>
@@ -45,7 +56,7 @@ export default function Footer() {
                 id='navbarNavDropdown'
               >
                 <ul className='navbar-nav ms-auto'>
-                  {user.email && (
+                  {login && (
                     <li>
                       <ActiveLink
                         className='nav-link resource px-4'
@@ -55,9 +66,12 @@ export default function Footer() {
                       </ActiveLink>
                     </li>
                   )}
-                  {user.email && (
+                  {login && (
                     <li>
-                      <ActiveLink className='nav-link resource px-4' href='/'>
+                      <ActiveLink
+                        className='nav-link resource px-4'
+                        href='/recomendations'
+                      >
                         Recommendations
                       </ActiveLink>
                     </li>
@@ -122,7 +136,7 @@ export default function Footer() {
                 <Box
                   sx={{ display: "flex", gap: "10px", textDecoration: "none" }}
                 >
-                  {!user.email && (
+                  {!login && (
                     <Button
                       onClick={() => dispatch(userActions.loginModalVisible())}
                       variant='contained'
@@ -130,7 +144,7 @@ export default function Footer() {
                       Sign In
                     </Button>
                   )}
-                  {!user.email && (
+                  {!login && (
                     <Button
                       onClick={() =>
                         dispatch(userActions.registerModalVisible())
@@ -140,7 +154,7 @@ export default function Footer() {
                       Sign Up
                     </Button>
                   )}
-                  {user.email && (
+                  {login && (
                     <Button
                       onClick={() => {
                         dispatch(userActions.clearUserData());

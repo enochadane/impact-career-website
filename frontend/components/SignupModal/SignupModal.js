@@ -121,7 +121,7 @@ const SignupModal = () => {
       try {
         const response = await axios(reqConfig);
         if (response.status === 200) {
-          dispatch(userActions.setUserData(response.data.user));
+          dispatch(userActions.setUserData(response.data));
           resetFields();
           dispatch(userActions.registerModalHidden());
           router.push("/profile");

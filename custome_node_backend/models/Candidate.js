@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const CandidateSchema = new mongoose.Schema(
   {
@@ -58,6 +59,10 @@ const CandidateSchema = new mongoose.Schema(
     ],
     idealJobDescription: {
       type: String,
+    },
+    matches: {
+      type: [Schema.Types.ObjectId],
+      ref: "Job",
     },
   },
   { timestamps: true }

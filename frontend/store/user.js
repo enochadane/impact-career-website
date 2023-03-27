@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialUserState = {
+  pageLoaded: false,
   register: false,
   login: false,
   id: undefined,
@@ -15,6 +16,7 @@ const initialUserState = {
   certifications: [],
   education: [],
   idealJobDescription: undefined,
+  matches: [],
 };
 
 const userSlice = createSlice({
@@ -34,8 +36,8 @@ const userSlice = createSlice({
       state.login = false;
     },
     setUserData(state, action) {
-      if (action.payload.id) {
-        state.id = action.payload.id;
+      if (action.payload._id) {
+        state.id = action.payload._id;
       }
       if (action.payload.firstName) {
         state.firstName = action.payload.firstName;
@@ -70,6 +72,9 @@ const userSlice = createSlice({
       if (action.payload.idealJobDescription) {
         state.idealJobDescription = action.payload.idealJobDescription;
       }
+      if (action.payload.matches) {
+        state.matches = action.payload.matches;
+      }
     },
     clearUserData(state) {
       state.id = undefined;
@@ -84,6 +89,9 @@ const userSlice = createSlice({
       state.certifications = [];
       state.education = [];
       state.idealJobDescription = undefined;
+    },
+    pageLoaded(state) {
+      state.pageLoaded = true;
     },
   },
 });
