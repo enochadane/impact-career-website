@@ -47,7 +47,7 @@ const SuccessModal = ({ visible, onClose }) => {
         >
           Your profile is successfully saved
         </Typography>
-        <Link href='/'>
+        <Link href='/recommendations'>
           <Button
             // onClick={onClose}
             sx={{ width: "100%", height: "50px" }}

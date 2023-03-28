@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { Typography } from "@mui/material";
 
 const Recommendations = () => {
   const user = useSelector((state) => state.user);
@@ -20,6 +21,11 @@ const Recommendations = () => {
           padding: "30px 10px",
         }}
       >
+        {user.matches.length === 0 && (
+          <Typography variant='h6' sx={{ textAlign: "center" }}>
+            Job recommendations will appear here.
+          </Typography>
+        )}
         {user.matches.map((match, i) => (
           <div className='col-md-12 mb-3'>
             <div

@@ -204,8 +204,9 @@ const Profile = () => {
     };
 
     const response = await sendRequest(reqConfig);
-    dispatch(userActions.setUserData(userProfile));
-    // console.log("res: ", response);
+    dispatch(
+      userActions.setUserData({ ...userProfile, matches: response.data })
+    );
     setShowSuccessModal(true);
     // resetFields();
   };

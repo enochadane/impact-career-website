@@ -5,6 +5,7 @@ const { pinecone } = require("../db/pinecone");
 require("dotenv").config();
 const generateEmbedding = require("../util/generateEmbedding");
 const bcrypt = require("bcrypt");
+const axios = require("axios");
 
 const SALT_ROUND = 10;
 
@@ -23,7 +24,7 @@ controller.addProfile = async (req, res) => {
     country ${userProfile.country}
     ${userProfile.workHistory.map(
       (work) => "Worked as " + work.position + ". " + work.description
-    )} .
+    )}.
     ${userProfile.certifications.map(
       (certificate) => "Certificate of " + certificate.name
     )}.
@@ -42,11 +43,57 @@ controller.addProfile = async (req, res) => {
           values: embedding,
         },
       ],
+      namespace: "users",
     };
 
     const upsertResponse = await index.upsert({ upsertRequest });
+
+    const queryResponse = await axios({
+      method: "POST",
+      url: "https://candidates-445236f.svc.us-central1-gcp.pinecone.io/query",
+      headers: {
+        "Api-Key": process.env.PINECONE_KEY,
+        "Content-Type": "application/json",
+      },
+      data: {
+        vector: embedding,
+        topK: 1000,
+        includeValues: true,
+        namespace: "jobs",
+      },
+    });
+
+    const matches = queryResponse.data.matches;
+    let filteredMatch = [];
+
+    let existingMatches = response.matches.map((match) => match.toString());
+
+    if (matches) {
+      filteredMatch = matches
+        .filter((obj) => obj.score > 0.83 && !existingMatches.includes(obj.id))
+        .map(({ id, score }) => ({ id, score }));
+    }
+
+    filteredMatch = [
+      ...filteredMatch,
+      ...existingMatches.map((m) => ({ id: m })),
+    ];
+
+    const filteredMatchJobs = [];
+
+    for (let i = 0; i < filteredMatch.length; i++) {
+      const jobDetail = await Job.findById(filteredMatch[i].id);
+      if (jobDetail) {
+        filteredMatchJobs.push(jobDetail);
+      }
+    }
+
     console.log("pine: ", upsertResponse);
-    res.json(response);
+    res.json(filteredMatchJobs);
+
+    await Candidate.findByIdAndUpdate(id, {
+      matches: filteredMatch.map((match) => match.id),
+    });
   } catch (err) {
     console.log(err);
     res.status(500);

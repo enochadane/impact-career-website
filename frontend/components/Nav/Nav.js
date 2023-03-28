@@ -70,7 +70,7 @@ export default function Footer() {
                     <li>
                       <ActiveLink
                         className='nav-link resource px-4'
-                        href='/recomendations'
+                        href='/recommendations'
                       >
                         Recommendations
                       </ActiveLink>
