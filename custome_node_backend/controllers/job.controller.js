@@ -6,8 +6,12 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const axios = require("axios");
 const generateResume = require("../util/generateResume");
+const formatJobDescription = require("../util/formatJobDescription");
+const sendMail = require("../util/sendEmail");
 
 const generateEmbedding = require("../util/generateEmbedding");
+const generatePDF = require("../util/generatePDF");
+const emailFooter = require("../util/emailFooter");
 
 controller.add = async (req, res) => {
   try {
@@ -30,8 +34,8 @@ controller.add = async (req, res) => {
       },
       data: {
         vector: embedding,
-        topK: 1000,
-        includeValues: true,
+        topK: 100,
+        includeValues: false,
         namespace: "users",
       },
     });
@@ -63,26 +67,37 @@ controller.add = async (req, res) => {
     filteredMatches.forEach(async (match) => {
       const candidate = await Candidate.findByIdAndUpdate(match.id, {
         $push: { matches: [new mongoose.Types.ObjectId(job.id)] },
-      });
+      }).select(
+        "firstName lastName email skills workHistory certifications education country idealJobDescription phone yearsOfExperience doNotDisturb"
+      );
 
-      const candidateProfile = `
-      Name ${candidate.firstName} ${candidate.lastName}
-      email ${candidate.email}
+      if (!candidate.doNotDisturb) {
+        const resume = await generateResume(candidate, input);
 
-      skills ${candidate.skills}
-      years of experience ${candidate.yearsOfExperience}
-      country ${candidate.country}
-      ${candidate.workHistory.map(
-        (work) => "Worked as " + work.position + ". " + work.description
-      )}.
-      ${candidate.certifications.map(
-        (certificate) => "Certificate of " + certificate.name
-      )}.
-      ${candidate.education.map((edu) => "Studied " + edu.degree)} .
-      Ideal job description ${candidate.idealJobDescription}
-      `;
+        const pdfPath = await generatePDF(resume);
 
-      await generateResume(candidateProfile, input);
+        const formattedJobDescription = await formatJobDescription(job);
+
+        const resubscribeLink = `${process.env.SERVER}/example/candidate/resubscribe/${candidate._id}`;
+        const unsubscribeLink = `${process.env.SERVER}/example/candidate/unsubscribe/${candidate._id}`;
+
+        const emailConfig = {
+          to: candidate.email,
+          subject: "You are in luck! We've found your next job opportunity",
+          html:
+            formattedJobDescription +
+            emailFooter(url, resubscribeLink, unsubscribeLink),
+          attachments: [
+            {
+              filename: "resume.pdf",
+              path: pdfPath,
+              contentType: "application/pdf",
+            },
+          ],
+        };
+
+        await sendMail(emailConfig);
+      }
     });
 
     res.json(filteredMatches);

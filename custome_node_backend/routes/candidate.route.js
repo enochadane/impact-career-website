@@ -28,4 +28,12 @@ router.patch("/update-education/:userId", (req, res) => {
   candidateController.updateEducation(req, res);
 });
 
+router.get("/unsubscribe/:userId", (req, res) => {
+  candidateController.unsubscribe(req, res);
+});
+
+router.get("/resubscribe/:userId", (req, res) => {
+  candidateController.resubscribe(req, res);
+});
+
 module.exports = router;

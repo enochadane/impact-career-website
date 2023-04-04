@@ -58,7 +58,7 @@ controller.addProfile = async (req, res) => {
       data: {
         vector: embedding,
         topK: 1000,
-        includeValues: true,
+        includeValues: false,
         namespace: "jobs",
       },
     });
@@ -216,6 +216,36 @@ controller.updateEducation = async (req, res) => {
     const response = await Candidate.findByIdAndUpdate(userId, { education });
 
     res.status(200).json(response);
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.unsubscribe = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const response = await Candidate.findByIdAndUpdate(userId, {
+      doNotDisturb: true,
+    });
+
+    res.redirect(process.env.HOME_PAGE + "/unsubscribe");
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.resubscribe = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const response = await Candidate.findByIdAndUpdate(userId, {
+      doNotDisturb: false,
+    });
+
+    res.redirect(process.env.HOME_PAGE + "/subscribe");
   } catch (error) {
     // errorResponse(res);
     console.log(error);

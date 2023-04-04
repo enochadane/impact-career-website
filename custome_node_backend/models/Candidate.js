@@ -64,6 +64,9 @@ const CandidateSchema = new mongoose.Schema(
       type: [Schema.Types.ObjectId],
       ref: "Job",
     },
+    doNotDisturb: {
+      type: Boolean,
+    },
   },
   { timestamps: true }
 );
