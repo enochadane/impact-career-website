@@ -4,10 +4,10 @@ const Job = require("../models/Job");
 const { pinecone } = require("../db/pinecone");
 require("dotenv").config();
 const generateEmbedding = require("../util/generateEmbedding");
-const bcrypt = require("bcrypt");
 const axios = require("axios");
-
-const SALT_ROUND = 10;
+var crypto = require("crypto");
+const MagicLinkEmailBody = require("../email_copy/candidate/MagicLink");
+const sendEmail = require("../util/sendEmail");
 
 controller.addProfile = async (req, res) => {
   try {
@@ -102,7 +102,7 @@ controller.addProfile = async (req, res) => {
 
 controller.signUp = async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email } = req.body;
 
     const exists = await Candidate.findOne({ email });
 
@@ -112,20 +112,15 @@ controller.signUp = async (req, res) => {
         .json({ message: "Email already exists", payload: req.body });
     }
 
-    const hash = bcrypt.hashSync(password, SALT_ROUND);
-
     let candidate;
 
     if (!exists) {
-      candidate = await Candidate.create({ ...req.body, password: hash });
+      candidate = await Candidate.create({ ...req.body });
     } else {
       candidate = await Candidate.findByIdAndUpdate(exists._id, {
         ...req.body,
-        password: hash,
       });
     }
-
-    delete candidate._doc.password;
 
     res.status(200).json(candidate);
   } catch (error) {
@@ -175,6 +170,96 @@ controller.signIn = async (req, res) => {
   } catch (error) {
     // errorResponse(res);
     console.log(error);
+  }
+};
+
+controller.magicLogin = async (req, res) => {
+  try {
+    const { email, magicId } = req.body;
+
+    let user;
+
+    if (email && magicId) {
+      user = await Candidate.findOne({ email });
+    } else {
+      res.status(404).send("Resource not found");
+    }
+
+    if (
+      user.magicLinkActive == true &&
+      magicId == user.magicId &&
+      user.magicLinkExpiration > new Date()
+    ) {
+      res.status(200).json({
+        message: "correct authentication",
+        user: {
+          _id: user._id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          skills: user.skills,
+          workHistory: user.workHistory,
+          certifications: user.certifications,
+          education: user.education,
+          country: user.country,
+          idealJobDescription: user.idealJobDescription,
+          phone: user.phone,
+          yearsOfExperience: user.yearsOfExperience,
+          matches: user.matches,
+        },
+      });
+    } else {
+      res.json({ authorized: false });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("server error");
+  }
+};
+
+controller.magicLink = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    let user;
+    let emailBody;
+    const magicId = crypto.randomBytes(20).toString("hex");
+    const magicLinkExpiration = new Date();
+    magicLinkExpiration.setHours(magicLinkExpiration.getHours() + 1);
+
+    const magicLinkActive = true;
+
+    const kk = email;
+    if (email) {
+      user = await Candidate.findOne({ email });
+    } else {
+      res.status(404).send("Resource not found.");
+    }
+
+    if (!user) {
+      res.status(404).send("Resource not found");
+    } else {
+      emailBody = MagicLinkEmailBody(user, magicId);
+    }
+
+    const emailConfig = {
+      to: user.email,
+      subject: "Log in to Impactcareers",
+      html: emailBody,
+    };
+
+    await sendEmail(emailConfig);
+
+    await Candidate.findByIdAndUpdate(user._id, {
+      magicId,
+      magicLinkExpiration,
+      magicLinkActive,
+    });
+
+    res.status(200).send("magic link sent");
+  } catch (error) {
+    console.log(error);
+    res.status(500);
   }
 };
 

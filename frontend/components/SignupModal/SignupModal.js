@@ -13,7 +13,6 @@ import useInput from "../../hooks/use-input";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/user";
 import emailValidation from "../../utils/emailValidation";
-import strongPasswordValidation from "../../utils/strongPasswordValidation";
 
 const style = {
   position: "absolute",
@@ -69,37 +68,12 @@ const SignupModal = () => {
     reset: emailReset,
   } = useInput(emailValidation);
 
-  const {
-    value: password,
-    isValid: passwordIsValid,
-    hasError: passwordHasError,
-    valueChangeHandler: passwordChangeHandler,
-    inputBlurHandler: passwordBlurHandler,
-    reset: passwordReset,
-  } = useInput(strongPasswordValidation);
-
-  const {
-    value: confirmPassword,
-    isValid: confirmPasswordIsValid,
-    hasError: confirmPasswordHasError,
-    valueChangeHandler: confirmPasswordChangeHandler,
-    inputBlurHandler: confirmPasswordBlurHandler,
-    reset: confirmPasswordReset,
-  } = useInput((s) => s === password);
-
-  const validInputFields =
-    firstNameIsValid &&
-    lastNameIsValid &&
-    emailIsValid &&
-    passwordIsValid &&
-    confirmPasswordIsValid;
+  const validInputFields = firstNameIsValid && lastNameIsValid && emailIsValid;
 
   const resetFields = () => {
     firstNameReset();
     lastNameReset();
     emailReset();
-    passwordReset();
-    confirmPasswordReset();
     setLoading(false);
     setError(false);
   };
@@ -112,7 +86,6 @@ const SignupModal = () => {
         firstName,
         lastName,
         email,
-        password,
       },
     };
 
@@ -187,33 +160,6 @@ const SignupModal = () => {
           onChange={emailChangeHandler}
           error={emailHasError}
         />
-        <TextField
-          label='Password'
-          variant='outlined'
-          type='password'
-          required
-          sx={{ width: "100%" }}
-          value={password}
-          onBlur={passwordBlurHandler}
-          onChange={passwordChangeHandler}
-          error={passwordHasError}
-        />
-        <TextField
-          label='Confirm Password'
-          variant='outlined'
-          type='password'
-          required
-          sx={{ width: "100%" }}
-          value={confirmPassword}
-          onBlur={confirmPasswordBlurHandler}
-          onChange={confirmPasswordChangeHandler}
-          error={confirmPasswordHasError}
-        />
-        {passwordHasError && (
-          <Typography sx={{ color: "red", fontSize: "14px" }}>
-            Password should have at list 8 characters and an uppercase letter
-          </Typography>
-        )}
         {error && (
           <Typography sx={{ color: "red", fontSize: "14px" }}>
             Email already exists

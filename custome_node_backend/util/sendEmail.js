@@ -13,7 +13,10 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendEmail = ({ to, subject, html, attachments }) => {
-  const pdfPath = attachments[0].path;
+  let pdfPath;
+  if (attachments) {
+    pdfPath = attachments[0].path;
+  }
 
   const mailData = {
     from: "yourimpactcareers@gmail.com",
@@ -22,6 +25,10 @@ const sendEmail = ({ to, subject, html, attachments }) => {
     html,
     attachments,
   };
+
+  if (attachments) {
+    mailData.attachments = attachments;
+  }
 
   transporter.sendMail(mailData, function (err, info) {
     if (err) {

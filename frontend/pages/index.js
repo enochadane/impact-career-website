@@ -8,13 +8,48 @@ import LookingForEmployment from "../components/ApplyModal/LookingForEmployment"
 
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user";
+import { useRouter } from "next/router";
+import axios from "axios";
 
 export default function Home({ posts, name }) {
+  const router = useRouter();
+  const { email, ml } = router.query;
+  const [queryCheck, setQueryCheck] = useState(false);
+
   const [modal, setModal] = useState(false);
   const [modal1, setModal1] = useState(false);
   const [modal2, setModal2] = useState(false);
 
   const dispatch = useDispatch();
+  dispatch(userActions.loginModalHidden());
+  const authenticate = async (email, magicId) => {
+    const reqConfig = {
+      method: "POST",
+      url: `${process.env.SERVER}/candidate/magic-login`,
+      data: {
+        email,
+        magicId,
+      },
+    };
+
+    try {
+      const response = await axios(reqConfig);
+
+      if (response.status === 200) {
+        dispatch(userActions.setUserData(response.data.user));
+        router.push("/profile");
+      }
+    } catch (err) {
+      console.log(err);
+      router.push("/login-failed");
+    }
+  };
+
+  if (!queryCheck && email && ml) {
+    console.log("email: ", email, " magic link: ", ml);
+    authenticate(email, ml);
+    setQueryCheck(true);
+  }
 
   return (
     <>

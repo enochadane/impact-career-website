@@ -16,6 +16,14 @@ router.post("/sign-in", (req, res) => {
   candidateController.signIn(req, res);
 });
 
+router.post("/magic-link", (req, res) => {
+  candidateController.magicLink(req, res);
+});
+
+router.post("/magic-login", (req, res) => {
+  candidateController.magicLogin(req, res);
+});
+
 router.patch("/update-work-history/:userId", (req, res) => {
   candidateController.updateWorkHistory(req, res);
 });

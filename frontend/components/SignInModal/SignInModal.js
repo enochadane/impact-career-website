@@ -34,6 +34,7 @@ const style = {
 const SignInModal = () => {
   const [loading, setLoading] = useState();
   const [error, setError] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -48,20 +49,10 @@ const SignInModal = () => {
     reset: emailReset,
   } = useInput(emailValidation);
 
-  const {
-    value: password,
-    isValid: passwordIsValid,
-    hasError: passwordHasError,
-    valueChangeHandler: passwordChangeHandler,
-    inputBlurHandler: passwordBlurHandler,
-    reset: passwordReset,
-  } = useInput(strongPasswordValidation);
-
-  const validInputFields = passwordIsValid && emailIsValid;
+  const validInputFields = emailIsValid;
 
   const resetFields = () => {
     emailReset();
-    passwordReset();
     setLoading(false);
     setError(false);
   };
@@ -69,10 +60,9 @@ const SignInModal = () => {
   const handleSignIn = async () => {
     const reqConfig = {
       method: "POST",
-      url: `${process.env.SERVER}/candidate/sign-in`,
+      url: `${process.env.SERVER}/candidate/magic-link`,
       data: {
         email,
-        password,
       },
     };
 
@@ -82,10 +72,8 @@ const SignInModal = () => {
         const response = await axios(reqConfig);
 
         if (response.status === 200) {
-          dispatch(userActions.setUserData(response.data.user));
           resetFields();
-          dispatch(userActions.loginModalHidden());
-          router.push("/profile");
+          setEmailSent(true);
         }
       } catch (err) {
         setError(true);
@@ -104,40 +92,22 @@ const SignInModal = () => {
     <Modal
       open={user.login}
       onClose={handleClose}
-      aria-labelledby='modal-modal-title'
-      aria-describedby='modal-modal-description'
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography variant='h5' id='modal-modal-title' component='h2'>
-          👋🏾 Hey, welcome back
-        </Typography>
-        <Typography
-          sx={{ color: "#696969" }}
-          variant='subtitle'
-          id='modal-modal-description'
-        >
-          Enter your sign In details
+        <Typography variant="h5" id="modal-modal-title" component="h2">
+          {emailSent ? "Email sent!" : "👋🏾 Hey, welcome back"}
         </Typography>
         <TextField
-          label='Email'
-          variant='outlined'
+          label="Enter your email address"
+          variant="outlined"
           required
           sx={{ width: "100%" }}
           value={email}
           onBlur={emailBlurHandler}
           onChange={emailChangeHandler}
           error={emailHasError}
-        />
-        <TextField
-          label='Password'
-          variant='outlined'
-          type='password'
-          required
-          sx={{ width: "100%" }}
-          value={password}
-          onBlur={passwordBlurHandler}
-          onChange={passwordChangeHandler}
-          error={passwordHasError}
         />
         {error && (
           <Typography sx={{ color: "red", fontSize: "14px" }}>
@@ -149,9 +119,9 @@ const SignInModal = () => {
           loading={loading}
           disabled={!validInputFields}
           sx={{ width: "100%", height: "50px" }}
-          variant='contained'
+          variant="contained"
         >
-          Sign In
+          Get magic link
         </LoadingButton>
       </Box>
     </Modal>

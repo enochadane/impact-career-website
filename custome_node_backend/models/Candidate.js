@@ -67,6 +67,15 @@ const CandidateSchema = new mongoose.Schema(
     doNotDisturb: {
       type: Boolean,
     },
+    magicId: {
+      type: String,
+    },
+    magicLinkExpiration: {
+      type: Date,
+    },
+    magicLinkActive: {
+      type: Boolean,
+    },
   },
   { timestamps: true }
 );
