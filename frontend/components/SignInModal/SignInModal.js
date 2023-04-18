@@ -111,7 +111,7 @@ const SignInModal = () => {
         />
         {error && (
           <Typography sx={{ color: "red", fontSize: "14px" }}>
-            Email and password do not match
+            Email does not exist
           </Typography>
         )}
         <LoadingButton
