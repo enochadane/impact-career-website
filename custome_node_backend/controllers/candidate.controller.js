@@ -318,6 +318,7 @@ controller.unsubscribe = async (req, res) => {
 
     const response = await Candidate.findByIdAndUpdate(userId, {
       doNotDisturb: true,
+      unsubscribedAt: new Date(),
     });
 
     res.redirect(process.env.HOME_PAGE + "/unsubscribe");

@@ -71,6 +71,9 @@ const CandidateSchema = new mongoose.Schema(
     doNotDisturb: {
       type: Boolean,
     },
+    unsubscribedAt: {
+      type: Date,
+    },
     magicId: {
       type: String,
     },
