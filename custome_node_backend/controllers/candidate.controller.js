@@ -180,7 +180,12 @@ controller.magicLogin = async (req, res) => {
     let user;
 
     if (email && magicId) {
-      user = await Candidate.findOne({ email });
+      user = await Candidate.findOne({ email })
+        .populate({
+          path: "matches",
+          model: Job,
+        })
+        .exec();
     } else {
       res.status(404).send("Resource not found");
     }
