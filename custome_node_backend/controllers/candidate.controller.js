@@ -342,4 +342,23 @@ controller.resubscribe = async (req, res) => {
   }
 };
 
+controller.updateVisitedJobs = async (req, res) => {
+  try {
+    const { userId, jobId } = req.body;
+
+    const candidate = await Candidate.findByIdAndUpdate(userId, {
+      $push: { visited: jobId },
+    });
+
+    if (candidate) {
+      res.status(200).json(candidate);
+    } else {
+      res.status(404).json({ error: "User not found" });
+    }
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
 module.exports = controller;

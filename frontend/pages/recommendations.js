@@ -47,7 +47,6 @@ const Recommendations = () => {
                   ></img>
                 </div>
                 <div className='col-md-7 col-7'>
-                  {console.log("match: ", match)}
                   <Link
                     className='candidatesLink'
                     style={{ textDecoration: "none", color: "black" }}

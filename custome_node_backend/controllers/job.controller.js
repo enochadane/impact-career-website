@@ -118,4 +118,59 @@ controller.remove = async (req, res) => {
   }
 };
 
+controller.getAllJobs = async (req, res) => {
+  try {
+    const jobs = await Job.find();
+
+    res.status(200).json(jobs);
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+};
+
+controller.getJobsByPage = async (req, res) => {
+  try {
+    const page = parseInt(req.params.page);
+    const skip = (page - 1) * 10;
+
+    const jobs = await Job.find().skip(skip).limit(10);
+
+    res.json({ jobs });
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+};
+
+controller.getFilteredJobs = async (req, res) => {
+  try {
+    const searchKey = req.params.search;
+
+    const jobs = await Job.find({
+      $or: [
+        { title: { $regex: searchKey, $options: "i" } },
+        { companyName: { $regex: searchKey, $options: "i" } },
+        { location: { $regex: searchKey, $options: "i" } },
+        { description: { $regex: searchKey, $options: "i" } },
+      ],
+    });
+
+    res.json({ jobs });
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+};
+
+controller.getTotalJobs = async (req, res) => {
+  try {
+    const count = await Job.countDocuments();
+    res.json({ count });
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+};
+
 module.exports = controller;

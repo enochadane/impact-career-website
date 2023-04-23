@@ -19,15 +19,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import Pagination from '@mui/material/Pagination';
 import SchoolIcon from '@mui/icons-material/School';
+import { useSelector } from 'react-redux';
 
 import ApplyModal from '../components/ApplyModal/ApplyModal';
-
-const client = new ApolloClient({
-  uri: process.env.BACKEND_URL,
-  cache: new InMemoryCache(),
-});
+import axios from 'axios';
 
 export default function Job({ posts, name, numberOfJobs }) {
+  const user = useSelector((state) => state.user);
   const [modalVisible, setModalVisible] = useState(false);
   const [jobId, setJobId] = useState();
   const [jobUrl, setJobUrl] = useState();
@@ -44,11 +42,14 @@ export default function Job({ posts, name, numberOfJobs }) {
 
   const getJobs = async () => {
     try {
-      const { data } = await client.query({
-        query: getJobsByPage(page),
-      });
+      const jobsReqConfig = {
+        method: 'GET',
+        url: `${process.env.SERVER}/job/get-jobs-by-page/${page}`,
+      };
 
-      setFiltered(data.trendingJobs.data);
+      const response = await axios(jobsReqConfig);
+
+      setFiltered(response.data.jobs);
     } catch (error) {
       console.log(error);
     }
@@ -56,13 +57,14 @@ export default function Job({ posts, name, numberOfJobs }) {
 
   const getSearchedJobs = async () => {
     try {
-      const { data } = await client.query({
-        query: GET_FILTERED_JOBS,
-        variables: { key: search },
-      });
+      const jobsReqConfig = {
+        method: 'GET',
+        url: `${process.env.SERVER}/job/get-filtered-jobs/${search}`,
+      };
 
-      console.log('data: ', data);
-      setFiltered(data.trendingJobs.data);
+      const response = await axios(jobsReqConfig);
+
+      setFiltered(response.data.jobs);
     } catch (error) {
       console.log(error);
     }
@@ -78,6 +80,20 @@ export default function Job({ posts, name, numberOfJobs }) {
 
   const handlePageChange = (e, value) => {
     setPage(value);
+  };
+
+  const handleJobVisit = async (jobId, jobUrl) => {
+    const reqConfig = {
+      method: 'POST',
+      url: `${process.env.SERVER}/candidate/job-visit`,
+      data: {
+        userId: user.id,
+        jobId,
+      },
+    };
+
+    await axios(reqConfig);
+    window.location.href = jobUrl;
   };
 
   return (
@@ -152,7 +168,7 @@ export default function Job({ posts, name, numberOfJobs }) {
                               <Link
                                 className='candidatesLink'
                                 key={i}
-                                href={val.attributes.urlSlug}
+                                href={val.urlSlug}
                               >
                                 <img
                                   src={'/images/brif_case_2.png'}
@@ -165,16 +181,16 @@ export default function Job({ posts, name, numberOfJobs }) {
                               <Link
                                 className='candidatesLink'
                                 key={i}
-                                href={val.attributes.urlSlug}
+                                href={val.urlSlug}
                               >
                                 <div className='card-body senior-product '>
                                   <h5 className='card-title mt-3'>
-                                    {val.attributes.title}
+                                    {val.title}
                                   </h5>
                                   <p className='card-text'>
-                                    {val.attributes.jobsName}
-                                    {val.attributes.jobsLocation}
-                                    {val.attributes.jobsPrice}
+                                    {val.companyName}
+                                    {val.location}
+                                    {val.salary}
                                   </p>
                                 </div>
                               </Link>
@@ -202,9 +218,7 @@ export default function Job({ posts, name, numberOfJobs }) {
                                   backgroundColor: '#009F01',
                                 }}
                                 onClick={() => {
-                                  setModalVisible(true);
-                                  setJobUrl(val.attributes.url);
-                                  setJobId(val.id);
+                                  handleJobVisit(val._id, val.url);
                                 }}
                               >
                                 Apply
@@ -231,36 +245,36 @@ export default function Job({ posts, name, numberOfJobs }) {
               paddingBottom: '20px',
             }}
           />
-          <section className='faq'>
-            <div className='container col-sm-8'>
-              <div className='row acc-faq'>
-                <div className='col-md-12'>
-                  <h1 className='mt-5 mb-5 text-center faqHeading'>
+          {/* <section className="faq">
+            <div className="container col-sm-8">
+              <div className="row acc-faq">
+                <div className="col-md-12">
+                  <h1 className="mt-5 mb-5 text-center faqHeading">
                     Job Search Frequently Asked Questions
                   </h1>
                   {name.map((val, index) => {
                     return (
                       <div>
-                        <div className='accordion' id='accordionSection'>
-                          <div className='accordion-item mb-3'>
-                            <h2 className='accordion-header'>
+                        <div className="accordion" id="accordionSection">
+                          <div className="accordion-item mb-3">
+                            <h2 className="accordion-header">
                               <button
-                                type='button'
-                                className='accordion-button collapsed'
-                                data-bs-toggle='collapse'
+                                type="button"
+                                className="accordion-button collapsed"
+                                data-bs-toggle="collapse"
                                 data-bs-target={`#collapseOne${index}`}
                               >
-                                {val.attributes.heading}
+                                {val.heading}
                               </button>
                             </h2>
 
                             <div
-                              className='accordion-collapse collapse'
+                              className="accordion-collapse collapse"
                               id={`collapseOne${index}`}
-                              data-bs-parent='#accordionSection'
+                              data-bs-parent="#accordionSection"
                             >
-                              <div className='accordion-body pt-0'>
-                                <p>{val.attributes.content}</p>
+                              <div className="accordion-body pt-0">
+                                <p>{val.content}</p>
                               </div>
                             </div>
                           </div>
@@ -271,7 +285,7 @@ export default function Job({ posts, name, numberOfJobs }) {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
     </>
@@ -279,26 +293,26 @@ export default function Job({ posts, name, numberOfJobs }) {
 }
 
 export async function getServerSideProps() {
-  const client = new ApolloClient({
-    uri: process.env.BACKEND_URL,
-    cache: new InMemoryCache(),
-  });
   try {
-    const { data } = await client.query({
-      query: GET_ALL_JOBS,
-    });
-    const getfaqdata = await client.query({
-      query: GET_FAQ_JOBS,
-    });
-    const getNumberOfJobs = await client.query({
-      query: GET_NUMBER_OF_JOBS,
-    });
+    const jobsReqConfig = {
+      method: 'GET',
+      url: `${process.env.SERVER}/job/get-jobs-by-page/1`,
+    };
+
+    const jobs = await axios(jobsReqConfig);
+
+    const noOfJobsConfig = {
+      method: 'GET',
+      url: `${process.env.SERVER}/job/total-jobs`,
+    };
+
+    const noOfJobs = await axios(noOfJobsConfig);
 
     return {
       props: {
-        posts: data.trendingJobs.data,
-        name: getfaqdata.data.jobsFaqs.data,
-        numberOfJobs: getNumberOfJobs.data.trendingJobs.meta.pagination.total,
+        posts: jobs.data.jobs,
+        name: 'x',
+        numberOfJobs: noOfJobs.data.count,
       },
     };
   } catch (error) {

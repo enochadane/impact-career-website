@@ -24,6 +24,10 @@ router.post("/magic-login", (req, res) => {
   candidateController.magicLogin(req, res);
 });
 
+router.post("/job-visit", (req, res) => {
+  candidateController.updateVisitedJobs(req, res);
+});
+
 router.patch("/update-work-history/:userId", (req, res) => {
   candidateController.updateWorkHistory(req, res);
 });
