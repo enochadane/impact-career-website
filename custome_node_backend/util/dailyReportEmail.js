@@ -89,7 +89,7 @@ const sendDailyReportEmail = async (report) => {
   const emailConfig = {
     to: [
       "edgar.green@lex560.com",
-      "Green@steadtech.com",
+      "edgar.green@steadtech.com",
       "natnaelasmare777@gmail.com",
     ],
     subject: "Daily Report",
