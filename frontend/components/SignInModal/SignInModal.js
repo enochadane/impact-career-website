@@ -14,7 +14,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/user";
 
 import emailValidation from "../../utils/emailValidation";
-import strongPasswordValidation from "../../utils/strongPasswordValidation";
 
 const style = {
   position: "absolute",
@@ -34,7 +33,6 @@ const style = {
 const SignInModal = () => {
   const [loading, setLoading] = useState();
   const [error, setError] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -73,7 +71,8 @@ const SignInModal = () => {
 
         if (response.status === 200) {
           resetFields();
-          setEmailSent(true);
+          dispatch(userActions.loginModalHidden());
+          dispatch(userActions.magicLinkModalVisible());
         }
       } catch (err) {
         setError(true);
@@ -97,7 +96,7 @@ const SignInModal = () => {
     >
       <Box sx={style}>
         <Typography variant="h5" id="modal-modal-title" component="h2">
-          {emailSent ? "Email sent!" : "👋🏾 Hey, welcome back"}
+          👋🏾 Hey, welcome back
         </Typography>
         <TextField
           label="Enter your email address"

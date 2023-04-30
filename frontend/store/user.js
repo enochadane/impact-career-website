@@ -4,6 +4,7 @@ const initialUserState = {
   pageLoaded: false,
   register: false,
   login: false,
+  magicLinkSent: false,
   id: undefined,
   firstName: undefined,
   lastName: undefined,
@@ -34,6 +35,12 @@ const userSlice = createSlice({
     },
     loginModalHidden(state) {
       state.login = false;
+    },
+    magicLinkModalVisible(state, action) {
+      state.magicLinkSent = true;
+    },
+    magicLinkSentModalHidden(state) {
+      state.magicLinkSent = false;
     },
     setUserData(state, action) {
       if (action.payload._id) {

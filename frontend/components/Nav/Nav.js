@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import SignupModal from "../SignupModal/SignupModal";
 import SignInModal from "../SignInModal/SignInModal";
+import MagicLinkSent from "../MagicLinkSent/MagicLinkSent";
 
 import { userActions } from "../../store/user";
 import { useSelector, useDispatch } from "react-redux";
@@ -31,6 +32,7 @@ export default function Footer() {
     <>
       <SignupModal />
       <SignInModal />
+      <MagicLinkSent />
       <div className='nav'>
         <section id='home-page'>
           <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top p-0 shadow-sm'>
