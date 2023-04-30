@@ -7,6 +7,7 @@ const generateEmbedding = require("../util/generateEmbedding");
 const axios = require("axios");
 var crypto = require("crypto");
 const MagicLinkEmailBody = require("../email_copy/candidate/MagicLink");
+const AccountDelete = require("../email_copy/candidate/AccountDelete");
 const sendEmail = require("../util/sendEmail");
 
 controller.addProfile = async (req, res) => {
@@ -356,6 +357,42 @@ controller.updateVisitedJobs = async (req, res) => {
     } else {
       res.status(404).json({ error: "User not found" });
     }
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.accountDeletionRequest = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const candidate = await Candidate.findById(userId);
+
+    const emailBody = AccountDelete(candidate.toObject());
+
+    const emailConfig = {
+      to: candidate.email,
+      subject: "Account deletion",
+      html: emailBody,
+    };
+
+    await sendEmail(emailConfig);
+
+    res.status(200).send("Account deletion email sent");
+  } catch (error) {
+    // errorResponse(res);
+    console.log(error);
+  }
+};
+
+controller.deleteAccount = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const candidate = await Candidate.findByIdAndDelete(userId);
+
+    res.redirect(process.env.HOME_PAGE + "/account-deleted");
   } catch (error) {
     // errorResponse(res);
     console.log(error);

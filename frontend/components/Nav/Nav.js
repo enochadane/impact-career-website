@@ -10,6 +10,8 @@ import Box from "@mui/material/Box";
 import SignupModal from "../SignupModal/SignupModal";
 import SignInModal from "../SignInModal/SignInModal";
 import MagicLinkSent from "../MagicLinkSent/MagicLinkSent";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import DeleteAccountModal from "../DeleteAccountModal/DeleteAccountModal";
 
 import { userActions } from "../../store/user";
 import { useSelector, useDispatch } from "react-redux";
@@ -33,6 +35,7 @@ export default function Footer() {
       <SignupModal />
       <SignInModal />
       <MagicLinkSent />
+      <DeleteAccountModal />
       <div className='nav'>
         <section id='home-page'>
           <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top p-0 shadow-sm'>
@@ -157,15 +160,47 @@ export default function Footer() {
                     </Button>
                   )}
                   {login && (
-                    <Button
-                      onClick={() => {
-                        dispatch(userActions.clearUserData());
-                        router.push("/");
-                      }}
-                      variant='contained'
-                    >
-                      Logout
-                    </Button>
+                    <>
+                      <a
+                        className='nav-link'
+                        href='resources'
+                        id='navbarDropdown'
+                        role='button'
+                        data-bs-toggle='dropdown'
+                        aria-expanded='false'
+                      >
+                        <AccountCircleIcon
+                          sx={{ fontSize: "2rem", mx: "2rem" }}
+                        />
+                      </a>
+                      <ul
+                        className='dropdown-menu shadow border-0'
+                        aria-labelledby='navbarDropdown'
+                      >
+                        <li>
+                          <Button
+                            color='warning'
+                            onClick={() =>
+                              dispatch(userActions.deleteAccountModalVisible())
+                            }
+                            variant='outlined'
+                          >
+                            Delete Account
+                          </Button>
+                        </li>
+                        <li>
+                          <Button
+                            onClick={() => {
+                              dispatch(userActions.clearUserData());
+                              router.push("/");
+                            }}
+                            variant='contained'
+                          >
+                            Logout
+                          </Button>
+                        </li>
+                      </ul>
+                    </>
                   )}
                 </Box>
               </div>

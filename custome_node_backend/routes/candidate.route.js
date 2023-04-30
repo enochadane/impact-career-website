@@ -48,4 +48,12 @@ router.get("/resubscribe/:userId", (req, res) => {
   candidateController.resubscribe(req, res);
 });
 
+router.get("/account-deletion/:userId", (req, res) => {
+  candidateController.accountDeletionRequest(req, res);
+});
+
+router.get("/delete-account/:userId", (req, res) => {
+  candidateController.deleteAccount(req, res);
+});
+
 module.exports = router;

@@ -5,6 +5,7 @@ const initialUserState = {
   register: false,
   login: false,
   magicLinkSent: false,
+  deleteAccountModal: false,
   id: undefined,
   firstName: undefined,
   lastName: undefined,
@@ -41,6 +42,12 @@ const userSlice = createSlice({
     },
     magicLinkSentModalHidden(state) {
       state.magicLinkSent = false;
+    },
+    deleteAccountModalVisible(state, action) {
+      state.deleteAccountModal = true;
+    },
+    deleteAccountModalHidden(state) {
+      state.deleteAccountModal = false;
     },
     setUserData(state, action) {
       if (action.payload._id) {
