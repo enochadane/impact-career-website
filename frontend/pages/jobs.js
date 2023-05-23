@@ -168,7 +168,7 @@ export default function Job({ posts, name, numberOfJobs }) {
                               <Link
                                 className='candidatesLink'
                                 key={i}
-                                href={val.urlSlug}
+                                href={val.urlSlug ? val.urlSlug : ' '}
                               >
                                 <img
                                   src={'/images/brif_case_2.png'}
@@ -181,7 +181,7 @@ export default function Job({ posts, name, numberOfJobs }) {
                               <Link
                                 className='candidatesLink'
                                 key={i}
-                                href={val.urlSlug}
+                                href={val.urlSlug ? val.urlSlug : ' '}
                               >
                                 <div className='card-body senior-product '>
                                   <h5 className='card-title mt-3'>

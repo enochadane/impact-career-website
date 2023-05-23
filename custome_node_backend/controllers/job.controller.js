@@ -71,7 +71,7 @@ controller.add = async (req, res) => {
         "firstName lastName email skills workHistory certifications education country idealJobDescription phone yearsOfExperience doNotDisturb"
       );
 
-      if (!candidate.doNotDisturb) {
+      if (candidate && !candidate?.doNotDisturb) {
         const resume = await generateResume(candidate, input);
 
         const pdfPath = await generatePDF(resume);
