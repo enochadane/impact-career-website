@@ -58,7 +58,7 @@ export default function Nav() {
                 Copyright © {new Date().getFullYear()} IMPACT CAREERS. All
                 rights reserved.
               </p>
-              <p>Owned and Operated by LEX 560 Corp, Flort Lauderdale FL USA</p>
+              <p>Owned and Operated by LEX 560 Corp, Fort Lauderdale FL USA</p>
               <Link href='/privacy-policy' className='privacy-link'>
                 Privacy Policy
               </Link>
