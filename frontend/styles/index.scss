@@ -1,4 +1,9 @@
-@import "./../components/Nav/Nav.scss";
+@import './../components/Nav/Nav.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
 
 .app_wrapper {
   margin: auto;
@@ -125,24 +130,24 @@ body {
   }
 }
 .contact-banner {
-  background-image: url("/images/resourcesHero.jpg");
+  background-image: url('/images/resourcesHero.jpg');
 }
 .about-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .resources-banner {
-  background-image: url("/images/bannerImages/aboutBanner.png");
+  background-image: url('/images/bannerImages/aboutBanner.png');
 }
 .jobs-banner {
-  background-image: url("/images/jobs_banner.jpg");
+  background-image: url('/images/jobs_banner.jpg');
   background-position: 50% 50%;
 }
 .profile-banner {
-  background-image: url("/images/ai.jpeg");
+  background-image: url('/images/ai.jpeg');
   background-position: 50% 50%;
 }
 .privacy-banner {
-  background-image: url("/images/bannerImages/privacy-policy.jpg");
+  background-image: url('/images/bannerImages/privacy-policy.jpg');
   background-position: 50% 0;
 }
 //jobs section
@@ -199,11 +204,9 @@ body {
     }
   }
   .access-btn {
-    border-color: white;
-    font-weight: 600;
-    color: white;
+    border-color: rgba(0, 0, 0, 0.633);
+    color: rgba(0, 0, 0, 0.633);
     transition: all 0.3s linear;
-    border-width: 2px;
     &:hover {
       background-color: white;
       color: yellow;
@@ -211,7 +214,7 @@ body {
   }
   .last-card {
     border-radius: 15px;
-    background-image: url("/images/aboutUsHero.jpg");
+    background-image: url('/images/aboutUsHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -753,7 +756,7 @@ body {
   margin-top: 8rem;
   position: relative;
   .timeline::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 45px;
     height: 45px;
@@ -766,7 +769,7 @@ body {
   }
 }
 .timelineMain::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   background-color: rgb(166, 125, 45);
@@ -886,12 +889,7 @@ body {
       padding-bottom: 13px;
       display: flex;
       justify-content: space-between;
-      font-size: 15px;
       font-weight: 300;
-      h4 {
-        font-size: 14px;
-        font-weight: 400;
-      }
       .privacy-link {
         color: #fff;
         text-decoration: none;
@@ -1299,7 +1297,7 @@ body {
     .bottom-footer-content {
       flex-direction: column;
       text-align: center;
-      h4 {
+      p {
         margin-bottom: 20px;
       }
     }
@@ -1447,7 +1445,7 @@ body {
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 192px;
   }
   #apply-form {
@@ -1700,7 +1698,7 @@ body {
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 216px;
   }
 }
@@ -1858,7 +1856,7 @@ body {
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 213px;
   }
   //contact-button
@@ -1951,7 +1949,7 @@ body {
   }
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 189px;
   }
 }
@@ -2044,7 +2042,7 @@ body {
 
   //time-line
   .timelineMain::after {
-    content: "";
+    content: '';
     bottom: 227px;
   }
   .trending-jobs {
@@ -2231,16 +2229,6 @@ body {
     .social {
       h4 {
         font-size: 42px;
-      }
-    }
-    .bottom-footer {
-      .bottom-footer-content {
-        h4 {
-          font-size: 20px;
-        }
-        .privacy-link {
-          font-size: 24px;
-        }
       }
     }
   }
@@ -2514,16 +2502,6 @@ body {
     .social {
       h4 {
         font-size: 42px;
-      }
-    }
-    .bottom-footer {
-      .bottom-footer-content {
-        h4 {
-          font-size: 20px;
-        }
-        .privacy-link {
-          font-size: 24px;
-        }
       }
     }
   }

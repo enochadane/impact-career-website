@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
 
 export default function Nav() {
   return (
@@ -27,7 +27,7 @@ export default function Nav() {
               </div>
             </div>
             <div className='social'>
-              <h4>Social Media</h4>
+              <h5>Follow us at</h5>
               <div className='social-icons'>
                 <Link
                   href='https://www.facebook.com/theimpactcareers?_rdc=1&_rdr/'
@@ -54,7 +54,11 @@ export default function Nav() {
           </div>
           <div className='bottom-footer'>
             <div className='bottom-footer-content'>
-              <h4>Copyright © 2022 IMPACT CAREERS. All rights reserved.</h4>
+              <p>
+                Copyright © {new Date().getFullYear()} IMPACT CAREERS. All
+                rights reserved.
+              </p>
+              <p>Owned and Operated by LEX 560 Corp, Flort Lauderdale FL USA</p>
               <Link href='/privacy-policy' className='privacy-link'>
                 Privacy Policy
               </Link>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
 
 export default class AutoPlayMethods extends Component {
   constructor(props) {
@@ -41,7 +41,6 @@ export default class AutoPlayMethods extends Component {
         <link
           rel='stylesheet'
           type='text/css'
-          charset='UTF-8'
           href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'
         />
         <link
@@ -59,28 +58,32 @@ export default class AutoPlayMethods extends Component {
                 We pride ourselves on the following values:
               </h4>
               <div>
-                <img
-                  src='/images/Arrow_right.png'
-                  style={{
-                    backgroundColor: "#166433",
-                    padding: "10px 10px",
-                    borderRadius: "8px",
-                    float: "right",
-                    marginRight: "50px",
-                  }}
-                  onClick={this.next}
-                />
-                <img
-                  src='/images/Arrow_left.png'
-                  style={{
-                    backgroundColor: "#166433",
-                    padding: "10px 10px",
-                    borderRadius: "8px",
-                    float: "right",
-                    marginRight: "30px",
-                  }}
-                  onClick={this.previous}
-                />
+                <button onClick={this.next}>
+                  <img
+                    src='/images/Arrow_right.png'
+                    alt='Next'
+                    style={{
+                      backgroundColor: '#166433',
+                      padding: '10px 10px',
+                      borderRadius: '8px',
+                      float: 'right',
+                      marginRight: '50px',
+                    }}
+                  />
+                </button>
+                <button onClick={this.previous}>
+                  <img
+                    src='/images/Arrow_left.png'
+                    alt='Previous'
+                    style={{
+                      backgroundColor: '#166433',
+                      padding: '10px 10px',
+                      borderRadius: '8px',
+                      float: 'right',
+                      marginRight: '30px',
+                    }}
+                  />
+                </button>
               </div>
             </div>
             <Slider ref={(slider) => (this.slider = slider)} {...settings}>

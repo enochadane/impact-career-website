@@ -1,17 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-
 .nav .logo {
   font-size: 24px;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
 }
 
 .app_wrapper {
@@ -27,49 +25,38 @@ body {
 #home-page .navbar-light .navbar-nav .show > .nav-link {
   color: #166433;
 }
-
 #home-page .logo {
   height: 60px;
 }
-
 #home-page ul li {
   margin-left: 10px;
   margin-right: 0px;
   margin-top: 8px;
 }
-
 #home-page ul li a {
   color: black;
   font-weight: 500;
   font-size: 14px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-right: 30px;
   margin-top: -5px;
 }
-
 #home-page ul li a:hover {
   color: #166433;
   background: none;
 }
-
 #home-page ul li a:focus {
   color: #166433;
 }
-
 #home-page ul li a:active {
   color: #166433 !important;
 }
-
 #home-page ul li .dropdown-item {
   color: black;
 }
-
 #home-page ul li .dropdown-menu {
   --bs-dropdown-link-active-bg: hwb(225 98% 1%);
 }
-
 #home-page ul li .fa-solid {
   float: right;
   margin-left: 10px;
@@ -77,7 +64,6 @@ body {
   font-size: 1em;
   font-weight: 500px;
 }
-
 #home-page .btnDiv .ContactButton {
   padding: 11px 15px;
   color: white;
@@ -86,7 +72,6 @@ body {
   border-radius: 6px;
   border: none;
 }
-
 #home-page .btnDiv .ContactButton:hover {
   background-color: #166433;
 }
@@ -95,36 +80,29 @@ body {
   margin-top: 71px;
   background-color: black;
 }
-
 #demo .carouselSlide .slide-clr {
-  opacity: 0.4;
+  opacity: 0.6;
   background-color: black;
 }
-
 #demo .carouselSlide .carousel-caption {
+  z-index: 100;
   color: white;
   text-align: center;
-  top: 190px;
 }
 
 .Banner {
-  /* margin-top: 71px; */
+  margin-top: 71px;
   position: relative;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  /* display: flex; */
-  /* min-height: 41vh; */
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  display: flex;
+  min-height: 18vh;
   align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
   color: #fff;
-  height: 50px;
 }
-
 .Banner .row {
   position: absolute;
   left: 0%;
@@ -133,38 +111,43 @@ body {
   bottom: 0%;
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
 }
-
 .Banner .row h1 {
   text-align: center;
-  margin-top: 85px;
+  margin: auto;
   font-size: 66px;
   font-weight: 600;
 }
-
 .Banner .row h4 {
   text-align: center;
 }
 
 .contact-banner {
-  background-image: url('/images/resourcesHero.jpg');
+  background-image: url("/images/resourcesHero.jpg");
 }
 
 .about-banner {
-  background-image: url('/images/bannerImages/aboutBanner.png');
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 
 .resources-banner {
-  /* background-image: url('/images/bannerImages/aboutBanner.png'); */
+  background-image: url("/images/bannerImages/aboutBanner.png");
 }
 
 .jobs-banner {
-  background-image: url('/images/jobs_banner.jpg');
+  background-image: url("/images/jobs_banner.jpg");
+  background-position: 50% 50%;
+}
+
+.profile-banner {
+  background-image: url("/images/ai.jpeg");
   background-position: 50% 50%;
 }
 
 .privacy-banner {
-  background-image: url('/images/bannerImages/privacy-policy.jpg');
+  background-image: url("/images/bannerImages/privacy-policy.jpg");
   background-position: 50% 0;
 }
 
@@ -172,18 +155,15 @@ body {
   background-color: #f4f5f7;
   padding: 40px 0 60px 0;
 }
-
 .Job .candidate-card {
   border: none;
   border-radius: 10px;
   padding-left: 20px;
 }
-
 .Job .candidate-card .Job-Seeker {
   margin-top: 10px;
   padding-right: 0;
 }
-
 .Job .candidate-card .Job-Seeker h5 {
   margin-top: 0px;
   color: #474c55;
@@ -191,12 +171,10 @@ body {
   line-height: 120%;
   font-weight: 600;
 }
-
 .Job .candidate-card .Job-Seeker p {
   font-size: 16px;
   color: #474c55;
 }
-
 .Job .candidate-card .sub-btn {
   text-decoration: none;
   border-style: solid;
@@ -207,66 +185,52 @@ body {
   color: #166433;
   font-size: 16px;
   font-weight: 600;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-
 .Job .candidate-card .sub-btn:hover {
-  background-color: #013d01;
+  background-color: rgb(1, 61, 1);
   color: white;
 }
-
 .Job .Learn {
   background-color: #ffd447;
   padding: 30px;
   border-radius: 10px;
 }
-
 .Job .Learn h5 {
   font-size: 24px;
   font-weight: 400;
 }
-
 .Job .Learn p {
   font-weight: 100;
   font-size: 17px;
 }
-
 .Job .access-btn {
-  border-color: white;
-  font-weight: 600;
-  color: white;
-  -webkit-transition: all 0.3s linear;
+  border-color: rgba(0, 0, 0, 0.633);
+  color: rgba(0, 0, 0, 0.633);
   transition: all 0.3s linear;
-  border-width: 2px;
 }
-
 .Job .access-btn:hover {
   background-color: white;
   color: yellow;
 }
-
 .Job .last-card {
   border-radius: 15px;
-  background-image: url('/images/aboutUsHero.jpg');
+  background-image: url("/images/aboutUsHero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
   padding-left: 20px;
 }
-
 .Job .last-card h5 {
   font-size: 22px;
   line-height: 120%;
   font-weight: 500;
 }
-
 .Job .last-card p {
   font-size: 16px;
   font-weight: 400;
 }
-
 .Job .last-card .text-field {
   border: none;
   margin-top: 30px;
@@ -277,17 +241,14 @@ body {
   background-color: #fff;
   font-size: 13px;
 }
-
 .Job .last-card .sign-up .signup-btn {
   border-width: 2px;
   margin-top: 20px;
   border-color: white;
   font-weight: 600;
   color: white;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-
 .Job .last-card .sign-up .signup-btn:hover {
   background-color: white;
   color: yellow;
@@ -301,36 +262,29 @@ body {
   margin-top: 55px;
   margin-bottom: 6rem;
 }
-
 .homeEmployers .homeEmployersH2 {
   margin: 53px 0;
   text-align: center;
   color: #474c55;
 }
-
 .homeEmployers .employersRow {
   margin: 25px 0;
 }
-
 .homeEmployers .employersRow .bagImgCol {
   text-align: center;
 }
-
 .homeEmployers .employersRow .bagImgCol .employersImg {
   border-radius: 5px;
   max-width: 80%;
-  background-color: #ecebeb;
+  background-color: rgb(236, 235, 235);
   padding: 10px;
 }
-
 .homeEmployers .employersRow .employersContent {
   padding: 0;
 }
-
 .homeEmployers .employersRow .employersContent .employersH5 {
   color: #173753;
 }
-
 .homeEmployers .employersRow .employersContent .employersPara {
   margin: 15px 0;
   font-size: 14px;
@@ -339,29 +293,23 @@ body {
 .aboutMissionSec {
   margin-top: 5rem;
 }
-
 .aboutMissionSec .missionImgCol {
   margin: auto;
 }
-
 .aboutMissionSec .missionImgCol .missionImg {
   max-width: 100%;
 }
-
 .aboutMissionSec .missionImgCol .missionImgVertical {
   max-width: 100%;
 }
-
 .aboutMissionSec .missionContent {
   margin: auto;
 }
-
 .aboutMissionSec .missionContent .missionH1 {
   font-size: 22px;
   font-weight: 550;
   margin-top: 8px;
 }
-
 .aboutMissionSec .missionContent .missionPara {
   font-size: 15px;
   margin-top: 10px;
@@ -377,10 +325,9 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
-
 .modal .modal-content {
   left: 0;
   top: 0%;
@@ -391,14 +338,12 @@ body {
   width: 70%;
   overflow: auto;
 }
-
 .modal .close {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
 .modal .close:hover,
 .modal .close:focus {
   color: #000;
@@ -410,14 +355,11 @@ body {
   font-size: 32px;
   color: #474c55;
 }
-
 .employees .business-meet img.sticky {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   max-width: 100%;
 }
-
 .employees .contents .content-box p {
   margin-top: 10px;
   background-color: #f4f4f4;
@@ -430,25 +372,27 @@ body {
 .carousel {
   background-color: #f4f5f7;
 }
-
 .carousel .outer-card {
   width: 92%;
   border-top: 3px solid #166433;
   border-radius: 8px;
   margin-left: 20px;
   margin-right: 20px;
-  height: 265px;
+  height: 165px;
   margin-top: 40px;
   margin-bottom: 100px;
   border-style: solid none none none;
 }
-
 .carousel .outer-card img {
   margin-left: 40px;
 }
-
 .carousel .outer-card .card-body .card-text {
   font-size: 16px;
+}
+
+.carousel-item {
+  z-index: 0;
+  background-color: black;
 }
 
 .slick-arrow {
@@ -458,37 +402,30 @@ body {
 .aboutEmployersSec {
   margin-top: 5rem;
 }
-
 .aboutEmployersSec .employersHeader {
   text-align: center;
   font-weight: 600;
   font-size: 32px;
   margin: 30px auto;
 }
-
 .aboutEmployersSec .employersHeader .employerH1 {
   color: #474c55;
 }
-
 .aboutEmployersSec .cardMain {
   margin: 24px 5px;
   border: 3px solid #f5f6f8;
   height: 295px;
 }
-
 .aboutEmployersSec .cardMain .cardImg {
   margin: 15px auto;
   max-width: 18%;
 }
-
 .aboutEmployersSec .cardMain .cardContent {
   text-align: center;
 }
-
 .aboutEmployersSec .cardMain .cardContent .cardTitle {
   color: #333;
 }
-
 .aboutEmployersSec .cardMain .cardContent .cardText {
   margin: 20px 0;
   font-size: 14px;
@@ -498,21 +435,17 @@ body {
   margin-top: 5rem;
   background-color: #f5f5f5;
 }
-
 .aboutLocationSec .locationRow {
   padding-bottom: 80px;
 }
-
 .aboutLocationSec .locationRow .locationImg {
   max-width: 100%;
   border-radius: 20px;
   margin-top: 40px;
 }
-
 .aboutLocationSec .locationRow .locationH1 {
   margin: 30px 0;
 }
-
 .aboutLocationSec .locationRow .locationPara {
   text-align: justify;
 }
@@ -527,68 +460,54 @@ body {
 .trending-jobs {
   margin-top: 5rem;
 }
-
 .trending-jobs .trendingRow {
   margin: 60px 0;
 }
-
 .trending-jobs .product-designer {
   padding-bottom: 30px;
 }
-
 .trending-jobs .trendingH3 {
   text-align: left;
   margin-left: 75px;
   color: #474c55;
 }
-
 .trending-jobs .viewallCol {
   text-align: right;
 }
-
 .trending-jobs .viewallCol .atag {
   text-decoration: none;
   color: #166433;
 }
-
 .trending-jobs .viewallCol .atag .viewallPara {
   font-size: 17px;
   font-weight: 500;
   margin-right: 50px;
 }
-
 .trending-jobs .candidates {
   margin-bottom: 40px;
   border: none;
   border-radius: 40px;
   border-bottom: 2px solid #f4f4f4;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-
 .trending-jobs .candidates .candidatesLink {
   text-decoration: none;
   color: black;
 }
-
 .trending-jobs .candidates:hover {
   background-color: #f4f4f4;
 }
-
 .trending-jobs .candidates img {
   padding: 15px;
   margin-left: 20px;
   border-radius: 76px;
 }
-
 .trending-jobs .candidates .senior-product h5 {
   font-size: 20px;
 }
-
 .trending-jobs .candidates .senior-product p {
   font-size: 16px;
 }
-
 .trending-jobs .candidates .cardLInk {
   text-decoration: none;
   color: black;
@@ -597,20 +516,16 @@ body {
 .faq {
   background-color: #f4f5f7;
 }
-
 .faq .faqHeading {
-  color: #474c55;
+  color: rgb(71, 76, 85);
 }
-
 .faq .faqH3 {
   margin-top: 20px;
   color: #474c55;
 }
-
 .faq #accordionSection {
   margin-bottom: 24px;
 }
-
 .faq .accordion {
   --bs-accordion-bg: none;
   --bs-accordion-border-color: none;
@@ -618,7 +533,6 @@ body {
   width: 80%;
   margin-left: 100px;
 }
-
 .faq .accordion .accordion-button {
   border-width: 0;
   color: #173753;
@@ -627,11 +541,9 @@ body {
   padding-bottom: 20px;
   font-size: 16px;
 }
-
 .faq .accordion .accordion-item {
   border: none;
 }
-
 .faq .accordion .accordion-button.collapsed {
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
@@ -639,25 +551,20 @@ body {
   border-bottom-right-radius: 20px;
   background-color: white;
 }
-
 .faq .accordion .accordion-button:not(.collapsed) {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
   color: #173753;
   background-color: white;
 }
-
 .faq .accordion .accordion-button:focus {
   border: none;
-  -webkit-box-shadow: 0 0 0 0;
   box-shadow: 0 0 0 0;
 }
-
 .faq .accordion .accordion-collapse {
   border: solid rgba(0, 0, 0, 0.125);
   border-width: 0px 0px;
 }
-
 .faq .accordion .accordion-body {
   font-size: 15px;
   color: #333;
@@ -666,12 +573,10 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
 .faq .accordion .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
 }
-
 .faq .accordion .accordion-item:last-of-type .accordion-button.collapsed {
   border-radius: 22px;
   border-bottom-right-radius: -10px;
@@ -682,39 +587,31 @@ body {
   margin-top: 140px;
   margin-bottom: 60px;
 }
-
 .product .page {
   background-color: white;
   border: none;
 }
-
 .product .page:hover {
   background-color: #f4f5f7;
   border-radius: 20px;
 }
-
 .product .page .job-page {
   margin-left: 20px;
 }
-
 .product .page .job-page .slugPara {
   text-align: justify;
   padding: 2px 45px;
 }
-
 .product .page .job-page .inner-content h5 {
   font-size: 22px;
   margin-top: 24px;
 }
-
 .product .page .job-page .slugDescription {
   margin-top: 7px;
 }
-
 .product .page .job-page .slugDescription .slugSpan {
   margin-right: 30px;
 }
-
 .product .page .job-page .in-page img {
   margin-left: 20px;
   border-radius: 76px;
@@ -722,14 +619,12 @@ body {
   width: 70px;
   height: 70px;
 }
-
 .product .page .job-page .contents {
   margin-left: 20px;
   margin-top: 20px;
   font-weight: 400;
   font-size: 14px;
 }
-
 .product .page .job-page .submit-btn {
   margin-bottom: 20px;
   color: #166433;
@@ -739,7 +634,6 @@ body {
   background-color: transparent;
   margin-bottom: 20px;
 }
-
 .product .page .job-page .submit-btn:hover {
   color: white;
   background-color: #166433;
@@ -748,34 +642,27 @@ body {
 .trainingSec {
   margin-top: 45px;
 }
-
 .trainingSec .trainingCol {
   text-align: center;
 }
-
 .trainingSec .trainingCol .trainingH1 {
   margin: 30px 0;
   color: #333;
 }
-
 .trainingSec .trainingCol .trainingPara {
   margin-bottom: 22px;
 }
-
 .trainingSec .trainCardCol {
   margin: 15px 0;
 }
-
 .trainingSec .trainCardCol .trainingCard {
   border: none;
   border-radius: 15px;
 }
-
 .trainingSec .trainCardCol .trainingCard .trainingImg {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-
 .trainingSec .trainCardCol .trainCardH5 {
   margin: 15px 0;
 }
@@ -784,31 +671,25 @@ body {
   margin-top: 9rem;
   margin-bottom: 3rem;
 }
-
 .interviewSec .interviewH1 {
   text-align: center;
   color: #474c55;
 }
-
 .interviewSec .interviewPara {
   text-align: center;
 }
-
 .interviewSec .interviewCard {
   border: none;
   margin-top: 2rem;
   border-radius: 15px;
 }
-
 .interviewSec .interviewCard .interviewImg {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-
 .interviewSec .interviewCard .interviewCardBody {
   height: 340px;
 }
-
 .interviewSec .interviewCard .interviewCardBody .trainCardH5 {
   margin: 15px 0;
 }
@@ -816,7 +697,6 @@ body {
 #contact-card-section {
   margin-top: 60px;
 }
-
 #contact-card-section .card {
   padding: 10px 26px;
   border-radius: 12px;
@@ -824,22 +704,16 @@ body {
   min-height: 200px;
   margin-bottom: 35px;
 }
-
 #contact-card-section .card .topContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
 #contact-card-section .card .topContent h2 {
   font-size: 24px;
   line-height: 130%;
   font-weight: 500;
   margin: 19px;
 }
-
 #contact-card-section .card p {
   font-size: 15px;
   padding: 5px;
@@ -854,25 +728,24 @@ body {
   margin-top: 8rem;
   position: relative;
 }
-
 .timelineMain .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 45px;
   height: 45px;
   right: -23px;
   background-color: #f0f0f0;
-  border: 10px solid #a67d2d;
+  border: 10px solid rgb(166, 125, 45);
   top: 77px;
   border-radius: 50%;
   z-index: 1;
 }
 
 .timelineMain::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
-  background-color: #a67d2d;
+  background-color: rgb(166, 125, 45);
   top: 84px;
   bottom: 204px;
   left: 50%;
@@ -910,17 +783,14 @@ body {
   border-radius: 20px;
   border: none;
 }
-
 .cardSec .timelineH6 {
   color: darkgreen;
   font-weight: bold;
   font-size: 15px;
 }
-
 .cardSec .timelineH5 {
   margin: 25px 0;
 }
-
 .cardSec .timelinePara {
   margin-bottom: 10px;
 }
@@ -933,47 +803,34 @@ body {
   background-color: #231f20;
   color: #fff;
 }
-
 .black-footer .top-footer {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
 }
-
 .black-footer .top-footer .footer-brand {
   padding-bottom: 15px;
   padding-top: 55px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   grid-column-gap: 60px;
 }
-
 .black-footer .top-footer .footer-brand .img-fluid {
   max-width: 100px;
   height: auto;
   border-radius: 50px;
 }
-
 .black-footer .social {
   text-align: center;
   margin-top: 30px;
 }
-
 .black-footer .social h4 {
   font-weight: 600;
   margin-bottom: 13px;
   font-size: 22px;
 }
-
 .black-footer .social .social-icons {
   margin-bottom: 36px;
 }
-
 .black-footer .social .social-icons .fa {
   padding: 20px;
   font-size: 30px;
@@ -981,11 +838,9 @@ body {
   text-align: center;
   text-decoration: none;
 }
-
 .black-footer .social .social-icons .fa:hover {
   background: #885c2b;
 }
-
 .black-footer .social .social-icons .style {
   padding: 13px;
   background: #32353b;
@@ -997,25 +852,13 @@ body {
   color: white;
   font-size: 20px;
 }
-
 .black-footer .bottom-footer .bottom-footer-content {
   margin-top: 21px;
   padding-bottom: 13px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: 15px;
   font-weight: 300;
 }
-
-.black-footer .bottom-footer .bottom-footer-content h4 {
-  font-size: 14px;
-  font-weight: 400;
-}
-
 .black-footer .bottom-footer .bottom-footer-content .privacy-link {
   color: #fff;
   text-decoration: none;
@@ -1024,37 +867,30 @@ body {
 #apply-form {
   margin-bottom: 50px;
 }
-
 #apply-form .container {
   max-width: 832px;
 }
-
 #apply-form .container .apply-this-job {
   margin-top: 35px;
   text-align: center;
 }
-
 #apply-form .container .apply-this-job h2 {
   color: #474c55;
   font-size: 32px;
   line-height: 120%;
   font-weight: 600;
 }
-
 #apply-form .form-control {
   margin: 10px;
-  -webkit-box-shadow: none;
   box-shadow: none;
   padding: 13px;
 }
-
 #apply-form .UploadImg {
   padding-left: 100px;
   background-repeat: no-repeat;
   background-position-y: 17px;
   background-position-x: 60px;
 }
-
 #apply-form .submit-btn {
   margin-top: 10px;
   margin-left: 373px;
@@ -1067,10 +903,8 @@ body {
   color: #166433;
   font-size: 16px;
   font-weight: 600;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-
 #apply-form .submit-btn:hover {
   color: #fff;
   background-color: #166433;
@@ -1086,23 +920,19 @@ body {
 #contact-form {
   margin-bottom: 50px;
 }
-
 #contact-form .container {
   max-width: 832px;
 }
-
 #contact-form .container .get-in-touch {
   margin-top: 35px;
   text-align: center;
 }
-
 #contact-form .container .get-in-touch h2 {
   color: #474c55;
   font-size: 32px;
   line-height: 120%;
   font-weight: 600;
 }
-
 #contact-form .container .get-in-touch p {
   color: #333;
   font-size: 15px;
@@ -1110,21 +940,17 @@ body {
   font-weight: 400;
   padding: 0 34px;
 }
-
 #contact-form .form-control {
   margin: 10px;
-  -webkit-box-shadow: none;
   box-shadow: none;
   padding: 13px;
 }
-
 #contact-form .UploadImg {
   padding-left: 100px;
   background-repeat: no-repeat;
   background-position-y: 17px;
   background-position-x: 60px;
 }
-
 #contact-form .site-btn {
   margin-top: 10px;
   margin-left: 373px;
@@ -1137,15 +963,12 @@ body {
   color: #166433;
   font-size: 16px;
   font-weight: 600;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-
 #contact-form .site-btn:hover {
   color: #fff;
   background-color: #166433;
 }
-
 #contact-form .alert-primary {
   --bs-alert-color: black;
   --bs-alert-bg: #dddddd;
@@ -1160,7 +983,6 @@ body {
 .information {
   padding: 80px 100px;
 }
-
 .information p {
   font-size: 14px;
 }
@@ -1179,8 +1001,10 @@ body {
     margin: 37px -127px;
   }
   .carouselSlide .slide-clr {
-    height: 150px;
-    width: 380px;
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 200px;
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
@@ -1188,8 +1012,10 @@ body {
   .modal .modal-content {
     width: 80%;
   }
+  .Banner h1 {
+    font-size: 24px;
+  }
 }
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .carouselSlide .carousel-caption {
     top: 3px;
@@ -1304,11 +1130,14 @@ body {
     margin-left: -23px;
   }
   .Banner {
-    /* min-height: 30vh; */
+    min-height: 15vh;
   }
   .Banner .row h1 {
     margin-top: 65px;
     font-size: 29px;
+  }
+  .Banner h1 {
+    font-size: 24px;
   }
   #contact-card-section .card {
     min-height: 200px;
@@ -1367,13 +1196,10 @@ body {
     margin-left: 50px;
   }
   .bottom-footer .bottom-footer-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
   }
-  .bottom-footer .bottom-footer-content h4 {
+  .bottom-footer .bottom-footer-content p {
     margin-bottom: 20px;
   }
   .timelineH6 {
@@ -1389,15 +1215,12 @@ body {
     padding-right: 0;
   }
   .carouselSlide .slide-clr {
-    height: 150px;
-    width: 380px;
+    width: 100%;
   }
 }
-
 @media (width: 375px) {
   .carouselSlide .slide-clr {
-    height: 160px;
-    width: 380px;
+    width: 100%;
   }
   #apply-form .container .apply-this-job {
     margin-top: 35px;
@@ -1409,7 +1232,6 @@ body {
     margin-left: 135px;
   }
 }
-
 @media only screen and (min-width: 320px) and (max-width: 550px) {
   .homeEmployers .employersRow .bagImgCol .employersImg {
     max-width: none;
@@ -1461,20 +1283,22 @@ body {
     margin: 15px 0;
   }
 }
-
 @media only screen and (min-width: 425px) and (max-width: 767px) {
   .carouselSlide .slide-clr {
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
     height: 200px;
-    width: 430px;
   }
   .carouselSlide .carousel-caption {
+    z-index: 10;
     top: 30px;
   }
   #carousel-section .row .owl-theme .card img {
     margin: 37px -160px;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 192px;
   }
   #apply-form .container .apply-this-job {
@@ -1487,13 +1311,11 @@ body {
     margin-left: 158px;
   }
 }
-
 @media only screen and (min-width: 500px) and (max-width: 2560px) {
   .missionImgVertical {
     display: none;
   }
 }
-
 @media only screen and (min-width: 560px) and (max-width: 800px) {
   .homeEmployers .employersRow .bagImgCol .employersImg {
     max-width: 112%;
@@ -1510,7 +1332,6 @@ body {
     margin: 15px 0;
   }
 }
-
 @media screen and (max-width: 600px) and (max-width: 767px) {
   .timelineMain::after {
     left: 33px;
@@ -1536,17 +1357,19 @@ body {
     left: 0%;
   }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .carouselSlide .slide-clr {
-    height: 320px;
-    width: 800px;
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 200px;
   }
   #home-page ul li .resource {
     margin-left: -25px;
   }
   .carouselSlide .carousel-caption {
-    top: 73px;
+    z-index: 10;
+    top: 53px;
   }
   .carouselSlide .carousel-caption h1 {
     font-size: 25px;
@@ -1620,7 +1443,6 @@ body {
     font-size: 20px;
   }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .product-designer .candidates {
     width: auto;
@@ -1647,11 +1469,10 @@ body {
     max-width: 100%;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 216px;
   }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
   .Job .candidate-card {
     margin-top: 20px;
@@ -1676,7 +1497,6 @@ body {
     margin-left: 346px;
   }
 }
-
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .employers .cardMain {
     height: 350px;
@@ -1685,16 +1505,22 @@ body {
     height: 400px;
   }
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .carouselSlide .slide-clr {
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 300px;
+  }
   .carouselSlide .carousel-caption {
-    top: 119px;
+    z-index: 10;
+    top: 50px;
   }
   .carouselSlide .carousel-caption h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
   .carouselSlide .carousel-caption p {
-    font-size: 19px;
+    font-size: 16px;
   }
   #contact-card-section .card .topContent h2 {
     font-size: 18px;
@@ -1707,8 +1533,23 @@ body {
     font-size: 57px;
   }
 }
-
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .carouselSlide .slide-clr {
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 300px;
+  }
+  .carouselSlide .carousel-caption {
+    z-index: 10;
+    top: 50px;
+  }
+  .carouselSlide .carousel-caption h1 {
+    font-size: 30px;
+  }
+  .carouselSlide .carousel-caption p {
+    font-size: 16px;
+  }
   #carousel-section .row .owl-theme .card {
     min-height: 215px;
   }
@@ -1730,19 +1571,20 @@ body {
     padding-left: 0;
   }
 }
-
 @media (width: 1024px) {
   .carouselSlide .slide-clr {
-    height: 420px;
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 300px;
   }
   #apply-form .container .submit-btn {
     margin-left: 285px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 213px;
   }
   #home-page .btnDiv {
@@ -1768,29 +1610,29 @@ body {
     margin-top: 35px;
   }
 }
-
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide .carousel-caption {
-    top: 198px;
+    z-index: 10;
+    top: 98px;
   }
   .carouselSlide .carousel-caption h1 {
-    font-size: 42px;
+    font-size: 35px;
   }
   .carouselSlide .carousel-caption p {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
-
 @media (max-width: 1320px) {
   .product-container {
     padding: 0 15px;
   }
 }
-
 @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .carouselSlide .slide-clr {
-    height: 600px;
-    width: 1780px;
+    width: 100%;
+  }
+  .carouselSlide .carousel-item {
+    height: 400px;
   }
   .Job .candidate-card {
     height: 250px;
@@ -1803,11 +1645,10 @@ body {
     font-weight: 700;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 189px;
   }
 }
-
 @media (width: 2560px) {
   #home-page .navbar-brqnd {
     height: 200px;
@@ -1822,15 +1663,17 @@ body {
   #home-page .btnDiv .ContactButton {
     font-size: 25px;
   }
+  .carouselSlide .carousel-caption {
+    z-index: 10;
+  }
   .carouselSlide .carousel-caption h1 {
-    font-size: 70px;
+    font-size: 50px;
   }
   .carouselSlide .carousel-caption p {
-    font-size: 40px;
+    font-size: 30px;
   }
   .carouselSlide .slide-clr {
-    height: 900px;
-    width: 2580px;
+    width: 100%;
   }
   .Job .candidate-card {
     height: 350px;
@@ -1870,7 +1713,7 @@ body {
     font-weight: 600;
   }
   .timelineMain::after {
-    content: '';
+    content: "";
     bottom: 227px;
   }
   .trending-jobs .candidates .senior-product h5 {
@@ -1955,7 +1798,7 @@ body {
     margin-bottom: -100px;
   }
   #apply-form .site-btn {
-    margin-bottom: -0px;
+    margin-bottom: 0px;
   }
   .modal .modal-content {
     width: 40%;
@@ -1993,12 +1836,6 @@ body {
   .black-footer .social h4 {
     font-size: 42px;
   }
-  .black-footer .bottom-footer .bottom-footer-content h4 {
-    font-size: 20px;
-  }
-  .black-footer .bottom-footer .bottom-footer-content .privacy-link {
-    font-size: 24px;
-  }
   .modal .modal-content {
     width: 40%;
   }
@@ -2012,7 +1849,6 @@ body {
     font-size: 22px;
   }
 }
-
 @media only screen and (min-width: 1500px) and (max-width: 2000px) {
   #home-page .navbar-brqnd {
     height: 200px;
@@ -2027,15 +1863,14 @@ body {
   #home-page .btnDiv .ContactButton {
     font-size: 25px;
   }
+  .carouselSlide .carousel-caption {
+    z-index: 10;
+  }
   .carouselSlide .carousel-caption h1 {
-    font-size: 70px;
+    font-size: 50px;
   }
   .carouselSlide .carousel-caption p {
-    font-size: 40px;
-  }
-  .carouselSlide .slide-clr {
-    height: 900px;
-    width: 2580px;
+    font-size: 30px;
   }
   .Job .candidate-card {
     height: 350px;
@@ -2187,14 +2022,7 @@ body {
   .black-footer .social h4 {
     font-size: 42px;
   }
-  .black-footer .bottom-footer .bottom-footer-content h4 {
-    font-size: 20px;
-  }
-  .black-footer .bottom-footer .bottom-footer-content .privacy-link {
-    font-size: 24px;
-  }
 }
-
 @media (width: 1440px) {
   #apply-form .container .apply-this-job {
     margin-top: 35px;
@@ -2216,5 +2044,4 @@ body {
   #contact-form .container .row {
     max-width: 100%;
   }
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

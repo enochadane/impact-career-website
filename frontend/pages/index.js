@@ -1,15 +1,14 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { GET_FAQ, GET_ALL_JOBS } from "../graphql/queries";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import JobSubmitModal from "../components/JobSubmitModal/JobSubmitModal";
-import LookingForEmployment from "../components/ApplyModal/LookingForEmployment";
-
-import { useDispatch } from "react-redux";
-import { userActions } from "../store/user";
-import { useRouter } from "next/router";
-import axios from "axios";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_FAQ, GET_ALL_JOBS } from '../graphql/queries';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
+import JobSubmitModal from '../components/JobSubmitModal/JobSubmitModal';
+import LookingForEmployment from '../components/ApplyModal/LookingForEmployment';
+import { useDispatch } from 'react-redux';
+import { userActions } from '../store/user';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 
 export default function Home({ posts, name }) {
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function Home({ posts, name }) {
   dispatch(userActions.loginModalHidden());
   const authenticate = async (email, magicId) => {
     const reqConfig = {
-      method: "POST",
+      method: 'POST',
       url: `${process.env.SERVER}/candidate/magic-login`,
       data: {
         email,
@@ -37,16 +36,16 @@ export default function Home({ posts, name }) {
 
       if (response.status === 200) {
         dispatch(userActions.setUserData(response.data.user));
-        router.push("/profile");
+        router.push('/profile');
       }
     } catch (err) {
       console.log(err);
-      router.push("/login-failed");
+      router.push('/login-failed');
     }
   };
 
   if (!queryCheck && email && ml) {
-    console.log("email: ", email, " magic link: ", ml);
+    console.log('email: ', email, ' magic link: ', ml);
     authenticate(email, ml);
     setQueryCheck(true);
   }
@@ -59,7 +58,7 @@ export default function Home({ posts, name }) {
           setModal(false);
           setModal2(false);
         }}
-        type={modal ? "candidate_seeking_opportunity" : "resource_request"}
+        type={modal ? 'candidate_seeking_opportunity' : 'resource_request'}
       />
       <JobSubmitModal visible={modal1} onClose={() => setModal1(false)} />
       <div>
@@ -226,10 +225,10 @@ export default function Home({ posts, name }) {
                   <div className='row g-1'>
                     <div className='col-md-7 col-12'>
                       <div className='card-body p-0'>
-                        <h5 className='card-title text-white'>
+                        <h5 className='card-title'>
                           Resources to raise your chances
                         </h5>
-                        <p className='text-white'>
+                        <p>
                           Upskill yourself and gain a greater advantage for
                           future job applications. Our specific training
                           resources can help you learn more and provide you with
@@ -238,7 +237,7 @@ export default function Home({ posts, name }) {
                         <button
                           onClick={() => setModal2(true)}
                           id='myBtn2'
-                          className='btn btn-outline-white access-btn'
+                          className='btn access-btn'
                         >
                           Request access
                         </button>
@@ -330,7 +329,7 @@ export default function Home({ posts, name }) {
                               <div className='col-md-4 col-lg-3 col-4 '>
                                 <img
                                   src={
-                                    "/images/brif_case_2.png"
+                                    '/images/brif_case_2.png'
                                     // process.env.BACKEND_IMG +
                                     // '/uploads/orange_img_7cd28e9ae5.jpg'
                                     // val.attributes.image.data.attributes.url
