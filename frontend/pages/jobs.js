@@ -43,8 +43,8 @@ export default function Job({ posts, name, numberOfJobs }) {
   const getJobs = async () => {
     try {
       const jobsReqConfig = {
-        method: 'GET',
-        url: `${process.env.SERVER}/job/get-jobs-by-page/${page}`,
+        method: "GET",
+        url: `http://localhost:4000/job/get-jobs-by-page/${page}`,
       };
 
       const response = await axios(jobsReqConfig);

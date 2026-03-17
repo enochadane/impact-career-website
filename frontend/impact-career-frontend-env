@@ -1,0 +1,7 @@
+username=yourimpactcareers@gmail.com
+password=wjq1rZDSGRrYGxawjAtQ
+BACKEND_URL=https://impactcareers.com/graphql
+BACKEND_IMG=http://13.59.166.79:1337
+SERVER=http://localhost:4000
+AWS_S3_URL=impact-careers.s3.us-east-2.amazonaws.com
+SERVER=https://backend.impactcareers.com/example
